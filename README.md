@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ESP-IDF template app
 ====================
 
@@ -9,3 +10,7 @@ Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/lates
 Unless required by applicable law or agreed to in writing, this
 software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 CONDITIONS OF ANY KIND, either express or implied.*
+=======
+# rfidProject_V2_S2
+Firmware for esp32-s2 processor. Communicates with a desktop application https://github.com/mechaMan0/RFID_TAG_APP. 
+>>>>>>> origin/main
