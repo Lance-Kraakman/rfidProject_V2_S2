@@ -1,0 +1,6 @@
+source "/home/lance/esp/esp-idf/components/efuse/Kconfig"
+source "/home/lance/esp/esp-idf/components/esp32s2/Kconfig"
+source "/home/lance/esp/esp-idf/components/esp_common/Kconfig"
+source "/home/lance/esp/esp-idf/components/esp_system/Kconfig"
+source "/home/lance/esp/esp-idf/components/log/Kconfig"
+source "/home/lance/esp/esp-idf/components/spi_flash/Kconfig"
