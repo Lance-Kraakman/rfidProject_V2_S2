@@ -300,6 +300,8 @@ void processServerData(void *arg) {
 				cJSON_AddNumberToObject(uuidArray, "UUID", recvd_rfidTag.uuid[1]);
 				cJSON_AddNumberToObject(uuidArray, "UUID", recvd_rfidTag.uuid[2]);
 				cJSON_AddNumberToObject(uuidArray, "UUID", recvd_rfidTag.uuid[3]);
+				cJSON_AddNumberToObject(uuidArray, "UUID", recvd_rfidTag.uuid[4]);
+
 
 				// Add cJSON object to array
 				cJSON_AddItemToArray(jsonArray, rfidJsonObject);

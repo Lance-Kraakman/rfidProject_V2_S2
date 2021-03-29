@@ -24,7 +24,7 @@ static void tag_handler(uint8_t* serial_no) {
         printf("%#x ", serial_no[i]);
     }
     dummyTag.time = esp_timer_get_time();
-    memcpy(dummyTag.uuid, serial_no, 4*sizeof(uint8_t));
+    memcpy(dummyTag.uuid, serial_no, 5*sizeof(uint8_t));
     xQueueSend(xQueueRfid, &dummyTag, 1000);
 
     printf("\n ------ FIN ----- \n");
@@ -67,7 +67,6 @@ void configButtonInputs(gpio_num_t *buttonList, int buttonListLength) {
 
 	io_conf.pin_bit_mask = gpioBitMask;
 	gpio_config(&io_conf);
-
 }
 
 static void pollButtonInputs(void* arg)
