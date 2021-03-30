@@ -14,7 +14,6 @@
 
 
 
-
 #include "esp_log.h"
 #include "../../Drivers/esp-idf-rc522/rc522.h"
 

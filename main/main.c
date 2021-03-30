@@ -5,6 +5,9 @@ xQueueHandle xQueueRfid = NULL;
 
 void app_main(void)
 {
+	esp_log_level_set("*", ESP_LOG_DEBUG);
+	esp_log_level_set("MQTT_CLIENT", ESP_LOG_DEBUG);
+
 	// Create Queues, Semaphores and Message Boxes
 	xQueueRfid = xQueueCreate(25,sizeof(rfid_tag_item));
 
@@ -27,6 +30,9 @@ void app_main(void)
 	// Start Input Processor
 	startInputProcessor(); // Somewhere in start input processor memory may not be allocated correctly -> Might just be on INIT//
 	ESP_LOGI(TAG_IP, "START INPUT PROCESSOR FINISHED \n");
+
+	esp_log_level_set("*", ESP_LOG_DEBUG);
+	esp_log_level_set("MQTT_CLIENT", ESP_LOG_DEBUG);
 
 
 	while(1) {

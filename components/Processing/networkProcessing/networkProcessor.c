@@ -5,163 +5,111 @@
  *      Author: lance
  */
 #include "networkProcessor.h"
-
+#include "protocol_examples_common.h"
+#include "mqtt_client.h"
 #define MIN_TAG_TIME_MICROSECONDS 1000000
-static char *rfidHttpResponse = NULL;
+static char *rfidDataBuffer = NULL;
 
 //	Connect to local network and run a HTTPS server
-static void checkMdnsService(void *arg);
 void processServerData(void *arg);
+void sendDataMqtt(void *arg);
 void resolve_mdns_host(const char * host_name);
-static xSemaphoreHandle xSemHttp = NULL;
+static xSemaphoreHandle xSemDataSent = NULL;
+static esp_mqtt_client_handle_t client = NULL;
+static int desktop_app_listening = 0;
+
 
 void startNetworkProcessor() {
 	printf("Starting Network Processor \n");
-	xSemHttp = xSemaphoreCreateBinary();
+	xSemDataSent = xSemaphoreCreateBinary();
 	configNetwork();
-	xTaskCreate(checkMdnsService, "checkMdnsService", 4096, NULL, 1, NULL);
+	xTaskCreate(sendDataMqtt, "sendDataMqtt", 4096, NULL, 1, NULL);
 	xTaskCreate(processServerData, "processServerData", 4096 , NULL, 1, NULL);
 
 }
 
-/* An HTTP GET handler */
-static esp_err_t root_get_handler(httpd_req_t *req)
+/* Mqtt Client */
+static void log_error_if_nonzero(const char *message, int error_code)
 {
-    httpd_resp_set_type(req, "text/html");
-    httpd_resp_send(req, "<h1>Hello Secure World!</h1>", HTTPD_RESP_USE_STRLEN);
-
-    return ESP_OK;
-}
-
-static const httpd_uri_t root = {
-    .uri       = "/",
-    .method    = HTTP_GET,
-    .handler   = root_get_handler
-};
-
-/* Http get handler which gets all of the tagged events from the RFID event tags */
-static esp_err_t get_taged_handler(httpd_req_t *req) {
-
-	BaseType_t xHigherPriorityTaskWoken;
-	httpd_resp_set_type(req, "text/json");
-
-	if (rfidHttpResponse != NULL) {
-
-		httpd_resp_send(req, rfidHttpResponse, HTTPD_RESP_USE_STRLEN);
-		xSemaphoreGiveFromISR(xSemHttp, &xHigherPriorityTaskWoken);
-		// Have to do this here, as we need it to be called before the next http call
-		free(rfidHttpResponse); // Free allocated memory
-		rfidHttpResponse = NULL; // Set equal to null.
-		if (xHigherPriorityTaskWoken!=pdFALSE) {
-		// Force Context Switch
-			portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-		}
-
-	} else {
-		httpd_resp_send(req, "Get F%$^3d. Empty List", HTTPD_RESP_USE_STRLEN);
-	}
-
-
-    return ESP_OK;
-}
-
-static const httpd_uri_t tag_get_request = {
-    .uri       = "/getTags",
-    .method    = HTTP_GET,
-    .handler   = get_taged_handler
-};
-
-static httpd_handle_t start_webserver(void)
-{
-    httpd_handle_t server = NULL;
-
-
-    // Start the httpd server
-    ESP_LOGI(TAG_NP, "Starting server");
-
-    httpd_ssl_config_t conf = HTTPD_SSL_CONFIG_DEFAULT();
-
-    extern const unsigned char cacert_pem_start[] asm("_binary_cacert_pem_start");
-    extern const unsigned char cacert_pem_end[]   asm("_binary_cacert_pem_end");
-    conf.cacert_pem = cacert_pem_start;
-    conf.cacert_len = cacert_pem_end - cacert_pem_start;
-
-    extern const unsigned char prvtkey_pem_start[] asm("_binary_prvtkey_pem_start");
-    extern const unsigned char prvtkey_pem_end[]   asm("_binary_prvtkey_pem_end");
-    conf.prvtkey_pem = prvtkey_pem_start;
-    conf.prvtkey_len = prvtkey_pem_end - prvtkey_pem_start;
-
-    esp_err_t ret = httpd_ssl_start(&server, &conf);
-
-    if (ESP_OK != ret) {
-        ESP_LOGI(TAG_NP, "Error starting server!");
-        return NULL;
-    }
-
-    // Set URI handlers
-    ESP_LOGI(TAG_NP, "Registering URI handlers");
-    httpd_register_uri_handler(server, &root);
-    httpd_register_uri_handler(server, &tag_get_request);
-    return server;
-}
-
-static void stop_webserver(httpd_handle_t server)
-{
-    // Stop the server
-    httpd_ssl_stop(server);
-}
-
-static void disconnect_handler(void* arg, esp_event_base_t event_base,
-                               int32_t event_id, void* event_data)
-{
-    httpd_handle_t* server = (httpd_handle_t*) arg;
-    if (*server) {
-        stop_webserver(*server);
-        *server = NULL;
+    if (error_code != 0) {
+        ESP_LOGE(TAG_NP, "Last error %s: 0x%x", message, error_code);
     }
 }
 
-static void connect_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data)
+/*
+ * @brief Event handler registered to receive MQTT events
+ *
+ *  This function is called by the MQTT client event loop.
+ *
+ * @param handler_args user data registered to the event.
+ * @param base Event base for the handler(always MQTT Base in this example).
+ * @param event_id The id for the received event.
+ * @param event_data The data for the event, esp_mqtt_event_handle_t.
+ */
+static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
 {
-    httpd_handle_t* server = (httpd_handle_t*) arg;
-    if (*server == NULL) {
-        *server = start_webserver();
+    ESP_LOGD(TAG_NP, "Event dispatched from event loop base=%s, event_id=%d", base, event_id);
+    esp_mqtt_event_handle_t event = event_data;
+    esp_mqtt_client_handle_t client = event->client;
+    int msg_id;
+    ESP_LOGI(TAG_NP, "Event ID %d", event_id);
+    switch ((esp_mqtt_event_id_t)event_id) {
+    case MQTT_EVENT_CONNECTED:
+        ESP_LOGI(TAG_NP, "MQTT_EVENT_CONNECTED");
+        break;
+    case MQTT_EVENT_DISCONNECTED:
+        ESP_LOGI(TAG_NP, "MQTT_EVENT_DISCONNECTED");
+        break;
+
+    case MQTT_EVENT_SUBSCRIBED:
+        ESP_LOGI(TAG_NP, "MQTT_EVENT_SUBSCRIBED, msg_id=%d", event->msg_id);
+        break;
+    case MQTT_EVENT_UNSUBSCRIBED:
+        ESP_LOGI(TAG_NP, "MQTT_EVENT_UNSUBSCRIBED, msg_id=%d", event->msg_id);
+        break;
+    case MQTT_EVENT_PUBLISHED:
+        ESP_LOGI(TAG_NP, "MQTT_EVENT_PUBLISHED, msg_id=%d", event->msg_id);
+        break;
+    case MQTT_EVENT_DATA:
+        ESP_LOGI(TAG_NP, "MQTT_EVENT_DATA");
+        printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
+        printf("DATA=%.*s\r\n", event->data_len, event->data);
+        desktop_app_listening = (int) *event->data; // Will just be a single bit tehe x
+        break;
+    case MQTT_EVENT_ERROR:
+        ESP_LOGI(TAG_NP, "MQTT_EVENT_ERROR");
+        if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
+            log_error_if_nonzero("reported from esp-tls", event->error_handle->esp_tls_last_esp_err);
+            log_error_if_nonzero("reported from tls stack", event->error_handle->esp_tls_stack_err);
+            log_error_if_nonzero("captured as transport's socket errno",  event->error_handle->esp_transport_sock_errno);
+            ESP_LOGI(TAG_NP, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno));
+
+        }
+        break;
+    default:
+        ESP_LOGI(TAG_NP, "Other event id:%d", event->event_id);
+        break;
     }
 }
 
-static void checkMdnsService(void *arg) {
-	while(1) {
-		vTaskDelay(15000/portTICK_RATE_MS); // Every 45 Seconds
-		refresh_mdns_service();
-	}
-}
-
-void start_mdns_service()
+/* Mqtt App Config */
+static void mqtt_app_start(void)
 {
-    //initialize mDNS service
-    esp_err_t err = mdns_init();
-    if (err) {
-        printf("MDNS Init failed: %d\n", err);
-        return;
-    } else {
-    	printf("MDNS Init Success \n");
-    }
+    static esp_mqtt_client_config_t mqtt_cfg = {
+    	.uri = CONFIG_BROKER_LOCAL,
+		.port = 1883,
 
-    mdns_hostname_set("my-esp32");			    //set hostname
-    mdns_instance_name_set("my-esp32");     //set default instance
+    };
 
-    //Add Service
-    mdns_txt_item_t serviceTxtData[] = {
-            {"board", "esp32"},
-            {"path", "/"}
-        };
-
-	ESP_ERROR_CHECK(mdns_service_add(NULL, "_https", "_tcp", 443, serviceTxtData,
-									 sizeof(serviceTxtData) / sizeof(serviceTxtData[0])));
-
-
+    client = esp_mqtt_client_init(&mqtt_cfg);
+    /* The last argument may be used to pass data to the event handler, in this example mqtt_event_handler */
+    esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
+    esp_mqtt_client_start(client);
 }
-// Unused - MDNS service cannot
+
+
+
+// Unused
 void resolve_mdns_host(const char * host_name)
 {
     printf("Query A: %s.local", host_name);
@@ -185,73 +133,21 @@ void resolve_mdns_host(const char * host_name)
     printf(IPSTR, IP2STR(&addr));
 }
 
-void refresh_mdns_service() {
-	printf("---------MDNS REFRESH---------\n");
-	mdns_free();
-	vTaskDelay(1000/portTICK_RATE_MS);
-	start_mdns_service();
-}
-
 // Config
 void configNetwork() {
-	static httpd_handle_t server = NULL;
 
 	ESP_ERROR_CHECK(nvs_flash_init());
 	ESP_ERROR_CHECK(esp_netif_init());
 	ESP_ERROR_CHECK(esp_event_loop_create_default());
 
-	start_mdns_service();
-
-	ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &connect_handler, &server));
-	ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, WIFI_EVENT_STA_DISCONNECTED, &disconnect_handler, &server));
-
 	ESP_ERROR_CHECK(example_connect());
-}
-
-// returns JSON array of scanned in tag objects
-// Parse a buffer & return -1 for unseccusefull
-char* getTagsFromQueue() {
-
-	cJSON *jsonArray = NULL;
-	cJSON *finalJSON = cJSON_CreateObject();
-	jsonArray = cJSON_AddArrayToObject(finalJSON, "RFID TAG ARRAY");
-
-	int queueRecieved = (int) pdTRUE;
-	rfid_tag_item recvd_rfidTag; //Array of RFID Tag items
-
-	while(queueRecieved == pdTRUE) {
-
-		memset(&recvd_rfidTag, 0, sizeof(recvd_rfidTag));
-		queueRecieved = (int) xQueueReceive(xQueueRfid, &recvd_rfidTag,( TickType_t ) 0);
-
-		if (queueRecieved == pdTRUE) { // Keep this check
-			printf("RFID Tag Received: %s\n", recvd_rfidTag.uuid);
-			cJSON *rfidJsonObject = cJSON_CreateObject();
-
-			// Add cJSON string object
-			//cJSON_AddStringToObject(rfidJsonObject, "UUID", recvd_rfidTag.uuid);
-
-			// Add cJSON object to array
-			cJSON_AddItemToArray(jsonArray, rfidJsonObject);
-		}
-	}
 
 
-	char *string = cJSON_Print(finalJSON); // This Dosent allocates memory.
-	ESP_LOGI(TAG_NP,"\n%s", string);
-
-	size_t strLen = strlen(string);
-	ESP_LOGI(TAG_NP, "Length of string %d \n",strLen);
-
-	// Create memory block for buffer for http response
-	free(rfidHttpResponse);
-	char *rfidHttpResponse = (char*) malloc((strLen+5)*sizeof(char));
-	memcpy(rfidHttpResponse,string,(strLen)*sizeof(char));
-
-	return rfidHttpResponse;
-
+	//start_mdns_service();
+	mqtt_app_start();
 
 }
+
 //portMAX_DELAY
 // Low priority Task. Add data to server from queue
 void processServerData(void *arg) {
@@ -265,15 +161,16 @@ void processServerData(void *arg) {
 	int queueRecieved = (int) pdTRUE;
 	rfid_tag_item recvd_rfidTag; //rfid tag item
 
-	rfid_tag_item prev_recvd_rfidTag; // Copy of previous RFID Tag
+	rfid_tag_item prev_recvd_rfidTag;
 	prev_recvd_rfidTag.time = 0;
 
 	while(1) {
 
+
 		queueRecieved = (int) xQueueReceive(xQueueRfid, &recvd_rfidTag,( TickType_t ) portMAX_DELAY);
 
 		// If an Http response has occurred, Create New JSON
-		if (xSemaphoreTake(xSemHttp, 0)) {
+		if (xSemaphoreTake(xSemDataSent, 0)) {
 			cJSON_Delete(finalJSON);
 			finalJSON = cJSON_CreateObject();
 			jsonArray = cJSON_AddArrayToObject(finalJSON, "RFID TAG ARRAY");
@@ -305,31 +202,79 @@ void processServerData(void *arg) {
 
 				// Add cJSON object to array
 				cJSON_AddItemToArray(jsonArray, rfidJsonObject);
-				ESP_LOGI(TAG_NP, "Fuck 3");
 
 				// Update the response
-				rfidHttpResponse = cJSON_Print(finalJSON); // This allocates a new block of memory, Containg the string
-				ESP_LOGI(TAG_NP,"\n%s", rfidHttpResponse);
-				size_t strLen = strlen(rfidHttpResponse);
+				rfidDataBuffer = cJSON_Print(finalJSON); // This allocates a new block of memory, Containg the string
+
+				// Print information
+				ESP_LOGI(TAG_NP,"\n%s", rfidDataBuffer);
+				size_t strLen = strlen(rfidDataBuffer);
 				ESP_LOGI(TAG_NP, "Length of string %d \n",strLen);
 
+
+
 			}
-
 			memcpy(&prev_recvd_rfidTag, &recvd_rfidTag, sizeof(rfid_tag_item));
-
 		}
 	}
+}
+
+void sendDataMqtt(void *arg) {
+	//Subscribe to topics
+
+    int msg_id = esp_mqtt_client_subscribe(client, "desktop-application", 1);
+    ESP_LOGI(TAG_NP, "sent subscribe successful, msg_id=%d", msg_id);
 
 
+	while(1) {
+
+		// Check if the mqtt subscriber is listening and there is data in the buffer
+		if ((rfidDataBuffer != NULL) && (desktop_app_listening)) {
+
+			ESP_LOGI(TAG_NP, "We made it baby");
+
+			msg_id = esp_mqtt_client_publish(client, "rfid", rfidDataBuffer, 0, 0, 0);
+			ESP_LOGI(TAG_NP, "sent publish successful, msg_id=%d", msg_id);
+
+			// hell
+
+			xSemaphoreGive(xSemDataSent); // Let the data processing service know that we have sent the data
+			free(rfidDataBuffer); // Free allocated memory
+			rfidDataBuffer = NULL;
+
+		}
+
+		vTaskDelay(500/portTICK_RATE_MS);
+	}
 }
 
 
 
-
-
-
-
-
+///* Http get handler which gets all of the tagged events from the RFID event tags */
+//static esp_err_t get_taged_handler(httpd_req_t *req) {
+//
+//	BaseType_t xHigherPriorityTaskWoken;
+//	httpd_resp_set_type(req, "text/json");
+//
+//	if (rfidDataBuffer != NULL) {
+//
+//		httpd_resp_send(req, rfidDataBuffer, HTTPD_RESP_USE_STRLEN);
+//		xSemaphoreGiveFromISR(xSemHttp, &xHigherPriorityTaskWoken);
+//		// Have to do this here, as we need it to be called before the next http call
+//		free(rfidDataBuffer); // Free allocated memory
+//		rfidDataBuffer = NULL; // Set equal to null.
+//		if (xHigherPriorityTaskWoken!=pdFALSE) {
+//		// Force Context Switch
+//			portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+//		}
+//
+//	} else {
+//		httpd_resp_send(req, "Get F%$^3d. Empty List", HTTPD_RESP_USE_STRLEN);
+//	}
+//
+//
+//    return ESP_OK;
+//}
 
 
 
