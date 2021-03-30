@@ -9,14 +9,19 @@ if(NOT DEFINED ENV{IOT_SOLUTION_PATH})
     message(WARNING "Can't detect IOT_SOLUTION_PATH in your environment, we infer it is $ENV{IOT_SOLUTION_PATH}")
 endif()
 
-
-
-
-set(EXTRA_COMPONENT_DIRS "./components/Processing/inputProcessing" "./components/Processing/displayProcessing"
-		"./components/Drivers/esp-idf-rc522" "./components/Processing/networkProcessing" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common")
+# CPP Component Dirs
+set(EXTRA_COMPONENT_DIRS "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService")
 		
-set(EXTRA_INCLUDE "./components/Processing/inputProcessing" "./components/Processing/displayProcessing" 
-		"./components/Drivers/esp-idf-rc522" "./components/Processing/networkProcessing")
+set(EXTRA_INCLUDE "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService")
+
+
+
+# C component dirs 
+#set(EXTRA_COMPONENT_DIRS "./components/Processing/inputProcessing" "./components/Processing/displayProcessing"
+#		"./components/Drivers/esp-idf-rc522" "./components/Processing/networkProcessing" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common")
+#		
+#set(EXTRA_INCLUDE "./components/Processing/inputProcessing" "./components/Processing/displayProcessing" 
+#		"./components/Drivers/esp-idf-rc522" "./components/Processing/networkProcessing")
 
 
 include($ENV{IOT_SOLUTION_PATH}/component.cmake)

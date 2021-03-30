@@ -11,4 +11,5 @@ extern "C" {
 void app_main(void)
 {
 	// Cry
+	MessagingService myMessagingService = MessagingService();
 }

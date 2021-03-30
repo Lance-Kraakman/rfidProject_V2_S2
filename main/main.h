@@ -16,11 +16,12 @@
 #include "esp_system.h"
 #include "esp_event.h"
 #include "driver/gpio.h"
+#include "../components/Classes/Networking/Messaging/MessagingService.h"
 
-extern "C" {
-	#include "../components/Processing/networkProcessing/networkProcessor.h"
-	#include "../components/Processing/inputProcessing/inputProcessor.h"
-}
+//extern "C" {
+//	#include "../components/Processing/networkProcessing/networkProcessor.h"
+//	#include "../components/Processing/inputProcessing/inputProcessor.h"
+//}
 
 
 
