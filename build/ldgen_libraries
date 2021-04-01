@@ -70,8 +70,9 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/touch_element/libtouch_element.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/ulp/libulp.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Mqtt/libMqtt.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/MqttService/libMqttService.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Messaging/libMessaging.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/protocol_examples_common/libprotocol_examples_common.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/bus/libbus.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/button/libbutton.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/dac_audio/libdac_audio.a

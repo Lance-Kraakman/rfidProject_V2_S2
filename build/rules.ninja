@@ -1516,7 +1516,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_wifi_provisioning
 #############################################
 # Rule for compiling CXX files.
 
-rule CXX_COMPILER____idf_Mqtt
+rule CXX_COMPILER____idf_MqttService
   depfile = $DEP_FILE
   deps = gcc
   command = /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-g++  $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -1526,7 +1526,7 @@ rule CXX_COMPILER____idf_Mqtt
 #############################################
 # Rule for linking C static library.
 
-rule C_STATIC_LIBRARY_LINKER____idf_Mqtt
+rule C_STATIC_LIBRARY_LINKER____idf_MqttService
   command = $PRE_LINK && /home/lance/.espressif/tools/cmake/3.16.4/bin/cmake -E remove $TARGET_FILE && /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
@@ -1546,6 +1546,25 @@ rule CXX_COMPILER____idf_Messaging
 # Rule for linking C static library.
 
 rule C_STATIC_LIBRARY_LINKER____idf_Messaging
+  command = $PRE_LINK && /home/lance/.espressif/tools/cmake/3.16.4/bin/cmake -E remove $TARGET_FILE && /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-ranlib $TARGET_FILE && $POST_BUILD
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
+rule C_COMPILER____idf_protocol_examples_common
+  depfile = $DEP_FILE
+  deps = gcc
+  command = /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER____idf_protocol_examples_common
   command = $PRE_LINK && /home/lance/.espressif/tools/cmake/3.16.4/bin/cmake -E remove $TARGET_FILE && /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-ar qc $TARGET_FILE $LINK_FLAGS $in && /home/lance/.espressif/tools/xtensa-esp32s2-elf/esp-2020r3-8.4.0/xtensa-esp32s2-elf/bin/xtensa-esp32s2-elf-ranlib $TARGET_FILE && $POST_BUILD
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
