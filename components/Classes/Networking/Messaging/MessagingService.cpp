@@ -22,12 +22,14 @@ MessagingService::MessagingService() {
 void MessagingService::initMessagingServices() {
 	// Configure Network
 
+	//To Do
+
 	// Configure MQTT
-	//MessagingService myMessagingService = MessagingService();
-	esp_mqtt_client_config_t mqtt_cfg = {
+	esp_mqtt_client_config_t mqtt_cfg = { // @suppress("Invalid arguments")
 	    	.uri = CONFIG_BROKER_LOCAL,
 			.port = 1883,
 	};
+
 
 	MqttService myService = MqttService(mqtt_cfg);
 	this->setMqttService(myService); // pass by copy because myService will be destroyed x

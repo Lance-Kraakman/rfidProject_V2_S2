@@ -10,9 +10,11 @@ if(NOT DEFINED ENV{IOT_SOLUTION_PATH})
 endif()
 
 # CPP Component Dirs
-set(EXTRA_COMPONENT_DIRS "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common")
+set(EXTRA_COMPONENT_DIRS "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common"
+	"./components/Classes/RfidTag" "./components/Classes/Device" "./components/Classes/Employee")
 		
-set(EXTRA_INCLUDE "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common")
+set(EXTRA_INCLUDE "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common"
+	"./components/Classes/RfidTag" "./components/Classes/Device" "./components/Classes/Employee")
 
 
 # C component dirs 

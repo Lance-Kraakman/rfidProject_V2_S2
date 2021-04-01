@@ -27,7 +27,8 @@ $<TARGET_FILE:__idf_esp_ringbuf>
 $<TARGET_FILE:__idf_driver>
 $<TARGET_FILE:__idf_xtensa>
 $<TARGET_FILE:__idf_espcoredump>
-$<TARGET_FILE:__idf_esp32s2>
+$<TARGET_FILE:__idf_perfmon>
+$<TARGET_FILE:__idf_esp32>
 $<TARGET_FILE:__idf_esp_common>
 $<TARGET_FILE:__idf_esp_timer>
 $<TARGET_FILE:__idf_freertos>
@@ -65,14 +66,15 @@ $<TARGET_FILE:__idf_json>
 $<TARGET_FILE:__idf_libsodium>
 $<TARGET_FILE:__idf_mqtt>
 $<TARGET_FILE:__idf_openssl>
-$<TARGET_FILE:__idf_perfmon>
 $<TARGET_FILE:__idf_spiffs>
-$<TARGET_FILE:__idf_touch_element>
 $<TARGET_FILE:__idf_ulp>
 $<TARGET_FILE:__idf_wifi_provisioning>
 $<TARGET_FILE:__idf_MqttService>
 $<TARGET_FILE:__idf_Messaging>
 $<TARGET_FILE:__idf_protocol_examples_common>
+$<TARGET_FILE:__idf_RfidTag>
+$<TARGET_FILE:__idf_Device>
+$<TARGET_FILE:__idf_Employee>
 $<TARGET_FILE:__idf_bus>
 $<TARGET_FILE:__idf_button>
 $<TARGET_FILE:__idf_dac_audio>

@@ -27,7 +27,8 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/driver/libdriver.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/xtensa/libxtensa.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/espcoredump/libespcoredump.a
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp32s2/libesp32s2.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/perfmon/libperfmon.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp32/libesp32.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp_common/libesp_common.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp_timer/libesp_timer.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/freertos/libfreertos.a
@@ -65,14 +66,15 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/libsodium/liblibsodium.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/mqtt/libmqtt.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/openssl/libopenssl.a
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/perfmon/libperfmon.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/spiffs/libspiffs.a
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/touch_element/libtouch_element.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/ulp/libulp.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/MqttService/libMqttService.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Messaging/libMessaging.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/protocol_examples_common/libprotocol_examples_common.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidTag/libRfidTag.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/libDevice.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/libEmployee.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/bus/libbus.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/button/libbutton.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/dac_audio/libdac_audio.a
