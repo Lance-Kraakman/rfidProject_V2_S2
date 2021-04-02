@@ -10,7 +10,10 @@
 
 #include "../RfidTag/RfidTag.h"
 #include "../Device/Device.h"
+#include "esp_log.h"
+#include "esp_system.h"
 #include <vector>
+
 
 
 class Employee {
@@ -21,10 +24,10 @@ private:
 	int activeStatus; // We can only add active status if employee is tagged
 public:
 	Employee();
-	Employee::Employee(std::string name, RfidTag tag);
+	Employee(std::string name, RfidTag tag);
 
-	void Employee::setName(std::string name);
-	std::string Employee::getName();
+	void setName(std::string name);
+	std::string getName();
 	void setTag(RfidTag tag);
 	RfidTag getTag();
 
@@ -33,7 +36,8 @@ public:
 	Device getDevice(std::string UUID); // Get device with the corrosponding UUID
 	Device popDevice(std::string UUID); // Pop Device with the corrosponding UUID
 	std::vector<Device> getDeviceList(); // Get the list
-
+	std::vector<Device>::iterator findDevice(Device deviceToFind);
+	bool checkDataReturned(std::vector<Device>::iterator it);
 	void setActive(int active);
 	int isActive();
 };

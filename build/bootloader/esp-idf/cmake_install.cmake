@@ -35,7 +35,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/lance/eclipse-workspace/rfidProject_V2_S2/build/bootloader/esp-idf/xtensa/cmake_install.cmake")
-  include("/home/lance/eclipse-workspace/rfidProject_V2_S2/build/bootloader/esp-idf/esp32/cmake_install.cmake")
+  include("/home/lance/eclipse-workspace/rfidProject_V2_S2/build/bootloader/esp-idf/esp32s2/cmake_install.cmake")
   include("/home/lance/eclipse-workspace/rfidProject_V2_S2/build/bootloader/esp-idf/hal/cmake_install.cmake")
   include("/home/lance/eclipse-workspace/rfidProject_V2_S2/build/bootloader/esp-idf/soc/cmake_install.cmake")
   include("/home/lance/eclipse-workspace/rfidProject_V2_S2/build/bootloader/esp-idf/micro-ecc/cmake_install.cmake")

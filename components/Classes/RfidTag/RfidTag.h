@@ -12,8 +12,9 @@
 
 class RfidTag {
 private:
-	std::string UUID;
+	// unsure but time or something lmao x
 public:
+	std::string UUID;
 	RfidTag();
 	RfidTag(std::string UUID);
 	void setUUID(std::string);

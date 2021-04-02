@@ -18,6 +18,10 @@ private:
 	std::string taggedTime;
 public:
 	Device();
+	Device(RfidTag tag);
+	friend bool operator== (const Device &D1, const Device &D2); // Search Function for has Device and getDeviceWithUUID <3
+	RfidTag getTag();
+	void setTag(RfidTag tag);
 };
 
 #endif /* COMPONENTS_CLASSES_DEVICE_DEVICE_H_ */
