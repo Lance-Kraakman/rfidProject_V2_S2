@@ -60,21 +60,21 @@ message MessagingService::popMessage() {
 	if (this->getMessageList().empty()) {
 		return message {"","",0};
 	} else {
-		message recvdMessage = this->getMessageList().back();
+		message recvdMessage = this->getMessageList().front();
 		this->getMessageList().pop_back(); // removes the last item in the message list
 		return recvdMessage;
 	}
 }
 
 /*
- * Reads a message from the back of the queue (FIFO)
+ * Reads a message from the front of the queue (FIFO)
  */
 message MessagingService::readMessage() {
 	int size = this->getMessageList().size();
 	if (size == 0) {
 		return message {"","",0};
 	} else {
-		message recvdMessage = this->getMessageList().back();
+		message recvdMessage = this->getMessageList().front();
 		return recvdMessage;
 	}
 

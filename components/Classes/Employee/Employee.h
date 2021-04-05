@@ -36,8 +36,8 @@ public:
 	Device getDevice(std::string UUID); // Get device with the corrosponding UUID
 	Device popDevice(std::string UUID); // Pop Device with the corrosponding UUID
 	std::vector<Device> getDeviceList(); // Get the list
-	std::vector<Device>::iterator findDevice(Device deviceToFind);
-	bool checkDataReturned(std::vector<Device>::iterator it);
+	bool findDevice(Device& deviceToFind); // Finds the device to check and updates any values
+	//bool checkDataReturned(std::vector<Device>::iterator it);
 	void setActive(int active);
 	int isActive();
 };

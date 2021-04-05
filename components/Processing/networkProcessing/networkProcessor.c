@@ -107,32 +107,6 @@ static void mqtt_app_start(void)
     esp_mqtt_client_start(client);
 }
 
-
-
-// Unused
-void resolve_mdns_host(const char * host_name)
-{
-    printf("Query A: %s.local", host_name);
-    esp_ip4_addr_t addr;
-    addr.addr = 0;
-
-    esp_err_t err = mdns_query_a(host_name, 3000,  &addr);
-    if(err){
-    	mdns_free();
-    	vTaskDelay(1000/portTICK_RATE_MS);
-    	start_mdns_service();
-
-    	if(err == ESP_ERR_NOT_FOUND){
-            printf(" Host was not found!\n");
-            return;
-        }
-        printf("Query Failed");
-        return;
-    }
-
-    printf(IPSTR, IP2STR(&addr));
-}
-
 // Config
 void configNetwork() {
 

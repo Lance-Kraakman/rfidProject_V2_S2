@@ -8,6 +8,10 @@
 #include "Employee.h"
 #include <algorithm>
 #include <string>
+#include "soc/rtc_wdt.h"
+#include "esp_int_wdt.h"
+#include "esp_task_wdt.h"
+
 
 #define SQUARE(x) (x*x)
 
@@ -55,35 +59,36 @@ Device Employee::popDevice(std::string UUID) { // Pop Device with the corrospond
 }
 
 /*
- * Function returns true if the employee already has the device and false if the employee dosent have the device
+ * Function Returns true and updates the device params if it finds the device!
  */
-std::vector<Device>::iterator Employee::findDevice(Device deviceToCheck) {
-	//std::vector<int>::iterator it = std::find(vecOfNums.begin(), vecOfNums.end(), 22);
+bool Employee::findDevice(Device& deviceToCheck) {
 
-	for (Device dev: this->getDeviceList()){
-		printf("%s\n", dev.getTag().getUUID().c_str());
-	}
+	std::vector<Device> DeviceList = this->getDeviceList();
 
-	std::vector<Device>::iterator it = std::find(this->getDeviceList().begin(), this->getDeviceList().end(), deviceToCheck);
+	auto it = std::find(DeviceList.begin(), DeviceList.end(), deviceToCheck);
 
-	if (it != this->getDeviceList().end()) {
-		printf("Found\n");
-		return it;
-	} else {
-		printf("Not Found\n");
-		return it;
-	}
-
-}
-
-
-bool Employee::checkDataReturned(std::vector<Device>::iterator it) {
-	if (it != this->getDeviceList().end()) {
+	if (it != DeviceList.end()) {
+		printf("Find Complete -- Found\n");
+		Device myDev = *it;
+		std::string getName = myDev.getName();
+		deviceToCheck.setName(getName);
 		return true;
 	} else {
+		printf("Find Complete -- Not Found\n");
 		return false;
+
 	}
+
 }
+
+
+//bool Employee::checkDataReturned(std::vector<Device>::iterator it) {
+//	if (it != this->getDeviceList().end()) {
+//		return true;
+//	} else {
+//		return false;
+//	}
+//}
 
 std::vector<Device> Employee::getDeviceList() { // Get the list
 	return this->deviceList;

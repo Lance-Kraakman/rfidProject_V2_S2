@@ -29,6 +29,8 @@
 #include "protocol_examples_common.h"
 
 #include "../components/Classes/Networking/Messaging/MessagingService.h"
+#include "../components/Classes/Employee/Employee.h"
+#include "../components/Classes/RfidScanner/RfidScanner.h"
 
 //extern "C" {
 //#include "../components/Processing/networkProcessing/networkProcessor.h"

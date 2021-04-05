@@ -1,7 +1,5 @@
 #include "main.h"
 
-#include "../components/Classes/Employee/Employee.h"
-#define CONFIG_BROKER_LOCAL "mqtt://192.168.1.73:1883"
 
 extern "C" {
 	void app_main();
@@ -11,75 +9,97 @@ extern "C" {
 // Global Queue Handles
 //xQueueHandle xQueueRfid = NULL;
 //
-void configNetwork() {
 
-	ESP_ERROR_CHECK(nvs_flash_init());
-	ESP_ERROR_CHECK(esp_netif_init());
-	ESP_ERROR_CHECK(esp_event_loop_create_default());
-	ESP_ERROR_CHECK(example_connect());
-
-}
 
 void app_main(void)
 {
+
+//	RfidScanner MyScanner = RfidScanner();
+//	MyScanner.startRfidScanner();
+
+
 	// Cry
-	//configNetwork();
+//	configNetwork();
+//
+//	SntpTime globalTime = SntpTime();
+//
+//	globalTime.config();
+//	globalTime.SyncTime();
+//	globalTime.printTime();
+//	globalTime.updateToCurrentTime(); // sets the time to the current time
+//	globalTime.printTime();
+//
+
 
 	// Employee/Tag classes have lists etc but dont "Have" a messaging service
 	//Tag
-	ESP_LOGI("---- ", "1");
-
-	RfidTag empTag = RfidTag("123456789");
+//	ESP_LOGI("---- ", "1");
 //
-//	printf("OK");
+//	RfidTag empTag = RfidTag("123456789");
+////
+////	printf("OK");
+////
+////	// add subscriptions
+//	Employee lanceKraakman = Employee();
+//	lanceKraakman.setName("Lance Kraakman");
+//	lanceKraakman.setTag(empTag);
 //
-//	// add subscriptions
-	Employee lanceKraakman = Employee();
-	lanceKraakman.setName("Lance Kraakman");
-	lanceKraakman.setTag(empTag);
-
-	ESP_LOGI("---- ", "2");
-
-
-
-
-	Device device1 = Device(RfidTag("1234"));
-	Device device2 = Device(RfidTag("223425"));
-	Device device3 = Device(RfidTag("3234"));
-	Device device4 = Device(RfidTag("42341"));
-
-	Device device5 = Device(RfidTag("23425"));
-	Device device6 = Device(RfidTag("646576"));
-	Device device7 = Device(RfidTag("234657"));
-	Device device8 = Device(RfidTag("7438"));
-	Device device9 = Device(RfidTag("900"));
-
-	ESP_LOGI("","%s", device3.getTag().getUUID().c_str());
-	ESP_LOGI("---- ", "3");
-
+//	ESP_LOGI("---- ", "2");
 //
-	lanceKraakman.addDevice(device1);
-	lanceKraakman.addDevice(device2);
-	lanceKraakman.addDevice(device3);
-	lanceKraakman.addDevice(device4);
-	lanceKraakman.addDevice(device5);
-	lanceKraakman.addDevice(device6);
-	lanceKraakman.addDevice(device7);
-	lanceKraakman.addDevice(device8);
-	lanceKraakman.addDevice(device9);
-
-	ESP_LOGI("---- ", "4");
-
-
-
-	Device dummy = Device(RfidTag("7438"));
-	auto it = lanceKraakman.findDevice(dummy);
-
-	if(lanceKraakman.checkDataReturned(it)) {
-		Device dev = *it;
-	} else {
-		printf("Couldnt find device \n");
-	}
+//
+//
+//
+//
+//	Device device1 = Device(RfidTag("1234"));
+//	Device device2 = Device(RfidTag("223425"));
+//	Device device3 = Device(RfidTag("3234"));
+//	Device device4 = Device(RfidTag("42341"));
+//
+//	Device device5 = Device(RfidTag("23425"));
+//	Device device6 = Device(RfidTag("646576"));
+//	Device device7 = Device(RfidTag("234657"));
+//	Device device8 = Device(RfidTag("7438"));
+//
+//	Device device9 = Device(RfidTag("900"));
+//	device9.setName("Akinifenwa");
+//
+//
+//	ESP_LOGI("","%s", device3.getTag().getUUID().c_str());
+//	ESP_LOGI("---- ", "3");
+//
+////
+//	lanceKraakman.addDevice(device1);
+//	lanceKraakman.addDevice(device2);
+//	lanceKraakman.addDevice(device3);
+//	lanceKraakman.addDevice(device4);
+//	lanceKraakman.addDevice(device5);
+//	lanceKraakman.addDevice(device6);
+//	lanceKraakman.addDevice(device7);
+//	lanceKraakman.addDevice(device8);
+//	lanceKraakman.addDevice(device9);
+//
+//	ESP_LOGI("---- ", "4");
+//
+//	vTaskDelay(50/portTICK_RATE_MS);
+//
+//
+//	Device dummy = Device(RfidTag("900"));
+//	printf("Device Name is %s\n", dummy.getName().c_str());
+//
+//
+//
+////	std::vector<Device>::iterator it = lanceKraakman.findDevice(dummy);
+//	vTaskDelay(500/portTICK_RATE_MS);
+//
+//	if(lanceKraakman.findDevice(dummy)) {
+//		ESP_LOGI("---- ", "5");
+//		ESP_LOGI("---- ", "6");
+//
+//	} else {
+//		printf("Couldnt find device \n");
+//	}
+//
+//	printf("Device Name is Now %s\n", dummy.getName().c_str());
 
 
 
@@ -98,7 +118,6 @@ void app_main(void)
 //	printf("%s" ,lanceKraakman.getDeviceList().back().getTag().getUUID().c_str());
 
 	ESP_LOGI("---- ", "5");
-
 	printf("-----------------   ENTERING LOOP   ----------------------\n");
 
 	while(1) {
