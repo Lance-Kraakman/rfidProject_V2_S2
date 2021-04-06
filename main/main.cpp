@@ -14,6 +14,11 @@ extern "C" {
 void app_main(void)
 {
 
+	MainApplication myApp = MainApplication();
+	myApp.runConfig();
+	myApp.runLoop();
+
+
 //	RfidScanner MyScanner = RfidScanner();
 //	MyScanner.startRfidScanner();
 

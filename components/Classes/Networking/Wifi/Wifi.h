@@ -17,6 +17,8 @@
 class Wifi {
 public:
 	Wifi();
+	void connectNetwork();
+	bool isConnected;
 };
 
 #endif /* COMPONENTS_CLASSES_NETWORKING_WIFI_WIFI_H_ */

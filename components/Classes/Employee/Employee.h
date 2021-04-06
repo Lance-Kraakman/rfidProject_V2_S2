@@ -4,6 +4,7 @@
  *  Created on: 1/04/2021
  *      Author: lance
  */
+#define EMPLOYEE_TAG "EMPLOYEE TAG"
 
 #ifndef COMPONENTS_CLASSES_EMPLOYEE_EMPLOYEE_H_
 #define COMPONENTS_CLASSES_EMPLOYEE_EMPLOYEE_H_
@@ -30,7 +31,7 @@ public:
 	std::string getName();
 	void setTag(RfidTag tag);
 	RfidTag getTag();
-
+	friend bool operator== (const Employee &E1, const Employee &E2); // Search Function for has Device and getDeviceWithUUID <3
 	void addDevice(Device deviceToAdd); // Add device to device list
 	void removeDevice(std::string UUID); // Remove Device from UUID
 	Device getDevice(std::string UUID); // Get device with the corrosponding UUID
@@ -39,6 +40,7 @@ public:
 	bool findDevice(Device& deviceToFind); // Finds the device to check and updates any values
 	//bool checkDataReturned(std::vector<Device>::iterator it);
 	void setActive(int active);
+	void printEmployee();
 	int isActive();
 };
 

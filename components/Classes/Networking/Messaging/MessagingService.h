@@ -11,6 +11,7 @@
 #define COMPONENTS_CLASSES_NETWORKING_MESSAGING_MESSAGINGSERVICE_H_
 
 #define MESSAGING_SERVICE "MESSAGING SERVICE"
+#define DEFAULT_QOS 0
 
 typedef struct {
 	std::string data;
@@ -35,6 +36,7 @@ public:
 	message readMessage();
 	void sendMessage(std::string topic, std::string message, int qaulity_of_service);
 	void updateMessageList();
+	void printMessage(message mes);
 
 	static void addMessage(message messageToAdd); // Adds a message to the list of messages
 

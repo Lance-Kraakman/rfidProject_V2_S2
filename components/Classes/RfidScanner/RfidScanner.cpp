@@ -11,32 +11,45 @@ std::vector<RfidTag> RfidScanner::RfidTagList = std::vector<RfidTag>();
 
 RfidScanner::RfidScanner() {
 	// TODO Auto-generated constructor stub
-
 }
+/*
+ *     uuidInt = 0
+                uuidIntLength = len(uuidInts)
+                for i in range(0, uuidIntLength):
+                    uuidInt += (uuidInts[i]) << (i * 8)
+                    print(i * 8)
+ */
 
 void RfidScanner::tag_handler(uint8_t* serial_no) {
 	RfidTag scannedTag;
-	std::string uuid_string = std::string((char *) serial_no);
-	scannedTag.setUUID(uuid_string);
+	int uuid = 0;
+	for (int i=0; i<5; i++) {
+		uuid += (*(serial_no+i)) << (i*8);
+	}
+	//std::string uuid_string = std::string((int *) serial_no);
+	scannedTag.setUUID(uuid);
 	ESP_LOGI(RFID_SCANNER_TAG, "SCANNED TAG");
+	ESP_LOGI(RFID_SCANNER_TAG, "UUID %lld", scannedTag.getUUID());
 
 	// Add data to tag to check scanned Tag
 	scannedTag.setTimeAsCurrent();
 	scannedTag.setStartupTime(esp_timer_get_time());
 
-	RfidScanner::RfidTagList.insert(RfidScanner::RfidTagList.end(), scannedTag);
+	RfidScanner::RfidTagList.insert(RfidScanner::RfidTagList.begin(), scannedTag);
 
 }
 
 std::vector<RfidTag> RfidScanner::getRfidList() {
-	return this->RfidTagList;
+	return RfidScanner::RfidTagList;
 }
 
 // Pops the next RFID tag from the list
 RfidTag RfidScanner::popRfidList() {
-	if (!(this->getRfidList().empty())) {
-		RfidTag returnItem = this->getRfidList().front();
-		this->getRfidList().erase(this->getRfidList().begin());
+
+	if (!(RfidScanner::RfidTagList.empty())) {
+		RfidTag returnItemRef = RfidScanner::RfidTagList.back();
+		RfidScanner::RfidTagList.pop_back();
+		RfidTag returnItem = RfidTag(returnItemRef.getUUID(), returnItemRef.getScannedTime(), returnItemRef.getStartupTime());
 		return returnItem;
 	} else {
 		return RfidTag();
@@ -45,11 +58,27 @@ RfidTag RfidScanner::popRfidList() {
 
 // Reads the next Rfid Tag from the list
 RfidTag RfidScanner::readRfidList() {
-	if (!(this->getRfidList().empty())) {
-			return this->getRfidList().front();
+	if (!(RfidScanner::RfidTagList.empty())) {
+			return RfidScanner::RfidTagList.front();
 	} else {
 		return RfidTag();
 	}
+}
+
+// Reads the next Rfid Tag from the list
+RfidTag RfidScanner::readRfidListFromPosition(uint position) {
+	if (!(RfidScanner::RfidTagList.empty())) {
+			return RfidScanner::RfidTagList.at(position);
+	} else {
+		return RfidTag();
+	}
+}
+
+bool RfidScanner::isDoubleTagged(RfidTag recvdTag,RfidTag previousTag, int microsecondTimeoutTime) {
+	if ((recvdTag.getStartupTime() - previousTag.getStartupTime()) < microsecondTimeoutTime) {
+			return true;
+		}
+	return false;
 }
 
 // Config RFID Inputs

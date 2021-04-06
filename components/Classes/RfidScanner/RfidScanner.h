@@ -12,6 +12,7 @@ extern "C" {
 	#include "../../Drivers/esp-idf-rc522/rc522.h"
 }
 #define RFID_SCANNER_TAG "RFID SCANNER"
+#define MICROSECOND_TIMEOUT_PERIOD 500000
 
 #ifndef COMPONENTS_CLASSES_RFIDSCANNER_RFIDSCANNER_H_
 #define COMPONENTS_CLASSES_RFIDSCANNER_RFIDSCANNER_H_
@@ -27,6 +28,8 @@ public:
 	void setRfidList(std::vector<RfidTag> RfidTaglist);
 	RfidTag popRfidList(); // Pops the next RFID tag from the list
 	RfidTag readRfidList(); // Reads the next Rfid Tag from the list
+	RfidTag readRfidListFromPosition(uint position);
+	bool isDoubleTagged(RfidTag recvdTag,RfidTag previousTag, int microsecondTimeoutTime);
 
 
 };

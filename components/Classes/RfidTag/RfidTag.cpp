@@ -9,20 +9,27 @@
 
 RfidTag::RfidTag() {
 	// TODO Auto-generated constructor stub
-	this->UUID = "";
+	this->UUID = 0;
 	this->scannedTime = SntpTime();
 	this->msSinceStartup = 0;
 }
 
-RfidTag::RfidTag(std::string UUID) {
+RfidTag::RfidTag(int64_t UUID, SntpTime scannedTime, int64_t msSniceStartup) {
+	// TODO Auto-generated constructor stub
+	this->UUID = UUID;
+	this->scannedTime = scannedTime;
+	this->msSinceStartup = msSniceStartup;
+}
+
+RfidTag::RfidTag(int64_t UUID) {
 	this->setUUID(UUID);
 }
 
-void RfidTag::setUUID(std::string UUID) {
+void RfidTag::setUUID(int64_t UUID) {
 	this->UUID = UUID;
 }
 
-std::string RfidTag::getUUID() {
+int64_t RfidTag::getUUID() {
 	return this->UUID;
 }
 
@@ -48,9 +55,13 @@ int64_t RfidTag::getStartupTime() {
 }
 
 bool RfidTag::isEmpty() {
-	if (this->getUUID().compare(std::string("")) == 0) {
-		return false;
+	if (this->getUUID() == 0) {
+		return true;
 	}
-	return true;
+	return false;
+}
+
+void RfidTag::printTag() {
+	ESP_LOGI(RFID_TAG, "%lld : %lld", this->getUUID(), this->getStartupTime());
 }
 

@@ -40,28 +40,31 @@ void MessagingService::initMessagingServices() {
 
 }
 
+/*
+ * Do after init
+ */
 void MessagingService::addMessageSubscription(std::string topic, int qaulity_of_service) {
 	this->getMqttService().addSubscriber(topic, qaulity_of_service);
 }
 
 void MessagingService::setMessagingList(std::vector<message> messageList) {
 	this->clearMessageList();
-	this->getMessageList() = messageList;
+	MessagingService::messageList = messageList;
 }
 
 void MessagingService::clearMessageList() {
-	this->getMessageList().clear();
+	MessagingService::messageList.clear();
 }
 
 /*
  * Returns the list item from the message list
  */
 message MessagingService::popMessage() {
-	if (this->getMessageList().empty()) {
+	if (MessagingService::messageList.empty()) {
 		return message {"","",0};
 	} else {
-		message recvdMessage = this->getMessageList().front();
-		this->getMessageList().pop_back(); // removes the last item in the message list
+		message recvdMessage = MessagingService::messageList.back();
+		MessagingService::messageList.pop_back(); // removes the last item in the message list
 		return recvdMessage;
 	}
 }
@@ -70,11 +73,11 @@ message MessagingService::popMessage() {
  * Reads a message from the front of the queue (FIFO)
  */
 message MessagingService::readMessage() {
-	int size = this->getMessageList().size();
+	int size = MessagingService::messageList.size();
 	if (size == 0) {
 		return message {"","",0};
 	} else {
-		message recvdMessage = this->getMessageList().front();
+		message recvdMessage = MessagingService::messageList.front();
 		return recvdMessage;
 	}
 
@@ -108,12 +111,16 @@ void MessagingService::registerMessageHandler(esp_event_handler_t eventHandler, 
 	}
 }
 
+void MessagingService::printMessage(message mes) {
+	ESP_LOGI(MESSAGING_SERVICE, "Message Info %s : Message Data %s \n", mes.topic.c_str(), mes.data.c_str());
+}
+
 /*
  * Custom event handler for MessagingService Class
  */
 void MessagingService::messageReceivedEventHandler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) { // Message Recieved Event Handler
 	esp_mqtt_event_handle_t event = (esp_mqtt_event_handle_t) event_data;
-	printf("Hello from message received event handler");
+	printf("Hello from message received event handler\n");
 
 	printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
 	printf("DATA=%.*s\r\n", event->data_len, event->data);

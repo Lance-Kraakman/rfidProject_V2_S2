@@ -22,6 +22,7 @@ Employee::Employee() {
 
 Employee::Employee(std::string name, RfidTag tag) {
 	this->setName(name);
+	this->setTag(tag);
 	this->deviceList = std::vector<Device>();
 
 }
@@ -102,7 +103,13 @@ int Employee::isActive() {
 	return this->activeStatus;
 }
 
+bool operator== (const Employee &E1,const Employee &E2) {
+	return E1.tag.UUID == E2.tag.UUID;
+}
 
+void Employee::printEmployee() {
+	ESP_LOGI(EMPLOYEE_TAG, "NAME: %s, UUID: %lld, Number of devices %d", this->getName().c_str(), this->getTag().getUUID(), this->getDeviceList().size());
+}
 
 //	printf("Elements in list : %d\n", this->getDeviceList().size());
 //	printf("Iterator at position %d\n", it-this->getDeviceList().end());
