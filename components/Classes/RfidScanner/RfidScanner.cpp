@@ -12,16 +12,9 @@ std::vector<RfidTag> RfidScanner::RfidTagList = std::vector<RfidTag>();
 RfidScanner::RfidScanner() {
 	// TODO Auto-generated constructor stub
 }
-/*
- *     uuidInt = 0
-                uuidIntLength = len(uuidInts)
-                for i in range(0, uuidIntLength):
-                    uuidInt += (uuidInts[i]) << (i * 8)
-                    print(i * 8)
- */
 
 void RfidScanner::tag_handler(uint8_t* serial_no) {
-	RfidTag scannedTag;
+	RfidTag scannedTag = RfidTag();
 	int uuid = 0;
 	for (int i=0; i<5; i++) {
 		uuid += (*(serial_no+i)) << (i*8);
@@ -32,8 +25,9 @@ void RfidScanner::tag_handler(uint8_t* serial_no) {
 	ESP_LOGI(RFID_SCANNER_TAG, "UUID %lld", scannedTag.getUUID());
 
 	// Add data to tag to check scanned Tag
-	scannedTag.setTimeAsCurrent();
+	scannedTag.updateTagScannedTime();
 	scannedTag.setStartupTime(esp_timer_get_time());
+	scannedTag.printTag();
 
 	RfidScanner::RfidTagList.insert(RfidScanner::RfidTagList.begin(), scannedTag);
 

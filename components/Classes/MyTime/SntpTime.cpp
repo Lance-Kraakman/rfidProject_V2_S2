@@ -7,16 +7,12 @@
 
 #include "SntpTime.h"
 
+tm SntpTime::timeInfo = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+time_t SntpTime::timeNow = {0};
+
 SntpTime::SntpTime() {
 	// TODO Auto-generated constructor stub
-	this->year = 0;
-	this->month = 0;
-	this->day = 0;
-	this->hour = 0;
-	this->minute = 0;
-	this->second = 0;
-	this->timeInfo = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-	this->timeNow = {0};
+	this->updateToCurrentTime();
 }
 
 // Static because only one per class
@@ -51,8 +47,8 @@ void SntpTime::SyncTime() {
 	        vTaskDelay(2000 / portTICK_PERIOD_MS);
 	}
 
-	time(&(this->timeNow));
-	localtime_r(&(this->timeNow), &(this->timeInfo));
+	time(&(SntpTime::timeNow));
+	localtime_r(&(SntpTime::timeNow), &(SntpTime::timeInfo));
 
 	this->setTimeZoneNZ(TIMEZONE_STR_NZ);
 }
@@ -65,17 +61,18 @@ void SntpTime::setTimeZoneNZ(const char * timezoneInfo) {
 
 void SntpTime::printTime() {
     char strftime_buf[64];
-	localtime_r(&(this->timeNow), &(this->timeInfo));
-	strftime(strftime_buf, sizeof(strftime_buf), "%c", &(this->timeInfo));
+	localtime_r(&(SntpTime::timeNow), &(SntpTime::timeInfo));
+	strftime(strftime_buf, sizeof(strftime_buf), "%c", &(SntpTime::timeInfo));
 	ESP_LOGI(TIME_TAG, "The current date/time in New Zealand is: %s", strftime_buf);
-	ESP_LOGI(TIME_TAG, "year:hour:minute:second %d, %d, %d, %d", this->year, this->hour, this->minute, this->second);
+	ESP_LOGI(TIME_TAG, "day:hour:minute:second %d, %d, %d, %d", this->day, this->hour, this->minute, this->second);
 }
 
 /*
  * Function Updates its time variables <3
  */
 void SntpTime::updateToCurrentTime() {
-	localtime_r(&(this->timeNow), &(this->timeInfo));
+	time(&(SntpTime::timeNow));
+	localtime_r(&(SntpTime::timeNow), &(SntpTime::timeInfo));
 	this->day = this->timeInfo.tm_mday;
 	this->year = this->timeInfo.tm_year;
 	this->month = this->timeInfo.tm_mon;

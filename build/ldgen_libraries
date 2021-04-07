@@ -74,8 +74,8 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/protocol_examples_common/libprotocol_examples_common.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/MyTime/libMyTime.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidTag/libRfidTag.a
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/libDevice.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/libEmployee.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/libDevice.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp-idf-rc522/libesp-idf-rc522.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidScanner/libRfidScanner.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Mdns/libMdns.a

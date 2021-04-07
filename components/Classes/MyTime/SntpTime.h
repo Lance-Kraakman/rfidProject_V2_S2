@@ -22,8 +22,8 @@ extern "C" {
 class SntpTime {
 private:
 	static void time_sync_notification_cb(struct timeval *tv);
-	struct tm timeInfo;
-	time_t timeNow;
+	static struct tm timeInfo;
+	static time_t timeNow;
 public:
 	int year;
 	int month;

@@ -671,13 +671,6 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidTag/CMakeFiles/rebuild_cache.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidTag/CMakeFiles/install.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidTag/CMakeFiles/list_install_components.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/install/strip.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/install/local.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/__idf_Device.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/install.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/list_install_components.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/edit_cache.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/rebuild_cache.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/CMakeFiles/install/strip.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/CMakeFiles/install/local.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/CMakeFiles/__idf_Employee.dir
@@ -685,6 +678,13 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/CMakeFiles/rebuild_cache.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/CMakeFiles/install.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Employee/CMakeFiles/list_install_components.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/install/strip.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/install/local.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/__idf_Device.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/install.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/list_install_components.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/edit_cache.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Device/CMakeFiles/rebuild_cache.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp-idf-rc522/CMakeFiles/install/strip.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp-idf-rc522/CMakeFiles/install/local.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp-idf-rc522/CMakeFiles/__idf_esp-idf-rc522.dir

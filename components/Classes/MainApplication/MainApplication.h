@@ -25,6 +25,7 @@
 #include <algorithm>
 
 #include "../Employee/Employee.h"
+#include "../Device/Device.h"
 #include "../Networking/Messaging/MessagingService.h"
 #include "../RfidScanner/RfidScanner.h"
 #include "../Networking/Wifi/Wifi.h"
@@ -41,6 +42,7 @@ private:
 	RfidScanner rfidScanner;
 	std::vector<Employee> employeeList;
 	std::vector<Device> deviceList;
+	SntpTime globalTime;
 
 	// Private state machine functions
 
@@ -50,9 +52,12 @@ public:
 	void runConfig(); // Startup Config
 	void runLoop(); // Main Loop
 	void messageProcessing(message& recvdMessage); // Process messages and functions based on this
-	void tagProcessing(RfidTag& recvdTag, RfidTag& previousTag); // Process tags and functions based on this
+	void tagProcessing(RfidTag& recvdTag, RfidTag& previousTag, Employee& lastScannedEmployee); // Process tags and functions based on this
 	bool findDevice(Device& deviceToCheck);
 	bool findEmployee(Employee& EmployeeToCheck);
+	bool updateDeviceInList(Device& deviceToUpdate);
+	bool updateEmployeeInList(Employee& EmployeeToUpdate);
+	bool checkTagTimeDuration(RfidTag tagFirst, RfidTag taggedSecond, int maxSeconds);
 };
 
 #endif /* COMPONENTS_CLASSES_MAINAPPLICATION_MAINAPPLICATION_H_ */

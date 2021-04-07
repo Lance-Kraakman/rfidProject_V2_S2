@@ -25,7 +25,7 @@ public:
 	RfidTag(int64_t UUID);
 	void setUUID(int64_t UUID);
 	int64_t getUUID();
-	void setTimeAsCurrent();
+	void updateTagScannedTime();
 	void setScannedTime(SntpTime scannedTime);
 	SntpTime getScannedTime(); // Returns when the tag was scanned
 	int64_t getStartupTime();

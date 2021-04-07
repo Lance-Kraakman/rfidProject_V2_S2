@@ -19,6 +19,8 @@ RfidTag::RfidTag(int64_t UUID, SntpTime scannedTime, int64_t msSniceStartup) {
 	this->UUID = UUID;
 	this->scannedTime = scannedTime;
 	this->msSinceStartup = msSniceStartup;
+	this->scannedTime = SntpTime();
+
 }
 
 RfidTag::RfidTag(int64_t UUID) {
@@ -33,7 +35,7 @@ int64_t RfidTag::getUUID() {
 	return this->UUID;
 }
 
-void RfidTag::setTimeAsCurrent() {
+void RfidTag::updateTagScannedTime() {
 	this->getScannedTime().updateToCurrentTime();
 }
 
@@ -63,5 +65,6 @@ bool RfidTag::isEmpty() {
 
 void RfidTag::printTag() {
 	ESP_LOGI(RFID_TAG, "%lld : %lld", this->getUUID(), this->getStartupTime());
+	this->getScannedTime().printTime();
 }
 

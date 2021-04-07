@@ -7,6 +7,10 @@ Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/lates
 ![GitHub Logo](/images/state-machine-firmware.png)
 Format: ![Alt Text](url)
 
+## MQTT Table 
+![GitHub Logo](/images/mqtt-table.png)
+Format: ![Alt Text](url)
+
 ## Class Diagram (In Progress/To-Do)
 ![GitHub Logo](/images/FirmwareClassDiagram.png)
 Format: ![Alt Text](url)
