@@ -28,6 +28,10 @@ void MessagingService::initMessagingServices() {
 	esp_mqtt_client_config_t mqtt_cfg = { // @suppress("Invalid arguments")
 	    	.uri = CONFIG_BROKER_LOCAL,
 			.port = 1883,
+//			.task_prio = 1,
+//			.task_stack = 8192,
+//			.buffer_size = 2048,
+
 	};
 
 
@@ -36,7 +40,6 @@ void MessagingService::initMessagingServices() {
 	this->getMqttService().InitMqttService();
 	this->registerMessageHandler(this->messageReceivedEventHandler, MQTT_EVENT_DATA); // Register Event for message received
 	this->getMqttService().StartMqttService(1);
-
 
 }
 
@@ -88,7 +91,7 @@ void MessagingService::sendMessage(std::string topic, std::string message, int q
 }
 
 void MessagingService::addMessage(message messageToAdd) {
-	MessagingService::messageList.insert(MessagingService::messageList.end(), messageToAdd);
+	MessagingService::messageList.insert(MessagingService::messageList.begin(), messageToAdd);
 }
 
 std::vector<message> MessagingService::getMessageList() {
@@ -125,22 +128,28 @@ void MessagingService::messageReceivedEventHandler(void *handler_args, esp_event
 	printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
 	printf("DATA=%.*s\r\n", event->data_len, event->data);
 
-	char dataBuf[event->data_len];
-	char topicBuf[event->topic_len];
+	//char dataBuf[event->data_len];
+	//char topicBuf[event->topic_len];
 
-	sprintf(dataBuf, "%.*s\r\n", event->data_len, event->data);
-	sprintf(topicBuf, "%.*s\r\n", event->topic_len, event->topic);
+	char *dataBuf = (char *) malloc((event->data_len+1)*sizeof(char));
+	char *topicBuf = (char *) malloc((event->topic_len+1)*sizeof(char));
+
+
+	sprintf(dataBuf, "%.*s", event->data_len, event->data);
+	sprintf(topicBuf, "%.*s", event->topic_len, event->topic);
+
+	printf("%d\n", event->data_len);
 
 
 	 std::string topic = std::string(topicBuf);
 	 std::string data = std::string(dataBuf);
 
-	 printf(dataBuf);
-	 printf(topicBuf);
-
-
 	 message messageToSend = {data, topic, 1}; // CPP struct
 	 addMessage(messageToSend); // Passes a copy of the data x
+
+	 free(topicBuf);
+	 free(dataBuf);
+
 
 }
 

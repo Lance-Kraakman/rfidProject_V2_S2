@@ -1,6 +1,8 @@
 #include "main.h"
 
 
+
+
 extern "C" {
 	void app_main();
 }
@@ -13,6 +15,9 @@ extern "C" {
 
 void app_main(void)
 {
+
+
+
 
 	MainApplication myApp = MainApplication();
 	myApp.runConfig();

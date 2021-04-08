@@ -82,3 +82,17 @@ void SntpTime::updateToCurrentTime() {
 
 }
 
+std::string SntpTime::timeString() {
+
+	std::string returnString = "";
+
+	returnString.append(std::to_string(this->year)); returnString.append(":");
+	returnString.append(std::to_string(this->month)); returnString.append(":");
+	returnString.append(std::to_string(this->day)); returnString.append(":");
+	returnString.append(std::to_string(this->hour)); returnString.append(":");
+	returnString.append(std::to_string(this->minute)); returnString.append(":");
+	returnString.append(std::to_string(this->second));
+
+	return returnString;
+}
+

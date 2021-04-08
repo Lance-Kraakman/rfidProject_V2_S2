@@ -11,6 +11,7 @@ extern "C" {
 	#include "esp_log.h"
 	#include "esp_system.h"
 }
+#include <string>
 
 #ifndef COMPONENTS_CLASSES_MYTIME_SNTPTIME_H_
 #define COMPONENTS_CLASSES_MYTIME_SNTPTIME_H_
@@ -38,6 +39,8 @@ public:
 	void printTime();
 	void updateToCurrentTime(); // This is the important one x
 	void setTimeZoneNZ(const char * timezoneInfo);
+	std::string timeString();
+
 };
 
 #endif /* COMPONENTS_CLASSES_MYTIME_SNTPTIME_H_ */

@@ -1,4 +1,4 @@
-# Install script for directory: /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Classes/MainApplication
+# Install script for directory: /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Classes/Application/MainApplication
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

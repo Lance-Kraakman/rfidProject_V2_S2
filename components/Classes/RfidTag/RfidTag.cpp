@@ -68,3 +68,19 @@ void RfidTag::printTag() {
 	this->getScannedTime().printTime();
 }
 
+/*
+ * Function returns false if tag one scanned maxSeconds after tag two
+ */
+bool RfidTag::checkTagTimeoutSeconds(RfidTag tagTwo, int maxSeconds) {
+	SntpTime first = this->getScannedTime();
+	SntpTime second = tagTwo.getScannedTime();
+
+	int firstTagSecondsToday = (first.hour * 60 * 60) + (first.minute * 60) + (first.second);
+	int secondSecondsToday = (second.hour * 60 * 60) + (second.minute * 60) + (second.second);
+
+	if ((abs(firstTagSecondsToday - secondSecondsToday) < maxSeconds)) {
+		return true;
+	}
+	return false;
+}
+

@@ -80,7 +80,11 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidScanner/libRfidScanner.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Mdns/libMdns.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Wifi/libWifi.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/DataProcessing/libDataProcessing.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/libsimpleson.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/TagProcessing/libTagProcessing.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/MainApplication/libMainApplication.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/EmployeeModel/libEmployeeModel.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/bus/libbus.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/button/libbutton.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/dac_audio/libdac_audio.a
@@ -109,4 +113,5 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/mvh3004d/libmvh3004d.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/bme280/libbme280.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/at24c02/libat24c02.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/DeviceModel/libDeviceModel.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/main/libmain.a

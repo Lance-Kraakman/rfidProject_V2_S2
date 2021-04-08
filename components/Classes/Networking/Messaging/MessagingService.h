@@ -6,12 +6,13 @@
  */
 #include "../MqttService/MqttService.h"
 #include <vector>
+#include <string>
 
 #ifndef COMPONENTS_CLASSES_NETWORKING_MESSAGING_MESSAGINGSERVICE_H_
 #define COMPONENTS_CLASSES_NETWORKING_MESSAGING_MESSAGINGSERVICE_H_
 
 #define MESSAGING_SERVICE "MESSAGING SERVICE"
-#define DEFAULT_QOS 0
+#define DEFAULT_QOS 1
 
 typedef struct {
 	std::string data;

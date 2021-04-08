@@ -19,5 +19,6 @@ EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components/gui/lcd_paint
 EXTRA_COMPONENT_DIRS += $(PROJECT_PATH)/components/Processing
 EXTRA_COMPONENT_DIRS += $(PROJECT_PATH)/components/Processing/inputProcessing
 
+CFLAGS += -fexceptions
 
 include $(IDF_PATH)/make/project.mk

@@ -60,6 +60,8 @@ bool operator== (const Employee &E1,const Employee &E2) {
 	return E1.tag.UUID == E2.tag.UUID;
 }
 
+
+
 void Employee::printEmployee() {
 	ESP_LOGI(EMPLOYEE_TAG, "NAME: %s, UUID: %lld, STATUS: %d", this->getName().c_str(), this->getTag().getUUID(), this->isActive());
 }

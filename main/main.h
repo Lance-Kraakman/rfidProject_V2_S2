@@ -10,6 +10,6 @@
 
 //#define RFID_UUID_CHAR_SIZE 10
 
-#include "../components/Classes/MainApplication/MainApplication.h"
+#include "../components/Classes/Application/MainApplication/MainApplication.h"
 
 #endif /* MAIN_MAIN_H_ */

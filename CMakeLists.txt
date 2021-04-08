@@ -12,14 +12,18 @@ endif()
 # CPP Component Dirs
 set(EXTRA_COMPONENT_DIRS "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common"
 	"./components/Classes/RfidTag" "./components/Classes/Device" "./components/Classes/Employee" "./components/Classes/MyTime" "./components/Classes/RfidScanner"
-		"./components/Drivers/esp-idf-rc522" "./components/Classes/Networking/Mdns" "./components/Classes/MainApplication" "./components/Classes/Networking/Wifi")
+		"./components/Drivers/esp-idf-rc522" "./components/Classes/Networking/Mdns" "./components/Classes/Application/MainApplication" "./components/Classes/Networking/Wifi"
+		"./components/Classes/simpleson" "./components/Classes/Application/DataProcessing" "./components/Classes/Application/TagProcessing" "./components/Classes/EmployeeModel"
+		"./components/Classes/DeviceModel")
 		
 set(EXTRA_INCLUDE "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common"
 	"./components/Classes/RfidTag" "./components/Classes/Device" "./components/Classes/Employee" "./components/Classes/MyTime" "./components/Classes/RfidScanner"
-		"./components/Drivers/esp-idf-rc522" "./components/Classes/Networking/Mdns" "./components/Classes/MainApplication" "./components/Classes/Networking/Wifi")
+		"./components/Drivers/esp-idf-rc522" "./components/Classes/Networking/Mdns" "./components/Classes/Application/MainApplication" "./components/Classes/Networking/Wifi" 
+		"./components/Classes/simpleson" "./components/Classes/Application/DataProcessing" "./components/Classes/Application/TagProcessing" "./components/Classes/EmployeeModel"
+		"./components/Classes/DeviceModel")
 
 # Set Compiler Flags <3
-set_source_files_properties(SRCS ${EXTRA_COMPONENT_DIRS} PROPERTIES COMPILE_FLAGS "-Wno-missing-field-initializers") # add compiler flags to sources in COMPONENT_DIRS
+set_source_files_properties(SRCS ${EXTRA_COMPONENT_DIRS} PROPERTIES COMPILE_FLAGS "-fexceptions -Wno-missing-field-initializers") # add compiler flags to sources in COMPONENT_DIRS
 
 include($ENV{IOT_SOLUTION_PATH}/component.cmake)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)

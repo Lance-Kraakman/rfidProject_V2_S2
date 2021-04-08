@@ -8,7 +8,7 @@ Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/lates
 Format: ![Alt Text](url)
 
 ## MQTT Table 
-![GitHub Logo](/images/mqtt-table.png)
+![GitHub Logo](/images/mqtt-table2.png)
 Format: ![Alt Text](url)
 
 ## Class Diagram (In Progress/To-Do)

@@ -7,6 +7,7 @@
 
 #include "RfidScanner.h"
 
+
 std::vector<RfidTag> RfidScanner::RfidTagList = std::vector<RfidTag>();
 
 RfidScanner::RfidScanner() {

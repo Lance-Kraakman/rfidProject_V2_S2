@@ -30,9 +30,9 @@ public:
 	SntpTime getScannedTime(); // Returns when the tag was scanned
 	int64_t getStartupTime();
 	void setStartupTime(int64_t startupTime);
+	bool checkTagTimeoutSeconds(RfidTag tagTwo, int maxSeconds);
 	bool isEmpty();
 	void printTag();
-
 };
 
 #endif /* COMPONENTS_CLASSES_RFID_RFIDTAG_RFIDTAG_H_ */

@@ -41,6 +41,7 @@ public:
 	void setActive(bool active);
 	void printEmployee();
 	bool isActive();
+	std::string timeString();
 };
 
 #endif /* COMPONENTS_CLASSES_EMPLOYEE_EMPLOYEE_H_ */
