@@ -72,7 +72,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Provides an abstraction layer for networking and messaging.  
+<p>Provides an abstraction layer for networking and messaging communications. Connection is made to a MQTT service. Messages that come in are stored in a list and can be accessed at any time. Static functionality as it is only reasonable to connect to one MQTT service at a time.  
  <a href="classMessagingService.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="MessagingService_8h_source.html">MessagingService.h</a>&gt;</code></p>
@@ -126,8 +126,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a48038242d3e8f6e912d864b4009e4ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides an abstraction layer for networking and messaging. </p>
-<p>Detailed description starts here. </p>
+<div class="textblock"><p>Provides an abstraction layer for networking and messaging communications. Connection is made to a MQTT service. Messages that come in are stored in a list and can be accessed at any time. Static functionality as it is only reasonable to connect to one MQTT service at a time. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a77dbf962907cffff7711e7f67b255b7e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a77dbf962907cffff7711e7f67b255b7e">&#9670;&nbsp;</a></span>MessagingService()</h2>
@@ -143,8 +142,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="MessagingService_8cpp.html">MessagingService.cpp</a> </p><pre class="fragment">Provides an abstraction layer for networking and messaging
-</pre> 
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -171,6 +169,12 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">messageToAdd</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -199,6 +203,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">topic</td><td></td></tr>
+    <tr><td class="paramname">qaulity_of_service</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -216,6 +227,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Clear the message list </p>
 
 </div>
 </div>
@@ -233,6 +245,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>a copy of the current message list </dd></dl>
 
 </div>
 </div>
@@ -250,6 +263,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>a copy of the MQTT service </dd></dl>
 
 </div>
 </div>
@@ -267,6 +281,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initializes the MQTT service with a default configuration. </p>
 
 </div>
 </div>
@@ -315,6 +330,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handler_args</td><td></td></tr>
+    <tr><td class="paramname">base</td><td></td></tr>
+    <tr><td class="paramname">event_id</td><td></td></tr>
+    <tr><td class="paramname">event_data</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -332,6 +356,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>returns a message and remove it from the message list</p>
+<dl class="section return"><dt>Returns</dt><dd>a message </dd></dl>
 
 </div>
 </div>
@@ -350,6 +376,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mes</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -395,6 +427,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventHandler</td><td></td></tr>
+    <tr><td class="paramname">event_id</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -429,6 +468,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Send a message</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">topic</td><td></td></tr>
+    <tr><td class="paramname">message</td><td></td></tr>
+    <tr><td class="paramname">qaulity_of_service</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -447,6 +495,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">messageList</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -460,11 +514,17 @@ Private Attributes</h2></td></tr>
           <td class="memname">void MessagingService::setMqttService </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classMqttService.html">MqttService</a>&#160;</td>
-          <td class="paramname"><em>mqttService</em></td><td>)</td>
+          <td class="paramname"><em>myMqttService</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">myMqttService</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

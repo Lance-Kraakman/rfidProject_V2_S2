@@ -122,7 +122,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a6568d796ab6c87372e6ea95fa257e327"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMqttService.html#a6568d796ab6c87372e6ea95fa257e327">initialized</a></td></tr>
 <tr class="separator:a6568d796ab6c87372e6ea95fa257e327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provides abstraction to C functions for the mqtt service, Essentially a wrapper class with some abstraction. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a723796fe61a9421d617b5eecf9c5ad3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a723796fe61a9421d617b5eecf9c5ad3f">&#9670;&nbsp;</a></span>MqttService() <span class="overload">[1/2]</span></h2>
 
@@ -184,6 +186,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Adds a subscriber to the MQTT service.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">topic</td><td></td></tr>
+    <tr><td class="paramname">qaulity_of_service</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -201,6 +211,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Closes the MQTT service. </p>
 
 </div>
 </div>
@@ -218,6 +229,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>esp_mqtt_client_handle_t client object (static) </dd></dl>
 
 </div>
 </div>
@@ -235,6 +247,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>mqtt config params </dd></dl>
 
 </div>
 </div>
@@ -252,6 +265,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initializes the MQTT service. </p>
 
 </div>
 </div>
@@ -269,6 +283,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>initialized state </dd></dl>
 
 </div>
 </div>
@@ -351,6 +366,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Publishes to the MQTT service.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">topic</td><td></td></tr>
+    <tr><td class="paramname">message</td><td></td></tr>
+    <tr><td class="paramname">qaulity_of_service</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -369,6 +393,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eventHandler</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -387,6 +417,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Configuration</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -405,6 +441,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Configuration</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -423,6 +465,12 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -441,6 +489,13 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Starts the MQTT service.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">networkStarted</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
