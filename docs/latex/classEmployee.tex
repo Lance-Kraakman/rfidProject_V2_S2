@@ -1,0 +1,145 @@
+\hypertarget{classEmployee}{}\doxysection{Employee Class Reference}
+\label{classEmployee}\index{Employee@{Employee}}
+
+
+{\ttfamily \#include $<$Employee.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEmployee_a003c7bd08c40924e381eb0750cbb906f}{Employee}} ()
+\item 
+\mbox{\hyperlink{classEmployee_aae9816c749947a560f13554071cb9693}{Employee}} (std\+::string \mbox{\hyperlink{classEmployee_a3ba103222f2451bf4d34c05ca28a1bed}{name}}, \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classEmployee_a1d062cd66f63ec54ca9721f4537dd973}{tag}})
+\item 
+void \mbox{\hyperlink{classEmployee_adba90764da59390b7fb346e5ef3bc69d}{set\+Name}} (std\+::string \mbox{\hyperlink{classEmployee_a3ba103222f2451bf4d34c05ca28a1bed}{name}})
+\item 
+std\+::string \mbox{\hyperlink{classEmployee_a72d9305f328548a928929154dab5d2b7}{get\+Name}} ()
+\item 
+void \mbox{\hyperlink{classEmployee_a832bc8ff781c12376a1ea43586611864}{set\+Tag}} (\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classEmployee_a1d062cd66f63ec54ca9721f4537dd973}{tag}})
+\item 
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classEmployee_ad386f9f9bfab135e45dab6052752fd42}{get\+Tag}} ()
+\item 
+void \mbox{\hyperlink{classEmployee_aa1064a384f6ac0d63cb5af8126b0ce89}{set\+Active}} (bool active)
+\item 
+void \mbox{\hyperlink{classEmployee_a863e69d694d606a2a9b50b04a6c7ccac}{print\+Employee}} ()
+\item 
+bool \mbox{\hyperlink{classEmployee_aacb33802f09cb8bc4c5ef0aaca91ef80}{is\+Active}} ()
+\item 
+std\+::string \mbox{\hyperlink{classEmployee_a0afc36a9bf53a4de72f9f0781689b3f2}{time\+String}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classEmployee_a3ba103222f2451bf4d34c05ca28a1bed}{name}}
+\item 
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classEmployee_a1d062cd66f63ec54ca9721f4537dd973}{tag}}
+\item 
+bool \mbox{\hyperlink{classEmployee_a42e1ddd073eccb549db1be883c0d550f}{active\+Status}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEmployee_a0635c658d1647ba083c3412dca0c0d89}{operator==}} (const \mbox{\hyperlink{classEmployee}{Employee}} \&E1, const \mbox{\hyperlink{classEmployee}{Employee}} \&E2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEmployee_a003c7bd08c40924e381eb0750cbb906f}\label{classEmployee_a003c7bd08c40924e381eb0750cbb906f}} 
+\index{Employee@{Employee}!Employee@{Employee}}
+\index{Employee@{Employee}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{Employee()}{Employee()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Employee\+::\+Employee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_aae9816c749947a560f13554071cb9693}\label{classEmployee_aae9816c749947a560f13554071cb9693}} 
+\index{Employee@{Employee}!Employee@{Employee}}
+\index{Employee@{Employee}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{Employee()}{Employee()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Employee\+::\+Employee (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmployee_a72d9305f328548a928929154dab5d2b7}\label{classEmployee_a72d9305f328548a928929154dab5d2b7}} 
+\index{Employee@{Employee}!getName@{getName}}
+\index{getName@{getName}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Employee\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_ad386f9f9bfab135e45dab6052752fd42}\label{classEmployee_ad386f9f9bfab135e45dab6052752fd42}} 
+\index{Employee@{Employee}!getTag@{getTag}}
+\index{getTag@{getTag}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} Employee\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_aacb33802f09cb8bc4c5ef0aaca91ef80}\label{classEmployee_aacb33802f09cb8bc4c5ef0aaca91ef80}} 
+\index{Employee@{Employee}!isActive@{isActive}}
+\index{isActive@{isActive}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily bool Employee\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_a863e69d694d606a2a9b50b04a6c7ccac}\label{classEmployee_a863e69d694d606a2a9b50b04a6c7ccac}} 
+\index{Employee@{Employee}!printEmployee@{printEmployee}}
+\index{printEmployee@{printEmployee}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{printEmployee()}{printEmployee()}}
+{\footnotesize\ttfamily void Employee\+::print\+Employee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_aa1064a384f6ac0d63cb5af8126b0ce89}\label{classEmployee_aa1064a384f6ac0d63cb5af8126b0ce89}} 
+\index{Employee@{Employee}!setActive@{setActive}}
+\index{setActive@{setActive}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{setActive()}{setActive()}}
+{\footnotesize\ttfamily void Employee\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_adba90764da59390b7fb346e5ef3bc69d}\label{classEmployee_adba90764da59390b7fb346e5ef3bc69d}} 
+\index{Employee@{Employee}!setName@{setName}}
+\index{setName@{setName}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Employee\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_a832bc8ff781c12376a1ea43586611864}\label{classEmployee_a832bc8ff781c12376a1ea43586611864}} 
+\index{Employee@{Employee}!setTag@{setTag}}
+\index{setTag@{setTag}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{setTag()}{setTag()}}
+{\footnotesize\ttfamily void Employee\+::set\+Tag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployee_a0afc36a9bf53a4de72f9f0781689b3f2}\label{classEmployee_a0afc36a9bf53a4de72f9f0781689b3f2}} 
+\index{Employee@{Employee}!timeString@{timeString}}
+\index{timeString@{timeString}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{timeString()}{timeString()}}
+{\footnotesize\ttfamily std\+::string Employee\+::time\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classEmployee_a0635c658d1647ba083c3412dca0c0d89}\label{classEmployee_a0635c658d1647ba083c3412dca0c0d89}} 
+\index{Employee@{Employee}!operator==@{operator==}}
+\index{operator==@{operator==}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEmployee}{Employee}} \&}]{E1,  }\item[{const \mbox{\hyperlink{classEmployee}{Employee}} \&}]{E2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEmployee_a42e1ddd073eccb549db1be883c0d550f}\label{classEmployee_a42e1ddd073eccb549db1be883c0d550f}} 
+\index{Employee@{Employee}!activeStatus@{activeStatus}}
+\index{activeStatus@{activeStatus}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{activeStatus}{activeStatus}}
+{\footnotesize\ttfamily bool Employee\+::active\+Status\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEmployee_a3ba103222f2451bf4d34c05ca28a1bed}\label{classEmployee_a3ba103222f2451bf4d34c05ca28a1bed}} 
+\index{Employee@{Employee}!name@{name}}
+\index{name@{name}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Employee\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEmployee_a1d062cd66f63ec54ca9721f4537dd973}\label{classEmployee_a1d062cd66f63ec54ca9721f4537dd973}} 
+\index{Employee@{Employee}!tag@{tag}}
+\index{tag@{tag}!Employee@{Employee}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} Employee\+::tag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Employee/\mbox{\hyperlink{Employee_8h}{Employee.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Employee/\mbox{\hyperlink{Employee_8cpp}{Employee.\+cpp}}\end{DoxyCompactItemize}

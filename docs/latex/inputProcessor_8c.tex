@@ -1,0 +1,101 @@
+\hypertarget{inputProcessor_8c}{}\doxysection{/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Processing/input\+Processing/input\+Processor.c File Reference}
+\label{inputProcessor_8c}\index{/home/lance/eclipse-\/workspace/rfidProject\_V2\_S2/components/Processing/inputProcessing/inputProcessor.c@{/home/lance/eclipse-\/workspace/rfidProject\_V2\_S2/components/Processing/inputProcessing/inputProcessor.c}}
+{\ttfamily \#include \char`\"{}input\+Processor.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{inputProcessor_8c_a730a3c7be7512e80edaf72e76e09aee0}{B\+U\+T\+T\+O\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+L\+I\+S\+T\+\_\+\+L\+E\+N\+G\+TH}}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{inputProcessor_8c_a08f6f90b95605bbafbd3d05ab63a44e5}{config\+Button\+Inputs}} (gpio\+\_\+num\+\_\+t $\ast$button\+List, int button\+List\+Length)
+\item 
+static void \mbox{\hyperlink{inputProcessor_8c_a442790623e2131cff8c79e93571c2b94}{poll\+Button\+Inputs}} (void $\ast$arg)
+\item 
+static void \mbox{\hyperlink{inputProcessor_8c_a02e78b5c681b93a38f57e2396c234923}{tag\+\_\+handler}} (uint8\+\_\+t $\ast$serial\+\_\+no)
+\item 
+x\+Queue\+Handle \mbox{\hyperlink{inputProcessor_8c_a034442890847ac17ceb04ff80b160b05}{get\+Gpio\+Event\+Queue}} ()
+\item 
+void \mbox{\hyperlink{inputProcessor_8c_a2cfff01690218731a6e81195e04b793e}{config\+Input\+Processor}} ()
+\item 
+void \mbox{\hyperlink{inputProcessor_8c_ad8b83e2f23467a3ae300dd17f7530d58}{start\+Input\+Processor}} ()
+\item 
+void \mbox{\hyperlink{inputProcessor_8c_a41ae48c989a86a0e85b03416bb5a253c}{config\+R\+F\+ID}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static x\+Queue\+Handle \mbox{\hyperlink{inputProcessor_8c_a76f0d160c5f47138c32635e420dd0ee4}{gpio\+Event\+Queue}} = N\+U\+LL
+\item 
+static gpio\+\_\+num\+\_\+t \mbox{\hyperlink{inputProcessor_8c_a39bf97921b518e75470de1eeaf8a46c9}{gpio\+Button\+Input\+List}} \mbox{[}$\,$\mbox{]} = \{G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+18, G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+26\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{inputProcessor_8c_a730a3c7be7512e80edaf72e76e09aee0}\label{inputProcessor_8c_a730a3c7be7512e80edaf72e76e09aee0}} 
+\index{inputProcessor.c@{inputProcessor.c}!BUTTON\_INPUT\_LIST\_LENGTH@{BUTTON\_INPUT\_LIST\_LENGTH}}
+\index{BUTTON\_INPUT\_LIST\_LENGTH@{BUTTON\_INPUT\_LIST\_LENGTH}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{BUTTON\_INPUT\_LIST\_LENGTH}{BUTTON\_INPUT\_LIST\_LENGTH}}
+{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+\+I\+N\+P\+U\+T\+\_\+\+L\+I\+S\+T\+\_\+\+L\+E\+N\+G\+TH~2}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{inputProcessor_8c_a08f6f90b95605bbafbd3d05ab63a44e5}\label{inputProcessor_8c_a08f6f90b95605bbafbd3d05ab63a44e5}} 
+\index{inputProcessor.c@{inputProcessor.c}!configButtonInputs@{configButtonInputs}}
+\index{configButtonInputs@{configButtonInputs}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{configButtonInputs()}{configButtonInputs()}}
+{\footnotesize\ttfamily void config\+Button\+Inputs (\begin{DoxyParamCaption}\item[{gpio\+\_\+num\+\_\+t $\ast$}]{button\+List,  }\item[{int}]{button\+List\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{inputProcessor_8c_a2cfff01690218731a6e81195e04b793e}\label{inputProcessor_8c_a2cfff01690218731a6e81195e04b793e}} 
+\index{inputProcessor.c@{inputProcessor.c}!configInputProcessor@{configInputProcessor}}
+\index{configInputProcessor@{configInputProcessor}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{configInputProcessor()}{configInputProcessor()}}
+{\footnotesize\ttfamily void config\+Input\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inputProcessor_8c_a41ae48c989a86a0e85b03416bb5a253c}\label{inputProcessor_8c_a41ae48c989a86a0e85b03416bb5a253c}} 
+\index{inputProcessor.c@{inputProcessor.c}!configRFID@{configRFID}}
+\index{configRFID@{configRFID}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{configRFID()}{configRFID()}}
+{\footnotesize\ttfamily void config\+R\+F\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inputProcessor_8c_a034442890847ac17ceb04ff80b160b05}\label{inputProcessor_8c_a034442890847ac17ceb04ff80b160b05}} 
+\index{inputProcessor.c@{inputProcessor.c}!getGpioEventQueue@{getGpioEventQueue}}
+\index{getGpioEventQueue@{getGpioEventQueue}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{getGpioEventQueue()}{getGpioEventQueue()}}
+{\footnotesize\ttfamily x\+Queue\+Handle get\+Gpio\+Event\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inputProcessor_8c_a442790623e2131cff8c79e93571c2b94}\label{inputProcessor_8c_a442790623e2131cff8c79e93571c2b94}} 
+\index{inputProcessor.c@{inputProcessor.c}!pollButtonInputs@{pollButtonInputs}}
+\index{pollButtonInputs@{pollButtonInputs}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{pollButtonInputs()}{pollButtonInputs()}}
+{\footnotesize\ttfamily static void poll\+Button\+Inputs (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{inputProcessor_8c_ad8b83e2f23467a3ae300dd17f7530d58}\label{inputProcessor_8c_ad8b83e2f23467a3ae300dd17f7530d58}} 
+\index{inputProcessor.c@{inputProcessor.c}!startInputProcessor@{startInputProcessor}}
+\index{startInputProcessor@{startInputProcessor}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{startInputProcessor()}{startInputProcessor()}}
+{\footnotesize\ttfamily void start\+Input\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inputProcessor_8c_a02e78b5c681b93a38f57e2396c234923}\label{inputProcessor_8c_a02e78b5c681b93a38f57e2396c234923}} 
+\index{inputProcessor.c@{inputProcessor.c}!tag\_handler@{tag\_handler}}
+\index{tag\_handler@{tag\_handler}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{tag\_handler()}{tag\_handler()}}
+{\footnotesize\ttfamily static void tag\+\_\+handler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{serial\+\_\+no }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{inputProcessor_8c_a39bf97921b518e75470de1eeaf8a46c9}\label{inputProcessor_8c_a39bf97921b518e75470de1eeaf8a46c9}} 
+\index{inputProcessor.c@{inputProcessor.c}!gpioButtonInputList@{gpioButtonInputList}}
+\index{gpioButtonInputList@{gpioButtonInputList}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{gpioButtonInputList}{gpioButtonInputList}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t gpio\+Button\+Input\+List\mbox{[}$\,$\mbox{]} = \{G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+18, G\+P\+I\+O\+\_\+\+N\+U\+M\+\_\+26\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{inputProcessor_8c_a76f0d160c5f47138c32635e420dd0ee4}\label{inputProcessor_8c_a76f0d160c5f47138c32635e420dd0ee4}} 
+\index{inputProcessor.c@{inputProcessor.c}!gpioEventQueue@{gpioEventQueue}}
+\index{gpioEventQueue@{gpioEventQueue}!inputProcessor.c@{inputProcessor.c}}
+\doxysubsubsection{\texorpdfstring{gpioEventQueue}{gpioEventQueue}}
+{\footnotesize\ttfamily x\+Queue\+Handle gpio\+Event\+Queue = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+

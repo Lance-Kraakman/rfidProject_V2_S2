@@ -1,0 +1,32 @@
+C library for interfacing E\+S\+P32 with M\+F\+R\+C522 R\+F\+ID card reader\hypertarget{md__home_lance_eclipse-workspace_rfidProject_V2_S2_components_Drivers_esp-idf-rc522_README_autotoc_md1}{}\doxysection{Demo}\label{md__home_lance_eclipse-workspace_rfidProject_V2_S2_components_Drivers_esp-idf-rc522_README_autotoc_md1}
+\href{https://www.youtube.com/watch?v=IHaccsDMg9s}{\texttt{ }}\hypertarget{md__home_lance_eclipse-workspace_rfidProject_V2_S2_components_Drivers_esp-idf-rc522_README_autotoc_md2}{}\doxysection{How to use}\label{md__home_lance_eclipse-workspace_rfidProject_V2_S2_components_Drivers_esp-idf-rc522_README_autotoc_md2}
+This directory is an E\+S\+P-\/\+I\+DF component. Clone it (or add it as submodule) into {\ttfamily components} directory of the project.
+
+Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "\mbox{\hyperlink{rc522_8h}{rc522.h}}"}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{inputProcessor_8c_a02e78b5c681b93a38f57e2396c234923}{tag\_handler}}(uint8\_t* serial\_no) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 5; i++) \{}
+\DoxyCodeLine{        printf(\textcolor{stringliteral}{"\%\#x "}, serial\_no[i]);}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{main_8cpp_abce06be17fc37d675118a678a8100a36}{app\_main}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{    \textcolor{keyword}{const} \mbox{\hyperlink{structrc522__start__args__t}{rc522\_start\_args\_t}} start\_args = \{}
+\DoxyCodeLine{        .\mbox{\hyperlink{structrc522__start__args__t_a292bdbf0934e9d976391ae3ffce50171}{miso\_io}}  = 25,}
+\DoxyCodeLine{        .mosi\_io  = 23,}
+\DoxyCodeLine{        .sck\_io   = 19,}
+\DoxyCodeLine{        .sda\_io   = 22,}
+\DoxyCodeLine{        .callback = \&\mbox{\hyperlink{inputProcessor_8c_a02e78b5c681b93a38f57e2396c234923}{tag\_handler}}}
+\DoxyCodeLine{    \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{rc522_8c_a5fb79972274f35ad5172e4b612896d6b}{rc522\_start}}(start\_args);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+ 

@@ -1,0 +1,161 @@
+\hypertarget{classDevice}{}\doxysection{Device Class Reference}
+\label{classDevice}\index{Device@{Device}}
+
+
+{\ttfamily \#include $<$Device.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDevice_a64ba12dcc5f4267486c5d545d04dcf68}{Device}} ()
+\item 
+\mbox{\hyperlink{classDevice_aeec274adf29655c931919557eea7e2fb}{Device}} (\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classDevice_a9c9ac253e084ffdb5dfe120410dd6647}{tag}})
+\item 
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classDevice_addc16da66dc0e0e5d2a8d08ee42f666d}{get\+Tag}} ()
+\item 
+void \mbox{\hyperlink{classDevice_a44184eed30502d71056e3718b297c593}{set\+Tag}} (\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classDevice_a9c9ac253e084ffdb5dfe120410dd6647}{tag}})
+\item 
+void \mbox{\hyperlink{classDevice_a2336bdddf06b341c53389c07939bbd93}{set\+Name}} (std\+::string \mbox{\hyperlink{classDevice_ae779f5ee618677629b71287f3f77f8e8}{name}})
+\item 
+std\+::string \mbox{\hyperlink{classDevice_a7e27b36eae579176707a47b682d84a22}{get\+Name}} ()
+\item 
+bool \mbox{\hyperlink{classDevice_ac22fe096cb2d9bf4e98c2eeddf8f6b6b}{has\+Employee}} ()
+\item 
+void \mbox{\hyperlink{classDevice_a541b0099dd4688a1f8632c6fb161cf3d}{set\+Has\+Employee}} (bool \mbox{\hyperlink{classDevice_abcf84c9d4fc991be6673db3e3f742b33}{has\+Emp}})
+\item 
+void \mbox{\hyperlink{classDevice_a913569a1e3b5c224093c1c05a35b0f4f}{set\+Employee}} (\mbox{\hyperlink{classEmployee}{Employee}} \mbox{\hyperlink{classDevice_a15b85bfca1dfc96d9fea7804cf3852e3}{emp}})
+\item 
+\mbox{\hyperlink{classEmployee}{Employee}} \mbox{\hyperlink{classDevice_a6ed498342228f6a24ea79bdd72c4af4e}{get\+Employee}} ()
+\item 
+void \mbox{\hyperlink{classDevice_aef90f1ff78a5e01983fd30a57ed51e7d}{print\+Device}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classDevice_ae779f5ee618677629b71287f3f77f8e8}{name}}
+\item 
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classDevice_a9c9ac253e084ffdb5dfe120410dd6647}{tag}}
+\item 
+bool \mbox{\hyperlink{classDevice_abcf84c9d4fc991be6673db3e3f742b33}{has\+Emp}}
+\item 
+\mbox{\hyperlink{classEmployee}{Employee}} \mbox{\hyperlink{classDevice_a15b85bfca1dfc96d9fea7804cf3852e3}{emp}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDevice_a8e88b57301a8ec1fb1ec348f5e23f255}{operator==}} (const \mbox{\hyperlink{classDevice}{Device}} \&D1, const \mbox{\hyperlink{classDevice}{Device}} \&D2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDevice_a64ba12dcc5f4267486c5d545d04dcf68}\label{classDevice_a64ba12dcc5f4267486c5d545d04dcf68}} 
+\index{Device@{Device}!Device@{Device}}
+\index{Device@{Device}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{Device()}{Device()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Device\+::\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_aeec274adf29655c931919557eea7e2fb}\label{classDevice_aeec274adf29655c931919557eea7e2fb}} 
+\index{Device@{Device}!Device@{Device}}
+\index{Device@{Device}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{Device()}{Device()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Device\+::\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDevice_a6ed498342228f6a24ea79bdd72c4af4e}\label{classDevice_a6ed498342228f6a24ea79bdd72c4af4e}} 
+\index{Device@{Device}!getEmployee@{getEmployee}}
+\index{getEmployee@{getEmployee}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{getEmployee()}{getEmployee()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEmployee}{Employee}} Device\+::get\+Employee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_a7e27b36eae579176707a47b682d84a22}\label{classDevice_a7e27b36eae579176707a47b682d84a22}} 
+\index{Device@{Device}!getName@{getName}}
+\index{getName@{getName}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Device\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_addc16da66dc0e0e5d2a8d08ee42f666d}\label{classDevice_addc16da66dc0e0e5d2a8d08ee42f666d}} 
+\index{Device@{Device}!getTag@{getTag}}
+\index{getTag@{getTag}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} Device\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_ac22fe096cb2d9bf4e98c2eeddf8f6b6b}\label{classDevice_ac22fe096cb2d9bf4e98c2eeddf8f6b6b}} 
+\index{Device@{Device}!hasEmployee@{hasEmployee}}
+\index{hasEmployee@{hasEmployee}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{hasEmployee()}{hasEmployee()}}
+{\footnotesize\ttfamily bool Device\+::has\+Employee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_aef90f1ff78a5e01983fd30a57ed51e7d}\label{classDevice_aef90f1ff78a5e01983fd30a57ed51e7d}} 
+\index{Device@{Device}!printDevice@{printDevice}}
+\index{printDevice@{printDevice}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{printDevice()}{printDevice()}}
+{\footnotesize\ttfamily void Device\+::print\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_a913569a1e3b5c224093c1c05a35b0f4f}\label{classDevice_a913569a1e3b5c224093c1c05a35b0f4f}} 
+\index{Device@{Device}!setEmployee@{setEmployee}}
+\index{setEmployee@{setEmployee}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{setEmployee()}{setEmployee()}}
+{\footnotesize\ttfamily void Device\+::set\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}}}]{emp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_a541b0099dd4688a1f8632c6fb161cf3d}\label{classDevice_a541b0099dd4688a1f8632c6fb161cf3d}} 
+\index{Device@{Device}!setHasEmployee@{setHasEmployee}}
+\index{setHasEmployee@{setHasEmployee}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{setHasEmployee()}{setHasEmployee()}}
+{\footnotesize\ttfamily void Device\+::set\+Has\+Employee (\begin{DoxyParamCaption}\item[{bool}]{has\+Emp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_a2336bdddf06b341c53389c07939bbd93}\label{classDevice_a2336bdddf06b341c53389c07939bbd93}} 
+\index{Device@{Device}!setName@{setName}}
+\index{setName@{setName}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Device\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDevice_a44184eed30502d71056e3718b297c593}\label{classDevice_a44184eed30502d71056e3718b297c593}} 
+\index{Device@{Device}!setTag@{setTag}}
+\index{setTag@{setTag}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{setTag()}{setTag()}}
+{\footnotesize\ttfamily void Device\+::set\+Tag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classDevice_a8e88b57301a8ec1fb1ec348f5e23f255}\label{classDevice_a8e88b57301a8ec1fb1ec348f5e23f255}} 
+\index{Device@{Device}!operator==@{operator==}}
+\index{operator==@{operator==}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDevice}{Device}} \&}]{D1,  }\item[{const \mbox{\hyperlink{classDevice}{Device}} \&}]{D2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDevice_a15b85bfca1dfc96d9fea7804cf3852e3}\label{classDevice_a15b85bfca1dfc96d9fea7804cf3852e3}} 
+\index{Device@{Device}!emp@{emp}}
+\index{emp@{emp}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{emp}{emp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEmployee}{Employee}} Device\+::emp\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDevice_abcf84c9d4fc991be6673db3e3f742b33}\label{classDevice_abcf84c9d4fc991be6673db3e3f742b33}} 
+\index{Device@{Device}!hasEmp@{hasEmp}}
+\index{hasEmp@{hasEmp}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{hasEmp}{hasEmp}}
+{\footnotesize\ttfamily bool Device\+::has\+Emp\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDevice_ae779f5ee618677629b71287f3f77f8e8}\label{classDevice_ae779f5ee618677629b71287f3f77f8e8}} 
+\index{Device@{Device}!name@{name}}
+\index{name@{name}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string Device\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDevice_a9c9ac253e084ffdb5dfe120410dd6647}\label{classDevice_a9c9ac253e084ffdb5dfe120410dd6647}} 
+\index{Device@{Device}!tag@{tag}}
+\index{tag@{tag}!Device@{Device}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} Device\+::tag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Device/\mbox{\hyperlink{Device_8h}{Device.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Device/\mbox{\hyperlink{Device_8cpp}{Device.\+cpp}}\end{DoxyCompactItemize}

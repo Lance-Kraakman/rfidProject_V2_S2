@@ -1,0 +1,177 @@
+\hypertarget{classMqttService}{}\doxysection{Mqtt\+Service Class Reference}
+\label{classMqttService}\index{MqttService@{MqttService}}
+
+
+{\ttfamily \#include $<$Mqtt\+Service.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMqttService_a723796fe61a9421d617b5eecf9c5ad3f}{Mqtt\+Service}} ()
+\item 
+\mbox{\hyperlink{classMqttService_a7ff0f097ca719bbd4b0f6fc76d89fdca}{Mqtt\+Service}} (esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t config)
+\item 
+void \mbox{\hyperlink{classMqttService_a0a8b20e1d9c8142a5c7fe54c7e434515}{Init\+Mqtt\+Service}} ()
+\item 
+void \mbox{\hyperlink{classMqttService_ae73f9dd0647b0e66bf8ae993e505f88c}{Start\+Mqtt\+Service}} (int network\+Started)
+\item 
+void \mbox{\hyperlink{classMqttService_a7c46d2ec575dd3b49087acd69dab7fbf}{Close\+Mqtt\+Service}} ()
+\item 
+void \mbox{\hyperlink{classMqttService_a28c9a22c1707cd3e5e7c7a979336096b}{add\+Subscriber}} (std\+::string topic, int qaulity\+\_\+of\+\_\+service)
+\item 
+void \mbox{\hyperlink{classMqttService_a78fef68c078bd56f4c40fd6829e6cba7}{publish\+Message}} (std\+::string topic, std\+::string \mbox{\hyperlink{structmessage}{message}}, int qaulity\+\_\+of\+\_\+service)
+\item 
+void \mbox{\hyperlink{classMqttService_a7df8c198dea425bf53396118350e116b}{set\+Init}} (int init)
+\item 
+int \mbox{\hyperlink{classMqttService_ab359e1879c81c91382e6b746850c6d2b}{is\+Init}} ()
+\item 
+void \mbox{\hyperlink{classMqttService_a3db39c823f8630388240cc2f0e51f550}{set\+Configuration}} (esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t Configuration)
+\item 
+esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t \mbox{\hyperlink{classMqttService_a96a69563ec2abbc3ad03da68ec0406e5}{get\+Configuration}} ()
+\item 
+void \mbox{\hyperlink{classMqttService_ad972d2aba754e9827faf290fa3d75be2}{set\+Client}} (esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \&Configuration)
+\item 
+esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \mbox{\hyperlink{classMqttService_a17342b3a92106d5536b468d10d770684}{get\+Client}} ()
+\item 
+void \mbox{\hyperlink{classMqttService_a1e7268e186ecfabef67e4d9f65392e21}{register\+Event\+Handler}} (esp\+\_\+event\+\_\+handler\+\_\+t event\+Handler)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classMqttService_aef564da76cebf9effe58b70a47654d5b}{mqqt\+\_\+event\+\_\+handler}} (void $\ast$handler\+\_\+args, esp\+\_\+event\+\_\+base\+\_\+t base, int32\+\_\+t event\+\_\+id, void $\ast$event\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \mbox{\hyperlink{classMqttService_a1f629c8d833fb977ab284d4deb089c70}{client}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t \mbox{\hyperlink{classMqttService_a27da6b547b43bd99e8e44180b6b5cd44}{mqtt\+Configuration}}
+\item 
+int \mbox{\hyperlink{classMqttService_a6568d796ab6c87372e6ea95fa257e327}{initialized}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMqttService_a723796fe61a9421d617b5eecf9c5ad3f}\label{classMqttService_a723796fe61a9421d617b5eecf9c5ad3f}} 
+\index{MqttService@{MqttService}!MqttService@{MqttService}}
+\index{MqttService@{MqttService}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{MqttService()}{MqttService()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Mqtt\+Service\+::\+Mqtt\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a7ff0f097ca719bbd4b0f6fc76d89fdca}\label{classMqttService_a7ff0f097ca719bbd4b0f6fc76d89fdca}} 
+\index{MqttService@{MqttService}!MqttService@{MqttService}}
+\index{MqttService@{MqttService}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{MqttService()}{MqttService()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Mqtt\+Service\+::\+Mqtt\+Service (\begin{DoxyParamCaption}\item[{esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t}]{config }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMqttService_a28c9a22c1707cd3e5e7c7a979336096b}\label{classMqttService_a28c9a22c1707cd3e5e7c7a979336096b}} 
+\index{MqttService@{MqttService}!addSubscriber@{addSubscriber}}
+\index{addSubscriber@{addSubscriber}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{addSubscriber()}{addSubscriber()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::add\+Subscriber (\begin{DoxyParamCaption}\item[{std\+::string}]{topic,  }\item[{int}]{qaulity\+\_\+of\+\_\+service }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a7c46d2ec575dd3b49087acd69dab7fbf}\label{classMqttService_a7c46d2ec575dd3b49087acd69dab7fbf}} 
+\index{MqttService@{MqttService}!CloseMqttService@{CloseMqttService}}
+\index{CloseMqttService@{CloseMqttService}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{CloseMqttService()}{CloseMqttService()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::\+Close\+Mqtt\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a17342b3a92106d5536b468d10d770684}\label{classMqttService_a17342b3a92106d5536b468d10d770684}} 
+\index{MqttService@{MqttService}!getClient@{getClient}}
+\index{getClient@{getClient}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{getClient()}{getClient()}}
+{\footnotesize\ttfamily esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t Mqtt\+Service\+::get\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a96a69563ec2abbc3ad03da68ec0406e5}\label{classMqttService_a96a69563ec2abbc3ad03da68ec0406e5}} 
+\index{MqttService@{MqttService}!getConfiguration@{getConfiguration}}
+\index{getConfiguration@{getConfiguration}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{getConfiguration()}{getConfiguration()}}
+{\footnotesize\ttfamily esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t Mqtt\+Service\+::get\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a0a8b20e1d9c8142a5c7fe54c7e434515}\label{classMqttService_a0a8b20e1d9c8142a5c7fe54c7e434515}} 
+\index{MqttService@{MqttService}!InitMqttService@{InitMqttService}}
+\index{InitMqttService@{InitMqttService}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{InitMqttService()}{InitMqttService()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::\+Init\+Mqtt\+Service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_ab359e1879c81c91382e6b746850c6d2b}\label{classMqttService_ab359e1879c81c91382e6b746850c6d2b}} 
+\index{MqttService@{MqttService}!isInit@{isInit}}
+\index{isInit@{isInit}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{isInit()}{isInit()}}
+{\footnotesize\ttfamily int Mqtt\+Service\+::is\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_aef564da76cebf9effe58b70a47654d5b}\label{classMqttService_aef564da76cebf9effe58b70a47654d5b}} 
+\index{MqttService@{MqttService}!mqqt\_event\_handler@{mqqt\_event\_handler}}
+\index{mqqt\_event\_handler@{mqqt\_event\_handler}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{mqqt\_event\_handler()}{mqqt\_event\_handler()}}
+{\footnotesize\ttfamily static void Mqtt\+Service\+::mqqt\+\_\+event\+\_\+handler (\begin{DoxyParamCaption}\item[{void $\ast$}]{handler\+\_\+args,  }\item[{esp\+\_\+event\+\_\+base\+\_\+t}]{base,  }\item[{int32\+\_\+t}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classMqttService_a78fef68c078bd56f4c40fd6829e6cba7}\label{classMqttService_a78fef68c078bd56f4c40fd6829e6cba7}} 
+\index{MqttService@{MqttService}!publishMessage@{publishMessage}}
+\index{publishMessage@{publishMessage}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{publishMessage()}{publishMessage()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::publish\+Message (\begin{DoxyParamCaption}\item[{std\+::string}]{topic,  }\item[{std\+::string}]{message,  }\item[{int}]{qaulity\+\_\+of\+\_\+service }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a1e7268e186ecfabef67e4d9f65392e21}\label{classMqttService_a1e7268e186ecfabef67e4d9f65392e21}} 
+\index{MqttService@{MqttService}!registerEventHandler@{registerEventHandler}}
+\index{registerEventHandler@{registerEventHandler}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{registerEventHandler()}{registerEventHandler()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::register\+Event\+Handler (\begin{DoxyParamCaption}\item[{esp\+\_\+event\+\_\+handler\+\_\+t}]{event\+Handler }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_ad972d2aba754e9827faf290fa3d75be2}\label{classMqttService_ad972d2aba754e9827faf290fa3d75be2}} 
+\index{MqttService@{MqttService}!setClient@{setClient}}
+\index{setClient@{setClient}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{setClient()}{setClient()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::set\+Client (\begin{DoxyParamCaption}\item[{esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \&}]{Configuration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a3db39c823f8630388240cc2f0e51f550}\label{classMqttService_a3db39c823f8630388240cc2f0e51f550}} 
+\index{MqttService@{MqttService}!setConfiguration@{setConfiguration}}
+\index{setConfiguration@{setConfiguration}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{setConfiguration()}{setConfiguration()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::set\+Configuration (\begin{DoxyParamCaption}\item[{esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t}]{Configuration }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_a7df8c198dea425bf53396118350e116b}\label{classMqttService_a7df8c198dea425bf53396118350e116b}} 
+\index{MqttService@{MqttService}!setInit@{setInit}}
+\index{setInit@{setInit}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{setInit()}{setInit()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::set\+Init (\begin{DoxyParamCaption}\item[{int}]{init }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMqttService_ae73f9dd0647b0e66bf8ae993e505f88c}\label{classMqttService_ae73f9dd0647b0e66bf8ae993e505f88c}} 
+\index{MqttService@{MqttService}!StartMqttService@{StartMqttService}}
+\index{StartMqttService@{StartMqttService}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{StartMqttService()}{StartMqttService()}}
+{\footnotesize\ttfamily void Mqtt\+Service\+::\+Start\+Mqtt\+Service (\begin{DoxyParamCaption}\item[{int}]{network\+Started }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMqttService_a1f629c8d833fb977ab284d4deb089c70}\label{classMqttService_a1f629c8d833fb977ab284d4deb089c70}} 
+\index{MqttService@{MqttService}!client@{client}}
+\index{client@{client}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t Mqtt\+Service\+::client\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classMqttService_a6568d796ab6c87372e6ea95fa257e327}\label{classMqttService_a6568d796ab6c87372e6ea95fa257e327}} 
+\index{MqttService@{MqttService}!initialized@{initialized}}
+\index{initialized@{initialized}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily int Mqtt\+Service\+::initialized\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMqttService_a27da6b547b43bd99e8e44180b6b5cd44}\label{classMqttService_a27da6b547b43bd99e8e44180b6b5cd44}} 
+\index{MqttService@{MqttService}!mqttConfiguration@{mqttConfiguration}}
+\index{mqttConfiguration@{mqttConfiguration}!MqttService@{MqttService}}
+\doxysubsubsection{\texorpdfstring{mqttConfiguration}{mqttConfiguration}}
+{\footnotesize\ttfamily esp\+\_\+mqtt\+\_\+client\+\_\+config\+\_\+t Mqtt\+Service\+::mqtt\+Configuration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Mqtt\+Service/\mbox{\hyperlink{MqttService_8h}{Mqtt\+Service.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Mqtt\+Service/\mbox{\hyperlink{MqttService_8cpp}{Mqtt\+Service.\+cpp}}\end{DoxyCompactItemize}

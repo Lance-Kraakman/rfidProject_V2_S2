@@ -1,0 +1,85 @@
+\hypertarget{inputProcessor_8h}{}\doxysection{/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Processing/input\+Processing/input\+Processor.h File Reference}
+\label{inputProcessor_8h}\index{/home/lance/eclipse-\/workspace/rfidProject\_V2\_S2/components/Processing/inputProcessing/inputProcessor.h@{/home/lance/eclipse-\/workspace/rfidProject\_V2\_S2/components/Processing/inputProcessing/inputProcessor.h}}
+{\ttfamily \#include \char`\"{}freertos/\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Drivers/esp-\/idf-\/rc522/rc522.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrfid__tag__item}{rfid\+\_\+tag\+\_\+item}}
+\item 
+struct \mbox{\hyperlink{structbuttonInput}{button\+Input}}
+\item 
+struct \mbox{\hyperlink{structtouchInput}{touch\+Input}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{inputProcessor_8h_ac13bf204db1df4aa720412e1c6dab5a6}{T\+A\+G\+\_\+\+IP}}~\char`\"{}I\+N\+P\+U\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+T\+AG\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{inputProcessor_8h_a2cfff01690218731a6e81195e04b793e}{config\+Input\+Processor}} ()
+\item 
+void \mbox{\hyperlink{inputProcessor_8h_ad8b83e2f23467a3ae300dd17f7530d58}{start\+Input\+Processor}} ()
+\item 
+void \mbox{\hyperlink{inputProcessor_8h_a41ae48c989a86a0e85b03416bb5a253c}{config\+R\+F\+ID}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+x\+Queue\+Handle \mbox{\hyperlink{inputProcessor_8h_a1ea243fe35104927212debaa78b0d83b}{x\+Queue\+Rfid}}
+\item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{inputProcessor_8h_afa8fb3b3288671b53ec23beadc896e63}{button\+Input\+Queue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{inputProcessor_8h_ac13bf204db1df4aa720412e1c6dab5a6}\label{inputProcessor_8h_ac13bf204db1df4aa720412e1c6dab5a6}} 
+\index{inputProcessor.h@{inputProcessor.h}!TAG\_IP@{TAG\_IP}}
+\index{TAG\_IP@{TAG\_IP}!inputProcessor.h@{inputProcessor.h}}
+\doxysubsubsection{\texorpdfstring{TAG\_IP}{TAG\_IP}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+IP~\char`\"{}I\+N\+P\+U\+T\+\_\+\+P\+R\+O\+C\+E\+S\+S\+O\+R\+\_\+\+T\+AG\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{inputProcessor_8h_a2cfff01690218731a6e81195e04b793e}\label{inputProcessor_8h_a2cfff01690218731a6e81195e04b793e}} 
+\index{inputProcessor.h@{inputProcessor.h}!configInputProcessor@{configInputProcessor}}
+\index{configInputProcessor@{configInputProcessor}!inputProcessor.h@{inputProcessor.h}}
+\doxysubsubsection{\texorpdfstring{configInputProcessor()}{configInputProcessor()}}
+{\footnotesize\ttfamily void config\+Input\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inputProcessor_8h_a41ae48c989a86a0e85b03416bb5a253c}\label{inputProcessor_8h_a41ae48c989a86a0e85b03416bb5a253c}} 
+\index{inputProcessor.h@{inputProcessor.h}!configRFID@{configRFID}}
+\index{configRFID@{configRFID}!inputProcessor.h@{inputProcessor.h}}
+\doxysubsubsection{\texorpdfstring{configRFID()}{configRFID()}}
+{\footnotesize\ttfamily void config\+R\+F\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{inputProcessor_8h_ad8b83e2f23467a3ae300dd17f7530d58}\label{inputProcessor_8h_ad8b83e2f23467a3ae300dd17f7530d58}} 
+\index{inputProcessor.h@{inputProcessor.h}!startInputProcessor@{startInputProcessor}}
+\index{startInputProcessor@{startInputProcessor}!inputProcessor.h@{inputProcessor.h}}
+\doxysubsubsection{\texorpdfstring{startInputProcessor()}{startInputProcessor()}}
+{\footnotesize\ttfamily void start\+Input\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{inputProcessor_8h_afa8fb3b3288671b53ec23beadc896e63}\label{inputProcessor_8h_afa8fb3b3288671b53ec23beadc896e63}} 
+\index{inputProcessor.h@{inputProcessor.h}!buttonInputQueue@{buttonInputQueue}}
+\index{buttonInputQueue@{buttonInputQueue}!inputProcessor.h@{inputProcessor.h}}
+\doxysubsubsection{\texorpdfstring{buttonInputQueue}{buttonInputQueue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t button\+Input\+Queue}
+
+\mbox{\Hypertarget{inputProcessor_8h_a1ea243fe35104927212debaa78b0d83b}\label{inputProcessor_8h_a1ea243fe35104927212debaa78b0d83b}} 
+\index{inputProcessor.h@{inputProcessor.h}!xQueueRfid@{xQueueRfid}}
+\index{xQueueRfid@{xQueueRfid}!inputProcessor.h@{inputProcessor.h}}
+\doxysubsubsection{\texorpdfstring{xQueueRfid}{xQueueRfid}}
+{\footnotesize\ttfamily x\+Queue\+Handle x\+Queue\+Rfid}
+

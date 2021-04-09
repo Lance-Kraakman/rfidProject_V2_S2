@@ -1,0 +1,134 @@
+\hypertarget{classTagProcessing}{}\doxysection{Tag\+Processing Class Reference}
+\label{classTagProcessing}\index{TagProcessing@{TagProcessing}}
+
+
+{\ttfamily \#include $<$Tag\+Processing.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTagProcessing_a635cea90e197fa819ff85e532c3b7b42}{Tag\+Processing}} ()
+\item 
+void \mbox{\hyperlink{classTagProcessing_a93f04f8db8ceea893f193e1a0219042a}{do\+Processing}} ()
+\item 
+\mbox{\hyperlink{classTagProcessing_a0752a542e38a3147589855a3e257238a}{Tag\+Processing}} (\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$\mbox{\hyperlink{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}{data\+Processor}})
+\item 
+void \mbox{\hyperlink{classTagProcessing_acd69999b3ce3fff9404676fb86bd07eb}{init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTagProcessing_a778edcab21bce84aadf1ffa25bc5901d}{device\+Is\+Found}} (\mbox{\hyperlink{classDevice}{Device}} \&search\+Device, \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \&recvd\+Tag)
+\item 
+void \mbox{\hyperlink{classTagProcessing_aa37b75b03d47a369182359b92ec57d97}{emp\+Is\+Active}} (\mbox{\hyperlink{classDevice}{Device}} \&search\+Device)
+\item 
+void \mbox{\hyperlink{classTagProcessing_a588ab33f1c06d045766f27242036f622}{found\+Employee}} (\mbox{\hyperlink{classEmployee}{Employee}} \&search\+Employee, \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \&recvd\+Tag)
+\item 
+void \mbox{\hyperlink{classTagProcessing_a09305b86f2d850a0012a762c994122a6}{scan\+Timeout}} ()
+\item 
+void \mbox{\hyperlink{classTagProcessing_a83528a75e888b205b376af4db23f7274}{send\+Config\+Request}} (\mbox{\hyperlink{classEmployee}{Employee}} \&emp)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRfidScanner}{Rfid\+Scanner}} \mbox{\hyperlink{classTagProcessing_a2fa439d1ce34c28fb865a982d23efaf3}{rfid\+Scanner}}
+\item 
+\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$ \mbox{\hyperlink{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}{data\+Processor}}
+\item 
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classTagProcessing_acd080b23b7fef5ded9034b47561b5de2}{previous\+Tag}}
+\item 
+\mbox{\hyperlink{classEmployee}{Employee}} \mbox{\hyperlink{classTagProcessing_ad714e837ea5ab8e0a19adc417b72cc76}{previous\+Employee}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTagProcessing_a635cea90e197fa819ff85e532c3b7b42}\label{classTagProcessing_a635cea90e197fa819ff85e532c3b7b42}} 
+\index{TagProcessing@{TagProcessing}!TagProcessing@{TagProcessing}}
+\index{TagProcessing@{TagProcessing}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{TagProcessing()}{TagProcessing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Tag\+Processing\+::\+Tag\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTagProcessing_a0752a542e38a3147589855a3e257238a}\label{classTagProcessing_a0752a542e38a3147589855a3e257238a}} 
+\index{TagProcessing@{TagProcessing}!TagProcessing@{TagProcessing}}
+\index{TagProcessing@{TagProcessing}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{TagProcessing()}{TagProcessing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Tag\+Processing\+::\+Tag\+Processing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$}]{data\+Processor }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTagProcessing_a778edcab21bce84aadf1ffa25bc5901d}\label{classTagProcessing_a778edcab21bce84aadf1ffa25bc5901d}} 
+\index{TagProcessing@{TagProcessing}!deviceIsFound@{deviceIsFound}}
+\index{deviceIsFound@{deviceIsFound}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{deviceIsFound()}{deviceIsFound()}}
+{\footnotesize\ttfamily void Tag\+Processing\+::device\+Is\+Found (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDevice}{Device}} \&}]{search\+Device,  }\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \&}]{recvd\+Tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_a93f04f8db8ceea893f193e1a0219042a}\label{classTagProcessing_a93f04f8db8ceea893f193e1a0219042a}} 
+\index{TagProcessing@{TagProcessing}!doProcessing@{doProcessing}}
+\index{doProcessing@{doProcessing}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{doProcessing()}{doProcessing()}}
+{\footnotesize\ttfamily void Tag\+Processing\+::do\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTagProcessing_aa37b75b03d47a369182359b92ec57d97}\label{classTagProcessing_aa37b75b03d47a369182359b92ec57d97}} 
+\index{TagProcessing@{TagProcessing}!empIsActive@{empIsActive}}
+\index{empIsActive@{empIsActive}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{empIsActive()}{empIsActive()}}
+{\footnotesize\ttfamily void Tag\+Processing\+::emp\+Is\+Active (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDevice}{Device}} \&}]{search\+Device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_a588ab33f1c06d045766f27242036f622}\label{classTagProcessing_a588ab33f1c06d045766f27242036f622}} 
+\index{TagProcessing@{TagProcessing}!foundEmployee@{foundEmployee}}
+\index{foundEmployee@{foundEmployee}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{foundEmployee()}{foundEmployee()}}
+{\footnotesize\ttfamily void Tag\+Processing\+::found\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}} \&}]{search\+Employee,  }\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \&}]{recvd\+Tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_acd69999b3ce3fff9404676fb86bd07eb}\label{classTagProcessing_acd69999b3ce3fff9404676fb86bd07eb}} 
+\index{TagProcessing@{TagProcessing}!init@{init}}
+\index{init@{init}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Tag\+Processing\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTagProcessing_a09305b86f2d850a0012a762c994122a6}\label{classTagProcessing_a09305b86f2d850a0012a762c994122a6}} 
+\index{TagProcessing@{TagProcessing}!scanTimeout@{scanTimeout}}
+\index{scanTimeout@{scanTimeout}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{scanTimeout()}{scanTimeout()}}
+{\footnotesize\ttfamily void Tag\+Processing\+::scan\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_a83528a75e888b205b376af4db23f7274}\label{classTagProcessing_a83528a75e888b205b376af4db23f7274}} 
+\index{TagProcessing@{TagProcessing}!sendConfigRequest@{sendConfigRequest}}
+\index{sendConfigRequest@{sendConfigRequest}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{sendConfigRequest()}{sendConfigRequest()}}
+{\footnotesize\ttfamily void Tag\+Processing\+::send\+Config\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}} \&}]{emp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}\label{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}} 
+\index{TagProcessing@{TagProcessing}!dataProcessor@{dataProcessor}}
+\index{dataProcessor@{dataProcessor}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{dataProcessor}{dataProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataProcessing}{Data\+Processing}}$\ast$ Tag\+Processing\+::data\+Processor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_ad714e837ea5ab8e0a19adc417b72cc76}\label{classTagProcessing_ad714e837ea5ab8e0a19adc417b72cc76}} 
+\index{TagProcessing@{TagProcessing}!previousEmployee@{previousEmployee}}
+\index{previousEmployee@{previousEmployee}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{previousEmployee}{previousEmployee}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEmployee}{Employee}} Tag\+Processing\+::previous\+Employee\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_acd080b23b7fef5ded9034b47561b5de2}\label{classTagProcessing_acd080b23b7fef5ded9034b47561b5de2}} 
+\index{TagProcessing@{TagProcessing}!previousTag@{previousTag}}
+\index{previousTag@{previousTag}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{previousTag}{previousTag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} Tag\+Processing\+::previous\+Tag\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_a2fa439d1ce34c28fb865a982d23efaf3}\label{classTagProcessing_a2fa439d1ce34c28fb865a982d23efaf3}} 
+\index{TagProcessing@{TagProcessing}!rfidScanner@{rfidScanner}}
+\index{rfidScanner@{rfidScanner}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{rfidScanner}{rfidScanner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRfidScanner}{Rfid\+Scanner}} Tag\+Processing\+::rfid\+Scanner\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Application/\+Tag\+Processing/\mbox{\hyperlink{TagProcessing_8h}{Tag\+Processing.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Application/\+Tag\+Processing/\mbox{\hyperlink{TagProcessing_8cpp}{Tag\+Processing.\+cpp}}\end{DoxyCompactItemize}

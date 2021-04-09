@@ -1,0 +1,91 @@
+\hypertarget{classDeviceModel}{}\doxysection{Device\+Model Class Reference}
+\label{classDeviceModel}\index{DeviceModel@{DeviceModel}}
+
+
+{\ttfamily \#include $<$Device\+Model.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDeviceModel_a9bc69dfafba8efb655cd0d16666204f5}{Device\+Model}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classDevice}{Device}} $>$ \& \mbox{\hyperlink{classDeviceModel_a10fbdbb96b5f1d7fc64dd3de7391240d}{get\+Device\+List}} ()
+\item 
+bool \mbox{\hyperlink{classDeviceModel_a66503a72bf53404277a0d0c0be80c7ec}{find\+Device}} (\mbox{\hyperlink{classDevice}{Device}} \&device\+To\+Check)
+\item 
+bool \mbox{\hyperlink{classDeviceModel_a7e2ed7d5ea65cd0e132c4b2020f657ad}{update\+Device\+In\+List}} (\mbox{\hyperlink{classDevice}{Device}} device\+To\+Update)
+\item 
+\mbox{\hyperlink{classDevice}{Device}} \mbox{\hyperlink{classDeviceModel_ab3e0963628d610c18d476b9baa81ae22}{device\+From\+Json}} (c\+J\+S\+ON $\ast$recvd\+J\+S\+ON)
+\item 
+void \mbox{\hyperlink{classDeviceModel_ab819cd02fcaf289889870487716be139}{add\+Device}} (\mbox{\hyperlink{classDevice}{Device}} dev)
+\item 
+c\+J\+S\+ON $\ast$ \mbox{\hyperlink{classDeviceModel_a413f112f0acafab2bb4a33f19d0fb7bb}{json\+Device\+List}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classDevice}{Device}} $>$ \mbox{\hyperlink{classDeviceModel_a7f05883c0baf464b617e837584761345}{device\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDeviceModel_a9bc69dfafba8efb655cd0d16666204f5}\label{classDeviceModel_a9bc69dfafba8efb655cd0d16666204f5}} 
+\index{DeviceModel@{DeviceModel}!DeviceModel@{DeviceModel}}
+\index{DeviceModel@{DeviceModel}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{DeviceModel()}{DeviceModel()}}
+{\footnotesize\ttfamily Device\+Model\+::\+Device\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDeviceModel_ab819cd02fcaf289889870487716be139}\label{classDeviceModel_ab819cd02fcaf289889870487716be139}} 
+\index{DeviceModel@{DeviceModel}!addDevice@{addDevice}}
+\index{addDevice@{addDevice}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{addDevice()}{addDevice()}}
+{\footnotesize\ttfamily void Device\+Model\+::add\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDevice}{Device}}}]{dev }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDeviceModel_ab3e0963628d610c18d476b9baa81ae22}\label{classDeviceModel_ab3e0963628d610c18d476b9baa81ae22}} 
+\index{DeviceModel@{DeviceModel}!deviceFromJson@{deviceFromJson}}
+\index{deviceFromJson@{deviceFromJson}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{deviceFromJson()}{deviceFromJson()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDevice}{Device}} Device\+Model\+::device\+From\+Json (\begin{DoxyParamCaption}\item[{c\+J\+S\+ON $\ast$}]{recvd\+J\+S\+ON }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDeviceModel_a66503a72bf53404277a0d0c0be80c7ec}\label{classDeviceModel_a66503a72bf53404277a0d0c0be80c7ec}} 
+\index{DeviceModel@{DeviceModel}!findDevice@{findDevice}}
+\index{findDevice@{findDevice}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{findDevice()}{findDevice()}}
+{\footnotesize\ttfamily bool Device\+Model\+::find\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDevice}{Device}} \&}]{device\+To\+Check }\end{DoxyParamCaption})}
+
+Searches for \mbox{\hyperlink{classDevice}{Device}}, if an \mbox{\hyperlink{classDevice}{Device}} is found it is updated with the values found in the list \mbox{\Hypertarget{classDeviceModel_a10fbdbb96b5f1d7fc64dd3de7391240d}\label{classDeviceModel_a10fbdbb96b5f1d7fc64dd3de7391240d}} 
+\index{DeviceModel@{DeviceModel}!getDeviceList@{getDeviceList}}
+\index{getDeviceList@{getDeviceList}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{getDeviceList()}{getDeviceList()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classDevice}{Device}} $>$ \& Device\+Model\+::get\+Device\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDeviceModel_a413f112f0acafab2bb4a33f19d0fb7bb}\label{classDeviceModel_a413f112f0acafab2bb4a33f19d0fb7bb}} 
+\index{DeviceModel@{DeviceModel}!jsonDeviceList@{jsonDeviceList}}
+\index{jsonDeviceList@{jsonDeviceList}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{jsonDeviceList()}{jsonDeviceList()}}
+{\footnotesize\ttfamily c\+J\+S\+ON $\ast$ Device\+Model\+::json\+Device\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@\+Warn -\/ It is up to the user to deallocate memory! -\/ (Created with Malloc so must use free()) \mbox{\Hypertarget{classDeviceModel_a7e2ed7d5ea65cd0e132c4b2020f657ad}\label{classDeviceModel_a7e2ed7d5ea65cd0e132c4b2020f657ad}} 
+\index{DeviceModel@{DeviceModel}!updateDeviceInList@{updateDeviceInList}}
+\index{updateDeviceInList@{updateDeviceInList}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{updateDeviceInList()}{updateDeviceInList()}}
+{\footnotesize\ttfamily bool Device\+Model\+::update\+Device\+In\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDevice}{Device}}}]{device\+To\+Update }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDeviceModel_a7f05883c0baf464b617e837584761345}\label{classDeviceModel_a7f05883c0baf464b617e837584761345}} 
+\index{DeviceModel@{DeviceModel}!deviceList@{deviceList}}
+\index{deviceList@{deviceList}!DeviceModel@{DeviceModel}}
+\doxysubsubsection{\texorpdfstring{deviceList}{deviceList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classDevice}{Device}}$>$ Device\+Model\+::device\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Device\+Model/\mbox{\hyperlink{DeviceModel_8h}{Device\+Model.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Device\+Model/\mbox{\hyperlink{DeviceModel_8cpp}{Device\+Model.\+cpp}}\end{DoxyCompactItemize}
