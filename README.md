@@ -1,7 +1,10 @@
 # rfidProject_V2_S2
-Firmware for esp32-s2 processor. Communicates with a desktop application https://github.com/mechaMan0/RFID_TAG_APP. 
+
+## Documentation: https://mechaman0.github.io/rfidProject_V2_S2/html/index.html
+
+###Firmware for esp32-s2 processor. Communicates with a desktop application https://github.com/mechaMan0/RFID_TAG_APP. 
 ====================
-Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for getting started instructions.
+###Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for getting started instructions.
 
 ## State Machine
 ![GitHub Logo](/images/state-machine-firmware.png)

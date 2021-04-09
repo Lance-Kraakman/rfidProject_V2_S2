@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sntptime_950',['SntpTime',['../classSntpTime.html',1,'']]]
+  ['sntptime_916',['SntpTime',['../classSntpTime.html',1,'']]]
 ];
