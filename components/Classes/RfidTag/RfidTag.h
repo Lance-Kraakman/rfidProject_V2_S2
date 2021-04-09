@@ -13,6 +13,9 @@
 #ifndef COMPONENTS_CLASSES_RFID_RFIDTAG_RFIDTAG_H_
 #define COMPONENTS_CLASSES_RFID_RFIDTAG_RFIDTAG_H_
 
+/** RfidTag class represents rfid tag with time of scan and time since start up attributes.
+ *
+ */
 class RfidTag {
 private:
 	SntpTime scannedTime; // Returns when the RfidTag Was last scanned

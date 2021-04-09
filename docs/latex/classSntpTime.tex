@@ -2,6 +2,11 @@
 \label{classSntpTime}\index{SntpTime@{SntpTime}}
 
 
+Class represents the data-\/time using 24 hour format The class also provides sync with a ntp server.  
+
+
+
+
 {\ttfamily \#include $<$Sntp\+Time.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -50,6 +55,11 @@ static time\+\_\+t \mbox{\hyperlink{classSntpTime_a377e63fb73a95c0a7c9d923f7f5bc
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Class represents the data-\/time using 24 hour format The class also provides sync with a ntp server. 
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classSntpTime_a9a98cc9c263e2cbc986d4994eb5e13bc}\label{classSntpTime_a9a98cc9c263e2cbc986d4994eb5e13bc}} 
 \index{SntpTime@{SntpTime}!SntpTime@{SntpTime}}
@@ -66,43 +76,53 @@ static time\+\_\+t \mbox{\hyperlink{classSntpTime_a377e63fb73a95c0a7c9d923f7f5bc
 \doxysubsubsection{\texorpdfstring{config()}{config()}}
 {\footnotesize\ttfamily void Sntp\+Time\+::config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSntpTime_a735a4a45f03f4ea57650c87ba33c0e98}\label{classSntpTime_a735a4a45f03f4ea57650c87ba33c0e98}} 
+Configures \mbox{\hyperlink{classSntpTime}{Sntp\+Time}} \mbox{\Hypertarget{classSntpTime_a735a4a45f03f4ea57650c87ba33c0e98}\label{classSntpTime_a735a4a45f03f4ea57650c87ba33c0e98}} 
 \index{SntpTime@{SntpTime}!printTime@{printTime}}
 \index{printTime@{printTime}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{printTime()}{printTime()}}
 {\footnotesize\ttfamily void Sntp\+Time\+::print\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSntpTime_af159927214cfe1225a4f9ffce2ee7c1e}\label{classSntpTime_af159927214cfe1225a4f9ffce2ee7c1e}} 
+prints the time \mbox{\Hypertarget{classSntpTime_af159927214cfe1225a4f9ffce2ee7c1e}\label{classSntpTime_af159927214cfe1225a4f9ffce2ee7c1e}} 
 \index{SntpTime@{SntpTime}!setTimeZoneNZ@{setTimeZoneNZ}}
 \index{setTimeZoneNZ@{setTimeZoneNZ}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{setTimeZoneNZ()}{setTimeZoneNZ()}}
 {\footnotesize\ttfamily void Sntp\+Time\+::set\+Time\+Zone\+NZ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{timezone\+Info }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSntpTime_a0b417bf1eb39acbb040ac1f373ce5f08}\label{classSntpTime_a0b417bf1eb39acbb040ac1f373ce5f08}} 
+Sets the timezone to nz \mbox{\Hypertarget{classSntpTime_a0b417bf1eb39acbb040ac1f373ce5f08}\label{classSntpTime_a0b417bf1eb39acbb040ac1f373ce5f08}} 
 \index{SntpTime@{SntpTime}!SyncTime@{SyncTime}}
 \index{SyncTime@{SyncTime}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{SyncTime()}{SyncTime()}}
 {\footnotesize\ttfamily void Sntp\+Time\+::\+Sync\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classSntpTime_abc79e87244fc8adabc6b27dba558ea4e}\label{classSntpTime_abc79e87244fc8adabc6b27dba558ea4e}} 
+Synchronizes the time with the classes time variables \mbox{\Hypertarget{classSntpTime_abc79e87244fc8adabc6b27dba558ea4e}\label{classSntpTime_abc79e87244fc8adabc6b27dba558ea4e}} 
 \index{SntpTime@{SntpTime}!time\_sync\_notification\_cb@{time\_sync\_notification\_cb}}
 \index{time\_sync\_notification\_cb@{time\_sync\_notification\_cb}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{time\_sync\_notification\_cb()}{time\_sync\_notification\_cb()}}
 {\footnotesize\ttfamily void Sntp\+Time\+::time\+\_\+sync\+\_\+notification\+\_\+cb (\begin{DoxyParamCaption}\item[{struct timeval $\ast$}]{tv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
+Event handler for time synchronization event
+
+
+\begin{DoxyParams}{Parameters}
+{\em tv} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classSntpTime_ae975dda3ba52e118bc9e7f41db87c6cb}\label{classSntpTime_ae975dda3ba52e118bc9e7f41db87c6cb}} 
 \index{SntpTime@{SntpTime}!timeString@{timeString}}
 \index{timeString@{timeString}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{timeString()}{timeString()}}
 {\footnotesize\ttfamily std\+::string Sntp\+Time\+::time\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+a std\+::string representation of objects time 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classSntpTime_a0f78371245071edda2e11befc61e21b7}\label{classSntpTime_a0f78371245071edda2e11befc61e21b7}} 
 \index{SntpTime@{SntpTime}!updateToCurrentTime@{updateToCurrentTime}}
 \index{updateToCurrentTime@{updateToCurrentTime}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{updateToCurrentTime()}{updateToCurrentTime()}}
 {\footnotesize\ttfamily void Sntp\+Time\+::update\+To\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
+updates classes time variables to the current time 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classSntpTime_ae1115eccffd494ca338d8fa22f33ab18}\label{classSntpTime_ae1115eccffd494ca338d8fa22f33ab18}} 
@@ -141,13 +161,13 @@ static time\+\_\+t \mbox{\hyperlink{classSntpTime_a377e63fb73a95c0a7c9d923f7f5bc
 \doxysubsubsection{\texorpdfstring{timeInfo}{timeInfo}}
 {\footnotesize\ttfamily tm Sntp\+Time\+::time\+Info = \{0, 0, 0, 0, 0, 0, 0, 0, 0\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
-\mbox{\Hypertarget{classSntpTime_a377e63fb73a95c0a7c9d923f7f5bc166}\label{classSntpTime_a377e63fb73a95c0a7c9d923f7f5bc166}} 
+Struct represents time info, Static because one variable needs to be shared between all instances \mbox{\Hypertarget{classSntpTime_a377e63fb73a95c0a7c9d923f7f5bc166}\label{classSntpTime_a377e63fb73a95c0a7c9d923f7f5bc166}} 
 \index{SntpTime@{SntpTime}!timeNow@{timeNow}}
 \index{timeNow@{timeNow}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{timeNow}{timeNow}}
 {\footnotesize\ttfamily time\+\_\+t Sntp\+Time\+::time\+Now = \{0\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
-\mbox{\Hypertarget{classSntpTime_a5eea1d6d84cf4063bd7e1beb74e37a60}\label{classSntpTime_a5eea1d6d84cf4063bd7e1beb74e37a60}} 
+Current time struct, Static because latest update is the same between classes. \mbox{\Hypertarget{classSntpTime_a5eea1d6d84cf4063bd7e1beb74e37a60}\label{classSntpTime_a5eea1d6d84cf4063bd7e1beb74e37a60}} 
 \index{SntpTime@{SntpTime}!year@{year}}
 \index{year@{year}!SntpTime@{SntpTime}}
 \doxysubsubsection{\texorpdfstring{year}{year}}

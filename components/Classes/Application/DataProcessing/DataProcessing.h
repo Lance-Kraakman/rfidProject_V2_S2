@@ -23,6 +23,10 @@ extern "C" {
 #ifndef COMPONENTS_CLASSES_APPLICATION_DATAPROCESSING_DATAPROCESSING_H_
 #define COMPONENTS_CLASSES_APPLICATION_DATAPROCESSING_DATAPROCESSING_H_
 
+/** \brief Application code, Provides interaction between communications, employee models and device models
+ *
+ *
+ */
 class DataProcessing {
 private:
 	Wifi WifiHandler;

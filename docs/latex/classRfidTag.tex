@@ -47,6 +47,9 @@ int64\+\_\+t \mbox{\hyperlink{classRfidTag_a0add947cddad099f263763f4783f6eed}{ms
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} class represents rfid tag with time of scan and time since start up attributes. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classRfidTag_ad40cdc9f383ce1fc4b7a2ac522dc149f}\label{classRfidTag_ad40cdc9f383ce1fc4b7a2ac522dc149f}} 
 \index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
@@ -60,12 +63,26 @@ int64\+\_\+t \mbox{\hyperlink{classRfidTag_a0add947cddad099f263763f4783f6eed}{ms
 \doxysubsubsection{\texorpdfstring{RfidTag()}{RfidTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Rfid\+Tag\+::\+Rfid\+Tag (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{U\+U\+ID,  }\item[{\mbox{\hyperlink{classSntpTime}{Sntp\+Time}}}]{scanned\+Time,  }\item[{int64\+\_\+t}]{ms\+Snice\+Startup }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em U\+U\+ID} & \\
+\hline
+{\em scanned\+Time} & \\
+\hline
+{\em ms\+Snice\+Startup} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classRfidTag_afac8d951eab6f27e8ec227fb66385fd2}\label{classRfidTag_afac8d951eab6f27e8ec227fb66385fd2}} 
 \index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
 \index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{RfidTag()}{RfidTag()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Rfid\+Tag\+::\+Rfid\+Tag (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{U\+U\+ID }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em U\+U\+ID} & \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -75,30 +92,54 @@ int64\+\_\+t \mbox{\hyperlink{classRfidTag_a0add947cddad099f263763f4783f6eed}{ms
 \doxysubsubsection{\texorpdfstring{checkTagTimeoutSeconds()}{checkTagTimeoutSeconds()}}
 {\footnotesize\ttfamily bool Rfid\+Tag\+::check\+Tag\+Timeout\+Seconds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag\+Two,  }\item[{int}]{max\+Seconds }\end{DoxyParamCaption})}
 
+Checks the time between the \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} and another dosen\textquotesingle{}t exceed mac\+Seconds
+
+
+\begin{DoxyParams}{Parameters}
+{\em tag\+Two} & \\
+\hline
+{\em max\+Seconds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classRfidTag_a93bad97caf70c2a294be6bf51e53dc46}\label{classRfidTag_a93bad97caf70c2a294be6bf51e53dc46}} 
 \index{RfidTag@{RfidTag}!getScannedTime@{getScannedTime}}
 \index{getScannedTime@{getScannedTime}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{getScannedTime()}{getScannedTime()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classSntpTime}{Sntp\+Time}} Rfid\+Tag\+::get\+Scanned\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classRfidTag_aa2c1ab3550755be4e197e7d9af7aedcf}\label{classRfidTag_aa2c1ab3550755be4e197e7d9af7aedcf}} 
 \index{RfidTag@{RfidTag}!getStartupTime@{getStartupTime}}
 \index{getStartupTime@{getStartupTime}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{getStartupTime()}{getStartupTime()}}
 {\footnotesize\ttfamily int64\+\_\+t Rfid\+Tag\+::get\+Startup\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classRfidTag_a6d99cc45d46eb5342213a9a66dc5f33d}\label{classRfidTag_a6d99cc45d46eb5342213a9a66dc5f33d}} 
 \index{RfidTag@{RfidTag}!getUUID@{getUUID}}
 \index{getUUID@{getUUID}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{getUUID()}{getUUID()}}
 {\footnotesize\ttfamily int64\+\_\+t Rfid\+Tag\+::get\+U\+U\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+U\+U\+ID 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classRfidTag_acb86f02bfac6172da55c5a11c1a42807}\label{classRfidTag_acb86f02bfac6172da55c5a11c1a42807}} 
 \index{RfidTag@{RfidTag}!isEmpty@{isEmpty}}
 \index{isEmpty@{isEmpty}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
 {\footnotesize\ttfamily bool Rfid\+Tag\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classRfidTag_ac5003387decad27242e1b8b263f387c4}\label{classRfidTag_ac5003387decad27242e1b8b263f387c4}} 
 \index{RfidTag@{RfidTag}!printTag@{printTag}}
 \index{printTag@{printTag}!RfidTag@{RfidTag}}
@@ -111,25 +152,42 @@ int64\+\_\+t \mbox{\hyperlink{classRfidTag_a0add947cddad099f263763f4783f6eed}{ms
 \doxysubsubsection{\texorpdfstring{setScannedTime()}{setScannedTime()}}
 {\footnotesize\ttfamily void Rfid\+Tag\+::set\+Scanned\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSntpTime}{Sntp\+Time}}}]{scanned\+Time }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em scanned\+Time} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classRfidTag_adb60e128f1a42ebdb5eb26a3239c4a96}\label{classRfidTag_adb60e128f1a42ebdb5eb26a3239c4a96}} 
 \index{RfidTag@{RfidTag}!setStartupTime@{setStartupTime}}
 \index{setStartupTime@{setStartupTime}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{setStartupTime()}{setStartupTime()}}
 {\footnotesize\ttfamily void Rfid\+Tag\+::set\+Startup\+Time (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{startup\+Time }\end{DoxyParamCaption})}
 
+Represents time in us since micro-\/controller start-\/up
+
+
+\begin{DoxyParams}{Parameters}
+{\em startup\+Time} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classRfidTag_a09951e2da3abef44b72753ea01c218ee}\label{classRfidTag_a09951e2da3abef44b72753ea01c218ee}} 
 \index{RfidTag@{RfidTag}!setUUID@{setUUID}}
 \index{setUUID@{setUUID}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{setUUID()}{setUUID()}}
 {\footnotesize\ttfamily void Rfid\+Tag\+::set\+U\+U\+ID (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{U\+U\+ID }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em U\+U\+ID} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classRfidTag_a42a91089bc8ceb1888723047553a7701}\label{classRfidTag_a42a91089bc8ceb1888723047553a7701}} 
 \index{RfidTag@{RfidTag}!updateTagScannedTime@{updateTagScannedTime}}
 \index{updateTagScannedTime@{updateTagScannedTime}!RfidTag@{RfidTag}}
 \doxysubsubsection{\texorpdfstring{updateTagScannedTime()}{updateTagScannedTime()}}
 {\footnotesize\ttfamily void Rfid\+Tag\+::update\+Tag\+Scanned\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
+sets the \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} scan time to the current time. 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classRfidTag_a0add947cddad099f263763f4783f6eed}\label{classRfidTag_a0add947cddad099f263763f4783f6eed}} 

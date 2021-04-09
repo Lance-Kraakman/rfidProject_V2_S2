@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>provides abstraction from rfid scanner. Tags are stored in a list which can be read, popped and manipulated from this class when needed  
+ <a href="classRfidScanner.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="RfidScanner_8h_source.html">RfidScanner.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -102,7 +105,9 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:acb2e203fc2b61224c6c6e1f3770a555a"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="classRfidTag.html">RfidTag</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRfidScanner.html#acb2e203fc2b61224c6c6e1f3770a555a">RfidTagList</a> = std::vector&lt;<a class="el" href="classRfidTag.html">RfidTag</a>&gt;()</td></tr>
 <tr class="separator:acb2e203fc2b61224c6c6e1f3770a555a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>provides abstraction from rfid scanner. Tags are stored in a list which can be read, popped and manipulated from this class when needed </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a06d873138c0f83a6c0fc91b1f11e6824"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06d873138c0f83a6c0fc91b1f11e6824">&#9670;&nbsp;</a></span>RfidScanner()</h2>
 
@@ -135,6 +140,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>a copy of the classes <a class="el" href="classRfidTag.html">RfidTag</a> list </dd></dl>
 
 </div>
 </div>
@@ -169,6 +175,16 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns true if the device has been tagged within microsecondTimeoutTime of the last tag</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recvdTag</td><td></td></tr>
+    <tr><td class="paramname">previousTag</td><td></td></tr>
+    <tr><td class="paramname">microsecondTimeoutTime</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -186,6 +202,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pops the next rfid tag from the classes list</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classRfidTag.html">RfidTag</a> </dd></dl>
 
 </div>
 </div>
@@ -203,6 +221,8 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>reads the front of the rfid list</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classRfidTag.html">RfidTag</a> </dd></dl>
 
 </div>
 </div>
@@ -221,6 +241,14 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>reads the rfid list at speciied position</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classRfidTag.html">RfidTag</a> </dd></dl>
 
 </div>
 </div>
@@ -256,6 +284,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>starts the rfid scanner </p>
 
 </div>
 </div>
@@ -282,6 +311,13 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Tag handler function which adds tags to the list of the class</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serial_no</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

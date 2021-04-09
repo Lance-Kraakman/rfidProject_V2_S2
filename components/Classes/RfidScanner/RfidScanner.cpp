@@ -14,6 +14,10 @@ RfidScanner::RfidScanner() {
 	// TODO Auto-generated constructor stub
 }
 
+/** Tag handler function which adds tags to the list of the class
+ *
+ * @param serial_no
+ */
 void RfidScanner::tag_handler(uint8_t* serial_no) {
 	RfidTag scannedTag = RfidTag();
 	int uuid = 0;
@@ -34,11 +38,18 @@ void RfidScanner::tag_handler(uint8_t* serial_no) {
 
 }
 
+/**
+ *
+ * @return a copy of the classes RfidTag list
+ */
 std::vector<RfidTag> RfidScanner::getRfidList() {
 	return RfidScanner::RfidTagList;
 }
 
-// Pops the next RFID tag from the list
+/** Pops the next rfid tag from the classes list
+ *
+ * @return RfidTag
+ */
 RfidTag RfidScanner::popRfidList() {
 
 	if (!(RfidScanner::RfidTagList.empty())) {
@@ -51,7 +62,10 @@ RfidTag RfidScanner::popRfidList() {
 	}
 }
 
-// Reads the next Rfid Tag from the list
+/** reads the front of the rfid list
+ *
+ * @return RfidTag
+ */
 RfidTag RfidScanner::readRfidList() {
 	if (!(RfidScanner::RfidTagList.empty())) {
 			return RfidScanner::RfidTagList.front();
@@ -60,7 +74,11 @@ RfidTag RfidScanner::readRfidList() {
 	}
 }
 
-// Reads the next Rfid Tag from the list
+/** reads the rfid list at speciied position
+ *
+ * @param position
+ * @return RfidTag
+ */
 RfidTag RfidScanner::readRfidListFromPosition(uint position) {
 	if (!(RfidScanner::RfidTagList.empty())) {
 			return RfidScanner::RfidTagList.at(position);
@@ -69,6 +87,13 @@ RfidTag RfidScanner::readRfidListFromPosition(uint position) {
 	}
 }
 
+/** Returns true if the device has been tagged within microsecondTimeoutTime of the last tag
+ *
+ * @param recvdTag
+ * @param previousTag
+ * @param microsecondTimeoutTime
+ * @return
+ */
 bool RfidScanner::isDoubleTagged(RfidTag recvdTag,RfidTag previousTag, int microsecondTimeoutTime) {
 	if ((recvdTag.getStartupTime() - previousTag.getStartupTime()) < microsecondTimeoutTime) {
 			return true;
@@ -76,7 +101,9 @@ bool RfidScanner::isDoubleTagged(RfidTag recvdTag,RfidTag previousTag, int micro
 	return false;
 }
 
-// Config RFID Inputs
+/** starts the rfid scanner
+ *
+ */
 void RfidScanner::startRfidScanner() {
 
 	const rc522_start_args_t start_args = {

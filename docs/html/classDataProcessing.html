@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Application code, Provides interaction between communications, employee models and device models.  
+ <a href="classDataProcessing.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="DataProcessing_8h_source.html">DataProcessing.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -118,7 +121,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9eca482a6f425dc38edd082a78899890"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmessage.html">message</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDataProcessing.html#a9eca482a6f425dc38edd082a78899890">recvdMessage</a></td></tr>
 <tr class="separator:a9eca482a6f425dc38edd082a78899890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Application code, Provides interaction between communications, employee models and device models. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6c2b35c38400048d5557b9977e291623"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c2b35c38400048d5557b9977e291623">&#9670;&nbsp;</a></span>DataProcessing()</h2>
 
@@ -151,6 +156,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Adds device to device model from the received message </p>
 
 </div>
 </div>
@@ -168,6 +174,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Adds <a class="el" href="classEmployee.html" title="Employee Class represents a employee with an RfidTag &#39;attached&#39;.">Employee</a> to device model from the received message </p>
 
 </div>
 </div>
@@ -211,6 +218,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>State machine which does sends, receives and manipulates data based on messages received</p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
@@ -229,6 +237,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>reference to device model </dd></dl>
 
 </div>
 </div>
@@ -246,6 +255,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>reference to employee model </dd></dl>
 
 </div>
 </div>
@@ -263,6 +273,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>copy of messaging service </dd></dl>
 
 </div>
 </div>
@@ -297,6 +308,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Prints the employee/device lists/models which the dataprocessor has </p>
 
 </div>
 </div>
@@ -314,6 +326,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends device list json to app/app-data MQTT topic </p>
 
 </div>
 </div>
@@ -331,6 +344,7 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends employee list json to app/app-data MQTT topic </p>
 
 </div>
 </div>

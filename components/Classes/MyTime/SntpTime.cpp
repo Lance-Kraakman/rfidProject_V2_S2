@@ -7,15 +7,24 @@
 
 #include "SntpTime.h"
 
+/** Struct represents time info, Static because one variable needs to be shared between all instances
+ *
+ *
+ */
 tm SntpTime::timeInfo = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+/**
+ * Current time struct, Static because latest update is the same between classes.
+ */
 time_t SntpTime::timeNow = {0};
 
 SntpTime::SntpTime() {
-	// TODO Auto-generated constructor stub
 	this->updateToCurrentTime();
 }
 
-// Static because only one per class
+/** Configures SntpTime
+ *
+ */
 void SntpTime::config() {
 
 	if (sntp_enabled()) { // SNTP must be inited inside LWIP driver code
@@ -28,14 +37,17 @@ void SntpTime::config() {
 	sntp_init();
 }
 
-
+/** Event handler for time synchronization event
+ *
+ * @param tv
+ */
 void SntpTime::time_sync_notification_cb(struct timeval *tv)
 {
     ESP_LOGI(TIME_TAG, "Notification of a time synchronization event");
 }
 
-/*
- * Time sync function Call once, every couple of days-ish
+/**
+ * Synchronizes the time with the classes time variables
  */
 void SntpTime::SyncTime() {
 
@@ -53,12 +65,17 @@ void SntpTime::SyncTime() {
 	this->setTimeZoneNZ(TIMEZONE_STR_NZ);
 }
 
-
+/** Sets the timezone to nz
+ *
+ */
 void SntpTime::setTimeZoneNZ(const char * timezoneInfo) {
 	setenv("TZ", timezoneInfo, 1);
 	tzset();
 }
 
+/** prints the time
+ *
+ */
 void SntpTime::printTime() {
     char strftime_buf[64];
 	localtime_r(&(SntpTime::timeNow), &(SntpTime::timeInfo));
@@ -67,8 +84,8 @@ void SntpTime::printTime() {
 	ESP_LOGI(TIME_TAG, "day:hour:minute:second %d, %d, %d, %d", this->day, this->hour, this->minute, this->second);
 }
 
-/*
- * Function Updates its time variables <3
+/** updates classes time variables to the current time
+ *
  */
 void SntpTime::updateToCurrentTime() {
 	time(&(SntpTime::timeNow));
@@ -82,6 +99,10 @@ void SntpTime::updateToCurrentTime() {
 
 }
 
+/**
+ *
+ * @return a std::string representation of objects time
+ */
 std::string SntpTime::timeString() {
 
 	std::string returnString = "";

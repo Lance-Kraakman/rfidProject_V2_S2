@@ -33,7 +33,7 @@ void DataProcessing::init() {
 		this->employees = EmployeeModel();
 }
 
-/**
+/** State machine which does sends, receives and manipulates data based on messages received
  *
  * @return void
  */
@@ -58,6 +58,9 @@ void DataProcessing::doMessageProcessing() {
 	}
 }
 
+/** Sends device list json to app/app-data MQTT topic
+ *
+ */
 void DataProcessing::sendDevices() {
 
 	cJSON* finalJSON = this->devices.jsonDeviceList();
@@ -74,6 +77,9 @@ void DataProcessing::sendDevices() {
 	finalJSON = NULL;
 }
 
+/** Sends employee list json to app/app-data MQTT topic
+ *
+ */
 void DataProcessing::sendEmployees() {
 
 	cJSON* finalJSON = this->employees.jsonEmployeeList();
@@ -90,7 +96,9 @@ void DataProcessing::sendEmployees() {
 
 }
 
-//Should only do this if the device isnt in the list
+/** Adds device to device model from the received message
+ *
+ */
 void DataProcessing::addDevice() {
 	cJSON *recvdJSON = cJSON_Parse(this->recvdMessage.data.c_str());
 	try {
@@ -105,7 +113,9 @@ void DataProcessing::addDevice() {
 	recvdJSON = NULL;
 }
 
-// It should only do this if the employee isnt in the list
+/** Adds Employee to device model from the received message
+ *
+ */
 void DataProcessing::addEmployee() {
 	cJSON *recvdJSON = cJSON_Parse(this->recvdMessage.data.c_str());
 	try {
@@ -141,15 +151,17 @@ void DataProcessing::commandReceived() {
 	}
 }
 
+/**
+ *
+ * @return copy of messaging service
+ */
 MessagingService DataProcessing::getMessagingService() {
 	return this->messagingService;
 }
 
-/*
- * PUBLIC FUNCTIONS
+/** Prints the employee/device lists/models which the dataprocessor has
+ *
  */
-
-
 void DataProcessing::printLists() {
 
 	ESP_LOGW(DATA_PROCESSING, "PRINTING EMPLOYEES");
@@ -162,10 +174,18 @@ void DataProcessing::printLists() {
 	}
 }
 
+/**
+ *
+ * @return reference to employee model
+ */
 EmployeeModel& DataProcessing::getEmployeeModel() {
 	return this->employees;
 }
 
+/**
+ *
+ * @return reference to device model
+ */
 DeviceModel& DataProcessing::getDeviceModel() {
 	return this->devices;
 }

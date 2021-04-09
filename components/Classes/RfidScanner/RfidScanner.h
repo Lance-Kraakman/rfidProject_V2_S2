@@ -17,6 +17,9 @@ extern "C" {
 #ifndef COMPONENTS_CLASSES_RFIDSCANNER_RFIDSCANNER_H_
 #define COMPONENTS_CLASSES_RFIDSCANNER_RFIDSCANNER_H_
 
+/** \brief provides abstraction from rfid scanner. Tags are stored in a list which can be read, popped and manipulated from this class when needed
+ *
+ */
 class RfidScanner {
 private:
 	static std::vector<RfidTag> RfidTagList;

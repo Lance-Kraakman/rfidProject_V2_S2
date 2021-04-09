@@ -20,6 +20,10 @@ extern "C" {
 #define TIMEZONE_STR_NY "EST5EDT,M3.2.0/2,M11.1.0"
 #define TIMEZONE_STR_NZ "NZST-12NZDT,M10.1.0/2,M3.3.0/3"
 
+/** \brief Class represents the data-time using 24 hour format
+ * 		The class also provides sync with a ntp server
+ *
+ */
 class SntpTime {
 private:
 	static void time_sync_notification_cb(struct timeval *tv);

@@ -72,6 +72,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class represents the data-time using 24 hour format The class also provides sync with a ntp server.  
+ <a href="classSntpTime.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="SntpTime_8h_source.html">SntpTime.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -118,7 +121,9 @@ Static Private Attributes</h2></td></tr>
 <tr class="memitem:a377e63fb73a95c0a7c9d923f7f5bc166"><td class="memItemLeft" align="right" valign="top">static time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSntpTime.html#a377e63fb73a95c0a7c9d923f7f5bc166">timeNow</a> = {0}</td></tr>
 <tr class="separator:a377e63fb73a95c0a7c9d923f7f5bc166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class represents the data-time using 24 hour format The class also provides sync with a ntp server. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9a98cc9c263e2cbc986d4994eb5e13bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9a98cc9c263e2cbc986d4994eb5e13bc">&#9670;&nbsp;</a></span>SntpTime()</h2>
 
@@ -151,6 +156,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Configures <a class="el" href="classSntpTime.html" title="Class represents the data-time using 24 hour format The class also provides sync with a ntp server.">SntpTime</a> </p>
 
 </div>
 </div>
@@ -168,6 +174,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>prints the time </p>
 
 </div>
 </div>
@@ -186,6 +193,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets the timezone to nz </p>
 
 </div>
 </div>
@@ -203,6 +211,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Synchronizes the time with the classes time variables </p>
 
 </div>
 </div>
@@ -229,6 +238,13 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Event handler for time synchronization event</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tv</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -246,6 +262,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>a std::string representation of objects time </dd></dl>
 
 </div>
 </div>
@@ -263,6 +280,7 @@ Static Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>updates classes time variables to the current time </p>
 
 </div>
 </div>
@@ -356,6 +374,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Struct represents time info, Static because one variable needs to be shared between all instances </p>
 
 </div>
 </div>
@@ -378,6 +397,7 @@ Static Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Current time struct, Static because latest update is the same between classes. </p>
 
 </div>
 </div>

@@ -20,7 +20,7 @@
 #include "esp_int_wdt.h"
 #include "esp_task_wdt.h"
 
-/** \brief Employee Class represents a device with an RfidTag 'attached'
+/** \brief Employee Class represents a employee with an RfidTag 'attached'
  *
  */
 class Employee {
