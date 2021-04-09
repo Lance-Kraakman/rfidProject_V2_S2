@@ -1,0 +1,193 @@
+\hypertarget{rc522_8c}{}\doxysection{components/\+Drivers/esp-\/idf-\/rc522/rc522.c File Reference}
+\label{rc522_8c}\index{components/Drivers/esp-\/idf-\/rc522/rc522.c@{components/Drivers/esp-\/idf-\/rc522/rc522.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/spi\+\_\+master.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}soc/gpio\+\_\+struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driver/gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rc522.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_a6bd29c41317d48bc37fd313cc18d9745}{rc522\+\_\+spi\+\_\+init}} (int miso\+\_\+io, int mosi\+\_\+io, int sck\+\_\+io, int sda\+\_\+io)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_abb98b90ac12ee9a3b5b5bc1703dbb927}{rc522\+\_\+write\+\_\+n}} (uint8\+\_\+t addr, uint8\+\_\+t n, uint8\+\_\+t $\ast$data)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_a6e86431baa6cb91ec8d5cb7643beeb7c}{rc522\+\_\+write}} (uint8\+\_\+t addr, uint8\+\_\+t val)
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{rc522_8c_ae2d216fc3c6bd2d0d57cfa18f83bd200}{rc522\+\_\+read\+\_\+n}} (uint8\+\_\+t addr, uint8\+\_\+t n)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{rc522_8c_af738257a7f90f0ab865040e528818fab}{rc522\+\_\+read}} (uint8\+\_\+t addr)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_a4df9b8363fd6482f41d7783e6d7ce8e5}{rc522\+\_\+init}} ()
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_ae4820b313a5f0463569df2d03e121855}{rc522\+\_\+set\+\_\+bitmask}} (uint8\+\_\+t addr, uint8\+\_\+t mask)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_ac36e0fc01eace886971306632ba1eb4f}{rc522\+\_\+clear\+\_\+bitmask}} (uint8\+\_\+t addr, uint8\+\_\+t mask)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_a244de41b5e2acab3e65b7f831654da50}{rc522\+\_\+antenna\+\_\+on}} ()
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{rc522_8c_ad09b287bd5dc0a9cda14f23a6e8a002a}{rc522\+\_\+calculate\+\_\+crc}} (uint8\+\_\+t $\ast$data, uint8\+\_\+t n)
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{rc522_8c_ab2cff9b15a3a26cc81a2b11b4f8b3fee}{rc522\+\_\+card\+\_\+write}} (uint8\+\_\+t cmd, uint8\+\_\+t $\ast$data, uint8\+\_\+t n, uint8\+\_\+t $\ast$res\+\_\+n)
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{rc522_8c_a20c76b4a4d0f6e155b7bae56914e8084}{rc522\+\_\+request}} (uint8\+\_\+t $\ast$res\+\_\+n)
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{rc522_8c_a2daa5f8195e0de02c813f09db69f8fa1}{rc522\+\_\+anticoll}} ()
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{rc522_8c_a5a5fdb29c90d7c71f6e5643e16193c92}{rc522\+\_\+get\+\_\+tag}} ()
+\item 
+static void \mbox{\hyperlink{rc522_8c_a9334fe75f7c9aa6fed613001b21822cf}{rc522\+\_\+timer\+\_\+callback}} (void $\ast$arg)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_a5fb79972274f35ad5172e4b612896d6b}{rc522\+\_\+start}} (\mbox{\hyperlink{structrc522__start__args__t}{rc522\+\_\+start\+\_\+args\+\_\+t}} start\+\_\+args)
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_ad8ff24278441a056b4967ad588350d1b}{rc522\+\_\+resume}} ()
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{rc522_8c_ab8b43ee54eba44821af2ca9fff42ac0a}{rc522\+\_\+pause}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+spi\+\_\+device\+\_\+handle\+\_\+t \mbox{\hyperlink{rc522_8c_a4f2a5fb4b67f29d8cd547e4a731a430c}{rc522\+\_\+spi}}
+\item 
+static esp\+\_\+timer\+\_\+handle\+\_\+t \mbox{\hyperlink{rc522_8c_acf1c0304b12dda015264d1665e759dec}{rc522\+\_\+timer}}
+\item 
+static bool \mbox{\hyperlink{rc522_8c_acc4f192102a1ac25b445ab21cf5aed6d}{rc522\+\_\+timer\+\_\+running}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rc522_8c_a244de41b5e2acab3e65b7f831654da50}\label{rc522_8c_a244de41b5e2acab3e65b7f831654da50}} 
+\index{rc522.c@{rc522.c}!rc522\_antenna\_on@{rc522\_antenna\_on}}
+\index{rc522\_antenna\_on@{rc522\_antenna\_on}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_antenna\_on()}{rc522\_antenna\_on()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+antenna\+\_\+on (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_a2daa5f8195e0de02c813f09db69f8fa1}\label{rc522_8c_a2daa5f8195e0de02c813f09db69f8fa1}} 
+\index{rc522.c@{rc522.c}!rc522\_anticoll@{rc522\_anticoll}}
+\index{rc522\_anticoll@{rc522\_anticoll}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_anticoll()}{rc522\_anticoll()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ rc522\+\_\+anticoll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_ad09b287bd5dc0a9cda14f23a6e8a002a}\label{rc522_8c_ad09b287bd5dc0a9cda14f23a6e8a002a}} 
+\index{rc522.c@{rc522.c}!rc522\_calculate\_crc@{rc522\_calculate\_crc}}
+\index{rc522\_calculate\_crc@{rc522\_calculate\_crc}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_calculate\_crc()}{rc522\_calculate\_crc()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ rc522\+\_\+calculate\+\_\+crc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_ab2cff9b15a3a26cc81a2b11b4f8b3fee}\label{rc522_8c_ab2cff9b15a3a26cc81a2b11b4f8b3fee}} 
+\index{rc522.c@{rc522.c}!rc522\_card\_write@{rc522\_card\_write}}
+\index{rc522\_card\_write@{rc522\_card\_write}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_card\_write()}{rc522\_card\_write()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ rc522\+\_\+card\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd,  }\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{n,  }\item[{uint8\+\_\+t $\ast$}]{res\+\_\+n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_ac36e0fc01eace886971306632ba1eb4f}\label{rc522_8c_ac36e0fc01eace886971306632ba1eb4f}} 
+\index{rc522.c@{rc522.c}!rc522\_clear\_bitmask@{rc522\_clear\_bitmask}}
+\index{rc522\_clear\_bitmask@{rc522\_clear\_bitmask}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_clear\_bitmask()}{rc522\_clear\_bitmask()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+clear\+\_\+bitmask (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{mask }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_a5a5fdb29c90d7c71f6e5643e16193c92}\label{rc522_8c_a5a5fdb29c90d7c71f6e5643e16193c92}} 
+\index{rc522.c@{rc522.c}!rc522\_get\_tag@{rc522\_get\_tag}}
+\index{rc522\_get\_tag@{rc522\_get\_tag}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_get\_tag()}{rc522\_get\_tag()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ rc522\+\_\+get\+\_\+tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_a4df9b8363fd6482f41d7783e6d7ce8e5}\label{rc522_8c_a4df9b8363fd6482f41d7783e6d7ce8e5}} 
+\index{rc522.c@{rc522.c}!rc522\_init@{rc522\_init}}
+\index{rc522\_init@{rc522\_init}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_init()}{rc522\_init()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_ab8b43ee54eba44821af2ca9fff42ac0a}\label{rc522_8c_ab8b43ee54eba44821af2ca9fff42ac0a}} 
+\index{rc522.c@{rc522.c}!rc522\_pause@{rc522\_pause}}
+\index{rc522\_pause@{rc522\_pause}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_pause()}{rc522\_pause()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_af738257a7f90f0ab865040e528818fab}\label{rc522_8c_af738257a7f90f0ab865040e528818fab}} 
+\index{rc522.c@{rc522.c}!rc522\_read@{rc522\_read}}
+\index{rc522\_read@{rc522\_read}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_read()}{rc522\_read()}}
+{\footnotesize\ttfamily uint8\+\_\+t rc522\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_ae2d216fc3c6bd2d0d57cfa18f83bd200}\label{rc522_8c_ae2d216fc3c6bd2d0d57cfa18f83bd200}} 
+\index{rc522.c@{rc522.c}!rc522\_read\_n@{rc522\_read\_n}}
+\index{rc522\_read\_n@{rc522\_read\_n}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_read\_n()}{rc522\_read\_n()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ rc522\+\_\+read\+\_\+n (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_a20c76b4a4d0f6e155b7bae56914e8084}\label{rc522_8c_a20c76b4a4d0f6e155b7bae56914e8084}} 
+\index{rc522.c@{rc522.c}!rc522\_request@{rc522\_request}}
+\index{rc522\_request@{rc522\_request}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_request()}{rc522\_request()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ rc522\+\_\+request (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{res\+\_\+n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_ad8ff24278441a056b4967ad588350d1b}\label{rc522_8c_ad8ff24278441a056b4967ad588350d1b}} 
+\index{rc522.c@{rc522.c}!rc522\_resume@{rc522\_resume}}
+\index{rc522\_resume@{rc522\_resume}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_resume()}{rc522\_resume()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_ae4820b313a5f0463569df2d03e121855}\label{rc522_8c_ae4820b313a5f0463569df2d03e121855}} 
+\index{rc522.c@{rc522.c}!rc522\_set\_bitmask@{rc522\_set\_bitmask}}
+\index{rc522\_set\_bitmask@{rc522\_set\_bitmask}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_set\_bitmask()}{rc522\_set\_bitmask()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+set\+\_\+bitmask (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{mask }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_a6bd29c41317d48bc37fd313cc18d9745}\label{rc522_8c_a6bd29c41317d48bc37fd313cc18d9745}} 
+\index{rc522.c@{rc522.c}!rc522\_spi\_init@{rc522\_spi\_init}}
+\index{rc522\_spi\_init@{rc522\_spi\_init}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_spi\_init()}{rc522\_spi\_init()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+spi\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{miso\+\_\+io,  }\item[{int}]{mosi\+\_\+io,  }\item[{int}]{sck\+\_\+io,  }\item[{int}]{sda\+\_\+io }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_a5fb79972274f35ad5172e4b612896d6b}\label{rc522_8c_a5fb79972274f35ad5172e4b612896d6b}} 
+\index{rc522.c@{rc522.c}!rc522\_start@{rc522\_start}}
+\index{rc522\_start@{rc522\_start}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_start()}{rc522\_start()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrc522__start__args__t}{rc522\+\_\+start\+\_\+args\+\_\+t}}}]{start\+\_\+args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_a9334fe75f7c9aa6fed613001b21822cf}\label{rc522_8c_a9334fe75f7c9aa6fed613001b21822cf}} 
+\index{rc522.c@{rc522.c}!rc522\_timer\_callback@{rc522\_timer\_callback}}
+\index{rc522\_timer\_callback@{rc522\_timer\_callback}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_timer\_callback()}{rc522\_timer\_callback()}}
+{\footnotesize\ttfamily static void rc522\+\_\+timer\+\_\+callback (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{rc522_8c_a6e86431baa6cb91ec8d5cb7643beeb7c}\label{rc522_8c_a6e86431baa6cb91ec8d5cb7643beeb7c}} 
+\index{rc522.c@{rc522.c}!rc522\_write@{rc522\_write}}
+\index{rc522\_write@{rc522\_write}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_write()}{rc522\_write()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rc522_8c_abb98b90ac12ee9a3b5b5bc1703dbb927}\label{rc522_8c_abb98b90ac12ee9a3b5b5bc1703dbb927}} 
+\index{rc522.c@{rc522.c}!rc522\_write\_n@{rc522\_write\_n}}
+\index{rc522\_write\_n@{rc522\_write\_n}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_write\_n()}{rc522\_write\_n()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t rc522\+\_\+write\+\_\+n (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{n,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{rc522_8c_a4f2a5fb4b67f29d8cd547e4a731a430c}\label{rc522_8c_a4f2a5fb4b67f29d8cd547e4a731a430c}} 
+\index{rc522.c@{rc522.c}!rc522\_spi@{rc522\_spi}}
+\index{rc522\_spi@{rc522\_spi}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_spi}{rc522\_spi}}
+{\footnotesize\ttfamily spi\+\_\+device\+\_\+handle\+\_\+t rc522\+\_\+spi}
+
+\mbox{\Hypertarget{rc522_8c_acf1c0304b12dda015264d1665e759dec}\label{rc522_8c_acf1c0304b12dda015264d1665e759dec}} 
+\index{rc522.c@{rc522.c}!rc522\_timer@{rc522\_timer}}
+\index{rc522\_timer@{rc522\_timer}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_timer}{rc522\_timer}}
+{\footnotesize\ttfamily esp\+\_\+timer\+\_\+handle\+\_\+t rc522\+\_\+timer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{rc522_8c_acc4f192102a1ac25b445ab21cf5aed6d}\label{rc522_8c_acc4f192102a1ac25b445ab21cf5aed6d}} 
+\index{rc522.c@{rc522.c}!rc522\_timer\_running@{rc522\_timer\_running}}
+\index{rc522\_timer\_running@{rc522\_timer\_running}!rc522.c@{rc522.c}}
+\doxysubsubsection{\texorpdfstring{rc522\_timer\_running}{rc522\_timer\_running}}
+{\footnotesize\ttfamily bool rc522\+\_\+timer\+\_\+running = false\hspace{0.3cm}{\ttfamily [static]}}
+

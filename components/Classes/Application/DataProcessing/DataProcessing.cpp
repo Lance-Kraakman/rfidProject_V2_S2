@@ -10,12 +10,6 @@
 
 DataProcessing::DataProcessing() {}
 
-DataProcessing::DataProcessing(std::vector<Employee> *employeeListPtr, std::vector<Device> *deviceListPtr) {
-	this->deviceListPtr = deviceListPtr;
-	this->employeeListPtr = employeeListPtr;
-	ESP_LOGI(DATA_PROCESSING, "Employee List Size: %d, Device List size %d", (*this->employeeListPtr).size(), (*this->deviceListPtr).size());
-}
-
 /*
  * config - in the future this will also handle exceptions and stuff
  */
@@ -34,6 +28,9 @@ void DataProcessing::init() {
 		globalTime.printTime();
 		globalTime.updateToCurrentTime(); // sets the time to the current time
 		globalTime.printTime();
+
+		this->devices = DeviceModel();
+		this->employees = EmployeeModel();
 }
 
 /**
@@ -62,124 +59,63 @@ void DataProcessing::doMessageProcessing() {
 }
 
 void DataProcessing::sendDevices() {
-	cJSON *finalJSON = cJSON_CreateObject();
-	cJSON *jsonArray = cJSON_AddArrayToObject(finalJSON, "DEVICE LIST");
-	for (Device dev : *(this->deviceListPtr)) {
-		cJSON *deviceJsonObject = cJSON_CreateObject();
 
-		cJSON_AddStringToObject(deviceJsonObject, "name", dev.getName().c_str());
-		cJSON_AddNumberToObject(deviceJsonObject, "uuid", dev.getTag().getUUID());
-		cJSON_AddStringToObject(deviceJsonObject, "time", dev.getTag().getScannedTime().timeString().c_str());
-		cJSON_AddNumberToObject(deviceJsonObject, "has-employee", dev.hasEmployee());
-		cJSON_AddNumberToObject(deviceJsonObject, "employee-uuid", dev.getEmployee().getTag().getUUID() );
-
-		cJSON_AddItemToArray(jsonArray, deviceJsonObject);
-	}
+	cJSON* finalJSON = this->devices.jsonDeviceList();
 	char *deviceDataBuffer = cJSON_Print(finalJSON);
+
 	printf("SENDING DATA %s", deviceDataBuffer);
 	this->messagingService.sendMessage("app/app-data", deviceDataBuffer, DEFAULT_QOS);
+
+	//Free Memory (Created with Malloc so must use free)
 	free(deviceDataBuffer);
 	deviceDataBuffer = NULL;
+
+	free(finalJSON);
+	finalJSON = NULL;
 }
 
 void DataProcessing::sendEmployees() {
 
-	cJSON *finalJSON = cJSON_CreateObject();
-	cJSON *jsonArray = cJSON_AddArrayToObject(finalJSON, "EMPLOYEE LIST");
-	for (Employee emp : *(this->employeeListPtr)) {
-		cJSON *employeeJsonObject = cJSON_CreateObject();
-
-		cJSON_AddStringToObject(employeeJsonObject, "name", emp.getName().c_str());
-		cJSON_AddNumberToObject(employeeJsonObject, "uuid", emp.getTag().getUUID());
-		cJSON_AddStringToObject(employeeJsonObject, "time", emp.getTag().getScannedTime().timeString().c_str());
-		cJSON_AddNumberToObject(employeeJsonObject, "active", emp.isActive());
-		cJSON_AddItemToArray(jsonArray, employeeJsonObject);
-	}
+	cJSON* finalJSON = this->employees.jsonEmployeeList();
 	char *employeeDataBuffer = cJSON_Print(finalJSON);
 	printf("SENDING DATA\n%s", employeeDataBuffer);
 	this->messagingService.sendMessage("app/app-data", employeeDataBuffer, DEFAULT_QOS);
+
+	// Free Memory (Created with Malloc so must use free)
 	free(employeeDataBuffer);
 	employeeDataBuffer = NULL;
 
+	free(finalJSON);
+	finalJSON = NULL;
 
 }
 
 //Should only do this if the device isnt in the list
 void DataProcessing::addDevice() {
 	cJSON *recvdJSON = cJSON_Parse(this->recvdMessage.data.c_str());
-	char *string = cJSON_Print(recvdJSON);
-	printf("RECEIVED JSON\n%s", string);
-
 	try {
-		cJSON* name  = cJSON_GetObjectItem(recvdJSON, "name");
-		cJSON* uuid = cJSON_GetObjectItem(recvdJSON, "uuid");
-		cJSON* cJSON_ARR[] = {name, uuid};
-
-		for (int i=0; i<2; i++) {
-			if (cJSON_ARR[i] == NULL) {
-				throw "ADD EMPLOYEE OBJECT ERROR";
-			}
-		}
-
-		Device dev = Device();
-		dev.setName(name->valuestring);
-		if (uuid->type == cJSON_String) {
-			dev.setTag(RfidTag(std::stoi(uuid->string)));
-		} else if (uuid->type == cJSON_Number) {
-			dev.setTag(RfidTag(uuid->valueint));
-		} else {
-			throw "Couldn't resolve cJSON_type";
-		}
-		this->deviceListPtr->insert(this->deviceListPtr->begin(), dev);
-
-
+		Device dev = this->devices.deviceFromJson(recvdJSON);
+		this->devices.addDevice(dev); // Adds the device if it is not already in the list
 	} catch(const char* msg) {
 		printf(msg);
 		printf("Employee Not added");
 	}
 
 	free(recvdJSON);
-	recvdJSON = NULL;}
+	recvdJSON = NULL;
+}
 
 // It should only do this if the employee isnt in the list
 void DataProcessing::addEmployee() {
 	cJSON *recvdJSON = cJSON_Parse(this->recvdMessage.data.c_str());
-	char *string = cJSON_Print(recvdJSON);
-	printf("RECEIVED JSON\n%s", string);
-
 	try {
-		cJSON* name  = cJSON_GetObjectItem(recvdJSON, "name");
-		cJSON* uuid = cJSON_GetObjectItem(recvdJSON, "uuid");
-
-		cJSON* cJSON_ARR[] = {name, uuid};
-
-		for (int i=0; i<2; i++) {
-			if (cJSON_ARR[i] == NULL) {
-				throw "ADD EMPLOYEE OBJECT ERROR";
-			}
-		}
-
-		Employee emp = Employee();
-		emp.setName(name->valuestring);
-
-		if (uuid->type == cJSON_String) {
-			emp.setTag(RfidTag(std::stoi(uuid->string)));
-		} else if (uuid->type == cJSON_Number) {
-			emp.setTag(RfidTag(uuid->valueint));
-		} else {
-			throw "Couldn't resolve cJSON_type";
-		}
-
-		// if employee is not in list
-
-		this->employeeListPtr->insert(this->employeeListPtr->begin(), emp);
-
+		Employee emp = this->employees.employeeFromJson(recvdJSON);
+		this->employees.addEmployee(emp);
 
 	} catch(const char* msg) {
 		printf(msg);
 		printf("Employee Not added");
 	}
-
 
 	free(recvdJSON);
 	recvdJSON = NULL;
@@ -215,58 +151,23 @@ MessagingService DataProcessing::getMessagingService() {
  */
 
 
-
-
-/*
- * Searches for Device, if an Device is found it is updated with the values found in the list
- */
-bool DataProcessing::findDevice(Device& deviceToCheck) {
-	std::vector<Device> DeviceList = *(this->deviceListPtr);
-
-	auto it = std::find(DeviceList.begin(), DeviceList.end(), deviceToCheck);
-	if (it != DeviceList.end()) {
-		printf("Find Complete -- Found\n");
-		deviceToCheck = *it; // Update the devices other params
-		return true;
-	}
-	printf("Find Complete -- Not Found\n");
-	return false;
-}
-
-/*
- * Searches for employee, if an employee is found it is updated with the values found in the list
- */
-bool DataProcessing::findEmployee(Employee& employeeToCheck) {
-	std::vector<Employee> employeeList = *(this->employeeListPtr);
-
-	auto it = std::find(employeeList.begin(), employeeList.end(), employeeToCheck);
-		if (it != employeeList.end()) {
-			employeeToCheck = *it;
-			return true;
-		}
-		return false;
-	return false;
-}
-
-bool DataProcessing::updateDeviceInList(Device deviceToUpdate) {
-	std::replace(this->deviceListPtr->begin(), this->deviceListPtr->end(), deviceToUpdate, deviceToUpdate);
-	return true;
-}
-
-bool DataProcessing::updateEmployeeInList(Employee EmployeeToUpdate) {
-	std::replace(this->employeeListPtr->begin(), this->employeeListPtr->end(), EmployeeToUpdate, EmployeeToUpdate);
-	return true;
-}
-
 void DataProcessing::printLists() {
 
-	ESP_LOGI(DATA_PROCESSING, "PRINTING EMPLOYEES");
-	for (Employee emp: *this->employeeListPtr) {
+	ESP_LOGW(DATA_PROCESSING, "PRINTING EMPLOYEES");
+	for (Employee emp: this->employees.getEmployeeList()) {
 		emp.printEmployee();
 	}
-	ESP_LOGI(DATA_PROCESSING, "PRINTING DEVICES");
-	for (Device dev: *this->deviceListPtr) {
+	ESP_LOGW(DATA_PROCESSING, "PRINTING DEVICES");
+	for (Device dev: this->devices.getDeviceList()) {
 		dev.printDevice();
 	}
+}
+
+EmployeeModel& DataProcessing::getEmployeeModel() {
+	return this->employees;
+}
+
+DeviceModel& DataProcessing::getDeviceModel() {
+	return this->devices;
 }
 

@@ -1,0 +1,67 @@
+\href{https://ci.appveyor.com/project/gregjesl/simpleson}{\texttt{ }}\hypertarget{md_components_Classes_simpleson_README_autotoc_md0}{}\doxysection{simpleson}\label{md_components_Classes_simpleson_README_autotoc_md0}
+Lightweight C++ J\+S\+ON parser \& serializer that is C++98 compatible with no dependencies\hypertarget{md_components_Classes_simpleson_README_autotoc_md1}{}\doxysubsection{Why simpleson?}\label{md_components_Classes_simpleson_README_autotoc_md1}
+Simpleson is built under the following requirements\+:
+\begin{DoxyItemize}
+\item One header and one source file only
+\item No external dependencies
+\item I\+S\+O/\+I\+EC 14882\+:1998 (aka C++98) compatible
+\item Cross-\/platform
+\end{DoxyItemize}
+
+A primary use case for simpleson is in an memory-\/constrained embedded system. ~\newline
+\hypertarget{md_components_Classes_simpleson_README_autotoc_md2}{}\doxysubsection{Building simpleson}\label{md_components_Classes_simpleson_README_autotoc_md2}
+Simpleson was intentionally built such that a developer could simply copy \href{json.h}{\texttt{ json.\+h}} into the target project\textquotesingle{}s {\ttfamily inc} folder, copy \href{json.cpp}{\texttt{ json.\+cpp}} into the {\ttfamily src} folder, and then compile the target project. No linking -\/$>$ no drama. ~\newline
+
+
+Building the library and tests follows the standard build chain via C\+Make\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ../}
+\DoxyCodeLine{make}
+\end{DoxyCode}
+ Unit tests can then be run by executing {\ttfamily make test}\hypertarget{md_components_Classes_simpleson_README_autotoc_md3}{}\doxysubsection{Quickstart}\label{md_components_Classes_simpleson_README_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{// Create the input}}
+\DoxyCodeLine{std::string input = \textcolor{stringliteral}{"\{ \(\backslash\)"hello\(\backslash\)": \(\backslash\)"world\(\backslash\)" \}"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Parse the input}}
+\DoxyCodeLine{\mbox{\hyperlink{classjson_1_1jobject}{json::jobject}} result = json::jobject::parse(input);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Get a value}}
+\DoxyCodeLine{std::string value = (std::string)result.get\_entry(\textcolor{stringliteral}{"hello"}).value}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Add entry}}
+\DoxyCodeLine{json::key\_value\_pair item;}
+\DoxyCodeLine{item.key = \textcolor{stringliteral}{"new\_key"};}
+\DoxyCodeLine{item.value = json::jvalue(123.4);}
+\DoxyCodeLine{result.push\_back(item);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Serialize the new object}}
+\DoxyCodeLine{std::string serial = (std::string)result;}
+\end{DoxyCode}
+\hypertarget{md_components_Classes_simpleson_README_autotoc_md4}{}\doxysubsection{Using simpleson}\label{md_components_Classes_simpleson_README_autotoc_md4}
+The namespace of simpleson is simply {\ttfamily json}. J\+S\+ON objects can be parsed by calling {\ttfamily json\+::jobject\+::parse()}, which returns a {\ttfamily jobject}. The {\ttfamily jobject} class is simply an extension of a vector of \href{\#key-value-pairs}{\texttt{ key-\/value pairs}}. Useful methods of {\ttfamily jobject} include\+:
+\begin{DoxyItemize}
+\item {\ttfamily has\+\_\+key(\char`\"{}key\char`\"{})}
+\item {\ttfamily get\+\_\+keys()}
+\item {\ttfamily get\+\_\+entry(\char`\"{}key\char`\"{})}
+\end{DoxyItemize}
+
+An instance of {\ttfamily jobject} can be searlized by casting it to a {\ttfamily std\+::string}. Note that an instance of {\ttfamily jobject} does not retain it\textquotesingle{}s original formatting (it drops tabs, spaces outside strings, and newlines). ~\newline
+
+
+You can build your own {\ttfamily jobject} from scratch by creating a fresh instance of {\ttfamily jobject} and then pushing ({\ttfamily push\+\_\+back}) key-\/value pairs into it. ~\newline
+\hypertarget{md_components_Classes_simpleson_README_autotoc_md5}{}\doxysubsubsection{A note on booleans}\label{md_components_Classes_simpleson_README_autotoc_md5}
+Booleans are handled a bit differently than other data types. Since everything can be cast to a boolean, having an implicit boolean operator meant everything goes to a boolean! Instead, $\ast$$\ast${\ttfamily jvalue} objects of type {\ttfamily jbool} are created using the {\ttfamily jvalue\+::jbool(const bool)} static method.$\ast$$\ast$ If you do not use this method and instead directly create/assign a boolean to a {\ttfamily jvalue} object, then the boolean will be cast to a {\ttfamily jnumber} type with a value of 0 or 1.\hypertarget{md_components_Classes_simpleson_README_autotoc_md6}{}\doxysubsubsection{Key-\/value pairs}\label{md_components_Classes_simpleson_README_autotoc_md6}
+A key-\/value pair is just that\+: a key and a value; the members {\ttfamily key} and {\ttfamily value} of {\ttfamily json\+::key\+\_\+value\+\_\+pair} are public. The {\ttfamily key} member is simply the string of the key whie the {\ttfamily value} member is a {\ttfamily jvalue} instance. A {\ttfamily jvalue} instance can be casted to {\ttfamily int}, {\ttfamily long}, {\ttfamily double}, {\ttfamily float}, {\ttfamily std\+::string}, and {\ttfamily json\+::jarray} depending on the type of value it holds. ~\newline
+
+
+You can check the type of value by calling {\ttfamily get\+\_\+type()} on the value. ~\newline
+
+
+You can deserialze a nested object by calling {\ttfamily json\+::jobject\+::parse(parent.\+get\+\_\+entry(\char`\"{}child\char`\"{}).value)}. ~\newline
+\hypertarget{md_components_Classes_simpleson_README_autotoc_md7}{}\doxysubsubsection{Arrays}\label{md_components_Classes_simpleson_README_autotoc_md7}
+Simpleson includes a class called {\ttfamily jarray}, which is an extension of a vector of strings. You can create an instance of {\ttfamily jarray} by parsing a string via {\ttfamily json\+::jarray\+::parse(input)}. An instance of {\ttfamily jarray} can also be casted to {\ttfamily std\+::vector$<$int$>$}, {\ttfamily std\+::vector$<$long$>$}, {\ttfamily std\+::vector$<$double$>$}, and {\ttfamily std\+::vector$<$float$>$}. ~\newline
+ 

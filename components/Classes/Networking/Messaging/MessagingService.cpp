@@ -31,9 +31,7 @@ void MessagingService::initMessagingServices() {
 //			.task_prio = 1,
 //			.task_stack = 8192,
 //			.buffer_size = 2048,
-
 	};
-
 
 	MqttService myService = MqttService(mqtt_cfg);
 	this->setMqttService(myService); // pass by copy because myService will be destroyed x
@@ -123,10 +121,9 @@ void MessagingService::printMessage(message mes) {
  */
 void MessagingService::messageReceivedEventHandler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) { // Message Recieved Event Handler
 	esp_mqtt_event_handle_t event = (esp_mqtt_event_handle_t) event_data;
-	printf("Hello from message received event handler\n");
 
-	printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
-	printf("DATA=%.*s\r\n", event->data_len, event->data);
+	ESP_LOGI(MESSAGING_SERVICE, "TOPIC=%.*s\r\n", event->topic_len, event->topic);
+	ESP_LOGI(MESSAGING_SERVICE, "DATA=%.*s\r\n", event->data_len, event->data);
 
 	//char dataBuf[event->data_len];
 	//char topicBuf[event->topic_len];
@@ -134,21 +131,17 @@ void MessagingService::messageReceivedEventHandler(void *handler_args, esp_event
 	char *dataBuf = (char *) malloc((event->data_len+1)*sizeof(char));
 	char *topicBuf = (char *) malloc((event->topic_len+1)*sizeof(char));
 
-
 	sprintf(dataBuf, "%.*s", event->data_len, event->data);
 	sprintf(topicBuf, "%.*s", event->topic_len, event->topic);
 
-	printf("%d\n", event->data_len);
+	std::string topic = std::string(topicBuf);
+	std::string data = std::string(dataBuf);
 
+	message messageToSend = {data, topic, 1}; // CPP struct
+	addMessage(messageToSend); // Passes a copy of the data x
 
-	 std::string topic = std::string(topicBuf);
-	 std::string data = std::string(dataBuf);
-
-	 message messageToSend = {data, topic, 1}; // CPP struct
-	 addMessage(messageToSend); // Passes a copy of the data x
-
-	 free(topicBuf);
-	 free(dataBuf);
+	free(topicBuf);
+	free(dataBuf);
 
 
 }

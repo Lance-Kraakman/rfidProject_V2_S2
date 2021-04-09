@@ -1,0 +1,91 @@
+\hypertarget{classEmployeeModel}{}\doxysection{Employee\+Model Class Reference}
+\label{classEmployeeModel}\index{EmployeeModel@{EmployeeModel}}
+
+
+{\ttfamily \#include $<$Employee\+Model.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEmployeeModel_affce71c022e80f5af820e216687f1687}{Employee\+Model}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classEmployee}{Employee}} $>$ \& \mbox{\hyperlink{classEmployeeModel_a6a445c0b6aae5f9d4d88e068e4dbc327}{get\+Employee\+List}} ()
+\item 
+bool \mbox{\hyperlink{classEmployeeModel_af3aa12d9dd404ed7e112a70c48742be9}{find\+Employee}} (\mbox{\hyperlink{classEmployee}{Employee}} \&employee\+To\+Check)
+\item 
+bool \mbox{\hyperlink{classEmployeeModel_ae966a232e267f4d978ff71fc3aa4c1c5}{update\+Employee\+In\+List}} (\mbox{\hyperlink{classEmployee}{Employee}} Employee\+To\+Update)
+\item 
+\mbox{\hyperlink{classEmployee}{Employee}} \mbox{\hyperlink{classEmployeeModel_a03ed235e371c61f4c880fd56a71a36c2}{employee\+From\+Json}} (c\+J\+S\+ON $\ast$json\+String)
+\item 
+void \mbox{\hyperlink{classEmployeeModel_ac7967206cb1af06ae9afd3de7c6fb43f}{add\+Employee}} (\mbox{\hyperlink{classEmployee}{Employee}} emp)
+\item 
+c\+J\+S\+ON $\ast$ \mbox{\hyperlink{classEmployeeModel_a923edfbc334113b741980c17a65bd99d}{json\+Employee\+List}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classEmployee}{Employee}} $>$ \mbox{\hyperlink{classEmployeeModel_a2fa8511103a639994d43b3cb415ef87b}{employee\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEmployeeModel_affce71c022e80f5af820e216687f1687}\label{classEmployeeModel_affce71c022e80f5af820e216687f1687}} 
+\index{EmployeeModel@{EmployeeModel}!EmployeeModel@{EmployeeModel}}
+\index{EmployeeModel@{EmployeeModel}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{EmployeeModel()}{EmployeeModel()}}
+{\footnotesize\ttfamily Employee\+Model\+::\+Employee\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmployeeModel_ac7967206cb1af06ae9afd3de7c6fb43f}\label{classEmployeeModel_ac7967206cb1af06ae9afd3de7c6fb43f}} 
+\index{EmployeeModel@{EmployeeModel}!addEmployee@{addEmployee}}
+\index{addEmployee@{addEmployee}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
+{\footnotesize\ttfamily void Employee\+Model\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}}}]{emp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployeeModel_a03ed235e371c61f4c880fd56a71a36c2}\label{classEmployeeModel_a03ed235e371c61f4c880fd56a71a36c2}} 
+\index{EmployeeModel@{EmployeeModel}!employeeFromJson@{employeeFromJson}}
+\index{employeeFromJson@{employeeFromJson}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{employeeFromJson()}{employeeFromJson()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEmployee}{Employee}} Employee\+Model\+::employee\+From\+Json (\begin{DoxyParamCaption}\item[{c\+J\+S\+ON $\ast$}]{json\+String }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployeeModel_af3aa12d9dd404ed7e112a70c48742be9}\label{classEmployeeModel_af3aa12d9dd404ed7e112a70c48742be9}} 
+\index{EmployeeModel@{EmployeeModel}!findEmployee@{findEmployee}}
+\index{findEmployee@{findEmployee}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{findEmployee()}{findEmployee()}}
+{\footnotesize\ttfamily bool Employee\+Model\+::find\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}} \&}]{employee\+To\+Check }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployeeModel_a6a445c0b6aae5f9d4d88e068e4dbc327}\label{classEmployeeModel_a6a445c0b6aae5f9d4d88e068e4dbc327}} 
+\index{EmployeeModel@{EmployeeModel}!getEmployeeList@{getEmployeeList}}
+\index{getEmployeeList@{getEmployeeList}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{getEmployeeList()}{getEmployeeList()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classEmployee}{Employee}} $>$ \& Employee\+Model\+::get\+Employee\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEmployeeModel_a923edfbc334113b741980c17a65bd99d}\label{classEmployeeModel_a923edfbc334113b741980c17a65bd99d}} 
+\index{EmployeeModel@{EmployeeModel}!jsonEmployeeList@{jsonEmployeeList}}
+\index{jsonEmployeeList@{jsonEmployeeList}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{jsonEmployeeList()}{jsonEmployeeList()}}
+{\footnotesize\ttfamily c\+J\+S\+ON $\ast$ Employee\+Model\+::json\+Employee\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@\+Warning -\/ It is up to the user to deallocate memory! -\/ (Created with Malloc so must use free()) \mbox{\Hypertarget{classEmployeeModel_ae966a232e267f4d978ff71fc3aa4c1c5}\label{classEmployeeModel_ae966a232e267f4d978ff71fc3aa4c1c5}} 
+\index{EmployeeModel@{EmployeeModel}!updateEmployeeInList@{updateEmployeeInList}}
+\index{updateEmployeeInList@{updateEmployeeInList}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{updateEmployeeInList()}{updateEmployeeInList()}}
+{\footnotesize\ttfamily bool Employee\+Model\+::update\+Employee\+In\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}}}]{Employee\+To\+Update }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEmployeeModel_a2fa8511103a639994d43b3cb415ef87b}\label{classEmployeeModel_a2fa8511103a639994d43b3cb415ef87b}} 
+\index{EmployeeModel@{EmployeeModel}!employeeList@{employeeList}}
+\index{employeeList@{employeeList}!EmployeeModel@{EmployeeModel}}
+\doxysubsubsection{\texorpdfstring{employeeList}{employeeList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classEmployee}{Employee}}$>$ Employee\+Model\+::employee\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+components/\+Classes/\+Employee\+Model/\mbox{\hyperlink{EmployeeModel_8h}{Employee\+Model.\+h}}\item 
+components/\+Classes/\+Employee\+Model/\mbox{\hyperlink{EmployeeModel_8cpp}{Employee\+Model.\+cpp}}\end{DoxyCompactItemize}

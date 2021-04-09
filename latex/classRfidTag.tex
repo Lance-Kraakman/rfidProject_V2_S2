@@ -1,0 +1,158 @@
+\hypertarget{classRfidTag}{}\doxysection{Rfid\+Tag Class Reference}
+\label{classRfidTag}\index{RfidTag@{RfidTag}}
+
+
+{\ttfamily \#include $<$Rfid\+Tag.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRfidTag_ad40cdc9f383ce1fc4b7a2ac522dc149f}{Rfid\+Tag}} ()
+\item 
+\mbox{\hyperlink{classRfidTag_a3a2e0735bbbb8e23351fe658fd36db2c}{Rfid\+Tag}} (int64\+\_\+t \mbox{\hyperlink{classRfidTag_ad3e564b0e99e269f070f1962354ee406}{U\+U\+ID}}, \mbox{\hyperlink{classSntpTime}{Sntp\+Time}} \mbox{\hyperlink{classRfidTag_a1debff52a45043bf5a69367506f68961}{scanned\+Time}}, int64\+\_\+t ms\+Snice\+Startup)
+\item 
+\mbox{\hyperlink{classRfidTag_afac8d951eab6f27e8ec227fb66385fd2}{Rfid\+Tag}} (int64\+\_\+t \mbox{\hyperlink{classRfidTag_ad3e564b0e99e269f070f1962354ee406}{U\+U\+ID}})
+\item 
+void \mbox{\hyperlink{classRfidTag_a09951e2da3abef44b72753ea01c218ee}{set\+U\+U\+ID}} (int64\+\_\+t \mbox{\hyperlink{classRfidTag_ad3e564b0e99e269f070f1962354ee406}{U\+U\+ID}})
+\item 
+int64\+\_\+t \mbox{\hyperlink{classRfidTag_a6d99cc45d46eb5342213a9a66dc5f33d}{get\+U\+U\+ID}} ()
+\item 
+void \mbox{\hyperlink{classRfidTag_a42a91089bc8ceb1888723047553a7701}{update\+Tag\+Scanned\+Time}} ()
+\item 
+void \mbox{\hyperlink{classRfidTag_a8cedfe7d0241c020c5dc7128aded6574}{set\+Scanned\+Time}} (\mbox{\hyperlink{classSntpTime}{Sntp\+Time}} \mbox{\hyperlink{classRfidTag_a1debff52a45043bf5a69367506f68961}{scanned\+Time}})
+\item 
+\mbox{\hyperlink{classSntpTime}{Sntp\+Time}} \mbox{\hyperlink{classRfidTag_a93bad97caf70c2a294be6bf51e53dc46}{get\+Scanned\+Time}} ()
+\item 
+int64\+\_\+t \mbox{\hyperlink{classRfidTag_aa2c1ab3550755be4e197e7d9af7aedcf}{get\+Startup\+Time}} ()
+\item 
+void \mbox{\hyperlink{classRfidTag_adb60e128f1a42ebdb5eb26a3239c4a96}{set\+Startup\+Time}} (int64\+\_\+t startup\+Time)
+\item 
+bool \mbox{\hyperlink{classRfidTag_a7ef5fd597fb4092af361e12697b0efca}{check\+Tag\+Timeout\+Seconds}} (\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} tag\+Two, int max\+Seconds)
+\item 
+bool \mbox{\hyperlink{classRfidTag_acb86f02bfac6172da55c5a11c1a42807}{is\+Empty}} ()
+\item 
+void \mbox{\hyperlink{classRfidTag_ac5003387decad27242e1b8b263f387c4}{print\+Tag}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int64\+\_\+t \mbox{\hyperlink{classRfidTag_ad3e564b0e99e269f070f1962354ee406}{U\+U\+ID}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSntpTime}{Sntp\+Time}} \mbox{\hyperlink{classRfidTag_a1debff52a45043bf5a69367506f68961}{scanned\+Time}}
+\item 
+int64\+\_\+t \mbox{\hyperlink{classRfidTag_a0add947cddad099f263763f4783f6eed}{ms\+Since\+Startup}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRfidTag_ad40cdc9f383ce1fc4b7a2ac522dc149f}\label{classRfidTag_ad40cdc9f383ce1fc4b7a2ac522dc149f}} 
+\index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
+\index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{RfidTag()}{RfidTag()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Rfid\+Tag\+::\+Rfid\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_a3a2e0735bbbb8e23351fe658fd36db2c}\label{classRfidTag_a3a2e0735bbbb8e23351fe658fd36db2c}} 
+\index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
+\index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{RfidTag()}{RfidTag()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Rfid\+Tag\+::\+Rfid\+Tag (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{U\+U\+ID,  }\item[{\mbox{\hyperlink{classSntpTime}{Sntp\+Time}}}]{scanned\+Time,  }\item[{int64\+\_\+t}]{ms\+Snice\+Startup }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_afac8d951eab6f27e8ec227fb66385fd2}\label{classRfidTag_afac8d951eab6f27e8ec227fb66385fd2}} 
+\index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
+\index{RfidTag@{RfidTag}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{RfidTag()}{RfidTag()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Rfid\+Tag\+::\+Rfid\+Tag (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{U\+U\+ID }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRfidTag_a7ef5fd597fb4092af361e12697b0efca}\label{classRfidTag_a7ef5fd597fb4092af361e12697b0efca}} 
+\index{RfidTag@{RfidTag}!checkTagTimeoutSeconds@{checkTagTimeoutSeconds}}
+\index{checkTagTimeoutSeconds@{checkTagTimeoutSeconds}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{checkTagTimeoutSeconds()}{checkTagTimeoutSeconds()}}
+{\footnotesize\ttfamily bool Rfid\+Tag\+::check\+Tag\+Timeout\+Seconds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag\+Two,  }\item[{int}]{max\+Seconds }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_a93bad97caf70c2a294be6bf51e53dc46}\label{classRfidTag_a93bad97caf70c2a294be6bf51e53dc46}} 
+\index{RfidTag@{RfidTag}!getScannedTime@{getScannedTime}}
+\index{getScannedTime@{getScannedTime}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{getScannedTime()}{getScannedTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSntpTime}{Sntp\+Time}} Rfid\+Tag\+::get\+Scanned\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_aa2c1ab3550755be4e197e7d9af7aedcf}\label{classRfidTag_aa2c1ab3550755be4e197e7d9af7aedcf}} 
+\index{RfidTag@{RfidTag}!getStartupTime@{getStartupTime}}
+\index{getStartupTime@{getStartupTime}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{getStartupTime()}{getStartupTime()}}
+{\footnotesize\ttfamily int64\+\_\+t Rfid\+Tag\+::get\+Startup\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_a6d99cc45d46eb5342213a9a66dc5f33d}\label{classRfidTag_a6d99cc45d46eb5342213a9a66dc5f33d}} 
+\index{RfidTag@{RfidTag}!getUUID@{getUUID}}
+\index{getUUID@{getUUID}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{getUUID()}{getUUID()}}
+{\footnotesize\ttfamily int64\+\_\+t Rfid\+Tag\+::get\+U\+U\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_acb86f02bfac6172da55c5a11c1a42807}\label{classRfidTag_acb86f02bfac6172da55c5a11c1a42807}} 
+\index{RfidTag@{RfidTag}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Rfid\+Tag\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_ac5003387decad27242e1b8b263f387c4}\label{classRfidTag_ac5003387decad27242e1b8b263f387c4}} 
+\index{RfidTag@{RfidTag}!printTag@{printTag}}
+\index{printTag@{printTag}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{printTag()}{printTag()}}
+{\footnotesize\ttfamily void Rfid\+Tag\+::print\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_a8cedfe7d0241c020c5dc7128aded6574}\label{classRfidTag_a8cedfe7d0241c020c5dc7128aded6574}} 
+\index{RfidTag@{RfidTag}!setScannedTime@{setScannedTime}}
+\index{setScannedTime@{setScannedTime}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{setScannedTime()}{setScannedTime()}}
+{\footnotesize\ttfamily void Rfid\+Tag\+::set\+Scanned\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSntpTime}{Sntp\+Time}}}]{scanned\+Time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_adb60e128f1a42ebdb5eb26a3239c4a96}\label{classRfidTag_adb60e128f1a42ebdb5eb26a3239c4a96}} 
+\index{RfidTag@{RfidTag}!setStartupTime@{setStartupTime}}
+\index{setStartupTime@{setStartupTime}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{setStartupTime()}{setStartupTime()}}
+{\footnotesize\ttfamily void Rfid\+Tag\+::set\+Startup\+Time (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{startup\+Time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_a09951e2da3abef44b72753ea01c218ee}\label{classRfidTag_a09951e2da3abef44b72753ea01c218ee}} 
+\index{RfidTag@{RfidTag}!setUUID@{setUUID}}
+\index{setUUID@{setUUID}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{setUUID()}{setUUID()}}
+{\footnotesize\ttfamily void Rfid\+Tag\+::set\+U\+U\+ID (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{U\+U\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRfidTag_a42a91089bc8ceb1888723047553a7701}\label{classRfidTag_a42a91089bc8ceb1888723047553a7701}} 
+\index{RfidTag@{RfidTag}!updateTagScannedTime@{updateTagScannedTime}}
+\index{updateTagScannedTime@{updateTagScannedTime}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{updateTagScannedTime()}{updateTagScannedTime()}}
+{\footnotesize\ttfamily void Rfid\+Tag\+::update\+Tag\+Scanned\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRfidTag_a0add947cddad099f263763f4783f6eed}\label{classRfidTag_a0add947cddad099f263763f4783f6eed}} 
+\index{RfidTag@{RfidTag}!msSinceStartup@{msSinceStartup}}
+\index{msSinceStartup@{msSinceStartup}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{msSinceStartup}{msSinceStartup}}
+{\footnotesize\ttfamily int64\+\_\+t Rfid\+Tag\+::ms\+Since\+Startup\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRfidTag_a1debff52a45043bf5a69367506f68961}\label{classRfidTag_a1debff52a45043bf5a69367506f68961}} 
+\index{RfidTag@{RfidTag}!scannedTime@{scannedTime}}
+\index{scannedTime@{scannedTime}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{scannedTime}{scannedTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSntpTime}{Sntp\+Time}} Rfid\+Tag\+::scanned\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classRfidTag_ad3e564b0e99e269f070f1962354ee406}\label{classRfidTag_ad3e564b0e99e269f070f1962354ee406}} 
+\index{RfidTag@{RfidTag}!UUID@{UUID}}
+\index{UUID@{UUID}!RfidTag@{RfidTag}}
+\doxysubsubsection{\texorpdfstring{UUID}{UUID}}
+{\footnotesize\ttfamily int64\+\_\+t Rfid\+Tag\+::\+U\+U\+ID}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+components/\+Classes/\+Rfid\+Tag/\mbox{\hyperlink{RfidTag_8h}{Rfid\+Tag.\+h}}\item 
+components/\+Classes/\+Rfid\+Tag/\mbox{\hyperlink{RfidTag_8cpp}{Rfid\+Tag.\+cpp}}\end{DoxyCompactItemize}

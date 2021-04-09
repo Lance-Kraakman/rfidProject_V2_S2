@@ -7,7 +7,9 @@
 #include "../../Networking/Wifi/Wifi.h"
 #include "../../Networking/Messaging/MessagingService.h"
 #include "../../Employee/Employee.h"
+#include "../../EmployeeModel/EmployeeModel.h"
 #include "../../Device/Device.h"
+#include "../../DeviceModel/DeviceModel.h"
 #include "../../MyTime/SntpTime.h"
 #include <vector>
 #include <algorithm>
@@ -25,15 +27,14 @@ class DataProcessing {
 private:
 	Wifi WifiHandler;
 	MessagingService messagingService;
-	std::vector<Employee> *employeeListPtr;
-	std::vector<Device> *deviceListPtr;
+	EmployeeModel employees;
+	DeviceModel devices;
 	SntpTime globalTime;
 
 	message recvdMessage;
 	void commandReceived();
 public:
 	DataProcessing();
-	DataProcessing(std::vector<Employee> *employeeListPtr, std::vector<Device> *deviceListPtr);
 	void init();
 	void doMessageProcessing();
 	MessagingService getMessagingService();
@@ -43,10 +44,9 @@ public:
 	void addDevice();
 	void addEmployee();
 
-	bool findDevice(Device& deviceToCheck);
-	bool findEmployee(Employee& employeeToCheck);
-	bool updateDeviceInList(Device deviceToUpdate);
-	bool updateEmployeeInList(Employee EmployeeToUpdate);
+	EmployeeModel& getEmployeeModel();
+	DeviceModel& getDeviceModel();
+
 	void printLists();
 };
 

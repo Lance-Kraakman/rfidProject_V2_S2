@@ -36,17 +36,21 @@ void TagProcessing::doProcessing() {
 				Device searchDevice = Device(recvdTag);
 
 				// Finds and updates Device if tag is a device tag
-				if (this->dataProcessor->findDevice(searchDevice)) {
+				if (this->dataProcessor->getDeviceModel().findDevice(searchDevice)) {
+					ESP_LOGV(TAG_PROCESSING, "---found device----");
 					this->deviceIsFound(searchDevice,recvdTag);
 				}
-				else if (this->dataProcessor->findEmployee(searchEmployee)) // finds the employee if the tag is an employee tag
+				else if (this->dataProcessor->getEmployeeModel().findEmployee(searchEmployee)) // finds the employee if the tag is an employee tag
 				{
+					ESP_LOGV(TAG_PROCESSING, "---found employee----");
 					this->foundEmployee(searchEmployee, recvdTag); // Finds and updates employee if found
 				}
 				else
 				{
 					this->sendConfigRequest(searchEmployee); // Request dataProcessor configuration
 				}
+				this->dataProcessor->printLists();
+
 			}
 		}
 		previousTag = recvdTag; // Updated the previos tag
@@ -62,7 +66,7 @@ void TagProcessing::deviceIsFound(Device& searchDevice, RfidTag& recvdTag) {
 	// check if device has an employee, remove employee if so.
 	searchDevice.setHasEmployee(false);
 	searchDevice.setEmployee(Employee());
-	this->dataProcessor->updateDeviceInList(searchDevice);
+	this->dataProcessor->getDeviceModel().updateDeviceInList(searchDevice);
 
 	// add employee to device if there is an active employee.
 	if (searchDevice.getTag().checkTagTimeoutSeconds(this->previousEmployee.getTag(), MAX_SECONDS)) {
@@ -80,27 +84,26 @@ void TagProcessing::deviceIsFound(Device& searchDevice, RfidTag& recvdTag) {
 void TagProcessing::empIsActive(Device& searchDevice) {
 	// set the employee as active
 	this->previousEmployee.setActive(false);
-	this->dataProcessor->updateEmployeeInList(this->previousEmployee);
+	this->dataProcessor->getEmployeeModel().updateEmployeeInList(this->previousEmployee);
 
 	// Add the employee to the device
 	searchDevice.setHasEmployee(true);
 	searchDevice.setEmployee(this->previousEmployee);
-	this->dataProcessor->updateDeviceInList(searchDevice);
+	this->dataProcessor->getDeviceModel().updateDeviceInList(searchDevice);
 }
 
 void TagProcessing::foundEmployee(Employee& searchEmployee, RfidTag& recvdTag) {
 	this->previousEmployee = searchEmployee;
 	this->previousEmployee.setActive(true); // activate the employee
 	this->previousEmployee.setTag(recvdTag); //update the tag
-	ESP_LOGI(TAG_PROCESSING, "1");
 	this->previousEmployee.printEmployee();
-	this->dataProcessor->updateEmployeeInList(this->previousEmployee);
+	this->dataProcessor->getEmployeeModel().updateEmployeeInList(this->previousEmployee);
 }
 
 void TagProcessing::scanTimeout() {
 	ESP_LOGI(TAG_PROCESSING, "TOOK TO LONG TO SCAN");
 	this->previousEmployee.setActive(false); // if taken to long to scan, reset the employee
-	this->dataProcessor->updateEmployeeInList(this->previousEmployee);
+	this->dataProcessor->getEmployeeModel().updateEmployeeInList(this->previousEmployee);
 }
 
 void TagProcessing::sendConfigRequest(Employee& emp) {

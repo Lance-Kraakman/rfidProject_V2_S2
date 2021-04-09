@@ -15,7 +15,7 @@
 ########################
 
 //No help, variable specified on the command line.
-CCACHE_ENABLE:UNINITIALIZED=1
+CCACHE_ENABLE:UNINITIALIZED=0
 
 //Path to a program.
 CCACHE_FOUND:FILEPATH=/usr/bin/ccache
@@ -241,6 +241,9 @@ ENABLE_TESTING:BOOL=
 //Build mbed TLS with zlib library.
 ENABLE_ZLIB_SUPPORT:BOOL=OFF
 
+//No help, variable specified on the command line.
+ESP_PLATFORM:UNINITIALIZED=1
+
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
@@ -255,6 +258,9 @@ LINK_WITH_PTHREAD:BOOL=OFF
 
 //Path to a program.
 PERL_EXECUTABLE:FILEPATH=/usr/bin/perl
+
+//No help, variable specified on the command line.
+PYTHON_DEPS_CHECKED:UNINITIALIZED=1
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/home/lance/.espressif/python_env/idf4.3_py3.8_env/bin/python
@@ -761,7 +767,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=134
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

@@ -1,0 +1,107 @@
+\hypertarget{networkProcessor_8h}{}\doxysection{components/\+Processing/network\+Processing/network\+Processor.h File Reference}
+\label{networkProcessor_8h}\index{components/Processing/networkProcessing/networkProcessor.h@{components/Processing/networkProcessing/networkProcessor.h}}
+{\ttfamily \#include $<$esp\+\_\+wifi.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+event.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+log.\+h$>$}\newline
+{\ttfamily \#include $<$esp\+\_\+system.\+h$>$}\newline
+{\ttfamily \#include $<$nvs\+\_\+flash.\+h$>$}\newline
+{\ttfamily \#include $<$sys/param.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+netif.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+eth.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protocol\+\_\+examples\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mdns.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lwip/apps/netbiosns.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}c\+J\+S\+O\+N.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$esp\+\_\+https\+\_\+server.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../input\+Processing/input\+Processor.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{networkProcessor_8h_aab9578f9ad6b6279d30236289a905566}{T\+A\+G\+\_\+\+NP}}~\char`\"{}N\+E\+T\+W\+O\+RK P\+R\+O\+C\+E\+S\+S\+OR\char`\"{}
+\item 
+\#define \mbox{\hyperlink{networkProcessor_8h_a621b70fe5ac83e08ede081359a774ced}{C\+O\+N\+F\+I\+G\+\_\+\+B\+R\+O\+K\+E\+R\+\_\+\+L\+O\+C\+AL}}~\char`\"{}mqtt\+://192.\+168.\+1.\+73\+:1883\char`\"{}
+\item 
+\#define \mbox{\hyperlink{networkProcessor_8h_ac88e380ecad5ddb165b4bb874a6ba046}{C\+O\+N\+F\+I\+G\+\_\+\+B\+R\+O\+K\+E\+R\+\_\+\+N\+O\+T\+\_\+\+L\+O\+C\+AL}}~\char`\"{}mqtt\+://mqtt.\+eclipseprojects.\+io\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{networkProcessor_8h_a9dce377097345655a7bcdb5b934aa86f}{start\+Network\+Processor}} ()
+\item 
+void \mbox{\hyperlink{networkProcessor_8h_a2ec1ca1c46c5142fe41092414817223d}{config\+Network}} ()
+\item 
+void \mbox{\hyperlink{networkProcessor_8h_a38e4c26e2894ab61e8d63f98bf1aaed8}{start\+\_\+mdns\+\_\+service}} ()
+\item 
+void \mbox{\hyperlink{networkProcessor_8h_af5f16e4ea5a80be6c383f72d4b72df4d}{refresh\+\_\+mdns\+\_\+service}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{networkProcessor_8h_a6fadd958439ed733b99590f8966f416d}{get\+Tags\+From\+Queue}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+x\+Queue\+Handle \mbox{\hyperlink{networkProcessor_8h_a1ea243fe35104927212debaa78b0d83b}{x\+Queue\+Rfid}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{networkProcessor_8h_a621b70fe5ac83e08ede081359a774ced}\label{networkProcessor_8h_a621b70fe5ac83e08ede081359a774ced}} 
+\index{networkProcessor.h@{networkProcessor.h}!CONFIG\_BROKER\_LOCAL@{CONFIG\_BROKER\_LOCAL}}
+\index{CONFIG\_BROKER\_LOCAL@{CONFIG\_BROKER\_LOCAL}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_BROKER\_LOCAL}{CONFIG\_BROKER\_LOCAL}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+B\+R\+O\+K\+E\+R\+\_\+\+L\+O\+C\+AL~\char`\"{}mqtt\+://192.\+168.\+1.\+73\+:1883\char`\"{}}
+
+\mbox{\Hypertarget{networkProcessor_8h_ac88e380ecad5ddb165b4bb874a6ba046}\label{networkProcessor_8h_ac88e380ecad5ddb165b4bb874a6ba046}} 
+\index{networkProcessor.h@{networkProcessor.h}!CONFIG\_BROKER\_NOT\_LOCAL@{CONFIG\_BROKER\_NOT\_LOCAL}}
+\index{CONFIG\_BROKER\_NOT\_LOCAL@{CONFIG\_BROKER\_NOT\_LOCAL}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_BROKER\_NOT\_LOCAL}{CONFIG\_BROKER\_NOT\_LOCAL}}
+{\footnotesize\ttfamily \#define C\+O\+N\+F\+I\+G\+\_\+\+B\+R\+O\+K\+E\+R\+\_\+\+N\+O\+T\+\_\+\+L\+O\+C\+AL~\char`\"{}mqtt\+://mqtt.\+eclipseprojects.\+io\char`\"{}}
+
+\mbox{\Hypertarget{networkProcessor_8h_aab9578f9ad6b6279d30236289a905566}\label{networkProcessor_8h_aab9578f9ad6b6279d30236289a905566}} 
+\index{networkProcessor.h@{networkProcessor.h}!TAG\_NP@{TAG\_NP}}
+\index{TAG\_NP@{TAG\_NP}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{TAG\_NP}{TAG\_NP}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+NP~\char`\"{}N\+E\+T\+W\+O\+RK P\+R\+O\+C\+E\+S\+S\+OR\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{networkProcessor_8h_a2ec1ca1c46c5142fe41092414817223d}\label{networkProcessor_8h_a2ec1ca1c46c5142fe41092414817223d}} 
+\index{networkProcessor.h@{networkProcessor.h}!configNetwork@{configNetwork}}
+\index{configNetwork@{configNetwork}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{configNetwork()}{configNetwork()}}
+{\footnotesize\ttfamily void config\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8h_a6fadd958439ed733b99590f8966f416d}\label{networkProcessor_8h_a6fadd958439ed733b99590f8966f416d}} 
+\index{networkProcessor.h@{networkProcessor.h}!getTagsFromQueue@{getTagsFromQueue}}
+\index{getTagsFromQueue@{getTagsFromQueue}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{getTagsFromQueue()}{getTagsFromQueue()}}
+{\footnotesize\ttfamily char$\ast$ get\+Tags\+From\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8h_af5f16e4ea5a80be6c383f72d4b72df4d}\label{networkProcessor_8h_af5f16e4ea5a80be6c383f72d4b72df4d}} 
+\index{networkProcessor.h@{networkProcessor.h}!refresh\_mdns\_service@{refresh\_mdns\_service}}
+\index{refresh\_mdns\_service@{refresh\_mdns\_service}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{refresh\_mdns\_service()}{refresh\_mdns\_service()}}
+{\footnotesize\ttfamily void refresh\+\_\+mdns\+\_\+service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8h_a38e4c26e2894ab61e8d63f98bf1aaed8}\label{networkProcessor_8h_a38e4c26e2894ab61e8d63f98bf1aaed8}} 
+\index{networkProcessor.h@{networkProcessor.h}!start\_mdns\_service@{start\_mdns\_service}}
+\index{start\_mdns\_service@{start\_mdns\_service}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{start\_mdns\_service()}{start\_mdns\_service()}}
+{\footnotesize\ttfamily void start\+\_\+mdns\+\_\+service (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8h_a9dce377097345655a7bcdb5b934aa86f}\label{networkProcessor_8h_a9dce377097345655a7bcdb5b934aa86f}} 
+\index{networkProcessor.h@{networkProcessor.h}!startNetworkProcessor@{startNetworkProcessor}}
+\index{startNetworkProcessor@{startNetworkProcessor}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{startNetworkProcessor()}{startNetworkProcessor()}}
+{\footnotesize\ttfamily void start\+Network\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{networkProcessor_8h_a1ea243fe35104927212debaa78b0d83b}\label{networkProcessor_8h_a1ea243fe35104927212debaa78b0d83b}} 
+\index{networkProcessor.h@{networkProcessor.h}!xQueueRfid@{xQueueRfid}}
+\index{xQueueRfid@{xQueueRfid}!networkProcessor.h@{networkProcessor.h}}
+\doxysubsubsection{\texorpdfstring{xQueueRfid}{xQueueRfid}}
+{\footnotesize\ttfamily x\+Queue\+Handle x\+Queue\+Rfid}
+

@@ -63,3 +63,4 @@ void Device::printDevice() {
 			this->getTag().getUUID(), this->hasEmployee(), this->getEmployee().getName().c_str());
 }
 
+

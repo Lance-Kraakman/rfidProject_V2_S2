@@ -1,0 +1,65 @@
+\hypertarget{classjson_1_1jobject}{}\doxysection{json\+::jobject Class Reference}
+\label{classjson_1_1jobject}\index{json::jobject@{json::jobject}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a4879f57bf3cd03d94ed33afca1541e9b}\label{classjson_1_1jobject_a4879f57bf3cd03d94ed33afca1541e9b}} 
+size\+\_\+t {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a572a77e9659b2a3f73b576ee3fb4dcfb}\label{classjson_1_1jobject_a572a77e9659b2a3f73b576ee3fb4dcfb}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a8698eba5ddb88d595763d5d11cc2fd98}\label{classjson_1_1jobject_a8698eba5ddb88d595763d5d11cc2fd98}} 
+\mbox{\hyperlink{classjson_1_1jobject}{jobject}} \& {\bfseries operator+=} (const kvp \&other)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_aaa4d242c864f9aaf8008998f102b3a6b}\label{classjson_1_1jobject_aaa4d242c864f9aaf8008998f102b3a6b}} 
+\mbox{\hyperlink{classjson_1_1jobject}{jobject}} \& {\bfseries operator+=} (\mbox{\hyperlink{classjson_1_1jobject}{jobject}} \&other)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a4aa5b38a7def6dcf002ac39af2b782a2}\label{classjson_1_1jobject_a4aa5b38a7def6dcf002ac39af2b782a2}} 
+\mbox{\hyperlink{classjson_1_1jobject}{jobject}} \& {\bfseries operator+=} (const \mbox{\hyperlink{classjson_1_1jobject}{jobject}} \&other)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_acb8b5f324d47ec14da01b5b79bb4a63b}\label{classjson_1_1jobject_acb8b5f324d47ec14da01b5b79bb4a63b}} 
+\mbox{\hyperlink{classjson_1_1jobject}{jobject}} {\bfseries operator+} (\mbox{\hyperlink{classjson_1_1jobject}{jobject}} \&other)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_ab942b939acabe06ac1164d18a8135261}\label{classjson_1_1jobject_ab942b939acabe06ac1164d18a8135261}} 
+bool {\bfseries has\+\_\+key} (const std\+::string \&key) const
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a0f46648e98ac477819d189c2a150ce1e}\label{classjson_1_1jobject_a0f46648e98ac477819d189c2a150ce1e}} 
+void {\bfseries set} (const std\+::string \&key, const std\+::string \&value)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_abc608134bfa25a2f471ba2aa5f8efdcd}\label{classjson_1_1jobject_abc608134bfa25a2f471ba2aa5f8efdcd}} 
+std\+::string {\bfseries get} (const std\+::string \&key) const
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_ac33e06ca15a66dcfbe5c8b6581c3fef9}\label{classjson_1_1jobject_ac33e06ca15a66dcfbe5c8b6581c3fef9}} 
+void {\bfseries remove} (const std\+::string \&key)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_afd7ab486b2a39778f4e8fe071afa8171}\label{classjson_1_1jobject_afd7ab486b2a39778f4e8fe071afa8171}} 
+virtual jobject\+::proxy {\bfseries operator\mbox{[}$\,$\mbox{]}} (const std\+::string key)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a2c9164e293d1506788bca1f0e9b13e90}\label{classjson_1_1jobject_a2c9164e293d1506788bca1f0e9b13e90}} 
+virtual const jobject\+::const\+\_\+proxy {\bfseries operator\mbox{[}$\,$\mbox{]}} (const std\+::string key) const
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_ae13ac44f3b43413a3c97a43cada8181d}\label{classjson_1_1jobject_ae13ac44f3b43413a3c97a43cada8181d}} 
+{\bfseries operator std\+::string} () const
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_abe7a008e50f0bc99dc4132fcfc550558}\label{classjson_1_1jobject_abe7a008e50f0bc99dc4132fcfc550558}} 
+std\+::string {\bfseries as\+\_\+string} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a07e29a2948df56e3eb332fcebe6ab9d5}\label{classjson_1_1jobject_a07e29a2948df56e3eb332fcebe6ab9d5}} 
+static \mbox{\hyperlink{classjson_1_1jobject}{jobject}} {\bfseries parse} (const char $\ast$input)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a6fb0b4dab78281f18cbfa2eef8ad1368}\label{classjson_1_1jobject_a6fb0b4dab78281f18cbfa2eef8ad1368}} 
+static \mbox{\hyperlink{classjson_1_1jobject}{jobject}} {\bfseries parse} (const std\+::string input)
+\item 
+\mbox{\Hypertarget{classjson_1_1jobject_a1049cbcf6dc1ebcd17fa8c3d21af3bd3}\label{classjson_1_1jobject_a1049cbcf6dc1ebcd17fa8c3d21af3bd3}} 
+static bool {\bfseries tryparse} (const char $\ast$input, \mbox{\hyperlink{classjson_1_1jobject}{jobject}} \&output)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+components/\+Classes/simpleson/json.\+h\item 
+components/\+Classes/simpleson/json.\+cpp\end{DoxyCompactItemize}

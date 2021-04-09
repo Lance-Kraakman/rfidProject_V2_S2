@@ -1,0 +1,127 @@
+\hypertarget{networkProcessor_8c}{}\doxysection{components/\+Processing/network\+Processing/network\+Processor.c File Reference}
+\label{networkProcessor_8c}\index{components/Processing/networkProcessing/networkProcessor.c@{components/Processing/networkProcessing/networkProcessor.c}}
+{\ttfamily \#include \char`\"{}network\+Processor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}protocol\+\_\+examples\+\_\+common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mqtt\+\_\+client.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{networkProcessor_8c_ad604d308f34f1851327adbf853e6a341}{M\+I\+N\+\_\+\+T\+A\+G\+\_\+\+T\+I\+M\+E\+\_\+\+M\+I\+C\+R\+O\+S\+E\+C\+O\+N\+DS}}~1000000
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{networkProcessor_8c_a8f7a2106cd5f9b63bf9fbb33fa9dfb84}{process\+Server\+Data}} (void $\ast$arg)
+\item 
+void \mbox{\hyperlink{networkProcessor_8c_a10f948655261670670929c0b7162f1ac}{send\+Data\+Mqtt}} (void $\ast$arg)
+\item 
+void \mbox{\hyperlink{networkProcessor_8c_a2950a013ed44c581821653da8ea66c27}{resolve\+\_\+mdns\+\_\+host}} (const char $\ast$host\+\_\+name)
+\item 
+void \mbox{\hyperlink{networkProcessor_8c_a9dce377097345655a7bcdb5b934aa86f}{start\+Network\+Processor}} ()
+\item 
+static void \mbox{\hyperlink{networkProcessor_8c_a7f8a15d29ffe1832250f92032705ddd6}{log\+\_\+error\+\_\+if\+\_\+nonzero}} (const char $\ast$\mbox{\hyperlink{structmessage}{message}}, int error\+\_\+code)
+\item 
+static void \mbox{\hyperlink{networkProcessor_8c_aa52dab722f8622a7067617397f9c7d88}{mqtt\+\_\+event\+\_\+handler}} (void $\ast$handler\+\_\+args, esp\+\_\+event\+\_\+base\+\_\+t base, int32\+\_\+t event\+\_\+id, void $\ast$event\+\_\+data)
+\item 
+static void \mbox{\hyperlink{networkProcessor_8c_ac97a521a4e5ce8d9dfae72ade13b2133}{mqtt\+\_\+app\+\_\+start}} (void)
+\item 
+void \mbox{\hyperlink{networkProcessor_8c_a2ec1ca1c46c5142fe41092414817223d}{config\+Network}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \mbox{\hyperlink{networkProcessor_8c_acbf0755e7212a326390c7842fcd8f1f3}{rfid\+Data\+Buffer}} = N\+U\+LL
+\item 
+static x\+Semaphore\+Handle \mbox{\hyperlink{networkProcessor_8c_a2a631b60c1aef91ac6bca993c18a54af}{x\+Sem\+Data\+Sent}} = N\+U\+LL
+\item 
+static esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t \mbox{\hyperlink{networkProcessor_8c_a079567aa85481c2c828fc6b36074db10}{client}} = N\+U\+LL
+\item 
+static int \mbox{\hyperlink{networkProcessor_8c_a06b1586289037b73360b3bac3d3c3b17}{desktop\+\_\+app\+\_\+listening}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{networkProcessor_8c_ad604d308f34f1851327adbf853e6a341}\label{networkProcessor_8c_ad604d308f34f1851327adbf853e6a341}} 
+\index{networkProcessor.c@{networkProcessor.c}!MIN\_TAG\_TIME\_MICROSECONDS@{MIN\_TAG\_TIME\_MICROSECONDS}}
+\index{MIN\_TAG\_TIME\_MICROSECONDS@{MIN\_TAG\_TIME\_MICROSECONDS}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_TAG\_TIME\_MICROSECONDS}{MIN\_TAG\_TIME\_MICROSECONDS}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+T\+A\+G\+\_\+\+T\+I\+M\+E\+\_\+\+M\+I\+C\+R\+O\+S\+E\+C\+O\+N\+DS~1000000}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{networkProcessor_8c_a2ec1ca1c46c5142fe41092414817223d}\label{networkProcessor_8c_a2ec1ca1c46c5142fe41092414817223d}} 
+\index{networkProcessor.c@{networkProcessor.c}!configNetwork@{configNetwork}}
+\index{configNetwork@{configNetwork}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{configNetwork()}{configNetwork()}}
+{\footnotesize\ttfamily void config\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8c_a7f8a15d29ffe1832250f92032705ddd6}\label{networkProcessor_8c_a7f8a15d29ffe1832250f92032705ddd6}} 
+\index{networkProcessor.c@{networkProcessor.c}!log\_error\_if\_nonzero@{log\_error\_if\_nonzero}}
+\index{log\_error\_if\_nonzero@{log\_error\_if\_nonzero}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{log\_error\_if\_nonzero()}{log\_error\_if\_nonzero()}}
+{\footnotesize\ttfamily static void log\+\_\+error\+\_\+if\+\_\+nonzero (\begin{DoxyParamCaption}\item[{const char $\ast$}]{message,  }\item[{int}]{error\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{networkProcessor_8c_ac97a521a4e5ce8d9dfae72ade13b2133}\label{networkProcessor_8c_ac97a521a4e5ce8d9dfae72ade13b2133}} 
+\index{networkProcessor.c@{networkProcessor.c}!mqtt\_app\_start@{mqtt\_app\_start}}
+\index{mqtt\_app\_start@{mqtt\_app\_start}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{mqtt\_app\_start()}{mqtt\_app\_start()}}
+{\footnotesize\ttfamily static void mqtt\+\_\+app\+\_\+start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{networkProcessor_8c_aa52dab722f8622a7067617397f9c7d88}\label{networkProcessor_8c_aa52dab722f8622a7067617397f9c7d88}} 
+\index{networkProcessor.c@{networkProcessor.c}!mqtt\_event\_handler@{mqtt\_event\_handler}}
+\index{mqtt\_event\_handler@{mqtt\_event\_handler}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{mqtt\_event\_handler()}{mqtt\_event\_handler()}}
+{\footnotesize\ttfamily static void mqtt\+\_\+event\+\_\+handler (\begin{DoxyParamCaption}\item[{void $\ast$}]{handler\+\_\+args,  }\item[{esp\+\_\+event\+\_\+base\+\_\+t}]{base,  }\item[{int32\+\_\+t}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{networkProcessor_8c_a8f7a2106cd5f9b63bf9fbb33fa9dfb84}\label{networkProcessor_8c_a8f7a2106cd5f9b63bf9fbb33fa9dfb84}} 
+\index{networkProcessor.c@{networkProcessor.c}!processServerData@{processServerData}}
+\index{processServerData@{processServerData}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{processServerData()}{processServerData()}}
+{\footnotesize\ttfamily void process\+Server\+Data (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8c_a2950a013ed44c581821653da8ea66c27}\label{networkProcessor_8c_a2950a013ed44c581821653da8ea66c27}} 
+\index{networkProcessor.c@{networkProcessor.c}!resolve\_mdns\_host@{resolve\_mdns\_host}}
+\index{resolve\_mdns\_host@{resolve\_mdns\_host}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{resolve\_mdns\_host()}{resolve\_mdns\_host()}}
+{\footnotesize\ttfamily void resolve\+\_\+mdns\+\_\+host (\begin{DoxyParamCaption}\item[{const char $\ast$}]{host\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8c_a10f948655261670670929c0b7162f1ac}\label{networkProcessor_8c_a10f948655261670670929c0b7162f1ac}} 
+\index{networkProcessor.c@{networkProcessor.c}!sendDataMqtt@{sendDataMqtt}}
+\index{sendDataMqtt@{sendDataMqtt}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{sendDataMqtt()}{sendDataMqtt()}}
+{\footnotesize\ttfamily void send\+Data\+Mqtt (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{networkProcessor_8c_a9dce377097345655a7bcdb5b934aa86f}\label{networkProcessor_8c_a9dce377097345655a7bcdb5b934aa86f}} 
+\index{networkProcessor.c@{networkProcessor.c}!startNetworkProcessor@{startNetworkProcessor}}
+\index{startNetworkProcessor@{startNetworkProcessor}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{startNetworkProcessor()}{startNetworkProcessor()}}
+{\footnotesize\ttfamily void start\+Network\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{networkProcessor_8c_a079567aa85481c2c828fc6b36074db10}\label{networkProcessor_8c_a079567aa85481c2c828fc6b36074db10}} 
+\index{networkProcessor.c@{networkProcessor.c}!client@{client}}
+\index{client@{client}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{client}{client}}
+{\footnotesize\ttfamily esp\+\_\+mqtt\+\_\+client\+\_\+handle\+\_\+t client = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{networkProcessor_8c_a06b1586289037b73360b3bac3d3c3b17}\label{networkProcessor_8c_a06b1586289037b73360b3bac3d3c3b17}} 
+\index{networkProcessor.c@{networkProcessor.c}!desktop\_app\_listening@{desktop\_app\_listening}}
+\index{desktop\_app\_listening@{desktop\_app\_listening}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{desktop\_app\_listening}{desktop\_app\_listening}}
+{\footnotesize\ttfamily int desktop\+\_\+app\+\_\+listening = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{networkProcessor_8c_acbf0755e7212a326390c7842fcd8f1f3}\label{networkProcessor_8c_acbf0755e7212a326390c7842fcd8f1f3}} 
+\index{networkProcessor.c@{networkProcessor.c}!rfidDataBuffer@{rfidDataBuffer}}
+\index{rfidDataBuffer@{rfidDataBuffer}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{rfidDataBuffer}{rfidDataBuffer}}
+{\footnotesize\ttfamily char$\ast$ rfid\+Data\+Buffer = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{networkProcessor_8c_a2a631b60c1aef91ac6bca993c18a54af}\label{networkProcessor_8c_a2a631b60c1aef91ac6bca993c18a54af}} 
+\index{networkProcessor.c@{networkProcessor.c}!xSemDataSent@{xSemDataSent}}
+\index{xSemDataSent@{xSemDataSent}!networkProcessor.c@{networkProcessor.c}}
+\doxysubsubsection{\texorpdfstring{xSemDataSent}{xSemDataSent}}
+{\footnotesize\ttfamily x\+Semaphore\+Handle x\+Sem\+Data\+Sent = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+

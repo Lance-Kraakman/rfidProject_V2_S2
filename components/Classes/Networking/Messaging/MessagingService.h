@@ -20,6 +20,11 @@ typedef struct {
 	int recvd;
 } message;
 
+/*! \brief
+ *         Provides an abstraction layer for networking and messaging
+ *
+ *  Detailed description starts here.
+ */
 class MessagingService {
 private:
 	MqttService myMqttService;
