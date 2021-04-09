@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wifihandler_1146',['WifiHandler',['../classDataProcessing.html#a8a99dede336c03de4d0f05d59ac6c9d3',1,'DataProcessing']]]
+  ['year_1054',['year',['../classSntpTime.html#a5eea1d6d84cf4063bd7e1beb74e37a60',1,'SntpTime']]]
 ];

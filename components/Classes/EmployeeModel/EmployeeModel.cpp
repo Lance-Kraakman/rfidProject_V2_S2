@@ -7,24 +7,20 @@
 
 #include "EmployeeModel.h"
 
-EmployeeModel::EmployeeModel() {
-	// TODO Auto-generated constructor stub
-	// Dummy Objects
-	Employee emp1 = Employee("Lance", RfidTag(195232940));
-	Employee emp2 = Employee("Nicole", RfidTag(194970784));
-	Employee emp3 = Employee("Charlie", RfidTag(194577574));
+EmployeeModel::EmployeeModel() {}
 
-	this->employeeList.push_back(emp1);
-	this->employeeList.push_back(emp2);
-	this->employeeList.push_back(emp3);
-}
-
+/**
+ *
+ * @return a reference to the EmployeeModels device list
+ */
 std::vector<Employee>& EmployeeModel::getEmployeeList() {
 	return this->employeeList;
 }
 
-/*
- * Searches for employee, if an employee is found it is updated with the values found in the list
+/** returns true if the Employee is found (found by UUID), EmployeeToCheck is set to the values of the found device.
+ *
+ * @param &employeeToCheck
+ * @return true if Employee is found
  */
 bool EmployeeModel::findEmployee(Employee& employeeToCheck) {
 	std::vector<Employee> EmployeeList = this->employeeList;
@@ -42,18 +38,33 @@ bool EmployeeModel::findEmployee(Employee& employeeToCheck) {
 	}
 }
 
-
+/** Updates the EmployeeToUpdate with the same uuid in the list with the device passed
+ *
+ * @param EmployeeToUpdate
+ * @return bool
+ */
 bool EmployeeModel::updateEmployeeInList(Employee EmployeeToUpdate) {
 	std::replace(this->employeeList.begin(), this->employeeList.end(), EmployeeToUpdate, EmployeeToUpdate);
 	return true;
 }
 
+/** Adds the passed Employee to the models internal list
+ *
+ * @param emp - Adds Employee dev to the Employee model list
+ */
 void EmployeeModel::addEmployee(Employee emp) {
 	if (!(this->findEmployee(emp))) {
 		this->getEmployeeList().insert(this->getEmployeeList().begin(), emp);
 	}
 }
 
+
+/** returns a Employee object from a Employee JSON object
+ *
+ * @warning - It is up to the user to deallocate memory! - (Created with Malloc so must use free())
+ * @param jsonString
+ * @return Device
+ */
 Employee EmployeeModel::employeeFromJson(cJSON *jsonString) {
 
 	cJSON* name  = cJSON_GetObjectItem(jsonString, "name");
@@ -80,8 +91,11 @@ Employee EmployeeModel::employeeFromJson(cJSON *jsonString) {
 	return emp;
 }
 
-/**
- * @Warning - It is up to the user to deallocate memory! - (Created with Malloc so must use free())
+/** Functon returns a pointer to a cJSON object of Employees.
+ *
+ * @warning - It is up to the user to deallocate memory! - (Created with Malloc so must use free())
+ * @param -
+ * @return
  *
  */
 cJSON *EmployeeModel::jsonEmployeeList() {

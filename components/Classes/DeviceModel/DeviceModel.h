@@ -12,6 +12,9 @@
 #ifndef COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_
 #define COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_
 
+/** \brief Represents a Device list and provides access and update abstraction.
+ *
+ */
 class DeviceModel {
 	std::vector<Device> deviceList;
 public:

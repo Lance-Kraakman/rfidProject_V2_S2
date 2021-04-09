@@ -9,13 +9,20 @@
 #ifndef COMPONENTS_CLASSES_EMPLOYEE_EMPLOYEE_H_
 #define COMPONENTS_CLASSES_EMPLOYEE_EMPLOYEE_H_
 
+#include <vector>
+#include <algorithm>
+#include <string>
+
 #include "../RfidTag/RfidTag.h"
 #include "esp_log.h"
 #include "esp_system.h"
-#include <vector>
+#include "soc/rtc_wdt.h"
+#include "esp_int_wdt.h"
+#include "esp_task_wdt.h"
 
-
-
+/** \brief Employee Class represents a device with an RfidTag 'attached'
+ *
+ */
 class Employee {
 private:
 	std::string name;
@@ -31,13 +38,6 @@ public:
 	void setTag(RfidTag tag);
 	RfidTag getTag();
 	friend bool operator== (const Employee &E1, const Employee &E2); // Search Function for has Device and getDeviceWithUUID <3
-	//void addDevice(Device deviceToAdd); // Add device to device list
-	//bool removeDevice(Device& deviceToRemove);  // Remove Device from UUID
-	//Device getDevice(std::string UUID); // Get device with the corrosponding UUID
-	//Device popDevice(std::string UUID); // Pop Device with the corrosponding UUID
-	//std::vector<Device>& getDeviceList(); // Get the list by reference
-	//bool findDevice(Device& deviceToFind); // Finds the device to check and updates any values
-	//bool checkDataReturned(std::vector<Device>::iterator it);
 	void setActive(bool active);
 	void printEmployee();
 	bool isActive();

@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['tag_5fhandler_1085',['tag_handler',['../classRfidScanner.html#a674acf00e931e204717ad5e5a77ee366',1,'RfidScanner::tag_handler()'],['../inputProcessor_8c.html#a02e78b5c681b93a38f57e2396c234923',1,'tag_handler():&#160;inputProcessor.c']]],
-  ['tagprocessing_1086',['TagProcessing',['../classTagProcessing.html#a635cea90e197fa819ff85e532c3b7b42',1,'TagProcessing::TagProcessing()'],['../classTagProcessing.html#a0752a542e38a3147589855a3e257238a',1,'TagProcessing::TagProcessing(DataProcessing *dataProcessor)']]],
-  ['time_5fsync_5fnotification_5fcb_1087',['time_sync_notification_cb',['../classSntpTime.html#abc79e87244fc8adabc6b27dba558ea4e',1,'SntpTime']]],
-  ['timestring_1088',['timeString',['../classEmployee.html#a0afc36a9bf53a4de72f9f0781689b3f2',1,'Employee::timeString()'],['../classSntpTime.html#ae975dda3ba52e118bc9e7f41db87c6cb',1,'SntpTime::timeString()']]]
+  ['updatedeviceinlist_1004',['updateDeviceInList',['../classDeviceModel.html#a7e2ed7d5ea65cd0e132c4b2020f657ad',1,'DeviceModel']]],
+  ['updateemployeeinlist_1005',['updateEmployeeInList',['../classEmployeeModel.html#ae966a232e267f4d978ff71fc3aa4c1c5',1,'EmployeeModel']]],
+  ['updatemessagelist_1006',['updateMessageList',['../classMessagingService.html#a56d3c6b3dad94de750dc264240451c1d',1,'MessagingService']]],
+  ['updatetagscannedtime_1007',['updateTagScannedTime',['../classRfidTag.html#a42a91089bc8ceb1888723047553a7701',1,'RfidTag']]],
+  ['updatetocurrenttime_1008',['updateToCurrentTime',['../classSntpTime.html#a0f78371245071edda2e11befc61e21b7',1,'SntpTime']]]
 ];

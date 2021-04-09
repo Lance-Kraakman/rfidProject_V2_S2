@@ -14,12 +14,11 @@
 #include <vector>
 #include <algorithm>
 
-#include "../Employee/Employee.h"
-#include "../Device/Device.h"
-#include "../Networking/Messaging/MessagingService.h"
-#include "../RfidScanner/RfidScanner.h"
-#include "../Networking/Wifi/Wifi.h"
-#include "../simpleson/json.h"
+#include "../../Employee/Employee.h"
+#include "../../Device/Device.h"
+#include "../../Networking/Messaging/MessagingService.h"
+#include "../../RfidScanner/RfidScanner.h"
+#include "../../Networking/Wifi/Wifi.h"
 #include "../TagProcessing/TagProcessing.h"
 
 #define MAIN_APP "MAIN_APP"

@@ -83,7 +83,6 @@ $<TARGET_FILE:__idf_DeviceModel>
 $<TARGET_FILE:__idf_EmployeeModel>
 $<TARGET_FILE:__idf_Wifi>
 $<TARGET_FILE:__idf_DataProcessing>
-$<TARGET_FILE:__idf_simpleson>
 $<TARGET_FILE:__idf_TagProcessing>
 $<TARGET_FILE:__idf_MainApplication>
 $<TARGET_FILE:__idf_bus>

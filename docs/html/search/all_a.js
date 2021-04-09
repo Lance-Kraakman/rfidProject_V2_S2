@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['log_5ferror_5fif_5fnonzero_746',['log_error_if_nonzero',['../networkProcessor_8c.html#a7f8a15d29ffe1832250f92032705ddd6',1,'networkProcessor.c']]]
+  ['name_750',['name',['../classDevice.html#ae779f5ee618677629b71287f3f77f8e8',1,'Device::name()'],['../classEmployee.html#a3ba103222f2451bf4d34c05ca28a1bed',1,'Employee::name()']]]
 ];

@@ -20,10 +20,11 @@ typedef struct {
 	int recvd;
 } message;
 
-/*! \brief
- *         Provides an abstraction layer for networking and messaging
+/** \brief Provides an abstraction layer for networking and messaging communications.
+ * 		Connection is made to a MQTT service. Messages that come in are stored in a list and can be accessed at any time.
+ *		Static functionality as it is only reasonable to connect to one MQTT service at a time
  *
- *  Detailed description starts here.
+ *
  */
 class MessagingService {
 private:
@@ -56,13 +57,6 @@ public:
 };
 
 /*
- *	Example Useage
- *
-	MessagingService myMessagingServcie = MessagingService();
-	myMessagingServcie.initMessagingServices();
-	myMessagingServcie.addMessageSubscription("tags", qaulity_of_service)
-	myMessagingServcie.addMessageSubscription("Commands", qaulity_of_service);
-*/
 
 
 

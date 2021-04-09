@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tagprocessing_917',['TagProcessing',['../classTagProcessing.html',1,'']]],
-  ['touchinput_918',['touchInput',['../structtouchInput.html',1,'']]]
+  ['wifi_858',['Wifi',['../classWifi.html',1,'']]]
 ];

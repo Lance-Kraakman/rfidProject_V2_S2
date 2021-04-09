@@ -2,6 +2,11 @@
 \label{classEmployee}\index{Employee@{Employee}}
 
 
+\mbox{\hyperlink{classEmployee}{Employee}} Class represents a device with an \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \textquotesingle{}attached\textquotesingle{}.  
+
+
+
+
 {\ttfamily \#include $<$Employee.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -43,6 +48,11 @@ bool \mbox{\hyperlink{classEmployee_a0635c658d1647ba083c3412dca0c0d89}{operator=
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classEmployee}{Employee}} Class represents a device with an \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \textquotesingle{}attached\textquotesingle{}. 
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classEmployee_a003c7bd08c40924e381eb0750cbb906f}\label{classEmployee_a003c7bd08c40924e381eb0750cbb906f}} 
 \index{Employee@{Employee}!Employee@{Employee}}
@@ -57,6 +67,13 @@ bool \mbox{\hyperlink{classEmployee_a0635c658d1647ba083c3412dca0c0d89}{operator=
 {\footnotesize\ttfamily Employee\+::\+Employee (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag }\end{DoxyParamCaption})}
 
 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+{\em tag} & \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classEmployee_a72d9305f328548a928929154dab5d2b7}\label{classEmployee_a72d9305f328548a928929154dab5d2b7}} 
@@ -65,42 +82,66 @@ bool \mbox{\hyperlink{classEmployee_a0635c658d1647ba083c3412dca0c0d89}{operator=
 \doxysubsubsection{\texorpdfstring{getName()}{getName()}}
 {\footnotesize\ttfamily std\+::string Employee\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+name 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classEmployee_ad386f9f9bfab135e45dab6052752fd42}\label{classEmployee_ad386f9f9bfab135e45dab6052752fd42}} 
 \index{Employee@{Employee}!getTag@{getTag}}
 \index{getTag@{getTag}!Employee@{Employee}}
 \doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} Employee\+::get\+Tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classEmployee_aacb33802f09cb8bc4c5ef0aaca91ef80}\label{classEmployee_aacb33802f09cb8bc4c5ef0aaca91ef80}} 
 \index{Employee@{Employee}!isActive@{isActive}}
 \index{isActive@{isActive}!Employee@{Employee}}
 \doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
 {\footnotesize\ttfamily bool Employee\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+bool if employee tag is active -\/ representing it has been scanned recently 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classEmployee_a863e69d694d606a2a9b50b04a6c7ccac}\label{classEmployee_a863e69d694d606a2a9b50b04a6c7ccac}} 
 \index{Employee@{Employee}!printEmployee@{printEmployee}}
 \index{printEmployee@{printEmployee}!Employee@{Employee}}
 \doxysubsubsection{\texorpdfstring{printEmployee()}{printEmployee()}}
 {\footnotesize\ttfamily void Employee\+::print\+Employee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classEmployee_aa1064a384f6ac0d63cb5af8126b0ce89}\label{classEmployee_aa1064a384f6ac0d63cb5af8126b0ce89}} 
+Prints the devices paramaters \mbox{\Hypertarget{classEmployee_aa1064a384f6ac0d63cb5af8126b0ce89}\label{classEmployee_aa1064a384f6ac0d63cb5af8126b0ce89}} 
 \index{Employee@{Employee}!setActive@{setActive}}
 \index{setActive@{setActive}!Employee@{Employee}}
 \doxysubsubsection{\texorpdfstring{setActive()}{setActive()}}
 {\footnotesize\ttfamily void Employee\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em active} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classEmployee_adba90764da59390b7fb346e5ef3bc69d}\label{classEmployee_adba90764da59390b7fb346e5ef3bc69d}} 
 \index{Employee@{Employee}!setName@{setName}}
 \index{setName@{setName}!Employee@{Employee}}
 \doxysubsubsection{\texorpdfstring{setName()}{setName()}}
 {\footnotesize\ttfamily void Employee\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classEmployee_a832bc8ff781c12376a1ea43586611864}\label{classEmployee_a832bc8ff781c12376a1ea43586611864}} 
 \index{Employee@{Employee}!setTag@{setTag}}
 \index{setTag@{setTag}!Employee@{Employee}}
 \doxysubsubsection{\texorpdfstring{setTag()}{setTag()}}
 {\footnotesize\ttfamily void Employee\+::set\+Tag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}}}]{tag }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em tag} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classEmployee_a0afc36a9bf53a4de72f9f0781689b3f2}\label{classEmployee_a0afc36a9bf53a4de72f9f0781689b3f2}} 
 \index{Employee@{Employee}!timeString@{timeString}}
 \index{timeString@{timeString}!Employee@{Employee}}

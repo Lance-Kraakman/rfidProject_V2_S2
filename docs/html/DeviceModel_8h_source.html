@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Classes/DeviceModel/DeviceModel.h Source File</title>
+<title>ESP32-TAG-PROCESSING-SYSTEM: /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Classes/DeviceModel/DeviceModel.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">ESP32-TAG-PROCESSING-SYSTEM
    </div>
   </td>
  </tr>
@@ -83,30 +83,30 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classDeviceModel.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDeviceModel.html">DeviceModel</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classDeviceModel.html#a7f05883c0baf464b617e837584761345">   16</a></span>&#160;    std::vector&lt;Device&gt; <a class="code" href="classDeviceModel.html#a7f05883c0baf464b617e837584761345">deviceList</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classDeviceModel.html#a9bc69dfafba8efb655cd0d16666204f5">DeviceModel</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::vector&lt;Device&gt;&amp; <a class="code" href="classDeviceModel.html#a10fbdbb96b5f1d7fc64dd3de7391240d">getDeviceList</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDeviceModel.html#a66503a72bf53404277a0d0c0be80c7ec">findDevice</a>(<a class="code" href="classDevice.html">Device</a>&amp; deviceToCheck);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDeviceModel.html#a7e2ed7d5ea65cd0e132c4b2020f657ad">updateDeviceInList</a>(<a class="code" href="classDevice.html">Device</a> deviceToUpdate);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classDevice.html">Device</a> <a class="code" href="classDeviceModel.html#ab3e0963628d610c18d476b9baa81ae22">deviceFromJson</a>(cJSON *recvdJSON);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDeviceModel.html#ab819cd02fcaf289889870487716be139">addDevice</a>(<a class="code" href="classDevice.html">Device</a> dev);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    cJSON *<a class="code" href="classDeviceModel.html#a413f112f0acafab2bb4a33f19d0fb7bb">jsonDeviceList</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classDeviceModel.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDeviceModel.html">DeviceModel</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classDeviceModel.html#a7f05883c0baf464b617e837584761345">   19</a></span>&#160;    std::vector&lt;Device&gt; <a class="code" href="classDeviceModel.html#a7f05883c0baf464b617e837584761345">deviceList</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classDeviceModel.html#a9bc69dfafba8efb655cd0d16666204f5">DeviceModel</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::vector&lt;Device&gt;&amp; <a class="code" href="classDeviceModel.html#a10fbdbb96b5f1d7fc64dd3de7391240d">getDeviceList</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDeviceModel.html#a66503a72bf53404277a0d0c0be80c7ec">findDevice</a>(<a class="code" href="classDevice.html">Device</a>&amp; deviceToCheck);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDeviceModel.html#a7e2ed7d5ea65cd0e132c4b2020f657ad">updateDeviceInList</a>(<a class="code" href="classDevice.html">Device</a> deviceToUpdate);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classDevice.html">Device</a> <a class="code" href="classDeviceModel.html#ab3e0963628d610c18d476b9baa81ae22">deviceFromJson</a>(cJSON *recvdJSON);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDeviceModel.html#ab819cd02fcaf289889870487716be139">addDevice</a>(<a class="code" href="classDevice.html">Device</a> dev);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    cJSON *<a class="code" href="classDeviceModel.html#a413f112f0acafab2bb4a33f19d0fb7bb">jsonDeviceList</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassDeviceModel_html_a413f112f0acafab2bb4a33f19d0fb7bb"><div class="ttname"><a href="classDeviceModel.html#a413f112f0acafab2bb4a33f19d0fb7bb">DeviceModel::jsonDeviceList</a></div><div class="ttdeci">cJSON * jsonDeviceList()</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:81</div></div>
-<div class="ttc" id="aclassDevice_html"><div class="ttname"><a href="classDevice.html">Device</a></div><div class="ttdef"><b>Definition:</b> Device.h:16</div></div>
-<div class="ttc" id="aclassDeviceModel_html"><div class="ttname"><a href="classDeviceModel.html">DeviceModel</a></div><div class="ttdef"><b>Definition:</b> DeviceModel.h:15</div></div>
-<div class="ttc" id="aclassDeviceModel_html_ab3e0963628d610c18d476b9baa81ae22"><div class="ttname"><a href="classDeviceModel.html#ab3e0963628d610c18d476b9baa81ae22">DeviceModel::deviceFromJson</a></div><div class="ttdeci">Device deviceFromJson(cJSON *recvdJSON)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:52</div></div>
-<div class="ttc" id="aclassDeviceModel_html_ab819cd02fcaf289889870487716be139"><div class="ttname"><a href="classDeviceModel.html#ab819cd02fcaf289889870487716be139">DeviceModel::addDevice</a></div><div class="ttdeci">void addDevice(Device dev)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:46</div></div>
-<div class="ttc" id="aclassDeviceModel_html_a66503a72bf53404277a0d0c0be80c7ec"><div class="ttname"><a href="classDeviceModel.html#a66503a72bf53404277a0d0c0be80c7ec">DeviceModel::findDevice</a></div><div class="ttdeci">bool findDevice(Device &amp;deviceToCheck)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:30</div></div>
-<div class="ttc" id="aclassDeviceModel_html_a7f05883c0baf464b617e837584761345"><div class="ttname"><a href="classDeviceModel.html#a7f05883c0baf464b617e837584761345">DeviceModel::deviceList</a></div><div class="ttdeci">std::vector&lt; Device &gt; deviceList</div><div class="ttdef"><b>Definition:</b> DeviceModel.h:16</div></div>
-<div class="ttc" id="aclassDeviceModel_html_a7e2ed7d5ea65cd0e132c4b2020f657ad"><div class="ttname"><a href="classDeviceModel.html#a7e2ed7d5ea65cd0e132c4b2020f657ad">DeviceModel::updateDeviceInList</a></div><div class="ttdeci">bool updateDeviceInList(Device deviceToUpdate)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:41</div></div>
-<div class="ttc" id="aclassDeviceModel_html_a10fbdbb96b5f1d7fc64dd3de7391240d"><div class="ttname"><a href="classDeviceModel.html#a10fbdbb96b5f1d7fc64dd3de7391240d">DeviceModel::getDeviceList</a></div><div class="ttdeci">std::vector&lt; Device &gt; &amp; getDeviceList()</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:23</div></div>
-<div class="ttc" id="aclassDeviceModel_html_a9bc69dfafba8efb655cd0d16666204f5"><div class="ttname"><a href="classDeviceModel.html#a9bc69dfafba8efb655cd0d16666204f5">DeviceModel::DeviceModel</a></div><div class="ttdeci">DeviceModel()</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:10</div></div>
+<div class="ttc" id="aclassDeviceModel_html_a413f112f0acafab2bb4a33f19d0fb7bb"><div class="ttname"><a href="classDeviceModel.html#a413f112f0acafab2bb4a33f19d0fb7bb">DeviceModel::jsonDeviceList</a></div><div class="ttdeci">cJSON * jsonDeviceList()</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:97</div></div>
+<div class="ttc" id="aclassDevice_html"><div class="ttname"><a href="classDevice.html">Device</a></div><div class="ttdoc">Device Class represents a device with an RfidTag 'attached'.</div><div class="ttdef"><b>Definition:</b> Device.h:19</div></div>
+<div class="ttc" id="aclassDeviceModel_html"><div class="ttname"><a href="classDeviceModel.html">DeviceModel</a></div><div class="ttdoc">Represents a Device list and provides access and update abstraction.</div><div class="ttdef"><b>Definition:</b> DeviceModel.h:18</div></div>
+<div class="ttc" id="aclassDeviceModel_html_ab3e0963628d610c18d476b9baa81ae22"><div class="ttname"><a href="classDeviceModel.html#ab3e0963628d610c18d476b9baa81ae22">DeviceModel::deviceFromJson</a></div><div class="ttdeci">Device deviceFromJson(cJSON *recvdJSON)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:64</div></div>
+<div class="ttc" id="aclassDeviceModel_html_ab819cd02fcaf289889870487716be139"><div class="ttname"><a href="classDeviceModel.html#ab819cd02fcaf289889870487716be139">DeviceModel::addDevice</a></div><div class="ttdeci">void addDevice(Device dev)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:53</div></div>
+<div class="ttc" id="aclassDeviceModel_html_a66503a72bf53404277a0d0c0be80c7ec"><div class="ttname"><a href="classDeviceModel.html#a66503a72bf53404277a0d0c0be80c7ec">DeviceModel::findDevice</a></div><div class="ttdeci">bool findDevice(Device &amp;deviceToCheck)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:28</div></div>
+<div class="ttc" id="aclassDeviceModel_html_a7f05883c0baf464b617e837584761345"><div class="ttname"><a href="classDeviceModel.html#a7f05883c0baf464b617e837584761345">DeviceModel::deviceList</a></div><div class="ttdeci">std::vector&lt; Device &gt; deviceList</div><div class="ttdef"><b>Definition:</b> DeviceModel.h:19</div></div>
+<div class="ttc" id="aclassDeviceModel_html_a7e2ed7d5ea65cd0e132c4b2020f657ad"><div class="ttname"><a href="classDeviceModel.html#a7e2ed7d5ea65cd0e132c4b2020f657ad">DeviceModel::updateDeviceInList</a></div><div class="ttdeci">bool updateDeviceInList(Device deviceToUpdate)</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:44</div></div>
+<div class="ttc" id="aclassDeviceModel_html_a10fbdbb96b5f1d7fc64dd3de7391240d"><div class="ttname"><a href="classDeviceModel.html#a10fbdbb96b5f1d7fc64dd3de7391240d">DeviceModel::getDeviceList</a></div><div class="ttdeci">std::vector&lt; Device &gt; &amp; getDeviceList()</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:19</div></div>
+<div class="ttc" id="aclassDeviceModel_html_a9bc69dfafba8efb655cd0d16666204f5"><div class="ttname"><a href="classDeviceModel.html#a9bc69dfafba8efb655cd0d16666204f5">DeviceModel::DeviceModel</a></div><div class="ttdeci">DeviceModel()</div><div class="ttdef"><b>Definition:</b> DeviceModel.cpp:13</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

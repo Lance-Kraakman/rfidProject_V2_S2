@@ -7,25 +7,23 @@
 
 #include "DeviceModel.h"
 
-DeviceModel::DeviceModel() {
-	// TODO Auto-generated constructor stub
-	// Create some tags and devices for testing
-	Device dev1 = Device(RfidTag(196609223));
-	Device dev2 = Device(RfidTag(194315418));
-	Device dev3 = Device(RfidTag(196347067));
+/** Default Constructor.
+ *
+ */
+DeviceModel::DeviceModel() {}
 
-	this->deviceList.push_back(dev1);
-	this->deviceList.push_back(dev2);
-	this->deviceList.push_back(dev3);
-
-}
-
+/**
+ *
+ * @return a reference to the DeviceModels device list
+ */
 std::vector<Device>& DeviceModel::getDeviceList() {
 	return this->deviceList;
 }
 
-/**
- * Searches for Device, if an Device is found it is updated with the values found in the list
+/** returns true if the device is found (found by UUID), device to check is set to the values of the found device.
+ *
+ * @param &deviceToCheck
+ * @return bool
  */
 bool DeviceModel::findDevice(Device& deviceToCheck) {
 	std::vector<Device> DeviceList = this->deviceList;
@@ -38,17 +36,31 @@ bool DeviceModel::findDevice(Device& deviceToCheck) {
 	return false;
 }
 
+/** Updates the device with the same uuid in the list with the device passed
+ *
+ * @param deviceToUpdate
+ * @return bool
+ */
 bool DeviceModel::updateDeviceInList(Device deviceToUpdate) {
 	std::replace(this->deviceList.begin(), this->deviceList.end(), deviceToUpdate, deviceToUpdate);
 	return true;
 }
 
+/** Adds the passed device to the models internal list
+ *
+ * @param dev - Adds device dev to the device model list
+ */
 void DeviceModel::addDevice(Device dev) {
 	if (!(this->findDevice(dev))) {
 		this->getDeviceList().insert(this->getDeviceList().begin(), dev);
 	}
 }
 
+/** returns a Device object from a Device JSON object
+ *
+ * @param recvdJSON
+ * @return Device
+ */
 Device DeviceModel::deviceFromJson(cJSON *recvdJSON) {
 
 	cJSON* name  = cJSON_GetObjectItem(recvdJSON, "name");
@@ -74,8 +86,12 @@ Device DeviceModel::deviceFromJson(cJSON *recvdJSON) {
 	return dev;
 }
 
-/*!
- * @Warn - It is up to the user to deallocate memory! - (Created with Malloc so must use free())
+/** Functon returns a pointer to a cJSON object of devices.
+ *
+ * @author Lance Kraakman
+ * @warning - It is up to the user to deallocate memory! - (Created with Malloc so must use free())
+ * @param -
+ * @return
  *
  */
 cJSON * DeviceModel::jsonDeviceList() {

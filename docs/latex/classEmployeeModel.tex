@@ -2,6 +2,11 @@
 \label{classEmployeeModel}\index{EmployeeModel@{EmployeeModel}}
 
 
+Represents a \mbox{\hyperlink{classEmployee}{Employee}} list and provides access, update and json abstraction.  
+
+
+
+
 {\ttfamily \#include $<$Employee\+Model.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -28,6 +33,11 @@ std\+::vector$<$ \mbox{\hyperlink{classEmployee}{Employee}} $>$ \mbox{\hyperlink
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Represents a \mbox{\hyperlink{classEmployee}{Employee}} list and provides access, update and json abstraction. 
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classEmployeeModel_affce71c022e80f5af820e216687f1687}\label{classEmployeeModel_affce71c022e80f5af820e216687f1687}} 
 \index{EmployeeModel@{EmployeeModel}!EmployeeModel@{EmployeeModel}}
@@ -44,36 +54,92 @@ std\+::vector$<$ \mbox{\hyperlink{classEmployee}{Employee}} $>$ \mbox{\hyperlink
 \doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
 {\footnotesize\ttfamily void Employee\+Model\+::add\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}}}]{emp }\end{DoxyParamCaption})}
 
+Adds the passed \mbox{\hyperlink{classEmployee}{Employee}} to the models internal list
+
+
+\begin{DoxyParams}{Parameters}
+{\em emp} & -\/ Adds \mbox{\hyperlink{classEmployee}{Employee}} dev to the \mbox{\hyperlink{classEmployee}{Employee}} model list \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classEmployeeModel_a03ed235e371c61f4c880fd56a71a36c2}\label{classEmployeeModel_a03ed235e371c61f4c880fd56a71a36c2}} 
 \index{EmployeeModel@{EmployeeModel}!employeeFromJson@{employeeFromJson}}
 \index{employeeFromJson@{employeeFromJson}!EmployeeModel@{EmployeeModel}}
 \doxysubsubsection{\texorpdfstring{employeeFromJson()}{employeeFromJson()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classEmployee}{Employee}} Employee\+Model\+::employee\+From\+Json (\begin{DoxyParamCaption}\item[{c\+J\+S\+ON $\ast$}]{json\+String }\end{DoxyParamCaption})}
 
+returns a \mbox{\hyperlink{classEmployee}{Employee}} object from a \mbox{\hyperlink{classEmployee}{Employee}} J\+S\+ON object
+
+\begin{DoxyWarning}{Warning}
+-\/ It is up to the user to deallocate memory! -\/ (Created with Malloc so must use free()) 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em json\+String} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDevice}{Device}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classEmployeeModel_af3aa12d9dd404ed7e112a70c48742be9}\label{classEmployeeModel_af3aa12d9dd404ed7e112a70c48742be9}} 
 \index{EmployeeModel@{EmployeeModel}!findEmployee@{findEmployee}}
 \index{findEmployee@{findEmployee}!EmployeeModel@{EmployeeModel}}
 \doxysubsubsection{\texorpdfstring{findEmployee()}{findEmployee()}}
 {\footnotesize\ttfamily bool Employee\+Model\+::find\+Employee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}} \&}]{employee\+To\+Check }\end{DoxyParamCaption})}
 
+returns true if the \mbox{\hyperlink{classEmployee}{Employee}} is found (found by U\+U\+ID), Employee\+To\+Check is set to the values of the found device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&employee\+To\+Check} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if \mbox{\hyperlink{classEmployee}{Employee}} is found 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classEmployeeModel_a6a445c0b6aae5f9d4d88e068e4dbc327}\label{classEmployeeModel_a6a445c0b6aae5f9d4d88e068e4dbc327}} 
 \index{EmployeeModel@{EmployeeModel}!getEmployeeList@{getEmployeeList}}
 \index{getEmployeeList@{getEmployeeList}!EmployeeModel@{EmployeeModel}}
 \doxysubsubsection{\texorpdfstring{getEmployeeList()}{getEmployeeList()}}
 {\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classEmployee}{Employee}} $>$ \& Employee\+Model\+::get\+Employee\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\begin{DoxyReturn}{Returns}
+a reference to the Employee\+Models device list 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classEmployeeModel_a923edfbc334113b741980c17a65bd99d}\label{classEmployeeModel_a923edfbc334113b741980c17a65bd99d}} 
 \index{EmployeeModel@{EmployeeModel}!jsonEmployeeList@{jsonEmployeeList}}
 \index{jsonEmployeeList@{jsonEmployeeList}!EmployeeModel@{EmployeeModel}}
 \doxysubsubsection{\texorpdfstring{jsonEmployeeList()}{jsonEmployeeList()}}
 {\footnotesize\ttfamily c\+J\+S\+ON $\ast$ Employee\+Model\+::json\+Employee\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-@\+Warning -\/ It is up to the user to deallocate memory! -\/ (Created with Malloc so must use free()) \mbox{\Hypertarget{classEmployeeModel_ae966a232e267f4d978ff71fc3aa4c1c5}\label{classEmployeeModel_ae966a232e267f4d978ff71fc3aa4c1c5}} 
+Functon returns a pointer to a c\+J\+S\+ON object of Employees.
+
+\begin{DoxyWarning}{Warning}
+-\/ It is up to the user to deallocate memory! -\/ (Created with Malloc so must use free()) 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmployeeModel_ae966a232e267f4d978ff71fc3aa4c1c5}\label{classEmployeeModel_ae966a232e267f4d978ff71fc3aa4c1c5}} 
 \index{EmployeeModel@{EmployeeModel}!updateEmployeeInList@{updateEmployeeInList}}
 \index{updateEmployeeInList@{updateEmployeeInList}!EmployeeModel@{EmployeeModel}}
 \doxysubsubsection{\texorpdfstring{updateEmployeeInList()}{updateEmployeeInList()}}
 {\footnotesize\ttfamily bool Employee\+Model\+::update\+Employee\+In\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmployee}{Employee}}}]{Employee\+To\+Update }\end{DoxyParamCaption})}
 
+Updates the Employee\+To\+Update with the same uuid in the list with the device passed
+
+
+\begin{DoxyParams}{Parameters}
+{\em Employee\+To\+Update} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}

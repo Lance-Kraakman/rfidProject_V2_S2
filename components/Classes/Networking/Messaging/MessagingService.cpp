@@ -9,21 +9,13 @@
 #define CONFIG_BROKER_LOCAL "mqtt://192.168.1.73:1883"
 std::vector<message> MessagingService::messageList = std::vector<message>(); // Static messaging list
 
-/**
- * MessagingService.cpp
+
+MessagingService::MessagingService() {}
+
+/** Initializes the MQTT service with a default configuration.
  *
- * 	Provides an abstraction layer for networking and messaging
  */
-MessagingService::MessagingService() {
-	// TODO Auto-generated constructor stub
-
-}
-
 void MessagingService::initMessagingServices() {
-	// Configure Network
-
-	//To Do
-
 	// Configure MQTT
 	esp_mqtt_client_config_t mqtt_cfg = { // @suppress("Invalid arguments")
 	    	.uri = CONFIG_BROKER_LOCAL,
@@ -41,24 +33,34 @@ void MessagingService::initMessagingServices() {
 
 }
 
-/*
- * Do after init
+/**
+ *
+ * @param topic
+ * @param qaulity_of_service
  */
 void MessagingService::addMessageSubscription(std::string topic, int qaulity_of_service) {
 	this->getMqttService().addSubscriber(topic, qaulity_of_service);
 }
 
+/**
+ *
+ * @param messageList
+ */
 void MessagingService::setMessagingList(std::vector<message> messageList) {
 	this->clearMessageList();
 	MessagingService::messageList = messageList;
 }
 
+/** Clear the message list
+ *
+ */
 void MessagingService::clearMessageList() {
 	MessagingService::messageList.clear();
 }
 
-/*
- * Returns the list item from the message list
+/** returns a message and remove it from the message list
+ *
+ * @return a message
  */
 message MessagingService::popMessage() {
 	if (MessagingService::messageList.empty()) {
@@ -84,26 +86,53 @@ message MessagingService::readMessage() {
 
 }
 
+/** Send a message
+ *
+ * @param topic
+ * @param message
+ * @param qaulity_of_service
+ */
 void MessagingService::sendMessage(std::string topic, std::string message, int qaulity_of_service) {
 	this->getMqttService().publishMessage(topic, message, qaulity_of_service);
 }
 
+/**
+ *
+ * @param messageToAdd
+ */
 void MessagingService::addMessage(message messageToAdd) {
 	MessagingService::messageList.insert(MessagingService::messageList.begin(), messageToAdd);
 }
 
+/**
+ *
+ * @return a copy of the current message list
+ */
 std::vector<message> MessagingService::getMessageList() {
 		return MessagingService::messageList;
 }
 
+/**
+ *
+ * @return a copy of the MQTT service
+ */
 MqttService MessagingService::getMqttService() {
 	return this->myMqttService;
 }
 
+/**
+ *
+ * @param myMqttService
+ */
 void MessagingService::setMqttService(MqttService myMqttService) {
 	this->myMqttService = myMqttService;
 }
 
+/**
+ *
+ * @param eventHandler
+ * @param event_id
+ */
 void MessagingService::registerMessageHandler(esp_event_handler_t eventHandler, esp_mqtt_event_id_t event_id) { // Only do this if mqtt service is init
 	if (this->getMqttService().isInit()) {
 		esp_mqtt_client_register_event((esp_mqtt_client_handle_t) this->getMqttService().getClient(),(esp_mqtt_event_id_t) event_id,(esp_event_handler_t) eventHandler,(void*) NULL);
@@ -112,12 +141,20 @@ void MessagingService::registerMessageHandler(esp_event_handler_t eventHandler, 
 	}
 }
 
+/**
+ *
+ * @param mes
+ */
 void MessagingService::printMessage(message mes) {
 	ESP_LOGI(MESSAGING_SERVICE, "Message Info %s : Message Data %s \n", mes.topic.c_str(), mes.data.c_str());
 }
 
-/*
- * Custom event handler for MessagingService Class
+/**
+ *
+ * @param handler_args
+ * @param base
+ * @param event_id
+ * @param event_data
  */
 void MessagingService::messageReceivedEventHandler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data) { // Message Recieved Event Handler
 	esp_mqtt_event_handle_t event = (esp_mqtt_event_handle_t) event_data;

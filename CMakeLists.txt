@@ -13,13 +13,13 @@ endif()
 set(EXTRA_COMPONENT_DIRS "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common"
 	"./components/Classes/RfidTag" "./components/Classes/Device" "./components/Classes/Employee" "./components/Classes/MyTime" "./components/Classes/RfidScanner"
 		"./components/Drivers/esp-idf-rc522" "./components/Classes/Networking/Mdns" "./components/Classes/Application/MainApplication" "./components/Classes/Networking/Wifi"
-		"./components/Classes/simpleson" "./components/Classes/Application/DataProcessing" "./components/Classes/Application/TagProcessing" "./components/Classes/EmployeeModel"
+		 "./components/Classes/Application/DataProcessing" "./components/Classes/Application/TagProcessing" "./components/Classes/EmployeeModel"
 		"./components/Classes/DeviceModel")
 		
 set(EXTRA_INCLUDE "./components/Classes/Networking/Messaging" "./components/Classes/Networking/MqttService" "$ENV{IDF_PATH}/examples/common_components/protocol_examples_common"
 	"./components/Classes/RfidTag" "./components/Classes/Device" "./components/Classes/Employee" "./components/Classes/MyTime" "./components/Classes/RfidScanner"
 		"./components/Drivers/esp-idf-rc522" "./components/Classes/Networking/Mdns" "./components/Classes/Application/MainApplication" "./components/Classes/Networking/Wifi" 
-		"./components/Classes/simpleson" "./components/Classes/Application/DataProcessing" "./components/Classes/Application/TagProcessing" "./components/Classes/EmployeeModel"
+		 "./components/Classes/Application/DataProcessing" "./components/Classes/Application/TagProcessing" "./components/Classes/EmployeeModel"
 		"./components/Classes/DeviceModel")
 
 # Set Compiler Flags <3

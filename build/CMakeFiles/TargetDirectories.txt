@@ -734,13 +734,6 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/DataProcessing/CMakeFiles/rebuild_cache.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/DataProcessing/CMakeFiles/install.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/DataProcessing/CMakeFiles/list_install_components.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/CMakeFiles/install/strip.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/CMakeFiles/install/local.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/CMakeFiles/__idf_simpleson.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/CMakeFiles/rebuild_cache.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/CMakeFiles/edit_cache.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/CMakeFiles/install.dir
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/CMakeFiles/list_install_components.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/TagProcessing/CMakeFiles/install/strip.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/TagProcessing/CMakeFiles/install/local.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/TagProcessing/CMakeFiles/__idf_TagProcessing.dir

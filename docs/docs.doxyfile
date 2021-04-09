@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "My Project"
+PROJECT_NAME           = ESP32-TAG-PROCESSING-SYSTEM
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -913,7 +913,7 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = build coredump files components/Processing components/Drivers /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Drivers/esp-idf-rc522 
+EXCLUDE                = build coredump files components/Processing components/Drivers /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Drivers/esp-idf-rc522 /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Processing/inputProcessing /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Processing/networkProcessing /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Processing/displayProcessing /home/lance/eclipse-workspace/rfidProject_V2_S2/components/Drivers/esp-idf-rc522 
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded

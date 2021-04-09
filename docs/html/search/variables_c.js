@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['s_5fspi2_5fbus_5fhandle_1136',['s_spi2_bus_handle',['../displayProcessor_8c.html#ad5112b9856ac5c83fa2afa3dcd1dade7',1,'displayProcessor.c']]],
-  ['scannedtime_1137',['scannedTime',['../classRfidTag.html#a1debff52a45043bf5a69367506f68961',1,'RfidTag']]],
-  ['second_1138',['second',['../classSntpTime.html#a9afc18dd48f19d9821ce48b6bf86c0dd',1,'SntpTime']]]
+  ['tag_1047',['tag',['../classDevice.html#a9c9ac253e084ffdb5dfe120410dd6647',1,'Device::tag()'],['../classEmployee.html#a1d062cd66f63ec54ca9721f4537dd973',1,'Employee::tag()']]],
+  ['tagprocessor_1048',['TagProcessor',['../classMainApplication.html#a12c64f1a5cb47303ce7af9774749a055',1,'MainApplication']]],
+  ['timeinfo_1049',['timeInfo',['../classSntpTime.html#aeab6c975b2f0d7ac19177c7c34259e13',1,'SntpTime']]],
+  ['timenow_1050',['timeNow',['../classSntpTime.html#a377e63fb73a95c0a7c9d923f7f5bc166',1,'SntpTime']]],
+  ['topic_1051',['topic',['../structmessage.html#a6b0469f5e1b507ba9a96804c63bb847d',1,'message']]]
 ];

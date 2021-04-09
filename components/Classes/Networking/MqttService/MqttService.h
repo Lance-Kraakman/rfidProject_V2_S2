@@ -22,7 +22,9 @@
 #define MQTT_INITIALIZED 1
 #define MQTT_UNINITIALIZED 0
 
-
+/** Provides abstraction to C functions for the mqtt service, Essentially a wrapper class with some abstraction.
+ *
+ */
 class MqttService {
 private:
 

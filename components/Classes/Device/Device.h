@@ -13,6 +13,9 @@
 
 #define DEVICE_TAG "DEVICE TAG"
 
+/** \brief Device Class represents a device with an RfidTag 'attached'
+ *
+ */
 class Device {
 private:
 	std::string name;

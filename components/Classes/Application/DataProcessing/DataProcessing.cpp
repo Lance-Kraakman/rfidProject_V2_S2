@@ -121,9 +121,8 @@ void DataProcessing::addEmployee() {
 	recvdJSON = NULL;
 }
 
-
-/**
- * @Return Nothing
+/** State-Machine which decides what to do when a command is received.
+ *
  */
 void DataProcessing::commandReceived() {
 	printf("command Message Received\n");

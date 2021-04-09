@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['pollbuttoninputs_1034',['pollButtonInputs',['../inputProcessor_8c.html#a442790623e2131cff8c79e93571c2b94',1,'inputProcessor.c']]],
-  ['popmessage_1035',['popMessage',['../classMessagingService.html#acd42b952c751ef703e6e4e6f96f443b0',1,'MessagingService']]],
-  ['poprfidlist_1036',['popRfidList',['../classRfidScanner.html#a69e78770471fc5be1fd03187a156e2b5',1,'RfidScanner']]],
-  ['printdevice_1037',['printDevice',['../classDevice.html#aef90f1ff78a5e01983fd30a57ed51e7d',1,'Device']]],
-  ['printemployee_1038',['printEmployee',['../classEmployee.html#a863e69d694d606a2a9b50b04a6c7ccac',1,'Employee']]],
-  ['printlists_1039',['printLists',['../classDataProcessing.html#a7ed585be5e85488c2c79281c3de1430f',1,'DataProcessing']]],
-  ['printmessage_1040',['printMessage',['../classMessagingService.html#a07c48b023c245513ba914df2daec1ae9',1,'MessagingService']]],
-  ['printtag_1041',['printTag',['../classRfidTag.html#ac5003387decad27242e1b8b263f387c4',1,'RfidTag']]],
-  ['printtime_1042',['printTime',['../classSntpTime.html#a735a4a45f03f4ea57650c87ba33c0e98',1,'SntpTime']]],
-  ['processserverdata_1043',['processServerData',['../networkProcessor_8c.html#a8f7a2106cd5f9b63bf9fbb33fa9dfb84',1,'networkProcessor.c']]],
-  ['publishmessage_1044',['publishMessage',['../classMqttService.html#a78fef68c078bd56f4c40fd6829e6cba7',1,'MqttService']]]
+  ['readmessage_966',['readMessage',['../classMessagingService.html#a330e035218681ad696b5041d52c0abf4',1,'MessagingService']]],
+  ['readrfidlist_967',['readRfidList',['../classRfidScanner.html#a4e299c8273e1a88801d2c0b110174eaf',1,'RfidScanner']]],
+  ['readrfidlistfromposition_968',['readRfidListFromPosition',['../classRfidScanner.html#af451fcab1e8aec0555b038b8cb2b7971',1,'RfidScanner']]],
+  ['registereventhandler_969',['registerEventHandler',['../classMqttService.html#a1e7268e186ecfabef67e4d9f65392e21',1,'MqttService']]],
+  ['registermessagehandler_970',['registerMessageHandler',['../classMessagingService.html#a920eddeed02f25c93dd4558cb1bddb90',1,'MessagingService']]],
+  ['resolve_5fmdns_5fhost_971',['resolve_mdns_host',['../classmdnsService.html#a1fb9331eda78290471e6068a47dc32a3',1,'mdnsService']]],
+  ['rfidscanner_972',['RfidScanner',['../classRfidScanner.html#a06d873138c0f83a6c0fc91b1f11e6824',1,'RfidScanner']]],
+  ['rfidtag_973',['RfidTag',['../classRfidTag.html#ad40cdc9f383ce1fc4b7a2ac522dc149f',1,'RfidTag::RfidTag()'],['../classRfidTag.html#a3a2e0735bbbb8e23351fe658fd36db2c',1,'RfidTag::RfidTag(int64_t UUID, SntpTime scannedTime, int64_t msSniceStartup)'],['../classRfidTag.html#afac8d951eab6f27e8ec227fb66385fd2',1,'RfidTag::RfidTag(int64_t UUID)']]],
+  ['runconfig_974',['runConfig',['../classMainApplication.html#a51e409331acd07814a1130bf9ed364f8',1,'MainApplication']]],
+  ['runloop_975',['runLoop',['../classMainApplication.html#a253ce8c20821a2b1eb7ad2682c3f66ab',1,'MainApplication']]]
 ];

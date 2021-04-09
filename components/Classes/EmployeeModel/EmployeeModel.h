@@ -15,6 +15,9 @@
 #ifndef COMPONENTS_CLASSES_EMPLOYEEMODEL_EMPLOYEEMODEL_H_
 #define COMPONENTS_CLASSES_EMPLOYEEMODEL_EMPLOYEEMODEL_H_
 
+/** \brief Represents a Employee list and provides access, update and json abstraction.
+ *
+ */
 class EmployeeModel {
 private:
 	std::vector<Employee> employeeList;

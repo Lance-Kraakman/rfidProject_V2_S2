@@ -83,7 +83,6 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/EmployeeModel/libEmployeeModel.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Wifi/libWifi.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/DataProcessing/libDataProcessing.a
-/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/simpleson/libsimpleson.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/TagProcessing/libTagProcessing.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/MainApplication/libMainApplication.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/bus/libbus.a
