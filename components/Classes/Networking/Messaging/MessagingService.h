@@ -14,6 +14,9 @@
 #define MESSAGING_SERVICE "MESSAGING SERVICE"
 #define DEFAULT_QOS 1
 
+/** \brief struct representing a MQTT message.
+ *
+ */
 typedef struct {
 	std::string data;
 	std::string topic;
@@ -56,7 +59,7 @@ public:
 
 };
 
-/*
+
 
 
 

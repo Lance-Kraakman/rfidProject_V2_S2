@@ -26,6 +26,9 @@
 #ifndef COMPONENTS_CLASSES_MAINAPPLICATION_MAINAPPLICATION_H_
 #define COMPONENTS_CLASSES_MAINAPPLICATION_MAINAPPLICATION_H_
 
+/** \brief Application Code - Initialization, startup code and loop.
+ *
+ */
 class MainApplication {
 private:
 

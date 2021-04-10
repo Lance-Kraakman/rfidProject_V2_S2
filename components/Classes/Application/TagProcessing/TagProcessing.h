@@ -16,6 +16,9 @@
 #ifndef COMPONENTS_CLASSES_APPLICATION_TAGPROCESSING_TAGPROCESSING_H_
 #define COMPONENTS_CLASSES_APPLICATION_TAGPROCESSING_TAGPROCESSING_H_
 
+/** \brief Application code, Provides interaction between rfid scanner and data processoing class
+ *	Provides a state machine which decides what to do with the scanned tags
+ */
 class TagProcessing {
 private:
 	RfidScanner rfidScanner;
@@ -30,7 +33,6 @@ private:
 	void foundEmployee(Employee& searchEmployee, RfidTag& recvdTag);
 	void scanTimeout();
 	void sendConfigRequest(Employee& emp);
-
 public:
 	TagProcessing();
 	void doProcessing();

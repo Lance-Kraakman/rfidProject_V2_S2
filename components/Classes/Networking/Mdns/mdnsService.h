@@ -9,6 +9,9 @@
 #ifndef COMPONENTS_CLASSES_NETWORKING_MDNS_MDNSSERVICE_H_
 #define COMPONENTS_CLASSES_NETWORKING_MDNS_MDNSSERVICE_H_
 
+/** \brief TODO - Will provide a mdns resolve service to resolve advertising protocols on the network.
+ *
+ */
 class mdnsService {
 public:
 	mdnsService();

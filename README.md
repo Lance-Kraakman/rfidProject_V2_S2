@@ -15,6 +15,6 @@ Format: ![Alt Text](url)
 Format: ![Alt Text](url)
 
 ## Class Diagram (In Progress/To-Do)
-![GitHub Logo](/images/FirmwareClassDiagram.png)
+![GitHub Logo](/images/FirmwareClassDiagram2.png)
 
 

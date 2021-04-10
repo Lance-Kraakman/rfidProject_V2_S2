@@ -24,7 +24,7 @@ extern "C" {
 #define COMPONENTS_CLASSES_APPLICATION_DATAPROCESSING_DATAPROCESSING_H_
 
 /** \brief Application code, Provides interaction between communications, employee models and device models
- *
+ *		Provides a state machine which decides what to do with the messages
  *
  */
 class DataProcessing {

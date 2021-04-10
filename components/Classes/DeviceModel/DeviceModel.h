@@ -12,7 +12,7 @@
 #ifndef COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_
 #define COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_
 
-/** \brief Represents a Device list and provides access and update abstraction.
+/** \brief Represents a Device list and provides access, update functionality and some json abstraction
  *
  */
 class DeviceModel {

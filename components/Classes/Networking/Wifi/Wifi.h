@@ -14,6 +14,9 @@
 #ifndef COMPONENTS_CLASSES_NETWORKING_WIFI_WIFI_H_
 #define COMPONENTS_CLASSES_NETWORKING_WIFI_WIFI_H_
 
+/** \brief Handles WiFi connection, provides abstraction to wifi functionallity TODO
+ *
+ */
 class Wifi {
 public:
 	Wifi();

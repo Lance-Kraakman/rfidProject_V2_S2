@@ -1,18 +1,18 @@
 \doxysection{Class List}
 Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
-\item\contentsline{section}{\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} \\*Application code, Provides interaction between communications, employee models and device models }{\pageref{classDataProcessing}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} \\*Application code, Provides interaction between communications, employee models and device models Provides a state machine which decides what to do with the messages }{\pageref{classDataProcessing}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classDevice}{Device}} \\*\mbox{\hyperlink{classDevice}{Device}} Class represents a device with an \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \textquotesingle{}attached\textquotesingle{} }{\pageref{classDevice}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classDeviceModel}{Device\+Model}} \\*Represents a \mbox{\hyperlink{classDevice}{Device}} list and provides access and update abstraction }{\pageref{classDeviceModel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDeviceModel}{Device\+Model}} \\*Represents a \mbox{\hyperlink{classDevice}{Device}} list and provides access, update functionality and some json abstraction }{\pageref{classDeviceModel}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classEmployee}{Employee}} \\*\mbox{\hyperlink{classEmployee}{Employee}} Class represents a employee with an \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \textquotesingle{}attached\textquotesingle{} }{\pageref{classEmployee}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classEmployeeModel}{Employee\+Model}} \\*Represents a \mbox{\hyperlink{classEmployee}{Employee}} list and provides access, update and json abstraction }{\pageref{classEmployeeModel}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classMainApplication}{Main\+Application}} }{\pageref{classMainApplication}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classmdnsService}{mdns\+Service}} }{\pageref{classmdnsService}}{}
-\item\contentsline{section}{\mbox{\hyperlink{structmessage}{message}} }{\pageref{structmessage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmployeeModel}{Employee\+Model}} \\*Represents a \mbox{\hyperlink{classEmployee}{Employee}} list and provides access, update functionality and some json abstraction }{\pageref{classEmployeeModel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMainApplication}{Main\+Application}} \\*Application Code -\/ Initialization, startup code and loop }{\pageref{classMainApplication}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classmdnsService}{mdns\+Service}} \\*T\+O\+DO -\/ Will provide a mdns resolve service to resolve advertising protocols on the network }{\pageref{classmdnsService}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structmessage}{message}} \\*Struct representing a M\+Q\+TT message }{\pageref{structmessage}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classMessagingService}{Messaging\+Service}} \\*Provides an abstraction layer for networking and messaging communications. Connection is made to a M\+Q\+TT service. Messages that come in are stored in a list and can be accessed at any time. Static functionality as it is only reasonable to connect to one M\+Q\+TT service at a time }{\pageref{classMessagingService}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classMqttService}{Mqtt\+Service}} }{\pageref{classMqttService}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMqttService}{Mqtt\+Service}} \\*Provides abstraction to C functions for the mqtt service, Essentially a wrapper class with some abstraction }{\pageref{classMqttService}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classRfidScanner}{Rfid\+Scanner}} \\*Abstraction from rfid scanner. Tags are stored in a list which can be read, popped and manipulated from this class when needed }{\pageref{classRfidScanner}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} }{\pageref{classRfidTag}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \\*\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} class represents rfid tag with time of scan and time since start up attributes }{\pageref{classRfidTag}}{}
 \item\contentsline{section}{\mbox{\hyperlink{classSntpTime}{Sntp\+Time}} \\*Class represents the data-\/time using 24 hour format The class also provides sync with a ntp server }{\pageref{classSntpTime}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classTagProcessing}{Tag\+Processing}} }{\pageref{classTagProcessing}}{}
-\item\contentsline{section}{\mbox{\hyperlink{classWifi}{Wifi}} }{\pageref{classWifi}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTagProcessing}{Tag\+Processing}} \\*Application code, Provides interaction between rfid scanner and data processoing class Provides a state machine which decides what to do with the scanned tags }{\pageref{classTagProcessing}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classWifi}{Wifi}} \\*Handles Wi\+Fi connection, provides abstraction to wifi functionallity T\+O\+DO }{\pageref{classWifi}}{}
 \end{DoxyCompactList}

@@ -15,7 +15,7 @@
 #ifndef COMPONENTS_CLASSES_EMPLOYEEMODEL_EMPLOYEEMODEL_H_
 #define COMPONENTS_CLASSES_EMPLOYEEMODEL_EMPLOYEEMODEL_H_
 
-/** \brief Represents a Employee list and provides access, update and json abstraction.
+/** \brief Represents a Employee list and provides access, update functionality and some json abstraction
  *
  */
 class EmployeeModel {
