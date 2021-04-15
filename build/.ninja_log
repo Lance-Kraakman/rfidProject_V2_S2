@@ -1252,3 +1252,5 @@
 13	20	1618350075461649711	bootloader/bootloader.bin	831a43ccfd84544c
 13	20	1618350075461649711	bootloader/bootloader.map	831a43ccfd84544c
 20	19455	0	CMakeFiles/flash	7c5dacc7ba18d9d
+87	4231	1618463784104487181	build.ninja	c0dbcab04c9fa364
+0	2079315	0	CMakeFiles/confserver	526f31c835f8040e
