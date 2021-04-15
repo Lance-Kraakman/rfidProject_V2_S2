@@ -13,6 +13,7 @@
 #include "../../MyTime/SntpTime.h"
 #include <vector>
 #include <algorithm>
+#include "../../Display/DisplayDriver.h"
 
 extern "C" {
 	#include "cJSON.h"
@@ -33,12 +34,15 @@ private:
 	MessagingService messagingService;
 	EmployeeModel employees;
 	DeviceModel devices;
+
+	DisplayDriver display;
 	SntpTime globalTime;
 
 	message recvdMessage;
 	void commandReceived();
 public:
 	DataProcessing();
+	DataProcessing(DisplayDriver& myDriver);
 	void init();
 	void doMessageProcessing();
 	MessagingService getMessagingService();

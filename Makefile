@@ -1,24 +1,36 @@
-#
-# This is a project Makefile. It is assumed the directory this Makefile resides in is a
-# project subdirectory.
-#
+PROJECT_NAME := main
+IOT_SOLUTION_PATH ?= $(abspath $(shell pwd)/../../)
 
-PROJECT_NAME := rfidProject_V2_S2
+EXTRA_COMPONENT_DIRS += ./components/
+EXTRA_COMPONENT_DIRS += ./components/Classes/Networking/Messaging
+EXTRA_COMPONENT_DIRS += ./components/Classes/Networking/MqttService
+EXTRA_COMPONENT_DIRS += ENV{IDF_PATH}/examples/common_components/protocol_examples_common
+EXTRA_COMPONENT_DIRS += ./components/Classes/RfidTag
+EXTRA_COMPONENT_DIRS += ./components/Classes/Device
+EXTRA_COMPONENT_DIRS += ./components/Classes/Employee
+EXTRA_COMPONENT_DIRS += ./components/Classes/MyTime
+EXTRA_COMPONENT_DIRS += ./components/Classes/RfidScanner
+EXTRA_COMPONENT_DIRS += ./components/Classes/Application/DataProcessing
+EXTRA_COMPONENT_DIRS += ./components/Classes/Application/TagProcessing
+EXTRA_COMPONENT_DIRS += ./components/Classes/EmployeeModel
+EXTRA_COMPONENT_DIRS += ./components/Classes/DeviceModel
+EXTRA_COMPONENT_DIRS += ./components/Classes/Display
+EXTRA_COMPONENT_DIRS += ./components/Classes/Application/MainApplication
+
+EXTRA_INCLUDE_DIRS += ./components/
+EXTRA_INCLUDE_DIRS += ./components/Classes/Networking/Messaging
+EXTRA_INCLUDE_DIRS += ./components/Classes/Networking/MqttService
+EXTRA_INCLUDE_DIRS += ENV{IDF_PATH}/examples/common_components/protocol_examples_common
+EXTRA_INCLUDE_DIRS += ./components/Classes/RfidTag
+EXTRA_INCLUDE_DIRS += ./components/Classes/Device
+EXTRA_INCLUDE_DIRS += ./components/Classes/Employee
+EXTRA_INCLUDE_DIRS += ./components/Classes/MyTime
+EXTRA_INCLUDE_DIRS += ./components/Classes/RfidScanner
+EXTRA_INCLUDE_DIRS += ./components/Classes/Application/DataProcessing
+EXTRA_INCLUDE_DIRS += ./components/Classes/Application/TagProcessing
+EXTRA_INCLUDE_DIRS += ./components/Classes/EmployeeModel
+EXTRA_INCLUDE_DIRS += ./components/Classes/DeviceModel
+EXTRA_INCLUDE_DIRS += ./components/Classes/Display
+EXTRA_INCLUDE_DIRS += ./components/Classes/Application/MainApplication
 
 
-#If IOT_SOLUTION_PATH is not defined, use relative path as default value
-IOT_SOLUTION_PATH ?= $(abspath $(shell pwd)/../../../)
- 
-EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components
-EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components/general/param
-EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components/bus
-EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components/gui/ginput/touch
-EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components/gui/lvgl_gui
-EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components/gui/gdisp
-EXTRA_COMPONENT_DIRS += $(IOT_SOLUTION_PATH)/components/gui/lcd_paint
-EXTRA_COMPONENT_DIRS += $(PROJECT_PATH)/components/Processing
-EXTRA_COMPONENT_DIRS += $(PROJECT_PATH)/components/Processing/inputProcessing
-
-CFLAGS += -fexceptions
-
-include $(IDF_PATH)/make/project.mk

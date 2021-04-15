@@ -16,8 +16,11 @@ MainApplication::MainApplication() {
 
 void MainApplication::runConfig() {
 
+	this->DisplayProcessor = DisplayDriver(5,10,40000000,21,26,19,9,18);
+	this->DisplayProcessor.init();
+	vTaskDelay(50/portTICK_RATE_MS);
 	this->DataProcessor = DataProcessing();
-	this->TagProcessor = TagProcessing(&this->DataProcessor);
+	this->TagProcessor = TagProcessing(&this->DataProcessor, &DisplayProcessor);
 
 	this->DataProcessor.init();
 	this->TagProcessor.init();
@@ -45,13 +48,18 @@ void MainApplication::runConfig() {
 // Basic State Machine
 void MainApplication::runLoop() {
 
+
+
 	while(1) {
 		// Theese have to be sequential and not in parrellel because they access shared data
 		this->TagProcessor.doProcessing();
 		this->DataProcessor.doMessageProcessing();
-		vTaskDelay(200/portTICK_RATE_MS);
+		this->DisplayProcessor.runDisplay();
+		vTaskDelay(20/portTICK_RATE_MS);
 	}
 }
+
+
 
 
 

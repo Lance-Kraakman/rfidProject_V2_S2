@@ -95,6 +95,7 @@ RfidTag RfidScanner::readRfidListFromPosition(uint position) {
  * @return
  */
 bool RfidScanner::isDoubleTagged(RfidTag recvdTag,RfidTag previousTag, int microsecondTimeoutTime) {
+	printf("current %lld,prev %lld,diff %lld\n",recvdTag.getStartupTime(), previousTag.getStartupTime(),(recvdTag.getStartupTime() - previousTag.getStartupTime()));
 	if ((recvdTag.getStartupTime() - previousTag.getStartupTime()) < microsecondTimeoutTime) {
 			return true;
 		}

@@ -20,6 +20,7 @@
 #include "../../RfidScanner/RfidScanner.h"
 #include "../../Networking/Wifi/Wifi.h"
 #include "../TagProcessing/TagProcessing.h"
+#include "../../Display/DisplayDriver.h"
 
 #define MAIN_APP "MAIN_APP"
 
@@ -38,6 +39,9 @@ private:
 	// Private state machine functions
 	DataProcessing DataProcessor;
 	TagProcessing TagProcessor;
+
+	//Display
+	DisplayDriver DisplayProcessor;
 
 public:
 	MainApplication();

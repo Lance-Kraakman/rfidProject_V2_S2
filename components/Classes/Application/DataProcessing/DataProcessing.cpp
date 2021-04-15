@@ -10,6 +10,10 @@
 
 DataProcessing::DataProcessing() {}
 
+DataProcessing::DataProcessing(DisplayDriver& myDriver) {
+	this->display = myDriver;
+}
+
 /*
  * config - in the future this will also handle exceptions and stuff
  */
@@ -27,7 +31,6 @@ void DataProcessing::init() {
 		globalTime.SyncTime();
 		globalTime.printTime();
 		globalTime.updateToCurrentTime(); // sets the time to the current time
-		globalTime.printTime();
 
 		this->devices = DeviceModel();
 		this->employees = EmployeeModel();

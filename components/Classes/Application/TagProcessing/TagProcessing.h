@@ -9,6 +9,7 @@
 #include "../../Device/Device.h"
 #include <algorithm>
 #include "../DataProcessing/DataProcessing.h"
+#include "../../Display/DisplayDriver.h"
 
 #define TAG_PROCESSING "TAG PROCESSING"
 #define MAX_SECONDS 30
@@ -26,6 +27,9 @@ private:
 
 	RfidTag previousTag; // Copy of previously scanned tag
 	Employee previousEmployee; // Copy of previously scanned employee
+	Device previousDevice;
+
+	DisplayDriver *display;
 
 	// private methods for state machine
 	void deviceIsFound(Device& searchDevice, RfidTag& recvdTag);
@@ -36,7 +40,7 @@ private:
 public:
 	TagProcessing();
 	void doProcessing();
-	TagProcessing(DataProcessing *dataProcessor);
+	TagProcessing(DataProcessing *dataProcessor, DisplayDriver *myDriver);
 	void init();
 };
 
