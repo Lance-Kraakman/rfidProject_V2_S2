@@ -138,7 +138,7 @@ void TagProcessing::sendConfigRequest(Employee& emp) {
 	 */
 	char buffer[50];
 	sprintf(buffer, "Buffer: %lld \n", emp.getTag().getUUID());
-	this->dataProcessor->getMessagingService().sendMessage("config-employee", buffer, DEFAULT_QOS);
+	this->dataProcessor->getMessagingService().sendMessage("                                                                                                                                                                                                                                     -employee", buffer, DEFAULT_QOS);
 	this->display->updateHomeText("Please Register\nTag", STATE_EMPLOYEE_TAGGED, 5);
 }
 

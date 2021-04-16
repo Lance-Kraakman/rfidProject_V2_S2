@@ -18,6 +18,7 @@
 #include "driver/gpio.h"
 #include <string>
 
+#define CONFIG_USE_ONLY_LWIP_SELECT 1
 #define MQTT_SERVICE "MQTT SERVICE"
 #define MQTT_INITIALIZED 1
 #define MQTT_UNINITIALIZED 0

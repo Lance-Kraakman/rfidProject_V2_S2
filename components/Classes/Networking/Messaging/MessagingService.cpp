@@ -7,6 +7,7 @@
 
 #include "MessagingService.h"
 #define CONFIG_BROKER_LOCAL "mqtt://192.168.1.73:1883"
+#define CONFIG_BROKER_TEST "mqtt://iot.eclipse.org:1883"
 std::vector<message> MessagingService::messageList = std::vector<message>(); // Static messaging list
 
 
@@ -18,11 +19,10 @@ MessagingService::MessagingService() {}
 void MessagingService::initMessagingServices() {
 	// Configure MQTT
 	esp_mqtt_client_config_t mqtt_cfg = { // @suppress("Invalid arguments")
-	    	.uri = CONFIG_BROKER_LOCAL,
+	    	.uri = CONFIG_BROKER_TEST,
 			.port = 1883,
-//			.task_prio = 1,
-//			.task_stack = 8192,
-//			.buffer_size = 2048,
+			.task_prio = 5,
+
 	};
 
 	MqttService myService = MqttService(mqtt_cfg);
