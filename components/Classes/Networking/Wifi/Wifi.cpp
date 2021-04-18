@@ -30,7 +30,7 @@ Wifi::Wifi() {
  *
  * @return ESP_OK on successful connection
  */
-void Wifi::connectNetwork() {
+void Wifi::connectAsStation() {
 
 	 esp_err_t ret = nvs_flash_init();
 	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -54,13 +54,14 @@ void Wifi::wifi_init_sta(void)
     esp_netif_create_default_wifi_sta();
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
 
-    esp_event_handler_instance_t instance_any_id;
-    esp_event_handler_instance_t instance_got_ip;
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,ESP_EVENT_ANY_ID,&Wifi::event_handler,NULL,&instance_any_id));
+    //esp_event_handler_instance_t instance_any_id;
+    //esp_event_handler_instance_t instance_got_ip;
 
-    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,IP_EVENT_STA_GOT_IP, &Wifi::event_handler,NULL, &instance_got_ip));
+    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT,ESP_EVENT_ANY_ID,&Wifi::station_event_handler,NULL));
+    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT,IP_EVENT_STA_GOT_IP, &Wifi::station_event_handler,NULL));
 
     wifi_scan_threshold_t thresh = {
 		/* Setting a password implies station will connect to all security modes including WEP/WPA.
@@ -112,12 +113,14 @@ void Wifi::wifi_init_sta(void)
     }
 
     /* The event will not be processed after unregister */
+    /*
     ESP_ERROR_CHECK(esp_event_handler_instance_unregister(IP_EVENT, IP_EVENT_STA_GOT_IP, instance_got_ip));
     ESP_ERROR_CHECK(esp_event_handler_instance_unregister(WIFI_EVENT, ESP_EVENT_ANY_ID, instance_any_id));
     vEventGroupDelete(Wifi::s_wifi_event_group);
+    */
 }
 
-void Wifi::event_handler(void* arg, esp_event_base_t event_base,
+void Wifi::station_event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data)
 {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
@@ -134,7 +137,7 @@ void Wifi::event_handler(void* arg, esp_event_base_t event_base,
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
         ESP_LOGI(TAG_WIFI, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
-        Wifi::s_retry_num = 0;
+        Wifi::s_retry_num = 0; //Reset it back to zero
         xEventGroupSetBits(Wifi::s_wifi_event_group, WIFI_CONNECTED_BIT);
     }
 }

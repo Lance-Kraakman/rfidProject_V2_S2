@@ -6,8 +6,8 @@
  */
 
 #include "MessagingService.h"
-#define CONFIG_BROKER_LOCAL "mqtt://192.168.1.73:1883"
-#define CONFIG_BROKER_TEST "mqtt://iot.eclipse.org:1883"
+#define CONFIG_BROKER_LOCAL "mqtt://192.168.1.64"
+#define CONFIG_BROKER_TEST "mqtt://test.mosquitto.org"
 std::vector<message> MessagingService::messageList = std::vector<message>(); // Static messaging list
 
 

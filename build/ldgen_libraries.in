@@ -48,6 +48,7 @@ $<TARGET_FILE:__idf_tcp_transport>
 $<TARGET_FILE:__idf_esp_http_client>
 $<TARGET_FILE:__idf_esp_http_server>
 $<TARGET_FILE:__idf_esp_https_ota>
+$<TARGET_FILE:__idf_esp_https_server>
 $<TARGET_FILE:__idf_protobuf-c>
 $<TARGET_FILE:__idf_protocomm>
 $<TARGET_FILE:__idf_mdns>
@@ -79,6 +80,8 @@ $<TARGET_FILE:__idf_Device>
 $<TARGET_FILE:__idf_esp-idf-rc522>
 $<TARGET_FILE:__idf_RfidScanner>
 $<TARGET_FILE:__idf_Mdns>
+$<TARGET_FILE:__idf_Wifi>
+$<TARGET_FILE:__idf_WebServer>
 $<TARGET_FILE:__idf_bus>
 $<TARGET_FILE:__idf_boards>
 $<TARGET_FILE:__idf_screen>
@@ -88,7 +91,6 @@ $<TARGET_FILE:__idf_HomePage>
 $<TARGET_FILE:__idf_Display>
 $<TARGET_FILE:__idf_DeviceModel>
 $<TARGET_FILE:__idf_EmployeeModel>
-$<TARGET_FILE:__idf_Wifi>
 $<TARGET_FILE:__idf_DataProcessing>
 $<TARGET_FILE:__idf_TagProcessing>
 $<TARGET_FILE:__idf_MainApplication>

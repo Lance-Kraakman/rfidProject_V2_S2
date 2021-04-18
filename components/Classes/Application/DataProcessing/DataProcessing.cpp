@@ -19,7 +19,7 @@ DataProcessing::DataProcessing(DisplayDriver& myDriver) {
  */
 void DataProcessing::init() {
 
-		this->WifiHandler.connectNetwork();
+		this->WifiHandler.connectAsStation();
 		this->messagingService.initMessagingServices();
 		this->messagingService.addMessageSubscription("device/add-device", DEFAULT_QOS);
 		this->messagingService.addMessageSubscription("device/add-employee", DEFAULT_QOS);

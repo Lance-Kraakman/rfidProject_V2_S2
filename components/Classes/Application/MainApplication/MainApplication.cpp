@@ -44,11 +44,10 @@ void MainApplication::runConfig() {
 //	this->DataProcessor.getEmployeeModel().addEmployee(emp2);
 //	this->DataProcessor.getEmployeeModel().addEmployee(emp3);
 
-	Wifi wifi;
-	wifi.connectNetwork();
+	//Wifi wifi;
+	//wifi.connectAsStation();
 
-	MessagingService myService = MessagingService();
-	myService.initMessagingServices();
+	WebServer myServer;
 
 }
 
