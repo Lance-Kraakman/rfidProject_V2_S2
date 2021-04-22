@@ -714,6 +714,13 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Wifi/CMakeFiles/list_install_components.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Wifi/CMakeFiles/edit_cache.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Wifi/CMakeFiles/rebuild_cache.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/CMakeFiles/install/strip.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/CMakeFiles/install/local.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/CMakeFiles/install.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/CMakeFiles/__idf_WebServerSkeleton.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/CMakeFiles/list_install_components.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/CMakeFiles/edit_cache.dir
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/CMakeFiles/rebuild_cache.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServer/CMakeFiles/install/strip.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServer/CMakeFiles/install/local.dir
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServer/CMakeFiles/install.dir

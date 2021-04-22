@@ -6,6 +6,11 @@
  */
 
 #include "MainApplication.h"
+#include <string>
+
+// Creaete Pages
+httpResponse emps = httpResponse(std::string("<h1> Default Data <h1>"), HTTPD_RESP_USE_STRLEN, std::string("/emps"), std::string("application/json"), HTTP_GET);
+httpResponse devs = httpResponse(std::string("<h1> Default Data <h1>"), HTTPD_RESP_USE_STRLEN, std::string("/devs"), std::string("application/json"), HTTP_GET);
 
 #define MAX_SECONDS 30
 
@@ -47,7 +52,22 @@ void MainApplication::runConfig() {
 	//Wifi wifi;
 	//wifi.connectAsStation();
 
-	WebServer myServer;
+
+	WebServer myServer = WebServer();
+	vTaskDelay(10/portTICK_RATE_MS);
+
+
+	myServer.addResponse(&emps);
+	myServer.addResponse(&devs);
+
+	ESP_LOGI(TAG_PROCESSING, "Entering loop");
+	//pageOne.data.assign(std::string("<h1> New Data <h1>"));
+	char *empJson = "[{\"Letter\": 0 ,\"Freq\": 2858},{\"Letter\" : 31,\"Freq\" : 0}]";
+
+	char *devJson = "[{\"Letter\": 1 ,\"Freq\": 45345},{\"Letter\" : 222,\"Freq\" : 1}]";
+
+
+
 
 }
 

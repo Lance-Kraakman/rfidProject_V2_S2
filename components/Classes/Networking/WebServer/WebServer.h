@@ -5,28 +5,54 @@
  *      Author: lance
  */
 
-#include "../Wifi/Wifi.h"
-#include <esp_wifi.h>
-#include <esp_event.h>
-#include <esp_log.h>
-#include <esp_system.h>
-#include <nvs_flash.h>
-#include <sys/param.h>
-#include "esp_netif.h"
-#include "esp_eth.h"
-#include <esp_https_server.h>
+#include "../WebServerSkeleton/WebServerSkeleton.h"
+#include <string>
 
-#ifndef COMPONENTS_CLASSES_NETWORKING_WEBSERVER_WEBSERVER_H_
-#define COMPONENTS_CLASSES_NETWORKING_WEBSERVER_WEBSERVER_H_
+#define CONFIG_MAX_NUM_RESPONSES 5
 
-class WebServer : public Wifi {
+#ifndef COMPONENTS_CLASSES_NETWORKING_MYWEBSERVER_MYWEBSERVER_H_
+#define COMPONENTS_CLASSES_NETWORKING_MYWEBSERVER_MYWEBSERVER_H_
+
+class httpResponse {
+public:
+	httpResponse(std::string dataPtr, int dataSize, std::string uriString, std::string responseType, httpd_method_t method);
+	SemaphoreHandle_t dataSemaphore = NULL;
+	bool deleteDataOnResponse = false;
+	std::string uriString;
+	std::string responseType;
+	std::string data;
+	int dataSize;
+	void respond(httpd_req_t *req);
+	void respond_get(httpd_req_t *req);
+	void respond_post(httpd_req_t *req);
+
+
+	httpd_method_t method;
+
+	void updateData(std::string data);
+	void updateData(char *data);
+	void deleteData();
+	std::string getData();
+	void addToData(std::string data);
 private:
-	static void disconnect_handler(void* arg, esp_event_base_t event_base,int32_t event_id, void* event_data);
-	static void connect_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data);
-	static httpd_handle_t start_webserver(void);
-	static void stop_webserver(httpd_handle_t server);
+};
+
+/** Web Server Class. Add pages and shit leshgooo
+ *
+ */
+class WebServer : public WebServerSkeleton {
 public:
 	WebServer();
+	void addResponse(httpResponse *httpResponse);
+	static void response(const char *responseType, const char *data, ssize_t bufferLen, httpd_req_t *req);
+	static void find_uri_and_respond(httpd_req_t *req);
+private:
+	static esp_err_t handler(httpd_req_t *req);
+	static httpd_uri_t uri_list[CONFIG_MAX_NUM_RESPONSES];
+	static httpResponse *responseList[CONFIG_MAX_NUM_RESPONSES];
+	static int pageCount;
+
+
 };
 
 #endif /* COMPONENTS_CLASSES_NETWORKING_WEBSERVER_WEBSERVER_H_ */

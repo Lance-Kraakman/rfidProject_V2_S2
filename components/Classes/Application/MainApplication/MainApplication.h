@@ -19,9 +19,9 @@
 #include "../../Networking/Messaging/MessagingService.h"
 #include "../../RfidScanner/RfidScanner.h"
 #include "../../Networking/Wifi/Wifi.h"
-#include "../../Networking/WebServer/WebServer.h"
 #include "../TagProcessing/TagProcessing.h"
 #include "../../Display/DisplayDriver.h"
+#include "../../Networking/WebServer/WebServer.h"
 
 #define MAIN_APP "MAIN_APP"
 

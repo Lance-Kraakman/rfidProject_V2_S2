@@ -4,17 +4,17 @@
  *  Created on: 6/04/2021
  *      Author: lance
  */
-#include <sys/param.h>
-#include "esp_netif.h"
-#include "nvs_flash.h"
-#include "esp_wifi.h"
-#include "esp_system.h"
-#include "protocol_examples_common.h"
-#include "esp_eth.h"
-#include "esp_log.h"
-
-#include "freertos/event_groups.h"
-
+extern "C" {
+	#include <sys/param.h>
+	#include "esp_netif.h"
+	#include "nvs_flash.h"
+	#include "esp_wifi.h"
+	#include "esp_system.h"
+	#include "protocol_examples_common.h"
+	#include "esp_eth.h"
+	#include "esp_log.h"
+	#include "freertos/event_groups.h"
+}
 #ifndef COMPONENTS_CLASSES_NETWORKING_WIFI_WIFI_H_
 #define COMPONENTS_CLASSES_NETWORKING_WIFI_WIFI_H_
 
@@ -22,7 +22,7 @@
 #define EXAMPLE_ESP_WIFI_PASS CONFIG_EXAMPLE_WIFI_PASSWORD
 
 
-#define EXAMPLE_ESP_MAXIMUM_RETRY  8
+#define EXAMPLE_ESP_MAXIMUM_RETRY  99999999999
 #define TAG_WIFI "WIFI"
 
 #define WIFI_CONNECTED_BIT BIT0

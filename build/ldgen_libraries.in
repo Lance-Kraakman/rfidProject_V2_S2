@@ -81,6 +81,7 @@ $<TARGET_FILE:__idf_esp-idf-rc522>
 $<TARGET_FILE:__idf_RfidScanner>
 $<TARGET_FILE:__idf_Mdns>
 $<TARGET_FILE:__idf_Wifi>
+$<TARGET_FILE:__idf_WebServerSkeleton>
 $<TARGET_FILE:__idf_WebServer>
 $<TARGET_FILE:__idf_bus>
 $<TARGET_FILE:__idf_boards>
