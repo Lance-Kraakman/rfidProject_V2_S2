@@ -67,7 +67,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">MainApplication.h File Reference</div>  </div>
 </div><!--header-->
@@ -84,6 +85,11 @@ $(function() {
 <code>#include &quot;<a class="el" href="RfidScanner_8h_source.html">../../RfidScanner/RfidScanner.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Wifi_8h_source.html">../../Networking/Wifi/Wifi.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TagProcessing_8h_source.html">../TagProcessing/TagProcessing.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DisplayDriver_8h_source.html">../../Display/DisplayDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="WebServer_8h_source.html">../../Networking/WebServer/WebServer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="eventSkeleton_8h_source.html">../../eventLoopSkeleton/eventSkeleton.h</a>&quot;</code><br />
+<code>#include &quot;esp_event_base.h&quot;</code><br />
+<code>#include &quot;esp_timer.h&quot;</code><br />
 </div>
 <p><a href="MainApplication_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -97,8 +103,29 @@ Classes</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:ac82eb513ce42db19d1f81080f6d0bf2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MainApplication_8h.html#ac82eb513ce42db19d1f81080f6d0bf2a">MAIN_APP</a>&#160;&#160;&#160;&quot;MAIN_APP&quot;</td></tr>
 <tr class="separator:ac82eb513ce42db19d1f81080f6d0bf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af85b9c8557d782a906f4c172a229baea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MainApplication_8h.html#af85b9c8557d782a906f4c172a229baea">APPLICATION_CODE_EVENT_BASE</a>&#160;&#160;&#160;786</td></tr>
+<tr class="separator:af85b9c8557d782a906f4c172a229baea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a565abd3b75e8cb1a642698ad1cd36b85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="MainApplication_8h.html#a565abd3b75e8cb1a642698ad1cd36b85">ESP_EVENT_DECLARE_BASE</a> (APPLICATION_CODE_EVENTS)</td></tr>
+<tr class="separator:a565abd3b75e8cb1a642698ad1cd36b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="af85b9c8557d782a906f4c172a229baea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af85b9c8557d782a906f4c172a229baea">&#9670;&nbsp;</a></span>APPLICATION_CODE_EVENT_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define APPLICATION_CODE_EVENT_BASE&#160;&#160;&#160;786</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac82eb513ce42db19d1f81080f6d0bf2a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac82eb513ce42db19d1f81080f6d0bf2a">&#9670;&nbsp;</a></span>MAIN_APP</h2>
 
@@ -107,6 +134,25 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define MAIN_APP&#160;&#160;&#160;&quot;MAIN_APP&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a565abd3b75e8cb1a642698ad1cd36b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565abd3b75e8cb1a642698ad1cd36b85">&#9670;&nbsp;</a></span>ESP_EVENT_DECLARE_BASE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ESP_EVENT_DECLARE_BASE </td>
+          <td>(</td>
+          <td class="paramtype">APPLICATION_CODE_EVENTS&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">

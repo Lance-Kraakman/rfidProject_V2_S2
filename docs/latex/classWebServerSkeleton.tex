@@ -1,0 +1,96 @@
+\hypertarget{classWebServerSkeleton}{}\doxysection{Web\+Server\+Skeleton Class Reference}
+\label{classWebServerSkeleton}\index{WebServerSkeleton@{WebServerSkeleton}}
+
+
+{\ttfamily \#include $<$Web\+Server\+Skeleton.\+h$>$}
+
+Inheritance diagram for Web\+Server\+Skeleton\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classWebServerSkeleton}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServerSkeleton_a08ae8558d1956d0c580fb9193cbb7cdb}{Web\+Server\+Skeleton}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static httpd\+\_\+handle\+\_\+t \mbox{\hyperlink{classWebServerSkeleton_a7643bb2325c788967e5379545a2da2fa}{server}} = N\+U\+LL
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classWebServerSkeleton_a9a372dada8179668118c35e40e1c8c2c}{disconnect\+\_\+handler}} (void $\ast$arg, esp\+\_\+event\+\_\+base\+\_\+t event\+\_\+base, int32\+\_\+t event\+\_\+id, void $\ast$event\+\_\+data)
+\item 
+static void \mbox{\hyperlink{classWebServerSkeleton_add088576ac4454af100e5db896351492}{connect\+\_\+handler}} (void $\ast$arg, esp\+\_\+event\+\_\+base\+\_\+t event\+\_\+base, int32\+\_\+t event\+\_\+id, void $\ast$event\+\_\+data)
+\item 
+static httpd\+\_\+handle\+\_\+t \mbox{\hyperlink{classWebServerSkeleton_aedc61148cc459f66711b4d3a8fb4bdde}{start\+\_\+webserver}} (void)
+\item 
+static void \mbox{\hyperlink{classWebServerSkeleton_afd7313f18943705b64e13ac0815eaa03}{stop\+\_\+webserver}} (httpd\+\_\+handle\+\_\+t \mbox{\hyperlink{classWebServerSkeleton_a7643bb2325c788967e5379545a2da2fa}{server}})
+\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{classWebServerSkeleton_a5bffdc7dfc678b71e18c2a22efa3941a}{root\+\_\+handler}} (httpd\+\_\+req\+\_\+t $\ast$req)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Web Server defines event handlers for a web server. For implementation example see My\+Web\+Server 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebServerSkeleton_a08ae8558d1956d0c580fb9193cbb7cdb}\label{classWebServerSkeleton_a08ae8558d1956d0c580fb9193cbb7cdb}} 
+\index{WebServerSkeleton@{WebServerSkeleton}!WebServerSkeleton@{WebServerSkeleton}}
+\index{WebServerSkeleton@{WebServerSkeleton}!WebServerSkeleton@{WebServerSkeleton}}
+\doxysubsubsection{\texorpdfstring{WebServerSkeleton()}{WebServerSkeleton()}}
+{\footnotesize\ttfamily Web\+Server\+Skeleton\+::\+Web\+Server\+Skeleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServerSkeleton_add088576ac4454af100e5db896351492}\label{classWebServerSkeleton_add088576ac4454af100e5db896351492}} 
+\index{WebServerSkeleton@{WebServerSkeleton}!connect\_handler@{connect\_handler}}
+\index{connect\_handler@{connect\_handler}!WebServerSkeleton@{WebServerSkeleton}}
+\doxysubsubsection{\texorpdfstring{connect\_handler()}{connect\_handler()}}
+{\footnotesize\ttfamily void Web\+Server\+Skeleton\+::connect\+\_\+handler (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{esp\+\_\+event\+\_\+base\+\_\+t}]{event\+\_\+base,  }\item[{int32\+\_\+t}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWebServerSkeleton_a9a372dada8179668118c35e40e1c8c2c}\label{classWebServerSkeleton_a9a372dada8179668118c35e40e1c8c2c}} 
+\index{WebServerSkeleton@{WebServerSkeleton}!disconnect\_handler@{disconnect\_handler}}
+\index{disconnect\_handler@{disconnect\_handler}!WebServerSkeleton@{WebServerSkeleton}}
+\doxysubsubsection{\texorpdfstring{disconnect\_handler()}{disconnect\_handler()}}
+{\footnotesize\ttfamily void Web\+Server\+Skeleton\+::disconnect\+\_\+handler (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{esp\+\_\+event\+\_\+base\+\_\+t}]{event\+\_\+base,  }\item[{int32\+\_\+t}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWebServerSkeleton_a5bffdc7dfc678b71e18c2a22efa3941a}\label{classWebServerSkeleton_a5bffdc7dfc678b71e18c2a22efa3941a}} 
+\index{WebServerSkeleton@{WebServerSkeleton}!root\_handler@{root\_handler}}
+\index{root\_handler@{root\_handler}!WebServerSkeleton@{WebServerSkeleton}}
+\doxysubsubsection{\texorpdfstring{root\_handler()}{root\_handler()}}
+{\footnotesize\ttfamily static esp\+\_\+err\+\_\+t Web\+Server\+Skeleton\+::root\+\_\+handler (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWebServerSkeleton_aedc61148cc459f66711b4d3a8fb4bdde}\label{classWebServerSkeleton_aedc61148cc459f66711b4d3a8fb4bdde}} 
+\index{WebServerSkeleton@{WebServerSkeleton}!start\_webserver@{start\_webserver}}
+\index{start\_webserver@{start\_webserver}!WebServerSkeleton@{WebServerSkeleton}}
+\doxysubsubsection{\texorpdfstring{start\_webserver()}{start\_webserver()}}
+{\footnotesize\ttfamily httpd\+\_\+handle\+\_\+t Web\+Server\+Skeleton\+::start\+\_\+webserver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWebServerSkeleton_afd7313f18943705b64e13ac0815eaa03}\label{classWebServerSkeleton_afd7313f18943705b64e13ac0815eaa03}} 
+\index{WebServerSkeleton@{WebServerSkeleton}!stop\_webserver@{stop\_webserver}}
+\index{stop\_webserver@{stop\_webserver}!WebServerSkeleton@{WebServerSkeleton}}
+\doxysubsubsection{\texorpdfstring{stop\_webserver()}{stop\_webserver()}}
+{\footnotesize\ttfamily void Web\+Server\+Skeleton\+::stop\+\_\+webserver (\begin{DoxyParamCaption}\item[{httpd\+\_\+handle\+\_\+t}]{server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWebServerSkeleton_a7643bb2325c788967e5379545a2da2fa}\label{classWebServerSkeleton_a7643bb2325c788967e5379545a2da2fa}} 
+\index{WebServerSkeleton@{WebServerSkeleton}!server@{server}}
+\index{server@{server}!WebServerSkeleton@{WebServerSkeleton}}
+\doxysubsubsection{\texorpdfstring{server}{server}}
+{\footnotesize\ttfamily httpd\+\_\+handle\+\_\+t Web\+Server\+Skeleton\+::server = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Web\+Server\+Skeleton/\mbox{\hyperlink{WebServerSkeleton_8h}{Web\+Server\+Skeleton.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Web\+Server\+Skeleton/\mbox{\hyperlink{WebServerSkeleton_8cpp}{Web\+Server\+Skeleton.\+cpp}}\end{DoxyCompactItemize}

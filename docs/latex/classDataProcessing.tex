@@ -14,6 +14,8 @@ Application code, Provides interaction between communications, employee models a
 \item 
 \mbox{\hyperlink{classDataProcessing_a6c2b35c38400048d5557b9977e291623}{Data\+Processing}} ()
 \item 
+\mbox{\hyperlink{classDataProcessing_abc8756ff002f62b4a25f41c6391fd46f}{Data\+Processing}} (\mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} \&my\+Driver)
+\item 
 void \mbox{\hyperlink{classDataProcessing_a0a4d672b6cc6af09038a338c658c0fd5}{init}} ()
 \item 
 void \mbox{\hyperlink{classDataProcessing_a735a8cbfbd5c09482d7ac9957db76222}{do\+Message\+Processing}} ()
@@ -50,6 +52,8 @@ void \mbox{\hyperlink{classDataProcessing_ae52b862c0170d433d53f7b2b7bfa47ff}{com
 \item 
 \mbox{\hyperlink{classDeviceModel}{Device\+Model}} \mbox{\hyperlink{classDataProcessing_a8c8effd80e2aa1a0cc7f32e024f79f6d}{devices}}
 \item 
+\mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} \mbox{\hyperlink{classDataProcessing_ae36c5470f9b0debdc80980959a8e3a35}{display}}
+\item 
 \mbox{\hyperlink{classSntpTime}{Sntp\+Time}} \mbox{\hyperlink{classDataProcessing_ac3fc7e2ef66b7809cb1ab4d18db82b77}{global\+Time}}
 \item 
 \mbox{\hyperlink{structmessage}{message}} \mbox{\hyperlink{classDataProcessing_a9eca482a6f425dc38edd082a78899890}{recvd\+Message}}
@@ -65,8 +69,14 @@ Application code, Provides interaction between communications, employee models a
 \mbox{\Hypertarget{classDataProcessing_a6c2b35c38400048d5557b9977e291623}\label{classDataProcessing_a6c2b35c38400048d5557b9977e291623}} 
 \index{DataProcessing@{DataProcessing}!DataProcessing@{DataProcessing}}
 \index{DataProcessing@{DataProcessing}!DataProcessing@{DataProcessing}}
-\doxysubsubsection{\texorpdfstring{DataProcessing()}{DataProcessing()}}
+\doxysubsubsection{\texorpdfstring{DataProcessing()}{DataProcessing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Data\+Processing\+::\+Data\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataProcessing_abc8756ff002f62b4a25f41c6391fd46f}\label{classDataProcessing_abc8756ff002f62b4a25f41c6391fd46f}} 
+\index{DataProcessing@{DataProcessing}!DataProcessing@{DataProcessing}}
+\index{DataProcessing@{DataProcessing}!DataProcessing@{DataProcessing}}
+\doxysubsubsection{\texorpdfstring{DataProcessing()}{DataProcessing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Data\+Processing\+::\+Data\+Processing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} \&}]{my\+Driver }\end{DoxyParamCaption})}
 
 
 
@@ -159,6 +169,12 @@ Sends employee list json to app/app-\/data M\+Q\+TT topic
 \index{devices@{devices}!DataProcessing@{DataProcessing}}
 \doxysubsubsection{\texorpdfstring{devices}{devices}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classDeviceModel}{Device\+Model}} Data\+Processing\+::devices\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDataProcessing_ae36c5470f9b0debdc80980959a8e3a35}\label{classDataProcessing_ae36c5470f9b0debdc80980959a8e3a35}} 
+\index{DataProcessing@{DataProcessing}!display@{display}}
+\index{display@{display}!DataProcessing@{DataProcessing}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} Data\+Processing\+::display\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classDataProcessing_a24c588e07efc8a979c0411f20d2c9063}\label{classDataProcessing_a24c588e07efc8a979c0411f20d2c9063}} 
 \index{DataProcessing@{DataProcessing}!employees@{employees}}

@@ -7,6 +7,7 @@
 
 #include "../RfidTag/RfidTag.h"
 #include "../Employee/Employee.h"
+#include <string>
 
 #ifndef COMPONENTS_CLASSES_DEVICE_DEVICE_H_
 #define COMPONENTS_CLASSES_DEVICE_DEVICE_H_

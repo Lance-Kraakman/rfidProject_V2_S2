@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['tag_5fprocessing_1699',['TAG_PROCESSING',['../TagProcessing_8h.html#af05191ad5710220375986e4188d696ff',1,'TagProcessing.h']]],
-  ['time_5ftag_1700',['TIME_TAG',['../SntpTime_8h.html#aa6f8d9ec7ec1ae31b6338e8dd1aa86dd',1,'SntpTime.h']]],
-  ['timezone_5fstr_5fny_1701',['TIMEZONE_STR_NY',['../SntpTime_8h.html#a671ca9130812cc250c34f6d503703f72',1,'SntpTime.h']]],
-  ['timezone_5fstr_5fnz_1702',['TIMEZONE_STR_NZ',['../SntpTime_8h.html#ad5c61737d9562b40fd8690f87c07ad80',1,'SntpTime.h']]]
+  ['state_5fdevice_5ftagged_1911',['STATE_DEVICE_TAGGED',['../DisplayDriver_8h.html#a124b5d0b6dd65e1398a670cf8ece3c7b',1,'DisplayDriver.h']]],
+  ['state_5femployee_5ftagged_1912',['STATE_EMPLOYEE_TAGGED',['../DisplayDriver_8h.html#a92d870dd7fc43e320bb5611ec6f07c4b',1,'DisplayDriver.h']]],
+  ['state_5fhome_1913',['STATE_HOME',['../DisplayDriver_8h.html#a135e27179fb5a50988cf293bc28b00ca',1,'DisplayDriver.h']]],
+  ['state_5fnot_5fhome_1914',['STATE_NOT_HOME',['../DisplayDriver_8h.html#a2c41dc0c021d20cb3388028ba693a44c',1,'DisplayDriver.h']]],
+  ['stringify_1915',['STRINGIFY',['../bootloader_2CMakeFiles_23_816_84_2CompilerIdC_2CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCCompilerId.c'],['../bootloader_2CMakeFiles_23_816_84_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCXXCompilerId.cpp'],['../CMakeFiles_23_816_84_2CompilerIdC_2CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCCompilerId.c'],['../CMakeFiles_23_816_84_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCXXCompilerId.cpp']]],
+  ['stringify_5fhelper_1916',['STRINGIFY_HELPER',['../bootloader_2CMakeFiles_23_816_84_2CompilerIdC_2CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCCompilerId.c'],['../bootloader_2CMakeFiles_23_816_84_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCXXCompilerId.cpp'],['../CMakeFiles_23_816_84_2CompilerIdC_2CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCCompilerId.c'],['../CMakeFiles_23_816_84_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCXXCompilerId.cpp']]]
 ];

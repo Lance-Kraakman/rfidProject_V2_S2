@@ -1,0 +1,111 @@
+\hypertarget{classWebServer}{}\doxysection{Web\+Server Class Reference}
+\label{classWebServer}\index{WebServer@{WebServer}}
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
+Inheritance diagram for Web\+Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classWebServer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServer_ad053f4e1808a3c10c7522d0dbbbc031a}{Web\+Server}} ()
+\begin{DoxyCompactList}\small\item\em My\+Web\+Server is an implementation of the web server class! this can be used as a demonstration of how to implement the web server class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_a225d88816819e5fbd248c38db43c7f14}{add\+Response}} (\mbox{\hyperlink{classhttpResponse}{http\+Response}} $\ast$\mbox{\hyperlink{classhttpResponse}{http\+Response}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classWebServer_abea28baea4598a2b9788b4dde639e1c0}{response}} (const char $\ast$response\+Type, const char $\ast$data, ssize\+\_\+t buffer\+Len, httpd\+\_\+req\+\_\+t $\ast$req)
+\item 
+static void \mbox{\hyperlink{classWebServer_a359bf125159a6e50b7232c823d7649d3}{find\+\_\+uri\+\_\+and\+\_\+respond}} (httpd\+\_\+req\+\_\+t $\ast$req)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static esp\+\_\+err\+\_\+t \mbox{\hyperlink{classWebServer_a40d83a0c140ad850754b30ef587db782}{handler}} (httpd\+\_\+req\+\_\+t $\ast$req)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static httpd\+\_\+uri\+\_\+t \mbox{\hyperlink{classWebServer_a311928b0e5bf2828ffb80f8b805d63da}{uri\+\_\+list}} \mbox{[}\mbox{\hyperlink{WebServer_8h_add74e70d247ef4b5eeecc33fec37debd}{C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES}}\mbox{]}
+\item 
+static \mbox{\hyperlink{classhttpResponse}{http\+Response}} $\ast$ \mbox{\hyperlink{classWebServer_a48f81755feba624a1cb58539e8a74cfb}{response\+List}} \mbox{[}\mbox{\hyperlink{WebServer_8h_add74e70d247ef4b5eeecc33fec37debd}{C\+O\+N\+F\+I\+G\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+R\+E\+S\+P\+O\+N\+S\+ES}}\mbox{]}
+\item 
+static int \mbox{\hyperlink{classWebServer_a512962ffc04f469e5365d47ae9004558}{page\+Count}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Web Server Class. Add pages and shit leshgooo 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebServer_ad053f4e1808a3c10c7522d0dbbbc031a}\label{classWebServer_ad053f4e1808a3c10c7522d0dbbbc031a}} 
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+My\+Web\+Server is an implementation of the web server class! this can be used as a demonstration of how to implement the web server class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServer_a225d88816819e5fbd248c38db43c7f14}\label{classWebServer_a225d88816819e5fbd248c38db43c7f14}} 
+\index{WebServer@{WebServer}!addResponse@{addResponse}}
+\index{addResponse@{addResponse}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{addResponse()}{addResponse()}}
+{\footnotesize\ttfamily void Web\+Server\+::add\+Response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classhttpResponse}{http\+Response}} $\ast$}]{http\+Response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWebServer_a359bf125159a6e50b7232c823d7649d3}\label{classWebServer_a359bf125159a6e50b7232c823d7649d3}} 
+\index{WebServer@{WebServer}!find\_uri\_and\_respond@{find\_uri\_and\_respond}}
+\index{find\_uri\_and\_respond@{find\_uri\_and\_respond}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{find\_uri\_and\_respond()}{find\_uri\_and\_respond()}}
+{\footnotesize\ttfamily void Web\+Server\+::find\+\_\+uri\+\_\+and\+\_\+respond (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classWebServer_a40d83a0c140ad850754b30ef587db782}\label{classWebServer_a40d83a0c140ad850754b30ef587db782}} 
+\index{WebServer@{WebServer}!handler@{handler}}
+\index{handler@{handler}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{handler()}{handler()}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t Web\+Server\+::handler (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWebServer_abea28baea4598a2b9788b4dde639e1c0}\label{classWebServer_abea28baea4598a2b9788b4dde639e1c0}} 
+\index{WebServer@{WebServer}!response@{response}}
+\index{response@{response}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{response()}{response()}}
+{\footnotesize\ttfamily void Web\+Server\+::response (\begin{DoxyParamCaption}\item[{const char $\ast$}]{response\+Type,  }\item[{const char $\ast$}]{data,  }\item[{ssize\+\_\+t}]{buffer\+Len,  }\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWebServer_a512962ffc04f469e5365d47ae9004558}\label{classWebServer_a512962ffc04f469e5365d47ae9004558}} 
+\index{WebServer@{WebServer}!pageCount@{pageCount}}
+\index{pageCount@{pageCount}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{pageCount}{pageCount}}
+{\footnotesize\ttfamily int Web\+Server\+::page\+Count = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWebServer_a48f81755feba624a1cb58539e8a74cfb}\label{classWebServer_a48f81755feba624a1cb58539e8a74cfb}} 
+\index{WebServer@{WebServer}!responseList@{responseList}}
+\index{responseList@{responseList}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{responseList}{responseList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classhttpResponse}{http\+Response}} $\ast$ Web\+Server\+::response\+List\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWebServer_a311928b0e5bf2828ffb80f8b805d63da}\label{classWebServer_a311928b0e5bf2828ffb80f8b805d63da}} 
+\index{WebServer@{WebServer}!uri\_list@{uri\_list}}
+\index{uri\_list@{uri\_list}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{uri\_list}{uri\_list}}
+{\footnotesize\ttfamily httpd\+\_\+uri\+\_\+t Web\+Server\+::uri\+\_\+list\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Web\+Server/\mbox{\hyperlink{WebServer_8h}{Web\+Server.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Web\+Server/\mbox{\hyperlink{WebServer_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}

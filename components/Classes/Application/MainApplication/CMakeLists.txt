@@ -1,4 +1,4 @@
-idf_component_register(SRCS "MainApplication.cpp" INCLUDE_DIRS "/." REQUIRES WebServer Display TagProcessing Wifi RfidScanner MyTime Employee Device RfidTag Messaging MqttService nvs_flash protocol_examples_common)
+idf_component_register(SRCS "MainApplication.cpp" INCLUDE_DIRS "/." REQUIRES eventLoopSkeleton WebServer  Display TagProcessing Wifi RfidScanner MyTime Employee Device RfidTag Messaging MqttService nvs_flash protocol_examples_common)
 
 set_source_files_properties(MainApplication.cpp PROPERTIES COMPILE_FLAGS -fexceptions)
 

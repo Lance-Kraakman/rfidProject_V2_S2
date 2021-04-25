@@ -9,6 +9,12 @@ Application Code -\/ Initialization, startup code and loop.
 
 {\ttfamily \#include $<$Main\+Application.\+h$>$}
 
+Inheritance diagram for Main\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMainApplication}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,6 +23,20 @@ Application Code -\/ Initialization, startup code and loop.
 void \mbox{\hyperlink{classMainApplication_a51e409331acd07814a1130bf9ed364f8}{run\+Config}} ()
 \item 
 void \mbox{\hyperlink{classMainApplication_a253ce8c20821a2b1eb7ad2682c3f66ab}{run\+Loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classMainApplication_a2220c215f417841cab6775f9d62cd4da}{print\+Hello\+Handler}} ()
+\item 
+static void \mbox{\hyperlink{classMainApplication_a1a73ab3c2b34f14f7d2c192f3ebdb1cc}{instance\+Handler}} (int $\ast$num)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classMainApplication_abc8bac784cb2b2649c806bdc78b21682}{tag}}
+\item 
+int \mbox{\hyperlink{classMainApplication_aaa9d0965b5936bac34ad697bf0a280cb}{x}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -28,6 +48,8 @@ std\+::vector$<$ \mbox{\hyperlink{classDevice}{Device}} $>$ \mbox{\hyperlink{cla
 \mbox{\hyperlink{classDataProcessing}{Data\+Processing}} \mbox{\hyperlink{classMainApplication_adc2dc393076778ce8d7c52cf495c5880}{Data\+Processor}}
 \item 
 \mbox{\hyperlink{classTagProcessing}{Tag\+Processing}} \mbox{\hyperlink{classMainApplication_a12c64f1a5cb47303ce7af9774749a055}{Tag\+Processor}}
+\item 
+\mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} \mbox{\hyperlink{classMainApplication_a8bfc947d42337f0bb90d42e78abd0777}{Display\+Processor}}
 \end{DoxyCompactItemize}
 
 
@@ -46,6 +68,18 @@ Application Code -\/ Initialization, startup code and loop.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMainApplication_a1a73ab3c2b34f14f7d2c192f3ebdb1cc}\label{classMainApplication_a1a73ab3c2b34f14f7d2c192f3ebdb1cc}} 
+\index{MainApplication@{MainApplication}!instanceHandler@{instanceHandler}}
+\index{instanceHandler@{instanceHandler}!MainApplication@{MainApplication}}
+\doxysubsubsection{\texorpdfstring{instanceHandler()}{instanceHandler()}}
+{\footnotesize\ttfamily void Main\+Application\+::instance\+Handler (\begin{DoxyParamCaption}\item[{int $\ast$}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classMainApplication_a2220c215f417841cab6775f9d62cd4da}\label{classMainApplication_a2220c215f417841cab6775f9d62cd4da}} 
+\index{MainApplication@{MainApplication}!printHelloHandler@{printHelloHandler}}
+\index{printHelloHandler@{printHelloHandler}!MainApplication@{MainApplication}}
+\doxysubsubsection{\texorpdfstring{printHelloHandler()}{printHelloHandler()}}
+{\footnotesize\ttfamily void Main\+Application\+::print\+Hello\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \mbox{\Hypertarget{classMainApplication_a51e409331acd07814a1130bf9ed364f8}\label{classMainApplication_a51e409331acd07814a1130bf9ed364f8}} 
 \index{MainApplication@{MainApplication}!runConfig@{runConfig}}
 \index{runConfig@{runConfig}!MainApplication@{MainApplication}}
@@ -73,17 +107,35 @@ Application Code -\/ Initialization, startup code and loop.
 \doxysubsubsection{\texorpdfstring{deviceList}{deviceList}}
 {\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classDevice}{Device}}$>$ Main\+Application\+::device\+List\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classMainApplication_a8bfc947d42337f0bb90d42e78abd0777}\label{classMainApplication_a8bfc947d42337f0bb90d42e78abd0777}} 
+\index{MainApplication@{MainApplication}!DisplayProcessor@{DisplayProcessor}}
+\index{DisplayProcessor@{DisplayProcessor}!MainApplication@{MainApplication}}
+\doxysubsubsection{\texorpdfstring{DisplayProcessor}{DisplayProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} Main\+Application\+::\+Display\+Processor\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classMainApplication_ad7eb6d927a0c147db09f358b333aae53}\label{classMainApplication_ad7eb6d927a0c147db09f358b333aae53}} 
 \index{MainApplication@{MainApplication}!employeeList@{employeeList}}
 \index{employeeList@{employeeList}!MainApplication@{MainApplication}}
 \doxysubsubsection{\texorpdfstring{employeeList}{employeeList}}
 {\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classEmployee}{Employee}}$>$ Main\+Application\+::employee\+List\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classMainApplication_abc8bac784cb2b2649c806bdc78b21682}\label{classMainApplication_abc8bac784cb2b2649c806bdc78b21682}} 
+\index{MainApplication@{MainApplication}!tag@{tag}}
+\index{tag@{tag}!MainApplication@{MainApplication}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} Main\+Application\+::tag}
+
 \mbox{\Hypertarget{classMainApplication_a12c64f1a5cb47303ce7af9774749a055}\label{classMainApplication_a12c64f1a5cb47303ce7af9774749a055}} 
 \index{MainApplication@{MainApplication}!TagProcessor@{TagProcessor}}
 \index{TagProcessor@{TagProcessor}!MainApplication@{MainApplication}}
 \doxysubsubsection{\texorpdfstring{TagProcessor}{TagProcessor}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classTagProcessing}{Tag\+Processing}} Main\+Application\+::\+Tag\+Processor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMainApplication_aaa9d0965b5936bac34ad697bf0a280cb}\label{classMainApplication_aaa9d0965b5936bac34ad697bf0a280cb}} 
+\index{MainApplication@{MainApplication}!x@{x}}
+\index{x@{x}!MainApplication@{MainApplication}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Main\+Application\+::x}
 
 
 

@@ -12,6 +12,11 @@
 {\ttfamily \#include \char`\"{}../../\+Rfid\+Scanner/\+Rfid\+Scanner.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../../\+Networking/\+Wifi/\+Wifi.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../\+Tag\+Processing/\+Tag\+Processing.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Display/\+Display\+Driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Networking/\+Web\+Server/\+Web\+Server.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../event\+Loop\+Skeleton/event\+Skeleton.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+event\+\_\+base.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+timer.\+h\char`\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,13 +26,35 @@ class \mbox{\hyperlink{classMainApplication}{Main\+Application}}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{MainApplication_8h_ac82eb513ce42db19d1f81080f6d0bf2a}{M\+A\+I\+N\+\_\+\+A\+PP}}~\char`\"{}M\+A\+I\+N\+\_\+\+A\+PP\char`\"{}
+\item 
+\#define \mbox{\hyperlink{MainApplication_8h_af85b9c8557d782a906f4c172a229baea}{A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+D\+E\+\_\+\+E\+V\+E\+N\+T\+\_\+\+B\+A\+SE}}~786
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MainApplication_8h_a565abd3b75e8cb1a642698ad1cd36b85}{E\+S\+P\+\_\+\+E\+V\+E\+N\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+B\+A\+SE}} (A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+D\+E\+\_\+\+E\+V\+E\+N\+TS)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{MainApplication_8h_af85b9c8557d782a906f4c172a229baea}\label{MainApplication_8h_af85b9c8557d782a906f4c172a229baea}} 
+\index{MainApplication.h@{MainApplication.h}!APPLICATION\_CODE\_EVENT\_BASE@{APPLICATION\_CODE\_EVENT\_BASE}}
+\index{APPLICATION\_CODE\_EVENT\_BASE@{APPLICATION\_CODE\_EVENT\_BASE}!MainApplication.h@{MainApplication.h}}
+\doxysubsubsection{\texorpdfstring{APPLICATION\_CODE\_EVENT\_BASE}{APPLICATION\_CODE\_EVENT\_BASE}}
+{\footnotesize\ttfamily \#define A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+D\+E\+\_\+\+E\+V\+E\+N\+T\+\_\+\+B\+A\+SE~786}
+
 \mbox{\Hypertarget{MainApplication_8h_ac82eb513ce42db19d1f81080f6d0bf2a}\label{MainApplication_8h_ac82eb513ce42db19d1f81080f6d0bf2a}} 
 \index{MainApplication.h@{MainApplication.h}!MAIN\_APP@{MAIN\_APP}}
 \index{MAIN\_APP@{MAIN\_APP}!MainApplication.h@{MainApplication.h}}
 \doxysubsubsection{\texorpdfstring{MAIN\_APP}{MAIN\_APP}}
 {\footnotesize\ttfamily \#define M\+A\+I\+N\+\_\+\+A\+PP~\char`\"{}M\+A\+I\+N\+\_\+\+A\+PP\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{MainApplication_8h_a565abd3b75e8cb1a642698ad1cd36b85}\label{MainApplication_8h_a565abd3b75e8cb1a642698ad1cd36b85}} 
+\index{MainApplication.h@{MainApplication.h}!ESP\_EVENT\_DECLARE\_BASE@{ESP\_EVENT\_DECLARE\_BASE}}
+\index{ESP\_EVENT\_DECLARE\_BASE@{ESP\_EVENT\_DECLARE\_BASE}!MainApplication.h@{MainApplication.h}}
+\doxysubsubsection{\texorpdfstring{ESP\_EVENT\_DECLARE\_BASE()}{ESP\_EVENT\_DECLARE\_BASE()}}
+{\footnotesize\ttfamily E\+S\+P\+\_\+\+E\+V\+E\+N\+T\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+B\+A\+SE (\begin{DoxyParamCaption}\item[{A\+P\+P\+L\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+O\+D\+E\+\_\+\+E\+V\+E\+N\+TS}]{ }\end{DoxyParamCaption})}
 

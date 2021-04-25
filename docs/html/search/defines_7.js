@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rfid_5fscanner_5ftag_1695',['RFID_SCANNER_TAG',['../RfidScanner_8h.html#ae0ecd889b4342f7d235a44f30d00f84a',1,'RfidScanner.h']]],
-  ['rfid_5ftag_1696',['RFID_TAG',['../RfidTag_8h.html#a13c1ce973c3928dd00142d2a6ccfe50a',1,'RfidTag.h']]]
+  ['platform_5fid_1908',['PLATFORM_ID',['../bootloader_2CMakeFiles_23_816_84_2CompilerIdC_2CMakeCCompilerId_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../bootloader_2CMakeFiles_23_816_84_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp'],['../CMakeFiles_23_816_84_2CompilerIdC_2CMakeCCompilerId_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../CMakeFiles_23_816_84_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]]
 ];

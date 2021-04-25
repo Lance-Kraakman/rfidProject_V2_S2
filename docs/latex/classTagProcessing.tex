@@ -16,7 +16,7 @@ Application code, Provides interaction between rfid scanner and data processoing
 \item 
 void \mbox{\hyperlink{classTagProcessing_a93f04f8db8ceea893f193e1a0219042a}{do\+Processing}} ()
 \item 
-\mbox{\hyperlink{classTagProcessing_a0752a542e38a3147589855a3e257238a}{Tag\+Processing}} (\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$\mbox{\hyperlink{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}{data\+Processor}})
+\mbox{\hyperlink{classTagProcessing_a26ca6acca125e4f65fdb1386435b8bc3}{Tag\+Processing}} (\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$\mbox{\hyperlink{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}{data\+Processor}}, \mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} $\ast$my\+Driver)
 \item 
 void \mbox{\hyperlink{classTagProcessing_acd69999b3ce3fff9404676fb86bd07eb}{init}} ()
 \end{DoxyCompactItemize}
@@ -43,6 +43,10 @@ void \mbox{\hyperlink{classTagProcessing_a83528a75e888b205b376af4db23f7274}{send
 \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classTagProcessing_acd080b23b7fef5ded9034b47561b5de2}{previous\+Tag}}
 \item 
 \mbox{\hyperlink{classEmployee}{Employee}} \mbox{\hyperlink{classTagProcessing_ad714e837ea5ab8e0a19adc417b72cc76}{previous\+Employee}}
+\item 
+\mbox{\hyperlink{classDevice}{Device}} \mbox{\hyperlink{classTagProcessing_ac194ce89a1f9850e46ee7cac2326506a}{previous\+Device}}
+\item 
+\mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} $\ast$ \mbox{\hyperlink{classTagProcessing_a411d96b8fe33b6ee7b39b294dc382988}{display}}
 \end{DoxyCompactItemize}
 
 
@@ -56,11 +60,11 @@ Application code, Provides interaction between rfid scanner and data processoing
 \doxysubsubsection{\texorpdfstring{TagProcessing()}{TagProcessing()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Tag\+Processing\+::\+Tag\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classTagProcessing_a0752a542e38a3147589855a3e257238a}\label{classTagProcessing_a0752a542e38a3147589855a3e257238a}} 
+\mbox{\Hypertarget{classTagProcessing_a26ca6acca125e4f65fdb1386435b8bc3}\label{classTagProcessing_a26ca6acca125e4f65fdb1386435b8bc3}} 
 \index{TagProcessing@{TagProcessing}!TagProcessing@{TagProcessing}}
 \index{TagProcessing@{TagProcessing}!TagProcessing@{TagProcessing}}
 \doxysubsubsection{\texorpdfstring{TagProcessing()}{TagProcessing()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Tag\+Processing\+::\+Tag\+Processing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$}]{data\+Processor }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Tag\+Processing\+::\+Tag\+Processing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$}]{data\+Processor,  }\item[{\mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} $\ast$}]{my\+Driver }\end{DoxyParamCaption})}
 
 
 
@@ -115,6 +119,18 @@ Application code, Provides interaction between rfid scanner and data processoing
 \index{dataProcessor@{dataProcessor}!TagProcessing@{TagProcessing}}
 \doxysubsubsection{\texorpdfstring{dataProcessor}{dataProcessor}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classDataProcessing}{Data\+Processing}}$\ast$ Tag\+Processing\+::data\+Processor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_a411d96b8fe33b6ee7b39b294dc382988}\label{classTagProcessing_a411d96b8fe33b6ee7b39b294dc382988}} 
+\index{TagProcessing@{TagProcessing}!display@{display}}
+\index{display@{display}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDisplayDriver}{Display\+Driver}}$\ast$ Tag\+Processing\+::display\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_ac194ce89a1f9850e46ee7cac2326506a}\label{classTagProcessing_ac194ce89a1f9850e46ee7cac2326506a}} 
+\index{TagProcessing@{TagProcessing}!previousDevice@{previousDevice}}
+\index{previousDevice@{previousDevice}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{previousDevice}{previousDevice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDevice}{Device}} Tag\+Processing\+::previous\+Device\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{classTagProcessing_ad714e837ea5ab8e0a19adc417b72cc76}\label{classTagProcessing_ad714e837ea5ab8e0a19adc417b72cc76}} 
 \index{TagProcessing@{TagProcessing}!previousEmployee@{previousEmployee}}

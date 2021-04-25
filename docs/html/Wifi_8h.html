@@ -66,7 +66,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">Wifi.h File Reference</div>  </div>
 </div><!--header-->
@@ -75,8 +76,11 @@ $(function() {
 <code>#include &quot;esp_netif.h&quot;</code><br />
 <code>#include &quot;nvs_flash.h&quot;</code><br />
 <code>#include &quot;esp_wifi.h&quot;</code><br />
+<code>#include &quot;esp_system.h&quot;</code><br />
 <code>#include &quot;protocol_examples_common.h&quot;</code><br />
 <code>#include &quot;esp_eth.h&quot;</code><br />
+<code>#include &quot;esp_log.h&quot;</code><br />
+<code>#include &quot;freertos/event_groups.h&quot;</code><br />
 </div>
 <p><a href="Wifi_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -85,7 +89,107 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html">Wifi</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles WiFi connection, provides abstraction to wifi functionallity TODO.  <a href="classWifi.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a4fb60228f865afd7f59ecff4a658a9a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wifi_8h.html#a4fb60228f865afd7f59ecff4a658a9a6">EXAMPLE_ESP_WIFI_SSID</a>&#160;&#160;&#160;<a class="el" href="config_2sdkconfig_8h.html#a29ef2657d6b7e814ef99fa3118b9d1a1">CONFIG_EXAMPLE_WIFI_SSID</a></td></tr>
+<tr class="separator:a4fb60228f865afd7f59ecff4a658a9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d09dc1b370b2971ca6849a248c0a2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wifi_8h.html#ad6d09dc1b370b2971ca6849a248c0a2d">EXAMPLE_ESP_WIFI_PASS</a>&#160;&#160;&#160;<a class="el" href="config_2sdkconfig_8h.html#a84dffeb6ba982d373884d071e1730a79">CONFIG_EXAMPLE_WIFI_PASSWORD</a></td></tr>
+<tr class="separator:ad6d09dc1b370b2971ca6849a248c0a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53b3f32bae9a0450911fd7a2d407a76d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wifi_8h.html#a53b3f32bae9a0450911fd7a2d407a76d">EXAMPLE_ESP_MAXIMUM_RETRY</a>&#160;&#160;&#160;99999999999</td></tr>
+<tr class="separator:a53b3f32bae9a0450911fd7a2d407a76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7fc93caae54cdd83e612273a26aabe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wifi_8h.html#a0b7fc93caae54cdd83e612273a26aabe">TAG_WIFI</a>&#160;&#160;&#160;&quot;WIFI&quot;</td></tr>
+<tr class="separator:a0b7fc93caae54cdd83e612273a26aabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad552e7688532cbbecd3967538ced06ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wifi_8h.html#ad552e7688532cbbecd3967538ced06ac">WIFI_CONNECTED_BIT</a>&#160;&#160;&#160;BIT0</td></tr>
+<tr class="separator:ad552e7688532cbbecd3967538ced06ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d013b55e50dfbda0904f5f933b63ec4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Wifi_8h.html#a7d013b55e50dfbda0904f5f933b63ec4">WIFI_FAIL_BIT</a>&#160;&#160;&#160;BIT1</td></tr>
+<tr class="separator:a7d013b55e50dfbda0904f5f933b63ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a53b3f32bae9a0450911fd7a2d407a76d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53b3f32bae9a0450911fd7a2d407a76d">&#9670;&nbsp;</a></span>EXAMPLE_ESP_MAXIMUM_RETRY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXAMPLE_ESP_MAXIMUM_RETRY&#160;&#160;&#160;99999999999</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad6d09dc1b370b2971ca6849a248c0a2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d09dc1b370b2971ca6849a248c0a2d">&#9670;&nbsp;</a></span>EXAMPLE_ESP_WIFI_PASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXAMPLE_ESP_WIFI_PASS&#160;&#160;&#160;<a class="el" href="config_2sdkconfig_8h.html#a84dffeb6ba982d373884d071e1730a79">CONFIG_EXAMPLE_WIFI_PASSWORD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fb60228f865afd7f59ecff4a658a9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb60228f865afd7f59ecff4a658a9a6">&#9670;&nbsp;</a></span>EXAMPLE_ESP_WIFI_SSID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXAMPLE_ESP_WIFI_SSID&#160;&#160;&#160;<a class="el" href="config_2sdkconfig_8h.html#a29ef2657d6b7e814ef99fa3118b9d1a1">CONFIG_EXAMPLE_WIFI_SSID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b7fc93caae54cdd83e612273a26aabe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7fc93caae54cdd83e612273a26aabe">&#9670;&nbsp;</a></span>TAG_WIFI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TAG_WIFI&#160;&#160;&#160;&quot;WIFI&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad552e7688532cbbecd3967538ced06ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad552e7688532cbbecd3967538ced06ac">&#9670;&nbsp;</a></span>WIFI_CONNECTED_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIFI_CONNECTED_BIT&#160;&#160;&#160;BIT0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d013b55e50dfbda0904f5f933b63ec4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d013b55e50dfbda0904f5f933b63ec4">&#9670;&nbsp;</a></span>WIFI_FAIL_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIFI_FAIL_BIT&#160;&#160;&#160;BIT1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

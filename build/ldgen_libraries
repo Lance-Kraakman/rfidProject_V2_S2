@@ -80,6 +80,7 @@
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/esp-idf-rc522/libesp-idf-rc522.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/RfidScanner/libRfidScanner.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Mdns/libMdns.a
+/home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/eventLoopSkeleton/libeventLoopSkeleton.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/Wifi/libWifi.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServerSkeleton/libWebServerSkeleton.a
 /home/lance/eclipse-workspace/rfidProject_V2_S2/build/esp-idf/WebServer/libWebServer.a

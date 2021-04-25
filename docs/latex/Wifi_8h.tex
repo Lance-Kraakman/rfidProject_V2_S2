@@ -4,10 +4,67 @@
 {\ttfamily \#include \char`\"{}esp\+\_\+netif.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}nvs\+\_\+flash.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}esp\+\_\+wifi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+system.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}protocol\+\_\+examples\+\_\+common.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}esp\+\_\+eth.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/event\+\_\+groups.\+h\char`\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classWifi}{Wifi}}
 \begin{DoxyCompactList}\small\item\em Handles Wi\+Fi connection, provides abstraction to wifi functionallity T\+O\+DO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Wifi_8h_a4fb60228f865afd7f59ecff4a658a9a6}{E\+X\+A\+M\+P\+L\+E\+\_\+\+E\+S\+P\+\_\+\+W\+I\+F\+I\+\_\+\+S\+S\+ID}}~\mbox{\hyperlink{config_2sdkconfig_8h_a29ef2657d6b7e814ef99fa3118b9d1a1}{C\+O\+N\+F\+I\+G\+\_\+\+E\+X\+A\+M\+P\+L\+E\+\_\+\+W\+I\+F\+I\+\_\+\+S\+S\+ID}}
+\item 
+\#define \mbox{\hyperlink{Wifi_8h_ad6d09dc1b370b2971ca6849a248c0a2d}{E\+X\+A\+M\+P\+L\+E\+\_\+\+E\+S\+P\+\_\+\+W\+I\+F\+I\+\_\+\+P\+A\+SS}}~\mbox{\hyperlink{config_2sdkconfig_8h_a84dffeb6ba982d373884d071e1730a79}{C\+O\+N\+F\+I\+G\+\_\+\+E\+X\+A\+M\+P\+L\+E\+\_\+\+W\+I\+F\+I\+\_\+\+P\+A\+S\+S\+W\+O\+RD}}
+\item 
+\#define \mbox{\hyperlink{Wifi_8h_a53b3f32bae9a0450911fd7a2d407a76d}{E\+X\+A\+M\+P\+L\+E\+\_\+\+E\+S\+P\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+R\+E\+T\+RY}}~99999999999
+\item 
+\#define \mbox{\hyperlink{Wifi_8h_a0b7fc93caae54cdd83e612273a26aabe}{T\+A\+G\+\_\+\+W\+I\+FI}}~\char`\"{}W\+I\+FI\char`\"{}
+\item 
+\#define \mbox{\hyperlink{Wifi_8h_ad552e7688532cbbecd3967538ced06ac}{W\+I\+F\+I\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+B\+IT}}~B\+I\+T0
+\item 
+\#define \mbox{\hyperlink{Wifi_8h_a7d013b55e50dfbda0904f5f933b63ec4}{W\+I\+F\+I\+\_\+\+F\+A\+I\+L\+\_\+\+B\+IT}}~B\+I\+T1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{Wifi_8h_a53b3f32bae9a0450911fd7a2d407a76d}\label{Wifi_8h_a53b3f32bae9a0450911fd7a2d407a76d}} 
+\index{Wifi.h@{Wifi.h}!EXAMPLE\_ESP\_MAXIMUM\_RETRY@{EXAMPLE\_ESP\_MAXIMUM\_RETRY}}
+\index{EXAMPLE\_ESP\_MAXIMUM\_RETRY@{EXAMPLE\_ESP\_MAXIMUM\_RETRY}!Wifi.h@{Wifi.h}}
+\doxysubsubsection{\texorpdfstring{EXAMPLE\_ESP\_MAXIMUM\_RETRY}{EXAMPLE\_ESP\_MAXIMUM\_RETRY}}
+{\footnotesize\ttfamily \#define E\+X\+A\+M\+P\+L\+E\+\_\+\+E\+S\+P\+\_\+\+M\+A\+X\+I\+M\+U\+M\+\_\+\+R\+E\+T\+RY~99999999999}
+
+\mbox{\Hypertarget{Wifi_8h_ad6d09dc1b370b2971ca6849a248c0a2d}\label{Wifi_8h_ad6d09dc1b370b2971ca6849a248c0a2d}} 
+\index{Wifi.h@{Wifi.h}!EXAMPLE\_ESP\_WIFI\_PASS@{EXAMPLE\_ESP\_WIFI\_PASS}}
+\index{EXAMPLE\_ESP\_WIFI\_PASS@{EXAMPLE\_ESP\_WIFI\_PASS}!Wifi.h@{Wifi.h}}
+\doxysubsubsection{\texorpdfstring{EXAMPLE\_ESP\_WIFI\_PASS}{EXAMPLE\_ESP\_WIFI\_PASS}}
+{\footnotesize\ttfamily \#define E\+X\+A\+M\+P\+L\+E\+\_\+\+E\+S\+P\+\_\+\+W\+I\+F\+I\+\_\+\+P\+A\+SS~\mbox{\hyperlink{config_2sdkconfig_8h_a84dffeb6ba982d373884d071e1730a79}{C\+O\+N\+F\+I\+G\+\_\+\+E\+X\+A\+M\+P\+L\+E\+\_\+\+W\+I\+F\+I\+\_\+\+P\+A\+S\+S\+W\+O\+RD}}}
+
+\mbox{\Hypertarget{Wifi_8h_a4fb60228f865afd7f59ecff4a658a9a6}\label{Wifi_8h_a4fb60228f865afd7f59ecff4a658a9a6}} 
+\index{Wifi.h@{Wifi.h}!EXAMPLE\_ESP\_WIFI\_SSID@{EXAMPLE\_ESP\_WIFI\_SSID}}
+\index{EXAMPLE\_ESP\_WIFI\_SSID@{EXAMPLE\_ESP\_WIFI\_SSID}!Wifi.h@{Wifi.h}}
+\doxysubsubsection{\texorpdfstring{EXAMPLE\_ESP\_WIFI\_SSID}{EXAMPLE\_ESP\_WIFI\_SSID}}
+{\footnotesize\ttfamily \#define E\+X\+A\+M\+P\+L\+E\+\_\+\+E\+S\+P\+\_\+\+W\+I\+F\+I\+\_\+\+S\+S\+ID~\mbox{\hyperlink{config_2sdkconfig_8h_a29ef2657d6b7e814ef99fa3118b9d1a1}{C\+O\+N\+F\+I\+G\+\_\+\+E\+X\+A\+M\+P\+L\+E\+\_\+\+W\+I\+F\+I\+\_\+\+S\+S\+ID}}}
+
+\mbox{\Hypertarget{Wifi_8h_a0b7fc93caae54cdd83e612273a26aabe}\label{Wifi_8h_a0b7fc93caae54cdd83e612273a26aabe}} 
+\index{Wifi.h@{Wifi.h}!TAG\_WIFI@{TAG\_WIFI}}
+\index{TAG\_WIFI@{TAG\_WIFI}!Wifi.h@{Wifi.h}}
+\doxysubsubsection{\texorpdfstring{TAG\_WIFI}{TAG\_WIFI}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+W\+I\+FI~\char`\"{}W\+I\+FI\char`\"{}}
+
+\mbox{\Hypertarget{Wifi_8h_ad552e7688532cbbecd3967538ced06ac}\label{Wifi_8h_ad552e7688532cbbecd3967538ced06ac}} 
+\index{Wifi.h@{Wifi.h}!WIFI\_CONNECTED\_BIT@{WIFI\_CONNECTED\_BIT}}
+\index{WIFI\_CONNECTED\_BIT@{WIFI\_CONNECTED\_BIT}!Wifi.h@{Wifi.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_CONNECTED\_BIT}{WIFI\_CONNECTED\_BIT}}
+{\footnotesize\ttfamily \#define W\+I\+F\+I\+\_\+\+C\+O\+N\+N\+E\+C\+T\+E\+D\+\_\+\+B\+IT~B\+I\+T0}
+
+\mbox{\Hypertarget{Wifi_8h_a7d013b55e50dfbda0904f5f933b63ec4}\label{Wifi_8h_a7d013b55e50dfbda0904f5f933b63ec4}} 
+\index{Wifi.h@{Wifi.h}!WIFI\_FAIL\_BIT@{WIFI\_FAIL\_BIT}}
+\index{WIFI\_FAIL\_BIT@{WIFI\_FAIL\_BIT}!Wifi.h@{Wifi.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_FAIL\_BIT}{WIFI\_FAIL\_BIT}}
+{\footnotesize\ttfamily \#define W\+I\+F\+I\+\_\+\+F\+A\+I\+L\+\_\+\+B\+IT~B\+I\+T1}
+

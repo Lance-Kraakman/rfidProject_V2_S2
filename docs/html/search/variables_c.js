@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['tag_1047',['tag',['../classDevice.html#a9c9ac253e084ffdb5dfe120410dd6647',1,'Device::tag()'],['../classEmployee.html#a1d062cd66f63ec54ca9721f4537dd973',1,'Employee::tag()']]],
-  ['tagprocessor_1048',['TagProcessor',['../classMainApplication.html#a12c64f1a5cb47303ce7af9774749a055',1,'MainApplication']]],
-  ['timeinfo_1049',['timeInfo',['../classSntpTime.html#aeab6c975b2f0d7ac19177c7c34259e13',1,'SntpTime']]],
-  ['timenow_1050',['timeNow',['../classSntpTime.html#a377e63fb73a95c0a7c9d923f7f5bc166',1,'SntpTime']]],
-  ['topic_1051',['topic',['../structmessage.html#a6b0469f5e1b507ba9a96804c63bb847d',1,'message']]]
+  ['pagecount_1237',['pageCount',['../classWebServer.html#a512962ffc04f469e5365d47ae9004558',1,'WebServer']]],
+  ['previousdevice_1238',['previousDevice',['../classTagProcessing.html#ac194ce89a1f9850e46ee7cac2326506a',1,'TagProcessing']]],
+  ['previousemployee_1239',['previousEmployee',['../classTagProcessing.html#ad714e837ea5ab8e0a19adc417b72cc76',1,'TagProcessing']]],
+  ['previousstatetime_1240',['previousStateTime',['../classDisplayDriver.html#ab003de9e9baaf170801dd5437fd2687e',1,'DisplayDriver']]],
+  ['previoustag_1241',['previousTag',['../classTagProcessing.html#acd080b23b7fef5ded9034b47561b5de2',1,'TagProcessing']]]
 ];

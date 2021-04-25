@@ -13,8 +13,8 @@ WebServerSkeleton::WebServerSkeleton() : Wifi() {
 	this->connectAsStation();
 
 	// connect handler for https server
-	ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT,IP_EVENT_STA_GOT_IP, &this->connect_handler, &WebServerSkeleton::server));
-    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, WIFI_EVENT_STA_DISCONNECTED, &this->disconnect_handler, &WebServerSkeleton::server));
+	ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT,IP_EVENT_STA_GOT_IP, &this->connect_handler, NULL));
+    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, WIFI_EVENT_STA_DISCONNECTED, &this->disconnect_handler, NULL));
 
     WebServerSkeleton::start_webserver();
 }

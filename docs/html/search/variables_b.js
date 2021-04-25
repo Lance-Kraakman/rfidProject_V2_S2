@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['scannedtime_1045',['scannedTime',['../classRfidTag.html#a1debff52a45043bf5a69367506f68961',1,'RfidTag']]],
-  ['second_1046',['second',['../classSntpTime.html#a9afc18dd48f19d9821ce48b6bf86c0dd',1,'SntpTime']]]
+  ['name_1236',['name',['../classDevice.html#ae779f5ee618677629b71287f3f77f8e8',1,'Device::name()'],['../classEmployee.html#a3ba103222f2451bf4d34c05ca28a1bed',1,'Employee::name()']]]
 ];

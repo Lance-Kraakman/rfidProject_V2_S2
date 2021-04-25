@@ -63,7 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classWifi-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Wifi Class Reference</div>  </div>
@@ -74,19 +75,38 @@ $(function() {
  <a href="classWifi.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Wifi_8h_source.html">Wifi.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Wifi:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classWifi.png" usemap="#Wifi_map" alt=""/>
+  <map id="Wifi_map" name="Wifi_map">
+<area href="classWebServerSkeleton.html" alt="WebServerSkeleton" shape="rect" coords="0,56,124,80"/>
+<area href="classWebServer.html" alt="WebServer" shape="rect" coords="0,112,124,136"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a63b40a234377f5927d2d34d67826a010"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#a63b40a234377f5927d2d34d67826a010">Wifi</a> ()</td></tr>
 <tr class="separator:a63b40a234377f5927d2d34d67826a010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4568b5e00c699c90a526bf8a0b02f3d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#a4568b5e00c699c90a526bf8a0b02f3d4">connectNetwork</a> ()</td></tr>
-<tr class="memdesc:a4568b5e00c699c90a526bf8a0b02f3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure Wi-Fi or Ethernet, connect, wait for IP.  <a href="classWifi.html#a4568b5e00c699c90a526bf8a0b02f3d4">More...</a><br /></td></tr>
-<tr class="separator:a4568b5e00c699c90a526bf8a0b02f3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a996560e44831ee6c2df47b0c4fb10a7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#a996560e44831ee6c2df47b0c4fb10a7d">connectAsStation</a> ()</td></tr>
+<tr class="memdesc:a996560e44831ee6c2df47b0c4fb10a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure Wi-Fi or Ethernet, connect, wait for IP.  <a href="classWifi.html#a996560e44831ee6c2df47b0c4fb10a7d">More...</a><br /></td></tr>
+<tr class="separator:a996560e44831ee6c2df47b0c4fb10a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7523b22664320e62dafb05ece8c21b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#a3a7523b22664320e62dafb05ece8c21b">wifi_init_sta</a> (void)</td></tr>
+<tr class="separator:a3a7523b22664320e62dafb05ece8c21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a108c1a217f8fe79df1589f833907c525"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#a108c1a217f8fe79df1589f833907c525">isConnected</a></td></tr>
-<tr class="separator:a108c1a217f8fe79df1589f833907c525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a96cd02a676b05ba864f921d9e455afde"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#a96cd02a676b05ba864f921d9e455afde">station_event_handler</a> (void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data)</td></tr>
+<tr class="separator:a96cd02a676b05ba864f921d9e455afde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:aaeb1a7b3177397dafe94a29336c01aa7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#aaeb1a7b3177397dafe94a29336c01aa7">s_retry_num</a> = 0</td></tr>
+<tr class="separator:aaeb1a7b3177397dafe94a29336c01aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71363abc26a2eb90a6c9b4277a274bf2"><td class="memItemLeft" align="right" valign="top">static EventGroupHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWifi.html#a71363abc26a2eb90a6c9b4277a274bf2">s_wifi_event_group</a> = NULL</td></tr>
+<tr class="separator:a71363abc26a2eb90a6c9b4277a274bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles WiFi connection, provides abstraction to wifi functionallity TODO. </p>
@@ -109,14 +129,14 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4568b5e00c699c90a526bf8a0b02f3d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4568b5e00c699c90a526bf8a0b02f3d4">&#9670;&nbsp;</a></span>connectNetwork()</h2>
+<a id="a996560e44831ee6c2df47b0c4fb10a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a996560e44831ee6c2df47b0c4fb10a7d">&#9670;&nbsp;</a></span>connectAsStation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Wifi::connectNetwork </td>
+          <td class="memname">void Wifi::connectAsStation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -132,17 +152,113 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a108c1a217f8fe79df1589f833907c525"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a108c1a217f8fe79df1589f833907c525">&#9670;&nbsp;</a></span>isConnected</h2>
+<a id="a96cd02a676b05ba864f921d9e455afde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96cd02a676b05ba864f921d9e455afde">&#9670;&nbsp;</a></span>station_event_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wifi::station_event_handler </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">esp_event_base_t&#160;</td>
+          <td class="paramname"><em>event_base</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>event_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>event_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a7523b22664320e62dafb05ece8c21b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7523b22664320e62dafb05ece8c21b">&#9670;&nbsp;</a></span>wifi_init_sta()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Wifi::isConnected</td>
+          <td class="memname">void Wifi::wifi_init_sta </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aaeb1a7b3177397dafe94a29336c01aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeb1a7b3177397dafe94a29336c01aa7">&#9670;&nbsp;</a></span>s_retry_num</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Wifi::s_retry_num = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71363abc26a2eb90a6c9b4277a274bf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71363abc26a2eb90a6c9b4277a274bf2">&#9670;&nbsp;</a></span>s_wifi_event_group</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">EventGroupHandle_t Wifi::s_wifi_event_group = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['adddevice_897',['addDevice',['../classDataProcessing.html#a6d0dd7af317a38714aaca6f53417b322',1,'DataProcessing::addDevice()'],['../classDeviceModel.html#ab819cd02fcaf289889870487716be139',1,'DeviceModel::addDevice()']]],
-  ['addemployee_898',['addEmployee',['../classDataProcessing.html#a521e19526f7384eb3540885945921c19',1,'DataProcessing::addEmployee()'],['../classEmployeeModel.html#ac7967206cb1af06ae9afd3de7c6fb43f',1,'EmployeeModel::addEmployee()']]],
-  ['addmessage_899',['addMessage',['../classMessagingService.html#a8489b9bd7071417cc1371c9afe9284e0',1,'MessagingService']]],
-  ['addmessagesubscription_900',['addMessageSubscription',['../classMessagingService.html#a54c20f9b3e82697b54462be003998906',1,'MessagingService']]],
-  ['addsubscriber_901',['addSubscriber',['../classMqttService.html#a28c9a22c1707cd3e5e7c7a979336096b',1,'MqttService']]],
-  ['app_5fmain_902',['app_main',['../main_8cpp.html#abce06be17fc37d675118a678a8100a36',1,'main.cpp']]]
+  ['adddevice_1023',['addDevice',['../classDataProcessing.html#a6d0dd7af317a38714aaca6f53417b322',1,'DataProcessing::addDevice()'],['../classDeviceModel.html#ab819cd02fcaf289889870487716be139',1,'DeviceModel::addDevice()']]],
+  ['addemployee_1024',['addEmployee',['../classDataProcessing.html#a521e19526f7384eb3540885945921c19',1,'DataProcessing::addEmployee()'],['../classEmployeeModel.html#ac7967206cb1af06ae9afd3de7c6fb43f',1,'EmployeeModel::addEmployee()']]],
+  ['addhandler_1025',['addHandler',['../classeventSkeleton.html#ac5cf42c3d8a3c002401ac0681b81b9f0',1,'eventSkeleton']]],
+  ['addmessage_1026',['addMessage',['../classMessagingService.html#a8489b9bd7071417cc1371c9afe9284e0',1,'MessagingService']]],
+  ['addmessagesubscription_1027',['addMessageSubscription',['../classMessagingService.html#a54c20f9b3e82697b54462be003998906',1,'MessagingService']]],
+  ['addresponse_1028',['addResponse',['../classWebServer.html#a225d88816819e5fbd248c38db43c7f14',1,'WebServer']]],
+  ['addsubscriber_1029',['addSubscriber',['../classMqttService.html#a28c9a22c1707cd3e5e7c7a979336096b',1,'MqttService']]],
+  ['addtodata_1030',['addToData',['../classhttpResponse.html#a2695491e146eb120d417f9a1027356b0',1,'httpResponse']]],
+  ['app_5fmain_1031',['app_main',['../main_8cpp.html#abce06be17fc37d675118a678a8100a36',1,'main.cpp']]]
 ];

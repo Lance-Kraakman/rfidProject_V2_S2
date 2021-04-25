@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sntptime_856',['SntpTime',['../classSntpTime.html',1,'']]]
+  ['rfidscanner_966',['RfidScanner',['../classRfidScanner.html',1,'']]],
+  ['rfidtag_967',['RfidTag',['../classRfidTag.html',1,'']]]
 ];

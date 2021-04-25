@@ -1,0 +1,81 @@
+\hypertarget{DisplayDriver_8h}{}\doxysection{/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Display/\+Display\+Driver.h File Reference}
+\label{DisplayDriver_8h}\index{/home/lance/eclipse-\/workspace/rfidProject\_V2\_S2/components/Classes/Display/DisplayDriver.h@{/home/lance/eclipse-\/workspace/rfidProject\_V2\_S2/components/Classes/Display/DisplayDriver.h}}
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}freertos/\+Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}freertos/queue.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+task\+\_\+wdt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}screen\+\_\+driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lvgl\+\_\+gui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lvgl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../\+Custom\+Lvgl/\+Pages/\+Home\+Page/\+Home\+Page.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDisplayDriver}{Display\+Driver}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{DisplayDriver_8h_a9f4115b1443fcc17520eecc58e2f1ba2}{T\+A\+G\+\_\+\+D\+I\+SP}}~\char`\"{}D\+I\+S\+P\+L\+AY D\+R\+I\+V\+ER\char`\"{}
+\item 
+\#define \mbox{\hyperlink{DisplayDriver_8h_a31c507ab1a1074ac1ab0a4ce6bbba2f6}{L\+V\+\_\+\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}}~10
+\item 
+\#define \mbox{\hyperlink{DisplayDriver_8h_a3052a80b013b0251f061534563eae577}{U\+S\+\_\+\+T\+O\+\_\+S}}~1000000
+\item 
+\#define \mbox{\hyperlink{DisplayDriver_8h_a135e27179fb5a50988cf293bc28b00ca}{S\+T\+A\+T\+E\+\_\+\+H\+O\+ME}}~0
+\item 
+\#define \mbox{\hyperlink{DisplayDriver_8h_a124b5d0b6dd65e1398a670cf8ece3c7b}{S\+T\+A\+T\+E\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+T\+A\+G\+G\+ED}}~2
+\item 
+\#define \mbox{\hyperlink{DisplayDriver_8h_a92d870dd7fc43e320bb5611ec6f07c4b}{S\+T\+A\+T\+E\+\_\+\+E\+M\+P\+L\+O\+Y\+E\+E\+\_\+\+T\+A\+G\+G\+ED}}~3
+\item 
+\#define \mbox{\hyperlink{DisplayDriver_8h_a2c41dc0c021d20cb3388028ba693a44c}{S\+T\+A\+T\+E\+\_\+\+N\+O\+T\+\_\+\+H\+O\+ME}}~1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{DisplayDriver_8h_a31c507ab1a1074ac1ab0a4ce6bbba2f6}\label{DisplayDriver_8h_a31c507ab1a1074ac1ab0a4ce6bbba2f6}} 
+\index{DisplayDriver.h@{DisplayDriver.h}!LV\_TICK\_PERIOD\_MS@{LV\_TICK\_PERIOD\_MS}}
+\index{LV\_TICK\_PERIOD\_MS@{LV\_TICK\_PERIOD\_MS}!DisplayDriver.h@{DisplayDriver.h}}
+\doxysubsubsection{\texorpdfstring{LV\_TICK\_PERIOD\_MS}{LV\_TICK\_PERIOD\_MS}}
+{\footnotesize\ttfamily \#define L\+V\+\_\+\+T\+I\+C\+K\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS~10}
+
+\mbox{\Hypertarget{DisplayDriver_8h_a124b5d0b6dd65e1398a670cf8ece3c7b}\label{DisplayDriver_8h_a124b5d0b6dd65e1398a670cf8ece3c7b}} 
+\index{DisplayDriver.h@{DisplayDriver.h}!STATE\_DEVICE\_TAGGED@{STATE\_DEVICE\_TAGGED}}
+\index{STATE\_DEVICE\_TAGGED@{STATE\_DEVICE\_TAGGED}!DisplayDriver.h@{DisplayDriver.h}}
+\doxysubsubsection{\texorpdfstring{STATE\_DEVICE\_TAGGED}{STATE\_DEVICE\_TAGGED}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+E\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+T\+A\+G\+G\+ED~2}
+
+\mbox{\Hypertarget{DisplayDriver_8h_a92d870dd7fc43e320bb5611ec6f07c4b}\label{DisplayDriver_8h_a92d870dd7fc43e320bb5611ec6f07c4b}} 
+\index{DisplayDriver.h@{DisplayDriver.h}!STATE\_EMPLOYEE\_TAGGED@{STATE\_EMPLOYEE\_TAGGED}}
+\index{STATE\_EMPLOYEE\_TAGGED@{STATE\_EMPLOYEE\_TAGGED}!DisplayDriver.h@{DisplayDriver.h}}
+\doxysubsubsection{\texorpdfstring{STATE\_EMPLOYEE\_TAGGED}{STATE\_EMPLOYEE\_TAGGED}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+E\+\_\+\+E\+M\+P\+L\+O\+Y\+E\+E\+\_\+\+T\+A\+G\+G\+ED~3}
+
+\mbox{\Hypertarget{DisplayDriver_8h_a135e27179fb5a50988cf293bc28b00ca}\label{DisplayDriver_8h_a135e27179fb5a50988cf293bc28b00ca}} 
+\index{DisplayDriver.h@{DisplayDriver.h}!STATE\_HOME@{STATE\_HOME}}
+\index{STATE\_HOME@{STATE\_HOME}!DisplayDriver.h@{DisplayDriver.h}}
+\doxysubsubsection{\texorpdfstring{STATE\_HOME}{STATE\_HOME}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+E\+\_\+\+H\+O\+ME~0}
+
+\mbox{\Hypertarget{DisplayDriver_8h_a2c41dc0c021d20cb3388028ba693a44c}\label{DisplayDriver_8h_a2c41dc0c021d20cb3388028ba693a44c}} 
+\index{DisplayDriver.h@{DisplayDriver.h}!STATE\_NOT\_HOME@{STATE\_NOT\_HOME}}
+\index{STATE\_NOT\_HOME@{STATE\_NOT\_HOME}!DisplayDriver.h@{DisplayDriver.h}}
+\doxysubsubsection{\texorpdfstring{STATE\_NOT\_HOME}{STATE\_NOT\_HOME}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+E\+\_\+\+N\+O\+T\+\_\+\+H\+O\+ME~1}
+
+\mbox{\Hypertarget{DisplayDriver_8h_a9f4115b1443fcc17520eecc58e2f1ba2}\label{DisplayDriver_8h_a9f4115b1443fcc17520eecc58e2f1ba2}} 
+\index{DisplayDriver.h@{DisplayDriver.h}!TAG\_DISP@{TAG\_DISP}}
+\index{TAG\_DISP@{TAG\_DISP}!DisplayDriver.h@{DisplayDriver.h}}
+\doxysubsubsection{\texorpdfstring{TAG\_DISP}{TAG\_DISP}}
+{\footnotesize\ttfamily \#define T\+A\+G\+\_\+\+D\+I\+SP~\char`\"{}D\+I\+S\+P\+L\+AY D\+R\+I\+V\+ER\char`\"{}}
+
+\mbox{\Hypertarget{DisplayDriver_8h_a3052a80b013b0251f061534563eae577}\label{DisplayDriver_8h_a3052a80b013b0251f061534563eae577}} 
+\index{DisplayDriver.h@{DisplayDriver.h}!US\_TO\_S@{US\_TO\_S}}
+\index{US\_TO\_S@{US\_TO\_S}!DisplayDriver.h@{DisplayDriver.h}}
+\doxysubsubsection{\texorpdfstring{US\_TO\_S}{US\_TO\_S}}
+{\footnotesize\ttfamily \#define U\+S\+\_\+\+T\+O\+\_\+S~1000000}
+

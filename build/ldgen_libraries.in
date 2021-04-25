@@ -80,6 +80,7 @@ $<TARGET_FILE:__idf_Device>
 $<TARGET_FILE:__idf_esp-idf-rc522>
 $<TARGET_FILE:__idf_RfidScanner>
 $<TARGET_FILE:__idf_Mdns>
+$<TARGET_FILE:__idf_eventLoopSkeleton>
 $<TARGET_FILE:__idf_Wifi>
 $<TARGET_FILE:__idf_WebServerSkeleton>
 $<TARGET_FILE:__idf_WebServer>

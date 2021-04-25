@@ -1,0 +1,222 @@
+\hypertarget{classDisplayDriver}{}\doxysection{Display\+Driver Class Reference}
+\label{classDisplayDriver}\index{DisplayDriver@{DisplayDriver}}
+
+
+{\ttfamily \#include $<$Display\+Driver.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDisplayDriver_af16270223a0d4e394cb42b7d5d018326}{Display\+Driver}} ()
+\item 
+\mbox{\hyperlink{classDisplayDriver_af88a28310ef3829127eb83f33813c4c1}{Display\+Driver}} (int \mbox{\hyperlink{classDisplayDriver_adb61a7a45c1957174bd34cf6e7381e7e}{lcd\+\_\+spi\+\_\+cs}}, int \mbox{\hyperlink{classDisplayDriver_a22775c1aedee796402cd9eb6cd629dec}{lcd\+\_\+spi\+\_\+dc}}, int \mbox{\hyperlink{classDisplayDriver_a360d81cbd9f094f5738fc6f2f4eba8ab}{lcd\+\_\+spi\+\_\+freq}}, int \mbox{\hyperlink{classDisplayDriver_a7e1f86ca0bf65e476739b0a511fd7ebd}{lcd\+\_\+spi\+\_\+reset}}, int \mbox{\hyperlink{classDisplayDriver_a034e772d5550b764424b84d556f113d4}{lcd\+\_\+spi\+\_\+bklight}}, int \mbox{\hyperlink{classDisplayDriver_a9b908d3431a711ae88febc4db8d2fcd0}{miso}}, int \mbox{\hyperlink{classDisplayDriver_a0dc94d97e3ecc846092210a4c2aeb03c}{mosi}}, int \mbox{\hyperlink{classDisplayDriver_a09f0eb45912c02c9791a777a218f02c6}{sck}})
+\item 
+void \mbox{\hyperlink{classDisplayDriver_a07cac6ace24702bddc257cb0fbf10075}{init}} ()
+\item 
+void \mbox{\hyperlink{classDisplayDriver_adf13b5a1ebd5394d2b50bc5bc31f2178}{run\+Display}} ()
+\item 
+void \mbox{\hyperlink{classDisplayDriver_aec686ccb1c6ee4b4ed85a52b0e7cf289}{clear\+\_\+screen}} (scr\+\_\+driver\+\_\+t $\ast$lcd, int color)
+\item 
+void \mbox{\hyperlink{classDisplayDriver_a212f02dd7a9c40c50740b7e6e01e8ef6}{show\+Page}} (int screen\+Num)
+\item 
+void \mbox{\hyperlink{classDisplayDriver_aed579dd1351cd2074ae50c8367e70318}{update\+Home\+Text}} (char $\ast$display\+Title, int \mbox{\hyperlink{classDisplayDriver_aa4651414a4d0cff289a687e832daf474}{state}}, int \mbox{\hyperlink{classDisplayDriver_a9cf62fc7153b670ca20d7da6d95c1829}{display\+Time}})
+\item 
+void \mbox{\hyperlink{classDisplayDriver_a0997d6c86e2c74bc84f4d61faf23d903}{check\+State}} ()
+\item 
+void \mbox{\hyperlink{classDisplayDriver_a72970fc0e1798b2de07940dd0a0bf5e5}{set\+State}} (int \mbox{\hyperlink{classDisplayDriver_aa4651414a4d0cff289a687e832daf474}{state}})
+\item 
+int \mbox{\hyperlink{classDisplayDriver_a41be9e4d55bd5bf6e95e0ee407589f49}{get\+State}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_adb61a7a45c1957174bd34cf6e7381e7e}{lcd\+\_\+spi\+\_\+cs}}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_a22775c1aedee796402cd9eb6cd629dec}{lcd\+\_\+spi\+\_\+dc}}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_a360d81cbd9f094f5738fc6f2f4eba8ab}{lcd\+\_\+spi\+\_\+freq}}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_a7e1f86ca0bf65e476739b0a511fd7ebd}{lcd\+\_\+spi\+\_\+reset}}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_a034e772d5550b764424b84d556f113d4}{lcd\+\_\+spi\+\_\+bklight}}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_a9b908d3431a711ae88febc4db8d2fcd0}{miso}}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_a0dc94d97e3ecc846092210a4c2aeb03c}{mosi}}
+\item 
+gpio\+\_\+num\+\_\+t \mbox{\hyperlink{classDisplayDriver_a09f0eb45912c02c9791a777a218f02c6}{sck}}
+\item 
+int \mbox{\hyperlink{classDisplayDriver_a9cf62fc7153b670ca20d7da6d95c1829}{display\+Time}}
+\item 
+int \mbox{\hyperlink{classDisplayDriver_aa4651414a4d0cff289a687e832daf474}{state}}
+\item 
+int64\+\_\+t \mbox{\hyperlink{classDisplayDriver_ab003de9e9baaf170801dd5437fd2687e}{previous\+State\+Time}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static scr\+\_\+driver\+\_\+t \mbox{\hyperlink{classDisplayDriver_a7372aeff90b4a3b616359f37c971a032}{g\+\_\+lcd}}
+\item 
+static scr\+\_\+info\+\_\+t \mbox{\hyperlink{classDisplayDriver_a1b60c16dd7fdbd884ba07856ef4e0ca4}{g\+\_\+lcd\+\_\+info}}
+\item 
+static touch\+\_\+panel\+\_\+driver\+\_\+t \mbox{\hyperlink{classDisplayDriver_a2988f5f4df0ad62dcfe9e8048d0fdd82}{touch\+\_\+drv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDisplayDriver_af16270223a0d4e394cb42b7d5d018326}\label{classDisplayDriver_af16270223a0d4e394cb42b7d5d018326}} 
+\index{DisplayDriver@{DisplayDriver}!DisplayDriver@{DisplayDriver}}
+\index{DisplayDriver@{DisplayDriver}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{DisplayDriver()}{DisplayDriver()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Display\+Driver\+::\+Display\+Driver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_af88a28310ef3829127eb83f33813c4c1}\label{classDisplayDriver_af88a28310ef3829127eb83f33813c4c1}} 
+\index{DisplayDriver@{DisplayDriver}!DisplayDriver@{DisplayDriver}}
+\index{DisplayDriver@{DisplayDriver}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{DisplayDriver()}{DisplayDriver()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Display\+Driver\+::\+Display\+Driver (\begin{DoxyParamCaption}\item[{int}]{lcd\+\_\+spi\+\_\+cs,  }\item[{int}]{lcd\+\_\+spi\+\_\+dc,  }\item[{int}]{lcd\+\_\+spi\+\_\+freq,  }\item[{int}]{lcd\+\_\+spi\+\_\+reset,  }\item[{int}]{lcd\+\_\+spi\+\_\+bklight,  }\item[{int}]{miso,  }\item[{int}]{mosi,  }\item[{int}]{sck }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDisplayDriver_a0997d6c86e2c74bc84f4d61faf23d903}\label{classDisplayDriver_a0997d6c86e2c74bc84f4d61faf23d903}} 
+\index{DisplayDriver@{DisplayDriver}!checkState@{checkState}}
+\index{checkState@{checkState}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{checkState()}{checkState()}}
+{\footnotesize\ttfamily void Display\+Driver\+::check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_aec686ccb1c6ee4b4ed85a52b0e7cf289}\label{classDisplayDriver_aec686ccb1c6ee4b4ed85a52b0e7cf289}} 
+\index{DisplayDriver@{DisplayDriver}!clear\_screen@{clear\_screen}}
+\index{clear\_screen@{clear\_screen}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{clear\_screen()}{clear\_screen()}}
+{\footnotesize\ttfamily void Display\+Driver\+::clear\+\_\+screen (\begin{DoxyParamCaption}\item[{scr\+\_\+driver\+\_\+t $\ast$}]{lcd,  }\item[{int}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_a41be9e4d55bd5bf6e95e0ee407589f49}\label{classDisplayDriver_a41be9e4d55bd5bf6e95e0ee407589f49}} 
+\index{DisplayDriver@{DisplayDriver}!getState@{getState}}
+\index{getState@{getState}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily int Display\+Driver\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_a07cac6ace24702bddc257cb0fbf10075}\label{classDisplayDriver_a07cac6ace24702bddc257cb0fbf10075}} 
+\index{DisplayDriver@{DisplayDriver}!init@{init}}
+\index{init@{init}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Display\+Driver\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_adf13b5a1ebd5394d2b50bc5bc31f2178}\label{classDisplayDriver_adf13b5a1ebd5394d2b50bc5bc31f2178}} 
+\index{DisplayDriver@{DisplayDriver}!runDisplay@{runDisplay}}
+\index{runDisplay@{runDisplay}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{runDisplay()}{runDisplay()}}
+{\footnotesize\ttfamily void Display\+Driver\+::run\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_a72970fc0e1798b2de07940dd0a0bf5e5}\label{classDisplayDriver_a72970fc0e1798b2de07940dd0a0bf5e5}} 
+\index{DisplayDriver@{DisplayDriver}!setState@{setState}}
+\index{setState@{setState}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Display\+Driver\+::set\+State (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_a212f02dd7a9c40c50740b7e6e01e8ef6}\label{classDisplayDriver_a212f02dd7a9c40c50740b7e6e01e8ef6}} 
+\index{DisplayDriver@{DisplayDriver}!showPage@{showPage}}
+\index{showPage@{showPage}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{showPage()}{showPage()}}
+{\footnotesize\ttfamily void Display\+Driver\+::show\+Page (\begin{DoxyParamCaption}\item[{int}]{screen\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDisplayDriver_aed579dd1351cd2074ae50c8367e70318}\label{classDisplayDriver_aed579dd1351cd2074ae50c8367e70318}} 
+\index{DisplayDriver@{DisplayDriver}!updateHomeText@{updateHomeText}}
+\index{updateHomeText@{updateHomeText}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{updateHomeText()}{updateHomeText()}}
+{\footnotesize\ttfamily void Display\+Driver\+::update\+Home\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{display\+Title,  }\item[{int}]{state,  }\item[{int}]{display\+Time }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDisplayDriver_a9cf62fc7153b670ca20d7da6d95c1829}\label{classDisplayDriver_a9cf62fc7153b670ca20d7da6d95c1829}} 
+\index{DisplayDriver@{DisplayDriver}!displayTime@{displayTime}}
+\index{displayTime@{displayTime}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{displayTime}{displayTime}}
+{\footnotesize\ttfamily int Display\+Driver\+::display\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a7372aeff90b4a3b616359f37c971a032}\label{classDisplayDriver_a7372aeff90b4a3b616359f37c971a032}} 
+\index{DisplayDriver@{DisplayDriver}!g\_lcd@{g\_lcd}}
+\index{g\_lcd@{g\_lcd}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{g\_lcd}{g\_lcd}}
+{\footnotesize\ttfamily scr\+\_\+driver\+\_\+t Display\+Driver\+::g\+\_\+lcd\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a1b60c16dd7fdbd884ba07856ef4e0ca4}\label{classDisplayDriver_a1b60c16dd7fdbd884ba07856ef4e0ca4}} 
+\index{DisplayDriver@{DisplayDriver}!g\_lcd\_info@{g\_lcd\_info}}
+\index{g\_lcd\_info@{g\_lcd\_info}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{g\_lcd\_info}{g\_lcd\_info}}
+{\footnotesize\ttfamily scr\+\_\+info\+\_\+t Display\+Driver\+::g\+\_\+lcd\+\_\+info\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a034e772d5550b764424b84d556f113d4}\label{classDisplayDriver_a034e772d5550b764424b84d556f113d4}} 
+\index{DisplayDriver@{DisplayDriver}!lcd\_spi\_bklight@{lcd\_spi\_bklight}}
+\index{lcd\_spi\_bklight@{lcd\_spi\_bklight}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{lcd\_spi\_bklight}{lcd\_spi\_bklight}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::lcd\+\_\+spi\+\_\+bklight\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_adb61a7a45c1957174bd34cf6e7381e7e}\label{classDisplayDriver_adb61a7a45c1957174bd34cf6e7381e7e}} 
+\index{DisplayDriver@{DisplayDriver}!lcd\_spi\_cs@{lcd\_spi\_cs}}
+\index{lcd\_spi\_cs@{lcd\_spi\_cs}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{lcd\_spi\_cs}{lcd\_spi\_cs}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::lcd\+\_\+spi\+\_\+cs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a22775c1aedee796402cd9eb6cd629dec}\label{classDisplayDriver_a22775c1aedee796402cd9eb6cd629dec}} 
+\index{DisplayDriver@{DisplayDriver}!lcd\_spi\_dc@{lcd\_spi\_dc}}
+\index{lcd\_spi\_dc@{lcd\_spi\_dc}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{lcd\_spi\_dc}{lcd\_spi\_dc}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::lcd\+\_\+spi\+\_\+dc\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a360d81cbd9f094f5738fc6f2f4eba8ab}\label{classDisplayDriver_a360d81cbd9f094f5738fc6f2f4eba8ab}} 
+\index{DisplayDriver@{DisplayDriver}!lcd\_spi\_freq@{lcd\_spi\_freq}}
+\index{lcd\_spi\_freq@{lcd\_spi\_freq}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{lcd\_spi\_freq}{lcd\_spi\_freq}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::lcd\+\_\+spi\+\_\+freq\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a7e1f86ca0bf65e476739b0a511fd7ebd}\label{classDisplayDriver_a7e1f86ca0bf65e476739b0a511fd7ebd}} 
+\index{DisplayDriver@{DisplayDriver}!lcd\_spi\_reset@{lcd\_spi\_reset}}
+\index{lcd\_spi\_reset@{lcd\_spi\_reset}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{lcd\_spi\_reset}{lcd\_spi\_reset}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::lcd\+\_\+spi\+\_\+reset\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a9b908d3431a711ae88febc4db8d2fcd0}\label{classDisplayDriver_a9b908d3431a711ae88febc4db8d2fcd0}} 
+\index{DisplayDriver@{DisplayDriver}!miso@{miso}}
+\index{miso@{miso}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{miso}{miso}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::miso\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a0dc94d97e3ecc846092210a4c2aeb03c}\label{classDisplayDriver_a0dc94d97e3ecc846092210a4c2aeb03c}} 
+\index{DisplayDriver@{DisplayDriver}!mosi@{mosi}}
+\index{mosi@{mosi}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{mosi}{mosi}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::mosi\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_ab003de9e9baaf170801dd5437fd2687e}\label{classDisplayDriver_ab003de9e9baaf170801dd5437fd2687e}} 
+\index{DisplayDriver@{DisplayDriver}!previousStateTime@{previousStateTime}}
+\index{previousStateTime@{previousStateTime}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{previousStateTime}{previousStateTime}}
+{\footnotesize\ttfamily int64\+\_\+t Display\+Driver\+::previous\+State\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a09f0eb45912c02c9791a777a218f02c6}\label{classDisplayDriver_a09f0eb45912c02c9791a777a218f02c6}} 
+\index{DisplayDriver@{DisplayDriver}!sck@{sck}}
+\index{sck@{sck}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{sck}{sck}}
+{\footnotesize\ttfamily gpio\+\_\+num\+\_\+t Display\+Driver\+::sck\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_aa4651414a4d0cff289a687e832daf474}\label{classDisplayDriver_aa4651414a4d0cff289a687e832daf474}} 
+\index{DisplayDriver@{DisplayDriver}!state@{state}}
+\index{state@{state}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily int Display\+Driver\+::state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDisplayDriver_a2988f5f4df0ad62dcfe9e8048d0fdd82}\label{classDisplayDriver_a2988f5f4df0ad62dcfe9e8048d0fdd82}} 
+\index{DisplayDriver@{DisplayDriver}!touch\_drv@{touch\_drv}}
+\index{touch\_drv@{touch\_drv}!DisplayDriver@{DisplayDriver}}
+\doxysubsubsection{\texorpdfstring{touch\_drv}{touch\_drv}}
+{\footnotesize\ttfamily touch\+\_\+panel\+\_\+driver\+\_\+t Display\+Driver\+::touch\+\_\+drv\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Display/\mbox{\hyperlink{DisplayDriver_8h}{Display\+Driver.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Display/\mbox{\hyperlink{DisplayDriver_8cpp}{Display\+Driver.\+cpp}}\end{DoxyCompactItemize}

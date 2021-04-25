@@ -9,17 +9,32 @@ Handles Wi\+Fi connection, provides abstraction to wifi functionallity T\+O\+DO.
 
 {\ttfamily \#include $<$Wifi.\+h$>$}
 
+Inheritance diagram for Wifi\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classWifi}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classWifi_a63b40a234377f5927d2d34d67826a010}{Wifi}} ()
 \item 
-void \mbox{\hyperlink{classWifi_a4568b5e00c699c90a526bf8a0b02f3d4}{connect\+Network}} ()
-\begin{DoxyCompactList}\small\item\em Configure Wi-\/\+Fi or Ethernet, connect, wait for IP. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Public Attributes}
+void \mbox{\hyperlink{classWifi_a996560e44831ee6c2df47b0c4fb10a7d}{connect\+As\+Station}} ()
+\begin{DoxyCompactList}\small\item\em Configure Wi-\/\+Fi or Ethernet, connect, wait for IP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWifi_a3a7523b22664320e62dafb05ece8c21b}{wifi\+\_\+init\+\_\+sta}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{classWifi_a108c1a217f8fe79df1589f833907c525}{is\+Connected}}
+static void \mbox{\hyperlink{classWifi_a96cd02a676b05ba864f921d9e455afde}{station\+\_\+event\+\_\+handler}} (void $\ast$arg, esp\+\_\+event\+\_\+base\+\_\+t event\+\_\+base, int32\+\_\+t event\+\_\+id, void $\ast$event\+\_\+data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classWifi_aaeb1a7b3177397dafe94a29336c01aa7}{s\+\_\+retry\+\_\+num}} = 0
+\item 
+static Event\+Group\+Handle\+\_\+t \mbox{\hyperlink{classWifi_a71363abc26a2eb90a6c9b4277a274bf2}{s\+\_\+wifi\+\_\+event\+\_\+group}} = N\+U\+LL
 \end{DoxyCompactItemize}
 
 
@@ -38,11 +53,11 @@ Handles Wi\+Fi connection, provides abstraction to wifi functionallity T\+O\+DO.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classWifi_a4568b5e00c699c90a526bf8a0b02f3d4}\label{classWifi_a4568b5e00c699c90a526bf8a0b02f3d4}} 
-\index{Wifi@{Wifi}!connectNetwork@{connectNetwork}}
-\index{connectNetwork@{connectNetwork}!Wifi@{Wifi}}
-\doxysubsubsection{\texorpdfstring{connectNetwork()}{connectNetwork()}}
-{\footnotesize\ttfamily void Wifi\+::connect\+Network (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classWifi_a996560e44831ee6c2df47b0c4fb10a7d}\label{classWifi_a996560e44831ee6c2df47b0c4fb10a7d}} 
+\index{Wifi@{Wifi}!connectAsStation@{connectAsStation}}
+\index{connectAsStation@{connectAsStation}!Wifi@{Wifi}}
+\doxysubsubsection{\texorpdfstring{connectAsStation()}{connectAsStation()}}
+{\footnotesize\ttfamily void Wifi\+::connect\+As\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -57,14 +72,32 @@ Read \char`\"{}\+Establishing Wi-\/\+Fi or Ethernet Connection\char`\"{} section
 \begin{DoxyReturn}{Returns}
 E\+S\+P\+\_\+\+OK on successful connection 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classWifi_a96cd02a676b05ba864f921d9e455afde}\label{classWifi_a96cd02a676b05ba864f921d9e455afde}} 
+\index{Wifi@{Wifi}!station\_event\_handler@{station\_event\_handler}}
+\index{station\_event\_handler@{station\_event\_handler}!Wifi@{Wifi}}
+\doxysubsubsection{\texorpdfstring{station\_event\_handler()}{station\_event\_handler()}}
+{\footnotesize\ttfamily void Wifi\+::station\+\_\+event\+\_\+handler (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg,  }\item[{esp\+\_\+event\+\_\+base\+\_\+t}]{event\+\_\+base,  }\item[{int32\+\_\+t}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classWifi_a3a7523b22664320e62dafb05ece8c21b}\label{classWifi_a3a7523b22664320e62dafb05ece8c21b}} 
+\index{Wifi@{Wifi}!wifi\_init\_sta@{wifi\_init\_sta}}
+\index{wifi\_init\_sta@{wifi\_init\_sta}!Wifi@{Wifi}}
+\doxysubsubsection{\texorpdfstring{wifi\_init\_sta()}{wifi\_init\_sta()}}
+{\footnotesize\ttfamily void Wifi\+::wifi\+\_\+init\+\_\+sta (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classWifi_a108c1a217f8fe79df1589f833907c525}\label{classWifi_a108c1a217f8fe79df1589f833907c525}} 
-\index{Wifi@{Wifi}!isConnected@{isConnected}}
-\index{isConnected@{isConnected}!Wifi@{Wifi}}
-\doxysubsubsection{\texorpdfstring{isConnected}{isConnected}}
-{\footnotesize\ttfamily bool Wifi\+::is\+Connected}
+\mbox{\Hypertarget{classWifi_aaeb1a7b3177397dafe94a29336c01aa7}\label{classWifi_aaeb1a7b3177397dafe94a29336c01aa7}} 
+\index{Wifi@{Wifi}!s\_retry\_num@{s\_retry\_num}}
+\index{s\_retry\_num@{s\_retry\_num}!Wifi@{Wifi}}
+\doxysubsubsection{\texorpdfstring{s\_retry\_num}{s\_retry\_num}}
+{\footnotesize\ttfamily int Wifi\+::s\+\_\+retry\+\_\+num = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classWifi_a71363abc26a2eb90a6c9b4277a274bf2}\label{classWifi_a71363abc26a2eb90a6c9b4277a274bf2}} 
+\index{Wifi@{Wifi}!s\_wifi\_event\_group@{s\_wifi\_event\_group}}
+\index{s\_wifi\_event\_group@{s\_wifi\_event\_group}!Wifi@{Wifi}}
+\doxysubsubsection{\texorpdfstring{s\_wifi\_event\_group}{s\_wifi\_event\_group}}
+{\footnotesize\ttfamily Event\+Group\+Handle\+\_\+t Wifi\+::s\+\_\+wifi\+\_\+event\+\_\+group = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

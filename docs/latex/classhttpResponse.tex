@@ -1,0 +1,155 @@
+\hypertarget{classhttpResponse}{}\doxysection{http\+Response Class Reference}
+\label{classhttpResponse}\index{httpResponse@{httpResponse}}
+
+
+{\ttfamily \#include $<$Web\+Server.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhttpResponse_a3bc284d2e400410e8fda0a705b8441ab}{http\+Response}} (std\+::string \mbox{\hyperlink{MainApplication_8cpp_a5f2b9adef963f5a93d2e9bfffeb506f3}{data\+Ptr}}, int \mbox{\hyperlink{classhttpResponse_aeb3b3351de5926dae093ac7f2dfd9743}{data\+Size}}, std\+::string \mbox{\hyperlink{classhttpResponse_a5b58db5a4e89c55173d5222e900632cd}{uri\+String}}, std\+::string \mbox{\hyperlink{classhttpResponse_a20ded79caa54b7972b2108fb926893ef}{response\+Type}}, httpd\+\_\+method\+\_\+t \mbox{\hyperlink{classhttpResponse_a27ec14714848fb778666790d5cfb567e}{method}})
+\item 
+void \mbox{\hyperlink{classhttpResponse_a68ca840aa532ae5ff838e58f502413e8}{respond}} (httpd\+\_\+req\+\_\+t $\ast$req)
+\item 
+void \mbox{\hyperlink{classhttpResponse_ac3e07fe1c24605f42f33239a71f5c72d}{respond\+\_\+get}} (httpd\+\_\+req\+\_\+t $\ast$req)
+\item 
+void \mbox{\hyperlink{classhttpResponse_a3d64e4c59ed626a8eb19ff368e1ec0a9}{respond\+\_\+post}} (httpd\+\_\+req\+\_\+t $\ast$req)
+\item 
+void \mbox{\hyperlink{classhttpResponse_aecc0fcc162fe5d182f3dbf5a859cf3c4}{update\+Data}} (std\+::string \mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
+\item 
+void \mbox{\hyperlink{classhttpResponse_a5e960fd7272df3af01cc5761d786ca61}{update\+Data}} (char $\ast$\mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
+\item 
+void \mbox{\hyperlink{classhttpResponse_aab3b5d3a7011afd86285fb9fe0c885df}{delete\+Data}} ()
+\item 
+std\+::string \mbox{\hyperlink{classhttpResponse_a51956c2c0e79e1d81f4aa266a38edb9e}{get\+Data}} ()
+\item 
+void \mbox{\hyperlink{classhttpResponse_a2695491e146eb120d417f9a1027356b0}{add\+To\+Data}} (std\+::string \mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{classhttpResponse_ae259cda1177a6c7f08dfac36b2ce756c}{data\+Semaphore}} = N\+U\+LL
+\item 
+bool \mbox{\hyperlink{classhttpResponse_a48034ec14d8d13ade52c84f17adb7aef}{delete\+Data\+On\+Response}} = false
+\item 
+std\+::string \mbox{\hyperlink{classhttpResponse_a5b58db5a4e89c55173d5222e900632cd}{uri\+String}}
+\item 
+std\+::string \mbox{\hyperlink{classhttpResponse_a20ded79caa54b7972b2108fb926893ef}{response\+Type}}
+\item 
+std\+::string \mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}}
+\item 
+int \mbox{\hyperlink{classhttpResponse_aeb3b3351de5926dae093ac7f2dfd9743}{data\+Size}}
+\item 
+httpd\+\_\+method\+\_\+t \mbox{\hyperlink{classhttpResponse_a27ec14714848fb778666790d5cfb567e}{method}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhttpResponse_a3bc284d2e400410e8fda0a705b8441ab}\label{classhttpResponse_a3bc284d2e400410e8fda0a705b8441ab}} 
+\index{httpResponse@{httpResponse}!httpResponse@{httpResponse}}
+\index{httpResponse@{httpResponse}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{httpResponse()}{httpResponse()}}
+{\footnotesize\ttfamily http\+Response\+::http\+Response (\begin{DoxyParamCaption}\item[{std\+::string}]{data\+Ptr,  }\item[{int}]{data\+Size,  }\item[{std\+::string}]{uri\+String,  }\item[{std\+::string}]{response\+Type,  }\item[{httpd\+\_\+method\+\_\+t}]{method }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhttpResponse_a2695491e146eb120d417f9a1027356b0}\label{classhttpResponse_a2695491e146eb120d417f9a1027356b0}} 
+\index{httpResponse@{httpResponse}!addToData@{addToData}}
+\index{addToData@{addToData}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{addToData()}{addToData()}}
+{\footnotesize\ttfamily void http\+Response\+::add\+To\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhttpResponse_aab3b5d3a7011afd86285fb9fe0c885df}\label{classhttpResponse_aab3b5d3a7011afd86285fb9fe0c885df}} 
+\index{httpResponse@{httpResponse}!deleteData@{deleteData}}
+\index{deleteData@{deleteData}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{deleteData()}{deleteData()}}
+{\footnotesize\ttfamily void http\+Response\+::delete\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhttpResponse_a51956c2c0e79e1d81f4aa266a38edb9e}\label{classhttpResponse_a51956c2c0e79e1d81f4aa266a38edb9e}} 
+\index{httpResponse@{httpResponse}!getData@{getData}}
+\index{getData@{getData}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily std\+::string http\+Response\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhttpResponse_a68ca840aa532ae5ff838e58f502413e8}\label{classhttpResponse_a68ca840aa532ae5ff838e58f502413e8}} 
+\index{httpResponse@{httpResponse}!respond@{respond}}
+\index{respond@{respond}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{respond()}{respond()}}
+{\footnotesize\ttfamily void http\+Response\+::respond (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhttpResponse_ac3e07fe1c24605f42f33239a71f5c72d}\label{classhttpResponse_ac3e07fe1c24605f42f33239a71f5c72d}} 
+\index{httpResponse@{httpResponse}!respond\_get@{respond\_get}}
+\index{respond\_get@{respond\_get}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{respond\_get()}{respond\_get()}}
+{\footnotesize\ttfamily void http\+Response\+::respond\+\_\+get (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhttpResponse_a3d64e4c59ed626a8eb19ff368e1ec0a9}\label{classhttpResponse_a3d64e4c59ed626a8eb19ff368e1ec0a9}} 
+\index{httpResponse@{httpResponse}!respond\_post@{respond\_post}}
+\index{respond\_post@{respond\_post}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{respond\_post()}{respond\_post()}}
+{\footnotesize\ttfamily void http\+Response\+::respond\+\_\+post (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhttpResponse_a5e960fd7272df3af01cc5761d786ca61}\label{classhttpResponse_a5e960fd7272df3af01cc5761d786ca61}} 
+\index{httpResponse@{httpResponse}!updateData@{updateData}}
+\index{updateData@{updateData}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void http\+Response\+::update\+Data (\begin{DoxyParamCaption}\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classhttpResponse_aecc0fcc162fe5d182f3dbf5a859cf3c4}\label{classhttpResponse_aecc0fcc162fe5d182f3dbf5a859cf3c4}} 
+\index{httpResponse@{httpResponse}!updateData@{updateData}}
+\index{updateData@{updateData}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void http\+Response\+::update\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}\label{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}} 
+\index{httpResponse@{httpResponse}!data@{data}}
+\index{data@{data}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::string http\+Response\+::data}
+
+\mbox{\Hypertarget{classhttpResponse_ae259cda1177a6c7f08dfac36b2ce756c}\label{classhttpResponse_ae259cda1177a6c7f08dfac36b2ce756c}} 
+\index{httpResponse@{httpResponse}!dataSemaphore@{dataSemaphore}}
+\index{dataSemaphore@{dataSemaphore}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{dataSemaphore}{dataSemaphore}}
+{\footnotesize\ttfamily Semaphore\+Handle\+\_\+t http\+Response\+::data\+Semaphore = N\+U\+LL}
+
+\mbox{\Hypertarget{classhttpResponse_aeb3b3351de5926dae093ac7f2dfd9743}\label{classhttpResponse_aeb3b3351de5926dae093ac7f2dfd9743}} 
+\index{httpResponse@{httpResponse}!dataSize@{dataSize}}
+\index{dataSize@{dataSize}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{dataSize}{dataSize}}
+{\footnotesize\ttfamily int http\+Response\+::data\+Size}
+
+\mbox{\Hypertarget{classhttpResponse_a48034ec14d8d13ade52c84f17adb7aef}\label{classhttpResponse_a48034ec14d8d13ade52c84f17adb7aef}} 
+\index{httpResponse@{httpResponse}!deleteDataOnResponse@{deleteDataOnResponse}}
+\index{deleteDataOnResponse@{deleteDataOnResponse}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{deleteDataOnResponse}{deleteDataOnResponse}}
+{\footnotesize\ttfamily bool http\+Response\+::delete\+Data\+On\+Response = false}
+
+\mbox{\Hypertarget{classhttpResponse_a27ec14714848fb778666790d5cfb567e}\label{classhttpResponse_a27ec14714848fb778666790d5cfb567e}} 
+\index{httpResponse@{httpResponse}!method@{method}}
+\index{method@{method}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{method}{method}}
+{\footnotesize\ttfamily httpd\+\_\+method\+\_\+t http\+Response\+::method}
+
+\mbox{\Hypertarget{classhttpResponse_a20ded79caa54b7972b2108fb926893ef}\label{classhttpResponse_a20ded79caa54b7972b2108fb926893ef}} 
+\index{httpResponse@{httpResponse}!responseType@{responseType}}
+\index{responseType@{responseType}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{responseType}{responseType}}
+{\footnotesize\ttfamily std\+::string http\+Response\+::response\+Type}
+
+\mbox{\Hypertarget{classhttpResponse_a5b58db5a4e89c55173d5222e900632cd}\label{classhttpResponse_a5b58db5a4e89c55173d5222e900632cd}} 
+\index{httpResponse@{httpResponse}!uriString@{uriString}}
+\index{uriString@{uriString}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{uriString}{uriString}}
+{\footnotesize\ttfamily std\+::string http\+Response\+::uri\+String}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Web\+Server/\mbox{\hyperlink{WebServer_8h}{Web\+Server.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/\+Networking/\+Web\+Server/\mbox{\hyperlink{WebServer_8cpp}{Web\+Server.\+cpp}}\end{DoxyCompactItemize}

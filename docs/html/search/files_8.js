@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['wifi_2ecpp_895',['Wifi.cpp',['../Wifi_8cpp.html',1,'']]],
-  ['wifi_2eh_896',['Wifi.h',['../Wifi_8h.html',1,'']]]
+  ['sdkconfig_2eh_1012',['sdkconfig.h',['../bootloader_2config_2sdkconfig_8h.html',1,'(Global Namespace)'],['../config_2sdkconfig_8h.html',1,'(Global Namespace)']]],
+  ['sntptime_2ecpp_1013',['SntpTime.cpp',['../SntpTime_8cpp.html',1,'']]],
+  ['sntptime_2eh_1014',['SntpTime.h',['../SntpTime_8h.html',1,'']]]
 ];

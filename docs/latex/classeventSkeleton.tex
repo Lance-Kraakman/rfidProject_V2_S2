@@ -1,0 +1,156 @@
+\hypertarget{classeventSkeleton}{}\doxysection{event\+Skeleton Class Reference}
+\label{classeventSkeleton}\index{eventSkeleton@{eventSkeleton}}
+
+
+Class Runs a event loop. Classes which inherit this class can add functions to the event loop.  
+
+
+
+
+{\ttfamily \#include $<$event\+Skeleton.\+h$>$}
+
+Inheritance diagram for event\+Skeleton\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classeventSkeleton}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classeventSkeleton_a0e5bab71bfcf916418be38e9958a25f3}{event\+Skeleton}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeventSkeleton_ac5cf42c3d8a3c002401ac0681b81b9f0}{add\+Handler}} (int event\+\_\+id, esp\+\_\+event\+\_\+handler\+\_\+t event\+\_\+handler, void $\ast$event\+\_\+handler\+\_\+args, esp\+\_\+event\+\_\+handler\+\_\+instance\+\_\+t $\ast$instance)
+\begin{DoxyCompactList}\small\item\em add a event handler to the event loop \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeventSkeleton_a550ae5b6f38ae09b91bdb8a84e1dc6e3}{event\+Post\+To}} (int event\+\_\+id, void $\ast$event\+\_\+data, size\+\_\+t event\+\_\+data\+\_\+size)
+\begin{DoxyCompactList}\small\item\em post to a created event \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classeventSkeleton_a2363eb8960c5b599b2ae61bbdd6d44d4}{run\+Event\+Loop}} (int ticks\+To\+Run)
+\begin{DoxyCompactList}\small\item\em Runs the event loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classeventSkeleton_a27f49c8591672810538c90da40814909}{instances}} = 0
+\item 
+static esp\+\_\+event\+\_\+base\+\_\+t \mbox{\hyperlink{classeventSkeleton_aa165ee3013c3a1c76fa75fe29a419ab6}{E\+V\+E\+N\+T\+\_\+\+B\+A\+S\+E\+\_\+\+O\+NE}} = \char`\"{}E\+V\+E\+N\+T\+\_\+\+B\+A\+S\+E\+\_\+\+O\+NE\char`\"{}
+\item 
+static esp\+\_\+event\+\_\+loop\+\_\+args\+\_\+t \mbox{\hyperlink{classeventSkeleton_abf6b9c3a2f395d94b8978e2f944128b8}{loop\+\_\+without\+\_\+task\+\_\+args}}
+\item 
+static esp\+\_\+event\+\_\+loop\+\_\+handle\+\_\+t \mbox{\hyperlink{classeventSkeleton_ac8e9d41bb64ef0579940a4b5b3ef1749}{loop\+\_\+handle}} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class Runs a event loop. Classes which inherit this class can add functions to the event loop. 
+
+To run the event loop, run\+Event\+Loop must be called 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classeventSkeleton_a0e5bab71bfcf916418be38e9958a25f3}\label{classeventSkeleton_a0e5bab71bfcf916418be38e9958a25f3}} 
+\index{eventSkeleton@{eventSkeleton}!eventSkeleton@{eventSkeleton}}
+\index{eventSkeleton@{eventSkeleton}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{eventSkeleton()}{eventSkeleton()}}
+{\footnotesize\ttfamily event\+Skeleton\+::event\+Skeleton (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default Constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classeventSkeleton_ac5cf42c3d8a3c002401ac0681b81b9f0}\label{classeventSkeleton_ac5cf42c3d8a3c002401ac0681b81b9f0}} 
+\index{eventSkeleton@{eventSkeleton}!addHandler@{addHandler}}
+\index{addHandler@{addHandler}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{addHandler()}{addHandler()}}
+{\footnotesize\ttfamily void event\+Skeleton\+::add\+Handler (\begin{DoxyParamCaption}\item[{int}]{event\+\_\+id,  }\item[{esp\+\_\+event\+\_\+handler\+\_\+t}]{event\+\_\+handler,  }\item[{void $\ast$}]{event\+\_\+handler\+\_\+args,  }\item[{esp\+\_\+event\+\_\+handler\+\_\+instance\+\_\+t $\ast$}]{instance }\end{DoxyParamCaption})}
+
+
+
+add a event handler to the event loop 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+id} & \\
+\hline
+{\em event\+\_\+handler} & \\
+\hline
+{\em event\+\_\+handler\+\_\+args} & \\
+\hline
+{\em instance} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classeventSkeleton_a550ae5b6f38ae09b91bdb8a84e1dc6e3}\label{classeventSkeleton_a550ae5b6f38ae09b91bdb8a84e1dc6e3}} 
+\index{eventSkeleton@{eventSkeleton}!eventPostTo@{eventPostTo}}
+\index{eventPostTo@{eventPostTo}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{eventPostTo()}{eventPostTo()}}
+{\footnotesize\ttfamily void event\+Skeleton\+::event\+Post\+To (\begin{DoxyParamCaption}\item[{int}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data,  }\item[{size\+\_\+t}]{event\+\_\+data\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+post to a created event 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+id} & \\
+\hline
+{\em event\+\_\+data} & \\
+\hline
+{\em event\+\_\+data\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classeventSkeleton_a2363eb8960c5b599b2ae61bbdd6d44d4}\label{classeventSkeleton_a2363eb8960c5b599b2ae61bbdd6d44d4}} 
+\index{eventSkeleton@{eventSkeleton}!runEventLoop@{runEventLoop}}
+\index{runEventLoop@{runEventLoop}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{runEventLoop()}{runEventLoop()}}
+{\footnotesize\ttfamily void event\+Skeleton\+::run\+Event\+Loop (\begin{DoxyParamCaption}\item[{int}]{ticks\+To\+Run }\end{DoxyParamCaption})}
+
+
+
+Runs the event loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ticks\+To\+Run} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classeventSkeleton_aa165ee3013c3a1c76fa75fe29a419ab6}\label{classeventSkeleton_aa165ee3013c3a1c76fa75fe29a419ab6}} 
+\index{eventSkeleton@{eventSkeleton}!EVENT\_BASE\_ONE@{EVENT\_BASE\_ONE}}
+\index{EVENT\_BASE\_ONE@{EVENT\_BASE\_ONE}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{EVENT\_BASE\_ONE}{EVENT\_BASE\_ONE}}
+{\footnotesize\ttfamily esp\+\_\+event\+\_\+base\+\_\+t event\+Skeleton\+::\+E\+V\+E\+N\+T\+\_\+\+B\+A\+S\+E\+\_\+\+O\+NE = \char`\"{}E\+V\+E\+N\+T\+\_\+\+B\+A\+S\+E\+\_\+\+O\+NE\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classeventSkeleton_a27f49c8591672810538c90da40814909}\label{classeventSkeleton_a27f49c8591672810538c90da40814909}} 
+\index{eventSkeleton@{eventSkeleton}!instances@{instances}}
+\index{instances@{instances}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{instances}{instances}}
+{\footnotesize\ttfamily int event\+Skeleton\+::instances = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classeventSkeleton_ac8e9d41bb64ef0579940a4b5b3ef1749}\label{classeventSkeleton_ac8e9d41bb64ef0579940a4b5b3ef1749}} 
+\index{eventSkeleton@{eventSkeleton}!loop\_handle@{loop\_handle}}
+\index{loop\_handle@{loop\_handle}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{loop\_handle}{loop\_handle}}
+{\footnotesize\ttfamily esp\+\_\+event\+\_\+loop\+\_\+handle\+\_\+t event\+Skeleton\+::loop\+\_\+handle = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classeventSkeleton_abf6b9c3a2f395d94b8978e2f944128b8}\label{classeventSkeleton_abf6b9c3a2f395d94b8978e2f944128b8}} 
+\index{eventSkeleton@{eventSkeleton}!loop\_without\_task\_args@{loop\_without\_task\_args}}
+\index{loop\_without\_task\_args@{loop\_without\_task\_args}!eventSkeleton@{eventSkeleton}}
+\doxysubsubsection{\texorpdfstring{loop\_without\_task\_args}{loop\_without\_task\_args}}
+{\footnotesize\ttfamily esp\+\_\+event\+\_\+loop\+\_\+args\+\_\+t event\+Skeleton\+::loop\+\_\+without\+\_\+task\+\_\+args\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        .queue\_size = \mbox{\hyperlink{eventSkeleton_8h_ac62ff0195038ea81c24c8ce34b35ffaa}{CONFIG\_EVENT\_LOOP\_SKELETON\_SIZE}},}
+\DoxyCodeLine{        .task\_name = NULL, }
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/event\+Loop\+Skeleton/\mbox{\hyperlink{eventSkeleton_8h}{event\+Skeleton.\+h}}\item 
+/home/lance/eclipse-\/workspace/rfid\+Project\+\_\+\+V2\+\_\+\+S2/components/\+Classes/event\+Loop\+Skeleton/\mbox{\hyperlink{eventSkeleton_8cpp}{event\+Skeleton.\+cpp}}\end{DoxyCompactItemize}
