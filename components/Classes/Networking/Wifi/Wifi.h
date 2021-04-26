@@ -42,6 +42,8 @@ public:
 	void connectAsStation();
 	static void station_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data);
 	void wifi_init_sta(void);
+private:
+	static int s_iterations;
 };
 
 #endif /* COMPONENTS_CLASSES_NETWORKING_WIFI_WIFI_H_ */

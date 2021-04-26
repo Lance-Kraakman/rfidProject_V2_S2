@@ -2,7 +2,6 @@
 
 
 
-
 extern "C" {
 	void app_main();
 }
@@ -22,8 +21,6 @@ void app_main(void)
 https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peripherals/spi_master.html
  *
  */
-
-
 
 	MainApplication myApp = MainApplication();
 	myApp.runConfig();

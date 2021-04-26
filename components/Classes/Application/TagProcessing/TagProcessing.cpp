@@ -75,12 +75,12 @@ void TagProcessing::deviceIsFound(Device& searchDevice, RfidTag& recvdTag) {
 
 	// check if device has an employee, remove employee if so.
 	if (searchDevice.hasEmployee() && !(searchDevice.getTag().checkTagTimeoutSeconds(this->previousDevice.getTag(), 3))) {
-		this->display->updateHomeText("Device Returned\nThank You!", STATE_NOT_HOME, 3);
+		this->display->updateHomeText((char *) "Device Returned\nThank You!", STATE_NOT_HOME, 3);
 		searchDevice.setHasEmployee(false);
 		searchDevice.setEmployee(Employee());
 		this->dataProcessor->getDeviceModel().updateDeviceInList(searchDevice);
 	} else if (!(searchDevice.hasEmployee()) && (!(searchDevice.getTag().checkTagTimeoutSeconds(this->previousDevice.getTag(), 3)))) {
-		this->display->updateHomeText("No Tagged\nEmplpoyee", STATE_DEVICE_TAGGED, 3);
+		this->display->updateHomeText((char *) "No Tagged\nEmplpoyee", STATE_DEVICE_TAGGED, 3);
 	}
 
 	// add employee to device if there is an active employee.
@@ -90,7 +90,7 @@ void TagProcessing::deviceIsFound(Device& searchDevice, RfidTag& recvdTag) {
 			ESP_LOGE(TAG_PROCESSING, "OK");
 
 			this->empIsActive(searchDevice);
-			this->display->updateHomeText("Device Tagged\nTo Person", STATE_DEVICE_TAGGED, 3); // This should have a timer function to go back to original display
+			this->display->updateHomeText((char *) "Device Tagged\nTo Person", STATE_DEVICE_TAGGED, 3); // This should have a timer function to go back to original display
 		}
 	}
 	else // Scan timeout so reset the active status
@@ -138,8 +138,8 @@ void TagProcessing::sendConfigRequest(Employee& emp) {
 	 */
 	char buffer[50];
 	sprintf(buffer, "Buffer: %lld \n", emp.getTag().getUUID());
-	this->dataProcessor->getMessagingService().sendMessage("                                                                                                                                                                                                                                     -employee", buffer, DEFAULT_QOS);
-	this->display->updateHomeText("Please Register\nTag", STATE_EMPLOYEE_TAGGED, 5);
+//	this->dataProcessor->getMessagingService().sendMessage("");                                                                                                                                                                                                                                 -employee", buffer, DEFAULT_QOS);
+	this->display->updateHomeText((char *) "Please Register\nTag", STATE_EMPLOYEE_TAGGED, 5);
 }
 
 

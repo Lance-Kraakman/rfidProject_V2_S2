@@ -14,6 +14,7 @@
 #include <vector>
 #include <algorithm>
 #include "../../Display/DisplayDriver.h"
+#include "../../Networking/WebServer/WebServer.h"
 
 extern "C" {
 	#include "cJSON.h"
@@ -30,8 +31,7 @@ extern "C" {
  */
 class DataProcessing {
 private:
-	Wifi WifiHandler;
-	MessagingService messagingService;
+	WebServer myServer;
 	EmployeeModel employees;
 	DeviceModel devices;
 

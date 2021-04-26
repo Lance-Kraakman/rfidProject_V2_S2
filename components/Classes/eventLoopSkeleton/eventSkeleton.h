@@ -29,8 +29,8 @@ class eventSkeleton {
 public:
 	eventSkeleton();
 	void addHandler(int event_id, esp_event_handler_t event_handler, void *event_handler_args, esp_event_handler_instance_t *instance);
-	void eventPostTo(int event_id, void * event_data, size_t event_data_size);
-	void runEventLoop(int ticksToRun);
+	static void eventPostTo(int event_id, void * event_data, size_t event_data_size);
+	static void runEventLoop(int ticksToRun);
 private:
 	static int instances;
 	static esp_event_base_t EVENT_BASE_ONE;

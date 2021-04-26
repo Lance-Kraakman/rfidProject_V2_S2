@@ -9,6 +9,7 @@
 #include <string.h>
 
 int Wifi::s_retry_num = 0;
+int Wifi::s_iterations = 0;
 EventGroupHandle_t Wifi::s_wifi_event_group = NULL;
 
 Wifi::Wifi() {
@@ -31,17 +32,20 @@ Wifi::Wifi() {
  * @return ESP_OK on successful connection
  */
 void Wifi::connectAsStation() {
+	// Only init and connect once per station turn on
+	if (Wifi::s_iterations == 0) {
+		 esp_err_t ret = nvs_flash_init();
+		if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+		  ESP_ERROR_CHECK(nvs_flash_erase());
+		  ret = nvs_flash_init();
+		}
+		ESP_ERROR_CHECK(ret);
 
-	 esp_err_t ret = nvs_flash_init();
-	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-	  ESP_ERROR_CHECK(nvs_flash_erase());
-	  ret = nvs_flash_init();
+		ESP_LOGI(TAG_WIFI, "ESP_WIFI_MODE_STA");
+		Wifi::wifi_init_sta();
+		Wifi::s_iterations++;
+
 	}
-	ESP_ERROR_CHECK(ret);
-
-	ESP_LOGI(TAG_WIFI, "ESP_WIFI_MODE_STA");
-	Wifi::wifi_init_sta();
-
 }
 
 void Wifi::wifi_init_sta(void)
@@ -49,8 +53,9 @@ void Wifi::wifi_init_sta(void)
     Wifi::s_wifi_event_group = xEventGroupCreate();
 
     ESP_ERROR_CHECK(esp_netif_init());
-
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    int ret = esp_event_loop_create_default();
+    printf("error: %d\n", ret);
+    ESP_ERROR_CHECK(ret);
     esp_netif_create_default_wifi_sta();
 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();

@@ -19,21 +19,13 @@ DataProcessing::DataProcessing(DisplayDriver& myDriver) {
  */
 void DataProcessing::init() {
 
-		this->WifiHandler.connectAsStation();
-		this->messagingService.initMessagingServices();
-		this->messagingService.addMessageSubscription("device/add-device", DEFAULT_QOS);
-		this->messagingService.addMessageSubscription("device/add-employee", DEFAULT_QOS);
-		this->messagingService.addMessageSubscription("device/command", DEFAULT_QOS);
-
+		vTaskDelay(10/portTICK_RATE_MS);
 		this->globalTime = SntpTime();
-
 		globalTime.config();
 		globalTime.SyncTime();
 		globalTime.printTime();
 		globalTime.updateToCurrentTime(); // sets the time to the current time
 
-		this->devices = DeviceModel();
-		this->employees = EmployeeModel();
 }
 
 /** State machine which does sends, receives and manipulates data based on messages received
@@ -42,23 +34,24 @@ void DataProcessing::init() {
  */
 void DataProcessing::doMessageProcessing() {
 
-	// Recieves the next message from the queue - returns empty message if none in queue
-	message mes = this->messagingService.popMessage();
-	this->recvdMessage = mes;
-	//check if we recieved a message
-
-	if (this->recvdMessage.recvd) {
-		this->messagingService.printMessage(recvdMessage);
-
-		if (!(this->recvdMessage.topic.compare("device/add-employee"))) { // recieve employee data and add it to list of employees
-			printf("Data Message Received\n");
-			this->addEmployee();
-		} else if (!(this->recvdMessage.topic.compare("device/add-device"))) { // receive a list of devices to add
-			this->addDevice();
-		} else if (!(this->recvdMessage.topic.compare("device/command"))) { // recieve command to do something
-			this->commandReceived();
-		}
-	}
+//	// Recieves the next message from the queue - returns empty message if none in queue
+//	message mes = this->messagingService.popMessage();
+//
+//	this->recvdMessage = mes;
+//	//check if we recieved a message
+//
+//	if (this->recvdMessage.recvd) {
+//		this->messagingService.printMessage(recvdMessage);
+//
+//		if (!(this->recvdMessage.topic.compare("device/add-employee"))) { // recieve employee data and add it to list of employees
+//			printf("Data Message Received\n");
+//			this->addEmployee();
+//		} else if (!(this->recvdMessage.topic.compare("device/add-device"))) { // receive a list of devices to add
+//			this->addDevice();
+//		} else if (!(this->recvdMessage.topic.compare("device/command"))) { // recieve command to do something
+//			this->commandReceived();
+//		}
+//	}
 }
 
 /** Sends device list json to app/app-data MQTT topic
@@ -70,7 +63,7 @@ void DataProcessing::sendDevices() {
 	char *deviceDataBuffer = cJSON_Print(finalJSON);
 
 	printf("SENDING DATA %s", deviceDataBuffer);
-	this->messagingService.sendMessage("app/app-data", deviceDataBuffer, DEFAULT_QOS);
+//	this->messagingService.sendMessage("app/app-data", deviceDataBuffer, DEFAULT_QOS);
 
 	//Free Memory (Created with Malloc so must use free)
 	free(deviceDataBuffer);
@@ -88,7 +81,8 @@ void DataProcessing::sendEmployees() {
 	cJSON* finalJSON = this->employees.jsonEmployeeList();
 	char *employeeDataBuffer = cJSON_Print(finalJSON);
 	printf("SENDING DATA\n%s", employeeDataBuffer);
-	this->messagingService.sendMessage("app/app-data", employeeDataBuffer, DEFAULT_QOS);
+
+	//this->messagingService.sendMessage("app/app-data", employeeDataBuffer, DEFAULT_QOS);
 
 	// Free Memory (Created with Malloc so must use free)
 	free(employeeDataBuffer);
@@ -143,7 +137,7 @@ void DataProcessing::commandReceived() {
 	// Now check all of the commands and
 	if (!(recvdMessage.data.compare("send-notification"))) {
 		// Send a notification to desktop-application wiith data one
-		this->messagingService.sendMessage("app/app-status", "1", DEFAULT_QOS);
+	//	this->messagingService.sendMessage("app/app-status", "1", DEFAULT_QOS);
 
 	} else if (!(recvdMessage.data.compare("send-employee-list"))) {
 		// publish the list of empoyees to a topi
@@ -159,7 +153,8 @@ void DataProcessing::commandReceived() {
  * @return copy of messaging service
  */
 MessagingService DataProcessing::getMessagingService() {
-	return this->messagingService;
+	//return this->messagingService;
+	return MessagingService();
 }
 
 /** Prints the employee/device lists/models which the dataprocessor has

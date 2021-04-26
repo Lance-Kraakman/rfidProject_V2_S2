@@ -13,7 +13,6 @@ extern "C" {
 	#include "freertos/queue.h"
 	#include "esp_log.h"
 	#include "esp_task_wdt.h"
-	#include "board.h"
 	#include "screen_driver.h"
 	#include "lvgl_gui.h"
 	#include "lvgl.h"
