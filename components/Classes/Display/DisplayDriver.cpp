@@ -26,7 +26,7 @@ DisplayDriver::DisplayDriver(int lcd_spi_cs, int lcd_spi_dc, int lcd_spi_freq, i
 	this->mosi = (gpio_num_t) mosi;
 	this->sck = (gpio_num_t) sck;
 
-	this->previousStateTime = esp_timer_get_time();;
+	this->previousStateTime = esp_timer_get_time();
 	this->state = 0;
 }
 

@@ -22,7 +22,7 @@ void MainApplication::runConfig() {
 
 	this->DisplayProcessor = DisplayDriver(5,10,40000000,21,26,19,9,18);
 	this->DisplayProcessor.init();
-//	vTaskDelay(50/portTICK_RATE_MS);
+	vTaskDelay(50/portTICK_RATE_MS);
 //	this->DataProcessor = DataProcessing();
 //	this->TagProcessor = TagProcessing(&this->DataProcessor, &DisplayProcessor);
 //
