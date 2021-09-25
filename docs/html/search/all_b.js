@@ -17,7 +17,7 @@ var searchData=
   ['messagelist_788',['messageList',['../classMessagingService.html#a4aa57366747cf2ada915e51be46cb08b',1,'MessagingService']]],
   ['messagereceivedeventhandler_789',['messageReceivedEventHandler',['../classMessagingService.html#aa31c276f6148a1536e50323e7854c95f',1,'MessagingService']]],
   ['messaging_5fservice_790',['MESSAGING_SERVICE',['../MessagingService_8h.html#a4a13c39c1543ed2cf1da81cdfd6f9169',1,'MessagingService.h']]],
-  ['messagingservice_791',['MessagingService',['../classMessagingService.html',1,'MessagingService'],['../classMessagingService.html#a77dbf962907cffff7711e7f67b255b7e',1,'MessagingService::MessagingService()'],['../classDataProcessing.html#a93967c6c4e1de7c93d1a026fddaec7e4',1,'DataProcessing::messagingService()']]],
+  ['messagingservice_791',['MessagingService',['../classMessagingService.html',1,'MessagingService'],['../classMessagingService.html#a77dbf962907cffff7711e7f67b255b7e',1,'MessagingService::MessagingService()']]],
   ['messagingservice_2ecpp_792',['MessagingService.cpp',['../MessagingService_8cpp.html',1,'']]],
   ['messagingservice_2eh_793',['MessagingService.h',['../MessagingService_8h.html',1,'']]],
   ['method_794',['method',['../classhttpResponse.html#a27ec14714848fb778666790d5cfb567e',1,'httpResponse']]],
@@ -35,5 +35,6 @@ var searchData=
   ['mqttservice_2ecpp_806',['MqttService.cpp',['../MqttService_8cpp.html',1,'']]],
   ['mqttservice_2eh_807',['MqttService.h',['../MqttService_8h.html',1,'']]],
   ['mssincestartup_808',['msSinceStartup',['../classRfidTag.html#a0add947cddad099f263763f4783f6eed',1,'RfidTag']]],
-  ['mymqttservice_809',['myMqttService',['../classMessagingService.html#a48038242d3e8f6e912d864b4009e4ab2',1,'MessagingService']]]
+  ['mymqttservice_809',['myMqttService',['../classMessagingService.html#a48038242d3e8f6e912d864b4009e4ab2',1,'MessagingService']]],
+  ['myserver_810',['myServer',['../classDataProcessing.html#a7b2bf8f23c65ab199d3946cd0dfb1de8',1,'DataProcessing']]]
 ];

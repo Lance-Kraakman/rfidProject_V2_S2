@@ -7,16 +7,22 @@
 #include "../WebServerSkeleton/WebServerSkeleton.h"
 
 httpd_handle_t WebServerSkeleton::server = NULL;
+int WebServerSkeleton::s_servers = 0;
 
 WebServerSkeleton::WebServerSkeleton() : Wifi() {
-	//Conect to internet
-	this->connectAsStation();
+	// We only can run one server!
 
-	// connect handler for https server
-	ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT,IP_EVENT_STA_GOT_IP, &this->connect_handler, NULL));
-    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, WIFI_EVENT_STA_DISCONNECTED, &this->disconnect_handler, NULL));
+	if (WebServerSkeleton::s_servers == 0) {
+		this->connectAsStation();
 
-    WebServerSkeleton::start_webserver();
+		// connect handler for https server
+		ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT,IP_EVENT_STA_GOT_IP, &this->connect_handler, NULL));
+		ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, WIFI_EVENT_STA_DISCONNECTED, &this->disconnect_handler, NULL));
+
+		WebServerSkeleton::start_webserver();
+
+		WebServerSkeleton::s_servers++; // Only run one server
+	}
 }
 
 httpd_handle_t WebServerSkeleton::start_webserver(void)

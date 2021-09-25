@@ -9,22 +9,19 @@ Class Runs a event loop. Classes which inherit this class can add functions to t
 
 {\ttfamily \#include $<$event\+Skeleton.\+h$>$}
 
-Inheritance diagram for event\+Skeleton\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classeventSkeleton}
-\end{center}
-\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classeventSkeleton_a0e5bab71bfcf916418be38e9958a25f3}{event\+Skeleton}} ()
 \begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classeventSkeleton_ac5cf42c3d8a3c002401ac0681b81b9f0}{add\+Handler}} (int event\+\_\+id, esp\+\_\+event\+\_\+handler\+\_\+t event\+\_\+handler, void $\ast$event\+\_\+handler\+\_\+args, esp\+\_\+event\+\_\+handler\+\_\+instance\+\_\+t $\ast$instance)
-\begin{DoxyCompactList}\small\item\em add a event handler to the event loop \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classeventSkeleton_a550ae5b6f38ae09b91bdb8a84e1dc6e3}{event\+Post\+To}} (int event\+\_\+id, void $\ast$event\+\_\+data, size\+\_\+t event\+\_\+data\+\_\+size)
+\begin{DoxyCompactList}\small\item\em add a event handler to the event loop \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classeventSkeleton_a550ae5b6f38ae09b91bdb8a84e1dc6e3}{event\+Post\+To}} (int event\+\_\+id, void $\ast$event\+\_\+data, size\+\_\+t event\+\_\+data\+\_\+size)
 \begin{DoxyCompactList}\small\item\em post to a created event \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classeventSkeleton_a2363eb8960c5b599b2ae61bbdd6d44d4}{run\+Event\+Loop}} (int ticks\+To\+Run)
+static void \mbox{\hyperlink{classeventSkeleton_a2363eb8960c5b599b2ae61bbdd6d44d4}{run\+Event\+Loop}} (int ticks\+To\+Run)
 \begin{DoxyCompactList}\small\item\em Runs the event loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
@@ -83,7 +80,7 @@ add a event handler to the event loop
 \index{eventSkeleton@{eventSkeleton}!eventPostTo@{eventPostTo}}
 \index{eventPostTo@{eventPostTo}!eventSkeleton@{eventSkeleton}}
 \doxysubsubsection{\texorpdfstring{eventPostTo()}{eventPostTo()}}
-{\footnotesize\ttfamily void event\+Skeleton\+::event\+Post\+To (\begin{DoxyParamCaption}\item[{int}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data,  }\item[{size\+\_\+t}]{event\+\_\+data\+\_\+size }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void event\+Skeleton\+::event\+Post\+To (\begin{DoxyParamCaption}\item[{int}]{event\+\_\+id,  }\item[{void $\ast$}]{event\+\_\+data,  }\item[{size\+\_\+t}]{event\+\_\+data\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -102,7 +99,7 @@ post to a created event
 \index{eventSkeleton@{eventSkeleton}!runEventLoop@{runEventLoop}}
 \index{runEventLoop@{runEventLoop}!eventSkeleton@{eventSkeleton}}
 \doxysubsubsection{\texorpdfstring{runEventLoop()}{runEventLoop()}}
-{\footnotesize\ttfamily void event\+Skeleton\+::run\+Event\+Loop (\begin{DoxyParamCaption}\item[{int}]{ticks\+To\+Run }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void event\+Skeleton\+::run\+Event\+Loop (\begin{DoxyParamCaption}\item[{int}]{ticks\+To\+Run }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

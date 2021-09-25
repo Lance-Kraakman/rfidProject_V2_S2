@@ -7,7 +7,9 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classhttpResponse_a3bc284d2e400410e8fda0a705b8441ab}{http\+Response}} (std\+::string \mbox{\hyperlink{MainApplication_8cpp_a5f2b9adef963f5a93d2e9bfffeb506f3}{data\+Ptr}}, int \mbox{\hyperlink{classhttpResponse_aeb3b3351de5926dae093ac7f2dfd9743}{data\+Size}}, std\+::string \mbox{\hyperlink{classhttpResponse_a5b58db5a4e89c55173d5222e900632cd}{uri\+String}}, std\+::string \mbox{\hyperlink{classhttpResponse_a20ded79caa54b7972b2108fb926893ef}{response\+Type}}, httpd\+\_\+method\+\_\+t \mbox{\hyperlink{classhttpResponse_a27ec14714848fb778666790d5cfb567e}{method}})
+\mbox{\hyperlink{classhttpResponse_a0733417c7b20004c265bd7e352c68927}{http\+Response}} ()
+\item 
+\mbox{\hyperlink{classhttpResponse_ae2ac432506d6973604ea31f41bebc247}{http\+Response}} (std\+::string \mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}}, int \mbox{\hyperlink{classhttpResponse_aeb3b3351de5926dae093ac7f2dfd9743}{data\+Size}}, std\+::string \mbox{\hyperlink{classhttpResponse_a5b58db5a4e89c55173d5222e900632cd}{uri\+String}}, std\+::string \mbox{\hyperlink{classhttpResponse_a20ded79caa54b7972b2108fb926893ef}{response\+Type}}, httpd\+\_\+method\+\_\+t \mbox{\hyperlink{classhttpResponse_a27ec14714848fb778666790d5cfb567e}{method}})
 \item 
 void \mbox{\hyperlink{classhttpResponse_a68ca840aa532ae5ff838e58f502413e8}{respond}} (httpd\+\_\+req\+\_\+t $\ast$req)
 \item 
@@ -17,13 +19,15 @@ void \mbox{\hyperlink{classhttpResponse_a3d64e4c59ed626a8eb19ff368e1ec0a9}{respo
 \item 
 void \mbox{\hyperlink{classhttpResponse_aecc0fcc162fe5d182f3dbf5a859cf3c4}{update\+Data}} (std\+::string \mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
 \item 
-void \mbox{\hyperlink{classhttpResponse_a5e960fd7272df3af01cc5761d786ca61}{update\+Data}} (char $\ast$\mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
+void \mbox{\hyperlink{classhttpResponse_a2123e9007ebe6700c0816ab97615689d}{update\+Data}} (const char $\ast$\mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
 \item 
 void \mbox{\hyperlink{classhttpResponse_aab3b5d3a7011afd86285fb9fe0c885df}{delete\+Data}} ()
 \item 
 std\+::string \mbox{\hyperlink{classhttpResponse_a51956c2c0e79e1d81f4aa266a38edb9e}{get\+Data}} ()
 \item 
 void \mbox{\hyperlink{classhttpResponse_a2695491e146eb120d417f9a1027356b0}{add\+To\+Data}} (std\+::string \mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
+\item 
+void \mbox{\hyperlink{classhttpResponse_a6629c60e55205ffbc1907baf831e4964}{add\+To\+Data}} (char $\ast$\mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dde5}{data}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -40,24 +44,38 @@ std\+::string \mbox{\hyperlink{classhttpResponse_aaf37751e7bcbe1c2d9b54349d877dd
 \item 
 int \mbox{\hyperlink{classhttpResponse_aeb3b3351de5926dae093ac7f2dfd9743}{data\+Size}}
 \item 
+bool \mbox{\hyperlink{classhttpResponse_aad647f0f02f85bb968716bf7f4bf27ad}{data\+Read}} = true
+\item 
 httpd\+\_\+method\+\_\+t \mbox{\hyperlink{classhttpResponse_a27ec14714848fb778666790d5cfb567e}{method}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classhttpResponse_a3bc284d2e400410e8fda0a705b8441ab}\label{classhttpResponse_a3bc284d2e400410e8fda0a705b8441ab}} 
+\mbox{\Hypertarget{classhttpResponse_a0733417c7b20004c265bd7e352c68927}\label{classhttpResponse_a0733417c7b20004c265bd7e352c68927}} 
 \index{httpResponse@{httpResponse}!httpResponse@{httpResponse}}
 \index{httpResponse@{httpResponse}!httpResponse@{httpResponse}}
-\doxysubsubsection{\texorpdfstring{httpResponse()}{httpResponse()}}
-{\footnotesize\ttfamily http\+Response\+::http\+Response (\begin{DoxyParamCaption}\item[{std\+::string}]{data\+Ptr,  }\item[{int}]{data\+Size,  }\item[{std\+::string}]{uri\+String,  }\item[{std\+::string}]{response\+Type,  }\item[{httpd\+\_\+method\+\_\+t}]{method }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{httpResponse()}{httpResponse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily http\+Response\+::http\+Response (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classhttpResponse_ae2ac432506d6973604ea31f41bebc247}\label{classhttpResponse_ae2ac432506d6973604ea31f41bebc247}} 
+\index{httpResponse@{httpResponse}!httpResponse@{httpResponse}}
+\index{httpResponse@{httpResponse}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{httpResponse()}{httpResponse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily http\+Response\+::http\+Response (\begin{DoxyParamCaption}\item[{std\+::string}]{data,  }\item[{int}]{data\+Size,  }\item[{std\+::string}]{uri\+String,  }\item[{std\+::string}]{response\+Type,  }\item[{httpd\+\_\+method\+\_\+t}]{method }\end{DoxyParamCaption})}
 
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhttpResponse_a6629c60e55205ffbc1907baf831e4964}\label{classhttpResponse_a6629c60e55205ffbc1907baf831e4964}} 
+\index{httpResponse@{httpResponse}!addToData@{addToData}}
+\index{addToData@{addToData}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{addToData()}{addToData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void http\+Response\+::add\+To\+Data (\begin{DoxyParamCaption}\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classhttpResponse_a2695491e146eb120d417f9a1027356b0}\label{classhttpResponse_a2695491e146eb120d417f9a1027356b0}} 
 \index{httpResponse@{httpResponse}!addToData@{addToData}}
 \index{addToData@{addToData}!httpResponse@{httpResponse}}
-\doxysubsubsection{\texorpdfstring{addToData()}{addToData()}}
+\doxysubsubsection{\texorpdfstring{addToData()}{addToData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily void http\+Response\+::add\+To\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classhttpResponse_aab3b5d3a7011afd86285fb9fe0c885df}\label{classhttpResponse_aab3b5d3a7011afd86285fb9fe0c885df}} 
@@ -90,11 +108,11 @@ httpd\+\_\+method\+\_\+t \mbox{\hyperlink{classhttpResponse_a27ec14714848fb77866
 \doxysubsubsection{\texorpdfstring{respond\_post()}{respond\_post()}}
 {\footnotesize\ttfamily void http\+Response\+::respond\+\_\+post (\begin{DoxyParamCaption}\item[{httpd\+\_\+req\+\_\+t $\ast$}]{req }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classhttpResponse_a5e960fd7272df3af01cc5761d786ca61}\label{classhttpResponse_a5e960fd7272df3af01cc5761d786ca61}} 
+\mbox{\Hypertarget{classhttpResponse_a2123e9007ebe6700c0816ab97615689d}\label{classhttpResponse_a2123e9007ebe6700c0816ab97615689d}} 
 \index{httpResponse@{httpResponse}!updateData@{updateData}}
 \index{updateData@{updateData}!httpResponse@{httpResponse}}
 \doxysubsubsection{\texorpdfstring{updateData()}{updateData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void http\+Response\+::update\+Data (\begin{DoxyParamCaption}\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void http\+Response\+::update\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classhttpResponse_aecc0fcc162fe5d182f3dbf5a859cf3c4}\label{classhttpResponse_aecc0fcc162fe5d182f3dbf5a859cf3c4}} 
 \index{httpResponse@{httpResponse}!updateData@{updateData}}
@@ -110,6 +128,12 @@ httpd\+\_\+method\+\_\+t \mbox{\hyperlink{classhttpResponse_a27ec14714848fb77866
 \index{data@{data}!httpResponse@{httpResponse}}
 \doxysubsubsection{\texorpdfstring{data}{data}}
 {\footnotesize\ttfamily std\+::string http\+Response\+::data}
+
+\mbox{\Hypertarget{classhttpResponse_aad647f0f02f85bb968716bf7f4bf27ad}\label{classhttpResponse_aad647f0f02f85bb968716bf7f4bf27ad}} 
+\index{httpResponse@{httpResponse}!dataRead@{dataRead}}
+\index{dataRead@{dataRead}!httpResponse@{httpResponse}}
+\doxysubsubsection{\texorpdfstring{dataRead}{dataRead}}
+{\footnotesize\ttfamily bool http\+Response\+::data\+Read = true}
 
 \mbox{\Hypertarget{classhttpResponse_ae259cda1177a6c7f08dfac36b2ce756c}\label{classhttpResponse_ae259cda1177a6c7f08dfac36b2ce756c}} 
 \index{httpResponse@{httpResponse}!dataSemaphore@{dataSemaphore}}

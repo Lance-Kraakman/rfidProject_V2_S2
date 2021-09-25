@@ -26,15 +26,20 @@ void \mbox{\hyperlink{classDataProcessing_a35ed94242ea12d5f3b8c996a85cbeabc}{sen
 \item 
 void \mbox{\hyperlink{classDataProcessing_a63ee6b3fa303d334e9bd0f67a18cbed3}{send\+Employees}} ()
 \item 
-void \mbox{\hyperlink{classDataProcessing_a6d0dd7af317a38714aaca6f53417b322}{add\+Device}} ()
+void \mbox{\hyperlink{classDataProcessing_a09def312f372e03df47e4aacd99fea57}{add\+Device}} (std\+::string data)
 \item 
-void \mbox{\hyperlink{classDataProcessing_a521e19526f7384eb3540885945921c19}{add\+Employee}} ()
+void \mbox{\hyperlink{classDataProcessing_a0a4a5f007f1cc552b696a05a04b2fd7e}{add\+Employee}} (std\+::string data)
 \item 
 \mbox{\hyperlink{classEmployeeModel}{Employee\+Model}} \& \mbox{\hyperlink{classDataProcessing_afed61f86fe5ac302f855aebe8a941405}{get\+Employee\+Model}} ()
 \item 
 \mbox{\hyperlink{classDeviceModel}{Device\+Model}} \& \mbox{\hyperlink{classDataProcessing_a147dff1900c977c587c62f64e4eb6aef}{get\+Device\+Model}} ()
 \item 
 void \mbox{\hyperlink{classDataProcessing_a7ed585be5e85488c2c79281c3de1430f}{print\+Lists}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWebServer}{Web\+Server}} \mbox{\hyperlink{classDataProcessing_a7b2bf8f23c65ab199d3946cd0dfb1de8}{my\+Server}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -43,10 +48,6 @@ void \mbox{\hyperlink{classDataProcessing_ae52b862c0170d433d53f7b2b7bfa47ff}{com
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{classWifi}{Wifi}} \mbox{\hyperlink{classDataProcessing_a8a99dede336c03de4d0f05d59ac6c9d3}{Wifi\+Handler}}
-\item 
-\mbox{\hyperlink{classMessagingService}{Messaging\+Service}} \mbox{\hyperlink{classDataProcessing_a93967c6c4e1de7c93d1a026fddaec7e4}{messaging\+Service}}
 \item 
 \mbox{\hyperlink{classEmployeeModel}{Employee\+Model}} \mbox{\hyperlink{classDataProcessing_a24c588e07efc8a979c0411f20d2c9063}{employees}}
 \item 
@@ -81,17 +82,17 @@ Application code, Provides interaction between communications, employee models a
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classDataProcessing_a6d0dd7af317a38714aaca6f53417b322}\label{classDataProcessing_a6d0dd7af317a38714aaca6f53417b322}} 
+\mbox{\Hypertarget{classDataProcessing_a09def312f372e03df47e4aacd99fea57}\label{classDataProcessing_a09def312f372e03df47e4aacd99fea57}} 
 \index{DataProcessing@{DataProcessing}!addDevice@{addDevice}}
 \index{addDevice@{addDevice}!DataProcessing@{DataProcessing}}
 \doxysubsubsection{\texorpdfstring{addDevice()}{addDevice()}}
-{\footnotesize\ttfamily void Data\+Processing\+::add\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Data\+Processing\+::add\+Device (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})}
 
-Adds device to device model from the received message \mbox{\Hypertarget{classDataProcessing_a521e19526f7384eb3540885945921c19}\label{classDataProcessing_a521e19526f7384eb3540885945921c19}} 
+Adds device to device model from the received message \mbox{\Hypertarget{classDataProcessing_a0a4a5f007f1cc552b696a05a04b2fd7e}\label{classDataProcessing_a0a4a5f007f1cc552b696a05a04b2fd7e}} 
 \index{DataProcessing@{DataProcessing}!addEmployee@{addEmployee}}
 \index{addEmployee@{addEmployee}!DataProcessing@{DataProcessing}}
 \doxysubsubsection{\texorpdfstring{addEmployee()}{addEmployee()}}
-{\footnotesize\ttfamily void Data\+Processing\+::add\+Employee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Data\+Processing\+::add\+Employee (\begin{DoxyParamCaption}\item[{std\+::string}]{data }\end{DoxyParamCaption})}
 
 Adds \mbox{\hyperlink{classEmployee}{Employee}} to device model from the received message \mbox{\Hypertarget{classDataProcessing_ae52b862c0170d433d53f7b2b7bfa47ff}\label{classDataProcessing_ae52b862c0170d433d53f7b2b7bfa47ff}} 
 \index{DataProcessing@{DataProcessing}!commandReceived@{commandReceived}}
@@ -188,23 +189,17 @@ Sends employee list json to app/app-\/data M\+Q\+TT topic
 \doxysubsubsection{\texorpdfstring{globalTime}{globalTime}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classSntpTime}{Sntp\+Time}} Data\+Processing\+::global\+Time\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classDataProcessing_a93967c6c4e1de7c93d1a026fddaec7e4}\label{classDataProcessing_a93967c6c4e1de7c93d1a026fddaec7e4}} 
-\index{DataProcessing@{DataProcessing}!messagingService@{messagingService}}
-\index{messagingService@{messagingService}!DataProcessing@{DataProcessing}}
-\doxysubsubsection{\texorpdfstring{messagingService}{messagingService}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMessagingService}{Messaging\+Service}} Data\+Processing\+::messaging\+Service\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classDataProcessing_a7b2bf8f23c65ab199d3946cd0dfb1de8}\label{classDataProcessing_a7b2bf8f23c65ab199d3946cd0dfb1de8}} 
+\index{DataProcessing@{DataProcessing}!myServer@{myServer}}
+\index{myServer@{myServer}!DataProcessing@{DataProcessing}}
+\doxysubsubsection{\texorpdfstring{myServer}{myServer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classWebServer}{Web\+Server}} Data\+Processing\+::my\+Server}
 
 \mbox{\Hypertarget{classDataProcessing_a9eca482a6f425dc38edd082a78899890}\label{classDataProcessing_a9eca482a6f425dc38edd082a78899890}} 
 \index{DataProcessing@{DataProcessing}!recvdMessage@{recvdMessage}}
 \index{recvdMessage@{recvdMessage}!DataProcessing@{DataProcessing}}
 \doxysubsubsection{\texorpdfstring{recvdMessage}{recvdMessage}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structmessage}{message}} Data\+Processing\+::recvd\+Message\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classDataProcessing_a8a99dede336c03de4d0f05d59ac6c9d3}\label{classDataProcessing_a8a99dede336c03de4d0f05d59ac6c9d3}} 
-\index{DataProcessing@{DataProcessing}!WifiHandler@{WifiHandler}}
-\index{WifiHandler@{WifiHandler}!DataProcessing@{DataProcessing}}
-\doxysubsubsection{\texorpdfstring{WifiHandler}{WifiHandler}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classWifi}{Wifi}} Data\+Processing\+::\+Wifi\+Handler\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

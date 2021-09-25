@@ -15,7 +15,8 @@
 
 class httpResponse {
 public:
-	httpResponse(std::string dataPtr, int dataSize, std::string uriString, std::string responseType, httpd_method_t method);
+	httpResponse() {};
+	httpResponse(std::string data, int dataSize, std::string uriString, std::string responseType, httpd_method_t method);
 	SemaphoreHandle_t dataSemaphore = NULL;
 	bool deleteDataOnResponse = false;
 	std::string uriString;
@@ -25,15 +26,18 @@ public:
 	void respond(httpd_req_t *req);
 	void respond_get(httpd_req_t *req);
 	void respond_post(httpd_req_t *req);
+	bool dataRead = true;
 
 
 	httpd_method_t method;
 
 	void updateData(std::string data);
-	void updateData(char *data);
+	void updateData(const char *data);
 	void deleteData();
 	std::string getData();
 	void addToData(std::string data);
+	void addToData(char *data);
+
 private:
 };
 

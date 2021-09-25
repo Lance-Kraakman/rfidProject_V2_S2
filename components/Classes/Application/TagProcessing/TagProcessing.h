@@ -22,8 +22,9 @@
  */
 class TagProcessing {
 private:
+
+
 	RfidScanner rfidScanner;
-	DataProcessing *dataProcessor;
 
 	RfidTag previousTag; // Copy of previously scanned tag
 	Employee previousEmployee; // Copy of previously scanned employee
@@ -38,10 +39,15 @@ private:
 	void scanTimeout();
 	void sendConfigRequest(Employee& emp);
 public:
+	DataProcessing *dataProcessor;
 	TagProcessing();
 	void doProcessing();
 	TagProcessing(DataProcessing *dataProcessor, DisplayDriver *myDriver);
 	void init();
+
+	static httpResponse addDevToSys;
+	static httpResponse addEmpToSys;
+	static httpResponse unregisteredTag;
 };
 
 #endif /* COMPONENTS_CLASSES_APPLICATION_TAGPROCESSING_TAGPROCESSING_H_ */

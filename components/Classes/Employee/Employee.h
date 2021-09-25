@@ -19,6 +19,7 @@
 #include "soc/rtc_wdt.h"
 #include "esp_int_wdt.h"
 #include "esp_task_wdt.h"
+#include "../Networking/WebServer/WebServer.h"
 
 /** \brief Employee Class represents a employee with an RfidTag 'attached'
  *

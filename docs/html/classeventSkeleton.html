@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classeventSkeleton-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -74,15 +75,6 @@ $(function() {
  <a href="classeventSkeleton.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="eventSkeleton_8h_source.html">eventSkeleton.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for eventSkeleton:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classeventSkeleton.png" usemap="#eventSkeleton_map" alt=""/>
-  <map id="eventSkeleton_map" name="eventSkeleton_map">
-<area href="classMainApplication.html" title="Application Code - Initialization, startup code and loop." alt="MainApplication" shape="rect" coords="0,56,103,80"/>
-  </map>
-</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -92,10 +84,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac5cf42c3d8a3c002401ac0681b81b9f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeventSkeleton.html#ac5cf42c3d8a3c002401ac0681b81b9f0">addHandler</a> (int event_id, esp_event_handler_t event_handler, void *event_handler_args, esp_event_handler_instance_t *instance)</td></tr>
 <tr class="memdesc:ac5cf42c3d8a3c002401ac0681b81b9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a event handler to the event loop  <a href="classeventSkeleton.html#ac5cf42c3d8a3c002401ac0681b81b9f0">More...</a><br /></td></tr>
 <tr class="separator:ac5cf42c3d8a3c002401ac0681b81b9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a550ae5b6f38ae09b91bdb8a84e1dc6e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeventSkeleton.html#a550ae5b6f38ae09b91bdb8a84e1dc6e3">eventPostTo</a> (int event_id, void *event_data, size_t event_data_size)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a550ae5b6f38ae09b91bdb8a84e1dc6e3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeventSkeleton.html#a550ae5b6f38ae09b91bdb8a84e1dc6e3">eventPostTo</a> (int event_id, void *event_data, size_t event_data_size)</td></tr>
 <tr class="memdesc:a550ae5b6f38ae09b91bdb8a84e1dc6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">post to a created event  <a href="classeventSkeleton.html#a550ae5b6f38ae09b91bdb8a84e1dc6e3">More...</a><br /></td></tr>
 <tr class="separator:a550ae5b6f38ae09b91bdb8a84e1dc6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2363eb8960c5b599b2ae61bbdd6d44d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeventSkeleton.html#a2363eb8960c5b599b2ae61bbdd6d44d4">runEventLoop</a> (int ticksToRun)</td></tr>
+<tr class="memitem:a2363eb8960c5b599b2ae61bbdd6d44d4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeventSkeleton.html#a2363eb8960c5b599b2ae61bbdd6d44d4">runEventLoop</a> (int ticksToRun)</td></tr>
 <tr class="memdesc:a2363eb8960c5b599b2ae61bbdd6d44d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the event loop.  <a href="classeventSkeleton.html#a2363eb8960c5b599b2ae61bbdd6d44d4">More...</a><br /></td></tr>
 <tr class="separator:a2363eb8960c5b599b2ae61bbdd6d44d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -190,6 +185,9 @@ Static Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void eventSkeleton::eventPostTo </td>
@@ -215,6 +213,11 @@ Static Private Attributes</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>post to a created event </p>
@@ -234,6 +237,9 @@ Static Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void eventSkeleton::runEventLoop </td>
@@ -243,6 +249,11 @@ Static Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Runs the event loop. </p>

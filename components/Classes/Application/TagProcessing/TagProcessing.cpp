@@ -8,8 +8,14 @@
 #include "/home/lance/eclipse-workspace/rfidProject_V2_S2/components/Classes/Application/TagProcessing/TagProcessing.h"
 
 TagProcessing::TagProcessing() {}
+
+httpResponse TagProcessing::addDevToSys = httpResponse("Default", HTTPD_RESP_USE_STRLEN, std::string("/addDev"), std::string("application/json"), HTTP_POST);
+httpResponse TagProcessing::addEmpToSys = httpResponse("Default", HTTPD_RESP_USE_STRLEN, std::string("/addEmp"), std::string("application/json"), HTTP_POST);
+httpResponse TagProcessing::unregisteredTag = httpResponse("", HTTPD_RESP_USE_STRLEN, std::string("/unregistered-tag"), std::string("application/json"), HTTP_GET);
+
+
 /*
- * Pass dataProcessor by reference and lists by address
+ * Pass dataProcessor by address and lists by address
  */
 TagProcessing::TagProcessing(DataProcessing *dataProcessor, DisplayDriver *myDriver) {
 	this->dataProcessor = dataProcessor;
@@ -17,12 +23,22 @@ TagProcessing::TagProcessing(DataProcessing *dataProcessor, DisplayDriver *myDri
 	this->rfidScanner = RfidScanner();
 	this->display = myDriver;
 	this->previousDevice = Device();
+
+	this->dataProcessor->myServer.addResponse(&TagProcessing::addDevToSys);
+	this->dataProcessor->myServer.addResponse(&TagProcessing::addEmpToSys);
+
+	TagProcessing::unregisteredTag.deleteDataOnResponse = true; // Once the data is read from the server it will be deleted automatically
+	this->dataProcessor->myServer.addResponse(&TagProcessing::unregisteredTag);
+
 }
 
 void TagProcessing::init() {
 	this->rfidScanner.startRfidScanner();
 }
 
+/** \brief Tag Processing Logic
+ *
+ */
 void TagProcessing::doProcessing() {
 	RfidTag recvdTag = this->rfidScanner.popRfidList();
 
@@ -59,17 +75,35 @@ void TagProcessing::doProcessing() {
 					printf("4");
 				}
 				this->dataProcessor->printLists();
+				this->dataProcessor->getDeviceModel().updateDeviceResponse();
+				this->dataProcessor->getEmployeeModel().updateEmployeeResponse();
 			}
+		}
+
+		// Check if we have recieved data from a post request!
+		if (!(this->addDevToSys.dataRead)) {
+			ESP_LOGW("","GET FUCKEd");
+			//We have read data so we do stuff with it <3
+			std::string recvdDevices = this->addDevToSys.getData();
+			this->dataProcessor->addDevice(recvdDevices);
+			this->addDevToSys.dataRead = true;
+		} else if (!(this->addEmpToSys.dataRead)) {
+			//we have read data so we do stuff with it <3
+			ESP_LOGW("","GET FUCKEd");
+			std::string recvdEmployees = this->addEmpToSys.getData();
+			this->dataProcessor->addEmployee(recvdEmployees);
+			this->addEmpToSys.dataRead  = true;
 		}
 		previousTag = recvdTag; // Updated the previos tag only if its legit
 
-
 }
+
+// It wont double up because when you add a person it gets the UUID from the system anyway -> which will be gotten from a https request.
+// Which will be set when a unregistered tag is sent
 
 /*
  * PRIVATE METHODS
  */
-
 void TagProcessing::deviceIsFound(Device& searchDevice, RfidTag& recvdTag) {
 	searchDevice.setTag(recvdTag); // Keep tag of scanned tag to update the time
 
@@ -136,10 +170,19 @@ void TagProcessing::sendConfigRequest(Employee& emp) {
 	 * See if we have a employee with this tag or a device. If we dont we send a message to the computer with the uuid of the device
 	 * and a request for the rfid tag or device to be added to the system.
 	 */
-	char buffer[50];
-	sprintf(buffer, "Buffer: %lld \n", emp.getTag().getUUID());
-//	this->dataProcessor->getMessagingService().sendMessage("");                                                                                                                                                                                                                                 -employee", buffer, DEFAULT_QOS);
+	char *uuidString = (char *) malloc(20 * sizeof(char)); //int_64_t is 10 chars. plus -, plus \0. then for assurance couple of extra tings for safety
+	sprintf(uuidString, "%lld\n", emp.getTag().getUUID());
+
+	// Update the data!
+	this->unregisteredTag.updateData(uuidString);
+
+	// Set the display
 	this->display->updateHomeText((char *) "Please Register\nTag", STATE_EMPLOYEE_TAGGED, 5);
+
+	// De allocate memory
+	free(uuidString);
+	uuidString = NULL;
+
 }
 
 

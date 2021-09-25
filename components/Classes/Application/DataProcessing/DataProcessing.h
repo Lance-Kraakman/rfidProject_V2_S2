@@ -31,7 +31,8 @@ extern "C" {
  */
 class DataProcessing {
 private:
-	WebServer myServer;
+
+
 	EmployeeModel employees;
 	DeviceModel devices;
 
@@ -41,6 +42,7 @@ private:
 	message recvdMessage;
 	void commandReceived();
 public:
+	WebServer myServer;
 	DataProcessing();
 	DataProcessing(DisplayDriver& myDriver);
 	void init();
@@ -49,8 +51,8 @@ public:
 
 	void sendDevices();
 	void sendEmployees();
-	void addDevice();
-	void addEmployee();
+	void addDevice(std::string data);
+	void addEmployee(std::string data);
 
 	EmployeeModel& getEmployeeModel();
 	DeviceModel& getDeviceModel();

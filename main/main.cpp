@@ -27,8 +27,6 @@ https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/api-reference/peri
 	myApp.runLoop();
 
 	printf("-----------------   ENTERING LOOP   ----------------------\n");
-
-	while(1) {
-	}
+	while(1) {}
 
 }

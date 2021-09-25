@@ -20,11 +20,15 @@ DataProcessing::DataProcessing(DisplayDriver& myDriver) {
 void DataProcessing::init() {
 
 		vTaskDelay(10/portTICK_RATE_MS);
+
 		this->globalTime = SntpTime();
 		globalTime.config();
 		globalTime.SyncTime();
 		globalTime.printTime();
 		globalTime.updateToCurrentTime(); // sets the time to the current time
+
+		this->myServer.addResponse(&this->devices.deviceResponse);
+		this->myServer.addResponse(&this->employees.employeeResponse);
 
 }
 
@@ -34,24 +38,7 @@ void DataProcessing::init() {
  */
 void DataProcessing::doMessageProcessing() {
 
-//	// Recieves the next message from the queue - returns empty message if none in queue
-//	message mes = this->messagingService.popMessage();
-//
-//	this->recvdMessage = mes;
-//	//check if we recieved a message
-//
-//	if (this->recvdMessage.recvd) {
-//		this->messagingService.printMessage(recvdMessage);
-//
-//		if (!(this->recvdMessage.topic.compare("device/add-employee"))) { // recieve employee data and add it to list of employees
-//			printf("Data Message Received\n");
-//			this->addEmployee();
-//		} else if (!(this->recvdMessage.topic.compare("device/add-device"))) { // receive a list of devices to add
-//			this->addDevice();
-//		} else if (!(this->recvdMessage.topic.compare("device/command"))) { // recieve command to do something
-//			this->commandReceived();
-//		}
-//	}
+
 }
 
 /** Sends device list json to app/app-data MQTT topic
@@ -63,7 +50,6 @@ void DataProcessing::sendDevices() {
 	char *deviceDataBuffer = cJSON_Print(finalJSON);
 
 	printf("SENDING DATA %s", deviceDataBuffer);
-//	this->messagingService.sendMessage("app/app-data", deviceDataBuffer, DEFAULT_QOS);
 
 	//Free Memory (Created with Malloc so must use free)
 	free(deviceDataBuffer);
@@ -96,8 +82,8 @@ void DataProcessing::sendEmployees() {
 /** Adds device to device model from the received message
  *
  */
-void DataProcessing::addDevice() {
-	cJSON *recvdJSON = cJSON_Parse(this->recvdMessage.data.c_str());
+void DataProcessing::addDevice(std::string data) {
+	cJSON *recvdJSON = cJSON_Parse(data.c_str());
 	try {
 		Device dev = this->devices.deviceFromJson(recvdJSON);
 		this->devices.addDevice(dev); // Adds the device if it is not already in the list
@@ -113,19 +99,23 @@ void DataProcessing::addDevice() {
 /** Adds Employee to device model from the received message
  *
  */
-void DataProcessing::addEmployee() {
-	cJSON *recvdJSON = cJSON_Parse(this->recvdMessage.data.c_str());
+void DataProcessing::addEmployee(std::string data) {
 	try {
+		// Multiple faults post requests will corrupt memory
+		cJSON *recvdJSON = cJSON_Parse(data.c_str());
 		Employee emp = this->employees.employeeFromJson(recvdJSON);
 		this->employees.addEmployee(emp);
+		free(recvdJSON);
+		recvdJSON = NULL;
 
 	} catch(const char* msg) {
 		printf(msg);
 		printf("Employee Not added");
 	}
 
-	free(recvdJSON);
-	recvdJSON = NULL;
+
+
+
 }
 
 /** State-Machine which decides what to do when a command is received.

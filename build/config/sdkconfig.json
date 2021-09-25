@@ -967,7 +967,7 @@
     "SPI_FLASH_VERIFY_WRITE": false,
     "SPI_FLASH_WRITE_CHUNK_SIZE": 8192,
     "SPI_FLASH_YIELD_DURING_ERASE": true,
-    "SPI_MASTER_IN_IRAM": false,
+    "SPI_MASTER_IN_IRAM": true,
     "SPI_MASTER_ISR_IN_IRAM": true,
     "SPI_SLAVE_IN_IRAM": false,
     "SPI_SLAVE_ISR_IN_IRAM": true,

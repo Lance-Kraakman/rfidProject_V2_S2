@@ -10,7 +10,9 @@
 /** Default Constructor.
  *
  */
-DeviceModel::DeviceModel() {}
+DeviceModel::DeviceModel() {
+	this->deviceResponse = httpResponse("<h1> Default Data <h1>", HTTPD_RESP_USE_STRLEN, std::string("/devs"), std::string("application/json"), HTTP_GET);
+}
 
 /**
  *
@@ -109,5 +111,19 @@ cJSON * DeviceModel::jsonDeviceList() {
 		cJSON_AddItemToArray(jsonArray, deviceJsonObject);
 	}
 	return finalJSON;
+}
+
+void DeviceModel::updateDeviceResponse() {
+
+	//this->jsonDeviceList()
+	cJSON *finalJSON = this->jsonDeviceList();
+	std::string dataString = std::string(cJSON_Print(finalJSON));
+
+	this->deviceResponse.updateData(dataString);
+	if (finalJSON != NULL) {
+		free(finalJSON);
+		finalJSON = NULL;
+
+	}
 }
 

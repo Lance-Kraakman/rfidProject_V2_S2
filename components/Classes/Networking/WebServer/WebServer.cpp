@@ -11,6 +11,7 @@ httpd_uri_t WebServer::uri_list[CONFIG_MAX_NUM_RESPONSES];
 httpResponse *WebServer::responseList[CONFIG_MAX_NUM_RESPONSES];
 int WebServer::pageCount = 0;
 #define TAG_HR "TAG HTTP RESPONSE"
+#define POST_REQUEST_MAX_CHARS 300
 
 /** \brief MyWebServer is an implementation of the web server class!
  * 	this can be used as a demonstration of how to implement the web server class.
@@ -19,13 +20,7 @@ int WebServer::pageCount = 0;
 WebServer::WebServer() : WebServerSkeleton() {
 	// Set URI handlers
    ESP_LOGI(TAG_WS, "Registering URI handlers");
-
-   // Register URIs Here - This needs to be done when a page is added but theese are for the dafault handlers
-   //httpd_register_uri_handler(WebServer::server, &WebServer::root); // root handler. Make this a class thing so we can add classes of
-   //httpd_register_uri_handler(WebServer::server, &WebServer::notRoot); // root handler. Make this a class thing so we can add classes of
-
    WebServer::pageCount = 0;
-
 }
 
 /* Add An HTTP GET handler */
@@ -38,8 +33,6 @@ esp_err_t WebServer::handler(httpd_req_t *req)
 }
 
 void WebServer::addResponse(httpResponse *httpResponse) {
-
-
 	WebServer::uri_list[WebServer::pageCount].handler = WebServer::handler;
 	WebServer::uri_list[WebServer::pageCount].uri = httpResponse->uriString.c_str();
 	WebServer::uri_list[WebServer::pageCount].method = httpResponse->method;
@@ -64,6 +57,7 @@ void WebServer::find_uri_and_respond(httpd_req_t *req) {
 		ESP_LOGI(TAG_WS, "Comparing Strings. STR 1: %s STR 2: %s",WebServer::responseList[i]->uriString.c_str(),std::string(req->uri).c_str());
 		// If the uri strings are legit and were not pointing to a NULL!
 		if (!(WebServer::responseList[i]->uriString.compare(std::string(req->uri)))) {
+			ESP_LOGW("", "1");
 			responseList[i]->respond(req);
 			ESP_LOGI(TAG_WS, "EXIT LOOP - if statement success");
 			break;
@@ -121,27 +115,45 @@ void httpResponse::respond_get(httpd_req_t *req) {
 
 void httpResponse::respond_post(httpd_req_t *req) {
 
-	char buffer[100];
-	int ret, remaining = req->content_len;
+	ESP_LOGW("", "POST REQUEST OK");
 
-	//
+	char buffer[POST_REQUEST_MAX_CHARS];
+	int ret = 0, remaining = req->content_len;
+
+	ESP_LOGW("","remaining %d",remaining);
+	std::string bufferCpy;
+
+	this->deleteData();
 	while (remaining > 0) {
 		/* Read the data for the request */
 		if ((ret = httpd_req_recv(req, buffer, MIN(remaining, sizeof(buffer)))) <= 0) {
 			if (ret == HTTPD_SOCK_ERR_TIMEOUT) {
 				/* Retry receiving if timeout occurred */
-				ret = httpd_req_recv(req, buffer, MIN(remaining, sizeof(buffer)));
-			}
-			// If bytes have sucessfully been received
-			if (ret > 0) {
-				this->updateData(buffer);
+				continue;
 			}
 		}
+
+		ESP_LOGW("","Data Received %s", buffer);
+		bufferCpy.append(buffer);
+
+		/* Send back the same data */
+		httpd_resp_send_chunk(req, buffer, ret);
+		remaining -= ret;
+
 	}
 
+	this->updateData(bufferCpy);
+	/* Log data received */
+	ESP_LOGI("", "=========== RECEIVED DATA ==========");
+	ESP_LOGI("", "%.*s", ret, this->getData().c_str());
+	ESP_LOGI("", "====================================");
+
+	this->dataRead = false;
+	httpd_resp_send_chunk(req, NULL, 0);
+
 	// Send the received data
-	httpd_resp_set_type(req, this->responseType.c_str());
-	httpd_resp_send(req, this->data.c_str(), this->dataSize);
+//	httpd_resp_set_type(req, this->responseType.c_str());
+//	httpd_resp_send(req, this->data.c_str(), this->dataSize);
 }
 
 void httpResponse::updateData(std::string data) {
@@ -150,7 +162,7 @@ void httpResponse::updateData(std::string data) {
 	xSemaphoreGive(this->dataSemaphore);
 }
 
-void httpResponse::updateData(char *data) {
+void httpResponse::updateData(const char *data) {
 	std::string tempData = std::string(data);
 	xSemaphoreTake(this->dataSemaphore, 1);
 	this->data.assign(tempData);
@@ -168,24 +180,15 @@ std::string httpResponse::getData() {
 }
 
 void httpResponse::addToData(std::string data) {
-	xSemaphoreTake(this->dataSemaphore, 0);
-	this->data.append(data);
+	xSemaphoreTake(this->dataSemaphore, 1);
+	this->data += data;
+	ESP_LOGI("","SLUT");
 	xSemaphoreGive(this->dataSemaphore);
 }
 
-// TODO. Send notification to event loop
-//void httpResponse::sendNotification() {
-//
-//}
-
-//httpd_uri_t WebServer::root = {
-//    .uri       = "/",
-//    .method    = HTTP_GET,
-//    .handler   = WebServer::root_get_handler
-//};
-//
-//httpd_uri_t WebServer::notRoot = {
-//    .uri       = "/not-root",
-//    .method    = HTTP_GET,
-//    .handler   = WebServer::root_get_handler
-//};
+void httpResponse::addToData(char *data) {
+	//std::string dataStr = std::string(data);
+	xSemaphoreTake(this->dataSemaphore, 1);
+	this->data += (std::string(data));
+	xSemaphoreGive(this->dataSemaphore);
+}

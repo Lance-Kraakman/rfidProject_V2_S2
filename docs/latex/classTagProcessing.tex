@@ -15,10 +15,24 @@ Application code, Provides interaction between rfid scanner and data processoing
 \mbox{\hyperlink{classTagProcessing_a635cea90e197fa819ff85e532c3b7b42}{Tag\+Processing}} ()
 \item 
 void \mbox{\hyperlink{classTagProcessing_a93f04f8db8ceea893f193e1a0219042a}{do\+Processing}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Tag Processing Logic. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTagProcessing_a26ca6acca125e4f65fdb1386435b8bc3}{Tag\+Processing}} (\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$\mbox{\hyperlink{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}{data\+Processor}}, \mbox{\hyperlink{classDisplayDriver}{Display\+Driver}} $\ast$my\+Driver)
 \item 
 void \mbox{\hyperlink{classTagProcessing_acd69999b3ce3fff9404676fb86bd07eb}{init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$ \mbox{\hyperlink{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}{data\+Processor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classhttpResponse}{http\+Response}} \mbox{\hyperlink{classTagProcessing_a71ad9cf53131ad6d39f33a76dd9aa56f}{add\+Dev\+To\+Sys}} = \mbox{\hyperlink{classhttpResponse}{http\+Response}}(\char`\"{}Default\char`\"{}, H\+T\+T\+P\+D\+\_\+\+R\+E\+S\+P\+\_\+\+U\+S\+E\+\_\+\+S\+T\+R\+L\+EN, std\+::string(\char`\"{}/add\+Dev\char`\"{}), std\+::string(\char`\"{}application/json\char`\"{}), H\+T\+T\+P\+\_\+\+P\+O\+ST)
+\item 
+static \mbox{\hyperlink{classhttpResponse}{http\+Response}} \mbox{\hyperlink{classTagProcessing_a7caa7c4f7bad020773cc939caf856a9d}{add\+Emp\+To\+Sys}} = \mbox{\hyperlink{classhttpResponse}{http\+Response}}(\char`\"{}Default\char`\"{}, H\+T\+T\+P\+D\+\_\+\+R\+E\+S\+P\+\_\+\+U\+S\+E\+\_\+\+S\+T\+R\+L\+EN, std\+::string(\char`\"{}/add\+Emp\char`\"{}), std\+::string(\char`\"{}application/json\char`\"{}), H\+T\+T\+P\+\_\+\+P\+O\+ST)
+\item 
+static \mbox{\hyperlink{classhttpResponse}{http\+Response}} \mbox{\hyperlink{classTagProcessing_a99f4244571aa5982c911a922a39457f6}{unregistered\+Tag}} = \mbox{\hyperlink{classhttpResponse}{http\+Response}}(\char`\"{}\char`\"{}, H\+T\+T\+P\+D\+\_\+\+R\+E\+S\+P\+\_\+\+U\+S\+E\+\_\+\+S\+T\+R\+L\+EN, std\+::string(\char`\"{}unregistered-\/tag\char`\"{}), std\+::string(\char`\"{}application/json\char`\"{}), H\+T\+T\+P\+\_\+\+G\+ET)
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -37,8 +51,6 @@ void \mbox{\hyperlink{classTagProcessing_a83528a75e888b205b376af4db23f7274}{send
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classRfidScanner}{Rfid\+Scanner}} \mbox{\hyperlink{classTagProcessing_a2fa439d1ce34c28fb865a982d23efaf3}{rfid\+Scanner}}
-\item 
-\mbox{\hyperlink{classDataProcessing}{Data\+Processing}} $\ast$ \mbox{\hyperlink{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}{data\+Processor}}
 \item 
 \mbox{\hyperlink{classRfidTag}{Rfid\+Tag}} \mbox{\hyperlink{classTagProcessing_acd080b23b7fef5ded9034b47561b5de2}{previous\+Tag}}
 \item 
@@ -81,6 +93,10 @@ Application code, Provides interaction between rfid scanner and data processoing
 \doxysubsubsection{\texorpdfstring{doProcessing()}{doProcessing()}}
 {\footnotesize\ttfamily void Tag\+Processing\+::do\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Tag Processing Logic. 
+
 \mbox{\Hypertarget{classTagProcessing_aa37b75b03d47a369182359b92ec57d97}\label{classTagProcessing_aa37b75b03d47a369182359b92ec57d97}} 
 \index{TagProcessing@{TagProcessing}!empIsActive@{empIsActive}}
 \index{empIsActive@{empIsActive}!TagProcessing@{TagProcessing}}
@@ -114,11 +130,23 @@ Application code, Provides interaction between rfid scanner and data processoing
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTagProcessing_a71ad9cf53131ad6d39f33a76dd9aa56f}\label{classTagProcessing_a71ad9cf53131ad6d39f33a76dd9aa56f}} 
+\index{TagProcessing@{TagProcessing}!addDevToSys@{addDevToSys}}
+\index{addDevToSys@{addDevToSys}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{addDevToSys}{addDevToSys}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classhttpResponse}{http\+Response}} Tag\+Processing\+::add\+Dev\+To\+Sys = \mbox{\hyperlink{classhttpResponse}{http\+Response}}(\char`\"{}Default\char`\"{}, H\+T\+T\+P\+D\+\_\+\+R\+E\+S\+P\+\_\+\+U\+S\+E\+\_\+\+S\+T\+R\+L\+EN, std\+::string(\char`\"{}/add\+Dev\char`\"{}), std\+::string(\char`\"{}application/json\char`\"{}), H\+T\+T\+P\+\_\+\+P\+O\+ST)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classTagProcessing_a7caa7c4f7bad020773cc939caf856a9d}\label{classTagProcessing_a7caa7c4f7bad020773cc939caf856a9d}} 
+\index{TagProcessing@{TagProcessing}!addEmpToSys@{addEmpToSys}}
+\index{addEmpToSys@{addEmpToSys}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{addEmpToSys}{addEmpToSys}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classhttpResponse}{http\+Response}} Tag\+Processing\+::add\+Emp\+To\+Sys = \mbox{\hyperlink{classhttpResponse}{http\+Response}}(\char`\"{}Default\char`\"{}, H\+T\+T\+P\+D\+\_\+\+R\+E\+S\+P\+\_\+\+U\+S\+E\+\_\+\+S\+T\+R\+L\+EN, std\+::string(\char`\"{}/add\+Emp\char`\"{}), std\+::string(\char`\"{}application/json\char`\"{}), H\+T\+T\+P\+\_\+\+P\+O\+ST)\hspace{0.3cm}{\ttfamily [static]}}
+
 \mbox{\Hypertarget{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}\label{classTagProcessing_a101c6b8753f1064dfac911e7aa8dee2d}} 
 \index{TagProcessing@{TagProcessing}!dataProcessor@{dataProcessor}}
 \index{dataProcessor@{dataProcessor}!TagProcessing@{TagProcessing}}
 \doxysubsubsection{\texorpdfstring{dataProcessor}{dataProcessor}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classDataProcessing}{Data\+Processing}}$\ast$ Tag\+Processing\+::data\+Processor\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataProcessing}{Data\+Processing}}$\ast$ Tag\+Processing\+::data\+Processor}
 
 \mbox{\Hypertarget{classTagProcessing_a411d96b8fe33b6ee7b39b294dc382988}\label{classTagProcessing_a411d96b8fe33b6ee7b39b294dc382988}} 
 \index{TagProcessing@{TagProcessing}!display@{display}}
@@ -149,6 +177,12 @@ Application code, Provides interaction between rfid scanner and data processoing
 \index{rfidScanner@{rfidScanner}!TagProcessing@{TagProcessing}}
 \doxysubsubsection{\texorpdfstring{rfidScanner}{rfidScanner}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classRfidScanner}{Rfid\+Scanner}} Tag\+Processing\+::rfid\+Scanner\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTagProcessing_a99f4244571aa5982c911a922a39457f6}\label{classTagProcessing_a99f4244571aa5982c911a922a39457f6}} 
+\index{TagProcessing@{TagProcessing}!unregisteredTag@{unregisteredTag}}
+\index{unregisteredTag@{unregisteredTag}!TagProcessing@{TagProcessing}}
+\doxysubsubsection{\texorpdfstring{unregisteredTag}{unregisteredTag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classhttpResponse}{http\+Response}} Tag\+Processing\+::unregistered\+Tag = \mbox{\hyperlink{classhttpResponse}{http\+Response}}(\char`\"{}\char`\"{}, H\+T\+T\+P\+D\+\_\+\+R\+E\+S\+P\+\_\+\+U\+S\+E\+\_\+\+S\+T\+R\+L\+EN, std\+::string(\char`\"{}unregistered-\/tag\char`\"{}), std\+::string(\char`\"{}application/json\char`\"{}), H\+T\+T\+P\+\_\+\+G\+ET)\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

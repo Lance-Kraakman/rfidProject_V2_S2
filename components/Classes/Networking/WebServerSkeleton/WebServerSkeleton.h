@@ -32,6 +32,7 @@ private:
 	static httpd_handle_t start_webserver(void);
 	static void stop_webserver(httpd_handle_t server);
 	static esp_err_t root_handler(httpd_req_t *req);
+	static int s_servers;
 protected:
     static httpd_handle_t server;
 public:

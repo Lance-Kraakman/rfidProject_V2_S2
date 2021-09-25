@@ -6,8 +6,11 @@
  */
 #include <vector>
 #include <algorithm>
+#include <string>
 #include "../Device/Device.h"
 #include "cJSON.h"
+#include "../Networking/WebServer/WebServer.h"
+
 
 #ifndef COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_
 #define COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_
@@ -24,7 +27,14 @@ public:
 	bool updateDeviceInList(Device deviceToUpdate);
 	Device deviceFromJson(cJSON *recvdJSON);
 	void addDevice(Device dev);
+
 	cJSON *jsonDeviceList();
+
+	httpResponse deviceResponse;
+	void updateDeviceResponse();
+
 };
 
 #endif /* COMPONENTS_DEVICEMODEL_DEVICEMODEL_H_ */
+
+

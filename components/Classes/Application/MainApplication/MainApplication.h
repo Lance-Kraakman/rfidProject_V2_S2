@@ -37,12 +37,9 @@
 class MainApplication {
 private:
 
-//	std::vector<Employee> employeeList;
-//	std::vector<Device> deviceList;
-//
-//	// Private state machine functions
-//	DataProcessing DataProcessor;
-//	TagProcessing TagProcessor;
+	// Private state machine functions
+	DataProcessing DataProcessor;
+	TagProcessing TagProcessor;
 
 	//Display
 	DisplayDriver DisplayProcessor;

@@ -7,7 +7,9 @@
 
 #include "EmployeeModel.h"
 
-EmployeeModel::EmployeeModel() {}
+EmployeeModel::EmployeeModel() {
+	this->employeeResponse = httpResponse("<h1> Default Data <h1>", HTTPD_RESP_USE_STRLEN, std::string("/emps"), std::string("application/json"), HTTP_GET);
+}
 
 /**
  *
@@ -111,4 +113,20 @@ cJSON *EmployeeModel::jsonEmployeeList() {
 		cJSON_AddItemToArray(jsonArray, employeeJsonObject);
 	}
 	return finalJSON;
+}
+
+
+void EmployeeModel::updateEmployeeResponse() {
+
+	//this->jsonDeviceList()
+	cJSON *finalJSON = this->jsonEmployeeList();
+	std::string dataString = std::string(cJSON_Print(finalJSON));
+
+	this->employeeResponse.updateData(dataString);
+
+	// free memory
+	if (finalJSON != NULL) {
+		free(finalJSON);
+		finalJSON = NULL;
+	}
 }
